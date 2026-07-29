@@ -1,0 +1,28 @@
+Accomplishments (Completed)
+Database: Supabase project initialized.
+
+Schema: profiles table created.
+
+Security: Row Level Security (RLS) configured to allow authenticated access for testing.
+
+Local Development: Next.js environment running successfully on localhost:3000.
+
+Integration: Verified connection between Next.js and Supabase (API data successfully fetched and displayed in browser).
+
+2. Current State
+Deployment Strategy: We have decided to use Vercel for hosting the application code to ensure the best performance and easiest integration with Next.js, while keeping the domain managed by GoDaddy.
+
+Next Steps: Connect GitHub to Vercel and deploy.
+
+3. Deployment Checklist (The "Squeezy Lemon" Phase)
+[ ] Create a GitHub account (if not already done).
+
+[ ] Create a new repository on GitHub and push the current project code.
+
+[ ] Connect the GitHub repository to Vercel.
+
+[ ] Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to Vercel's Environment Variables.
+
+[ ] Deploy the project.
+
+[ ] Configure GoDaddy DNS to point einsteinerror.com to the Vercel production URL.

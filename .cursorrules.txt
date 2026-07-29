@@ -1,0 +1,6 @@
+Project Architecture Constraints:
+- We use Supabase as our backend/database. 
+- We use Lemon Squeezy for all billing and payments.
+- DO NOT mention, suggest, or provide code for Stripe, Firebase, or any other alternative payment or database providers.
+- When providing code examples, always use the Supabase JS client and Lemon Squeezy API integrations.
+- Assume we are using Next.js 15+ and the App Router.
