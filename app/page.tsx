@@ -50,39 +50,9 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><br/>
       <div className="spacer" style={{ height: '20px' }}></div>
       
-      {/* Dynamic Truth Counter Layout Block */}
-      <div style={{ backgroundColor: '#000000', color: '#ffffff', padding: '24px', fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", textAlign: 'center', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-        <span style={{ fontSize: '1.1rem', fontWeight: 500 }}># of people who have<br/>now learned the TRUTH&nbsp; =&nbsp; </span>
-        
-        <div style={{ border: '2px solid #ffffff', borderRadius: '50px', padding: '6px 20px', display: 'inline-block', backgroundColor: '#000000' }}>
-          <span id="truth-counter-digits" style={{ fontSize: '1.2rem', fontWeight: 'bold', letterSpacing: '1px' }}>5,731,137</span>
-        </div>
-      </div>
-
-      {/* Turbopack Safe Script Execution */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            async function fetchAndUpdateCounter() {
-              try {
-                const response = await fetch('/api/view?slug=home');
-                const data = await response.json();
-                
-                if (data && typeof data.count === 'number') {
-                  const element = document.getElementById('truth-counter-digits');
-                  if (element) {
-                    element.textContent = data.count.toLocaleString();
-                  }
-                }
-              } catch (err) {
-                console.error('Could not fetch live view count', err);
-              }
-            }
-
-            fetchAndUpdateCounter();
-          `
-        }}
-      />
+      <h1 id="counter-display" style={{ color: '#FFFFFF', fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', textShadow: '2px 2px 4px #000000' }}>
+        # of people who now know the TRUTH - 5,731,137
+      </h1>
       
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -108,7 +78,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>" PERFECT "<br/>Physics &nbsp; Truth &nbsp; !</span>
+        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>" PERFECT "<br/>PHYSICS &nbsp; TRUTH &nbsp; !</span>
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -128,7 +98,33 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        And if you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning...
+        And if you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '35px' }}>$&nbsp; Money&nbsp; $</span><br/>by simply placing a small<br/>snippet onto your Website<br/>that displays this<br/><br/>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>* Monumental *<br/>Discovery&nbsp; !</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div><br/><br/>
+        <br/><img src="/MAX-LIT.png" alt="Max-Lit Engine" width={500} height={400} />
+      </div>
+
+      <div id="auth-section" style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '800px', border: '6px solid #C5A059', textAlign: 'center' }}>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>TRY&nbsp;&nbsp; " MAX-LIT "&nbsp;&nbsp; FREE&nbsp; !</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 2 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
+        <GoogleLoginButton initialError={authError} />
+      </div> 
+        
+      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span>
+      <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '35px' }}>Click&nbsp; the</span><br/>
+      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>" <span style={{ color: '#00FFFF' }}>Continue with Google</span> "</span>
+      <br/><span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>Link ( above )</span>
+      <div className="spacer" style={{ height: '70px' }}></div>
+      <div style={{ width: '75%', height: '6px', backgroundColor: '#C5A059', margin: '20px auto' }}></div>
+      <div className="spacer" style={{ height: '100px' }}></div>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>YES&nbsp; !<br/><br/>This&nbsp; Website<br/><br/>has&nbsp; the&nbsp; absolute<br/><br/>answer&nbsp; to&nbsp; Einstein's<br/><br/>Monumental&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>ERROR&nbsp; !</span></div>
+      <div className="spacer" style={{ height: '100px' }}></div>
+      <img src="/TWISTED.png" width={500} height={700} alt="Twisted" />
+      <div style={{ textAlign: 'center', marginTop: '100px' }}>
+        <a href="/page2" style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', textDecoration: 'none' }}>See&nbsp; the&nbsp; enormous&nbsp; PROOF<br/><br/>Click&nbsp; the&nbsp; Next&nbsp; Page &rarr;<br/><br/>Einstein Error . com</a>
+        <div className="spacer" style={{ height: '50px' }}></div>
+        <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '25px' }}>END&nbsp; of&nbsp; PAGE 1</span>
+        <div className="spacer" style={{ height: '100px' }}></div>
       </div>
     </main>
   );
