@@ -50,6 +50,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><br/>
       <div className="spacer" style={{ height: '20px' }}></div>
       
+
       <div style="background-color: #000000; color: #ffffff; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
   <span style="font-size: 1.1rem; font-weight: 500;"># of people who have learned the truth =</span>
   
@@ -58,67 +59,23 @@ export default async function Home({ searchParams }: HomeProps) {
   </div>
 </div>
 
-"use client";
-
-import { useEffect } from 'react';
-
-export default function Page() {
-  useEffect(() => {
-    async function fetchAndUpdateCounter() {
-      try {
-        const response = await fetch('/api/view?slug=home');
-        const data = await response.json();
-        
-        if (data && typeof data.count === 'number') {
-          const element = document.getElementById('truth-counter-digits');
-          if (element) {
-            element.textContent = data.count.toLocaleString();
-          }
-        }
-      } catch (err) {
-        console.error('Could not fetch live view count', err);
-      }
-    }
-
-    fetchAndUpdateCounter();
-  }, [])
-
-  return (
-    <div style={{
-      backgroundColor: '#000000', 
-      color: '#ffffff', 
-      padding: '24px', 
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", 
-      textAlign: 'center', 
-      display: 'flex', 
-      flexWrap: 'wrap', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      gap: '10px'
-    }}>
-      <span style={{ fontSize: '1.1rem', fontWeight: 500 }}>
-        # of people who have learned the truth =
-      </span>
+<script>
+  async function fetchAndUpdateCounter() {
+    try {
+      const response = await fetch('/api/view?slug=home');
+      const data = await response.json();
       
-      <div style={{ 
-        border: '2px solid #ffffff', 
-        borderRadius: '50px', 
-        padding: '6px 20px', 
-        display: 'inline-block', 
-        backgroundColor: '#000000' 
-      }}>
-        <span id="truth-counter-digits" style={{ 
-          fontSize: '1.2rem', 
-          fontWeight: 'bold', 
-          letter-spacing: '1px' 
-        }}>
-          5,731,137
-        </span>
-      </div>
-    </div>
-  );
-}
+      if (data && typeof data.count === 'number') {
+        document.getElementById('truth-counter-digits').textContent = data.count.toLocaleString();
+      }
+    } catch (err) {
+      console.error('Could not fetch live view count', err);
+    }
+  }
 
+  fetchAndUpdateCounter();
+</script>
+  
       
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
