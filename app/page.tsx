@@ -52,7 +52,7 @@ export default async function Home({ searchParams }: HomeProps) {
       
       {/* Dynamic Truth Counter Layout Block */}
       <div style={{ backgroundColor: '#000000', color: '#ffffff', padding: '24px', fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", textAlign: 'center', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-        <span style={{ fontSize: '1.1rem', fontWeight: 500 }}># of people who have learned the truth =</span>
+        <span style={{ fontSize: '1.1rem', fontWeight: 500 }}># of people who have<br/>now learned the TRUTH&nbsp; =&nbsp; </span>
         
         <div style={{ border: '2px solid #ffffff', borderRadius: '50px', padding: '6px 20px', display: 'inline-block', backgroundColor: '#000000' }}>
           <span id="truth-counter-digits" style={{ fontSize: '1.2rem', fontWeight: 'bold', letterSpacing: '1px' }}>5,731,137</span>
@@ -108,7 +108,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>" PERFECT "<br/>PHYSICS &nbsp; TRUTH &nbsp; !</span>
+        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>" PERFECT "<br/>Physics &nbsp; Truth &nbsp; !</span>
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
