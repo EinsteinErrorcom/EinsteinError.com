@@ -1,6 +1,7 @@
 export default function Page4() {
   return (
     <div className="page-wrapper">
+      <main id="main-content">
       <header className="site-header">
         <nav className="page-nav" aria-label="Page navigation">
           <span className="page-nav__label">Page 4 of 4</span>
@@ -437,13 +438,11 @@ Here, watch some Videos ...
       <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>UNDERSTAND THIS . . .</div>
       <br />
-      
-
-            This is the ***
-      <span className="c-cyan">REALITY</span>
-      *** of our universe. Gravity is at a CONSTANT Velocity (flowing into the earth) and a lattice of Neutrons (m) that make up the fabric of space, are naturally STATIONARY in space. Yes, Neutrons (m) that are cut free by the Magnetic-field of the earth and accelerated into Electrons (mA) (and)
-
-
+      <div className="f-x-large" style={{ color: '#00FFFF' }}>
+        This is the ***
+        <span className="c-cyan">REALITY</span>
+        *** of our universe. Gravity is at a CONSTANT Velocity (flowing into the earth) and a lattice of Neutrons (m) that make up the fabric of space, are naturally STATIONARY in space. Yes, Neutrons (m) that are cut free by the Magnetic-field of the earth and accelerated into Electrons (mA) (and)
+      </div>
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -894,6 +893,12 @@ Here, watch some Videos ...
           </span>
         </div>
       </div>
+      <footer className="page-footer">
+        <a className="page-footer__back" href="/page3">← Back to Page 3</a>
+        <a className="page-footer__back" href="/">← Back to Home</a>
+        <p className="page-footer__end">END  of  PAGE</p>
+      </footer>
+      </main>
     </div>
   );
 }

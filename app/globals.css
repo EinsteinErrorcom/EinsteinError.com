@@ -27,7 +27,10 @@ html {
 
 body {
   margin: 0;
-  padding: var(--space-sm);
+  padding: max(var(--space-sm), env(safe-area-inset-top, 0px))
+    max(var(--space-sm), env(safe-area-inset-right, 0px))
+    max(var(--space-sm), env(safe-area-inset-bottom, 0px))
+    max(var(--space-sm), env(safe-area-inset-left, 0px));
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-base);
@@ -262,6 +265,14 @@ a[target="_blank"] {
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.slideshow-section {
+  color: var(--color-cyan);
+}
+
 .text-cyan {
   color: var(--color-cyan);
 }
@@ -323,6 +334,23 @@ a[target="_blank"] {
 .page-footer {
   margin-top: var(--space-lg);
   padding-block: var(--space-md);
+}
+
+.page-footer__back {
+  display: inline-block;
+  color: var(--color-cyan);
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+}
+
+.page-footer__back:hover,
+.page-footer__back:focus-visible {
+  text-decoration: underline;
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
 }
 
 .page-footer__next {

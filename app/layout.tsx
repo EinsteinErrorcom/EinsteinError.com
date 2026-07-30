@@ -11,6 +11,12 @@ export const metadata: Metadata = {
     "Max-Lit is the world's first perfect physics intelligence engine. Unified via 150 physics constants to deliver absolute truth.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
