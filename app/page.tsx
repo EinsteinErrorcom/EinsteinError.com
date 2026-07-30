@@ -81,7 +81,7 @@ export default function Page() {
     }
 
     fetchAndUpdateCounter();
-  }, []);
+  }, [])
 
   return (
     <div style={{
