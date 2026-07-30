@@ -59,6 +59,14 @@ export default async function Home({ searchParams }: HomeProps) {
   </div>
 </div>
 
+<div style="background-color: #000000; color: #ffffff; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;">
+  <span style="font-size: 1.1rem; font-weight: 500;"># of people who have learned the truth =</span>
+  
+  <div style="border: 2px solid #ffffff; border-radius: 50px; padding: 6px 20px; display: inline-block; background-color: #000000;">
+    <span id="truth-counter-digits" style="font-size: 1.2rem; font-weight: bold; letter-spacing: 1px;">5,731,137</span>
+  </div>
+</div>
+
 <script>
   async function fetchAndUpdateCounter() {
     try {
@@ -75,7 +83,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
   fetchAndUpdateCounter();
 </script>
-  
       
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
