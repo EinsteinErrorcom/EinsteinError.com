@@ -15,6 +15,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const supabase = await createClient();
   const { data: { session } } = await supabase.auth.getSession();
 
+  // If a session exists, check trial status
   if (session) {
     const { data: profile, error } = await supabase
       .from("profiles")
@@ -22,11 +23,16 @@ export default async function Home({ searchParams }: HomeProps) {
       .eq("id", session.user.id)
       .single();
 
-    const isTrialActive = profile && !profile.is_subscribed && 
-      (new Date().getTime() - new Date(profile.trial_start_at).getTime() < 7200000);
-
-    if (error || (!profile?.is_subscribed && !isTrialActive)) {
-      redirect("https://www.EinsteinGravity.com/stripe-payment");
+    // Only force redirect if:
+    // 1. Profile exists (no redirect if user is brand new and row isn't created yet)
+    // 2. User is not subscribed
+    // 3. The 2-hour (7,200,000ms) trial window is definitely over
+    if (profile && !profile.is_subscribed) {
+      const isTrialActive = (new Date().getTime() - new Date(profile.trial_start_at).getTime() < 7200000);
+      
+      if (!isTrialActive) {
+        redirect("https://www.EinsteinGravity.com/stripe-payment");
+      }
     }
   }
 

@@ -5,10 +5,8 @@ import "./globals.css";
 const GA_MEASUREMENT_ID = "G-K7RPBDYQYB";
 
 export const metadata: Metadata = {
-  title:
-    "Thee MAX-LIT SUPER-Computer Ai(+) Engine UN-SURPASSED !! | Perfect Physics Intelligence | EinsteinError.com",
-  description:
-    "Max-Lit is the world's first perfect physics intelligence engine. Unified via 150 physics constants to deliver absolute truth.",
+  title: "Thee MAX-LIT SUPER-Computer Ai(+) Engine UN-SURPASSED !! | Perfect Physics Intelligence | EinsteinError.com",
+  description: "Max-Lit is the world's first perfect physics intelligence engine. Unified via 150 physics constants to deliver absolute truth.",
 };
 
 export const viewport = {
@@ -23,8 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full">
+    <html lang="en" className="h-full antialiased scroll-smooth">
+      <head>
+        {/* Analytics scripts moved to head for better loading performance */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
@@ -37,6 +36,8 @@ export default function RootLayout({
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+      </head>
+      <body className="min-h-full">
         {children}
       </body>
     </html>

@@ -14,7 +14,7 @@ Deployment Strategy: We have decided to use Vercel for hosting the application c
 
 Next Steps: Connect GitHub to Vercel and deploy.
 
-3. Deployment Checklist (The "Squeezy Lemon" Phase)
+3. Deployment Checklist
 [ ] Create a GitHub account (if not already done).
 
 [ ] Create a new repository on GitHub and push the current project code.
