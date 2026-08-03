@@ -36,7 +36,7 @@ export default function Page2() {
           </p>
           <p className="contact-block__counter">
             
-          # of people given the TRUTH  =  5,731,137
+          # of people given the TRUTH  =  5,731,486
         
           </p>
         </section>

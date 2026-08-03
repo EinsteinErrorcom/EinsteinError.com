@@ -1,4 +1,5 @@
 import { GoogleLoginButton } from "@/components/google-login-button";
+import { TruthCounter } from "@/components/truth-counter";
 import { createClient } from "@/lib/supabase/server";
 import { getGoogleClientId } from "@/lib/site-url";
 import { isProfileTrialActive } from "@/lib/trial";
@@ -104,9 +105,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><br/>
       <div className="spacer" style={{ height: '20px' }}></div>
       
-      <h1 id="counter-display" style={{ color: '#FFFFFF', fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', textShadow: '2px 2px 4px #000000' }}>
-        # of people who now know the TRUTH - 5,731,137
-      </h1>
+      <TruthCounter />
       
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>

@@ -21,7 +21,7 @@ export default function Page4() {
           <br />
           <span className="contact-block__value">wild.book0719@fastmail.com</span>
         </p>
-        <p className="contact-block__counter"># of people given the TRUTH  =  5,731,137</p>
+        <p className="contact-block__counter"># of people given the TRUTH  =  5,731,486</p>
       </section>
       <div className="f-medium">
         
