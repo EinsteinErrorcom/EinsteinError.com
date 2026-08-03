@@ -10,6 +10,8 @@ type CacheEntry = {
   expiresAt: number;
 };
 
+const cacheStore = new Map<string, CacheEntry>();
+
 const GEMINI_REQUEST_TIMEOUT_MS = 20_000;
 
 async function withTimeout<T>(promise: Promise<T>, label: string): Promise<T> {
