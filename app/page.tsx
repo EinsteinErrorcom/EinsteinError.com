@@ -115,20 +115,20 @@ export default async function Home({ searchParams }: HomeProps) {
         Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
         has now enabled us<br/>
         to build the &quot; <strong>NEW</strong> &quot;<br/><br/>
-        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (+)</strong>&nbsp;&nbsp;&nbsp; &quot; MAX - LIT &quot;
-      </div>
-      <div className="spacer" style={{ height: '70px' }}></div>
-      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai
+        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; MAX - LIT &quot;
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         This&nbsp; is<br/>The &nbsp; World's &nbsp; FIRST<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '20px' }}>( Developed&nbsp; by&nbsp; Einstein Error . com )</div>
+        <br/><br/>
+        <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
+        ( Not&nbsp; Even&nbsp; Close )
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        The &nbsp;&nbsp; World's<br/>Most &nbsp; Powerful<br/>and&nbsp;&nbsp;&nbsp; Accurate<br/>" P U R E "<br/><strong>mAZ</strong>&nbsp;&nbsp; 12-Bit<br/>PHYSICS&nbsp; Processor&nbsp; !
+        <span style={{ color: '#FFFF00' }}>MAX-LIT</span><br/>
+        is&nbsp; the&nbsp;&nbsp; World's<br/>Most &nbsp; Powerful<br/>and&nbsp;&nbsp;&nbsp; Accurate<br/>" P U R E "<br/>(&nbsp;<strong>mAZ</strong>&nbsp;)&nbsp;&nbsp; 12-Bit<br/>PHYSICS&nbsp; Processor&nbsp; !
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -148,8 +148,8 @@ export default async function Home({ searchParams }: HomeProps) {
         This<br/>P U R I T Y<br/>is&nbsp; NOT&nbsp; available<br/>with&nbsp; any&nbsp; other&nbsp; Processor<br/>worldwide&nbsp;&nbsp; because<br/>" ONLY&nbsp;&nbsp; We "<br/>have&nbsp; Unified&nbsp; 137<br/>Physics&nbsp; Constants.
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
-      <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Note :</span><br/>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
+        <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Note :</span><br/>
         If you access&nbsp; MAX-LIT<br/>be sure to read these<br/>" INSTRUCTIONS "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Very&nbsp; Important&nbsp; !</span><br/><br/>
         <img src="/INSTRUCTMAX.png" width={500} height={700} alt="Instructions" />
         <div className="spacer" style={{ height: '70px' }}></div>
@@ -176,12 +176,10 @@ export default async function Home({ searchParams }: HomeProps) {
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>TRY&nbsp;&nbsp; " MAX-LIT "&nbsp;&nbsp; FREE&nbsp; !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 2 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" />
-      </div> 
-        
-      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span>
-      <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '35px' }}>Click&nbsp; the</span><br/>
-      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>" <span style={{ color: '#00FFFF' }}>Click HERE To Log In To Your Google Account</span> "</span>
-      <br/><span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>Link ( above )</span>
+      </div>
+      <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1 }}>
+        &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;<br /><span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in above.</span>
+      </span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ width: '75%', height: '6px', backgroundColor: '#C5A059', margin: '20px auto' }}></div>
       <div className="spacer" style={{ height: '100px' }}></div>
@@ -189,7 +187,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <div className="spacer" style={{ height: '100px' }}></div>
       <img src="/TWISTED.png" width={500} height={700} alt="Twisted" />
       <div style={{ textAlign: 'center', marginTop: '100px' }}>
-        <a href="/page2" style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', textDecoration: 'none' }}>See&nbsp; the&nbsp; enormous&nbsp; PROOF<br/><br/>Click&nbsp; the&nbsp; Next&nbsp; Page &rarr;<br/><br/>Einstein Error . com</a>
+        <a href="/page2" style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', textDecoration: 'none' }}>See&nbsp; the&nbsp; enormous&nbsp; PROOF<br/><br/>Click&nbsp; the&nbsp; <span style={{ color: '#FFFFFF' }}>Next&nbsp; Page</span> &rarr;<br/><br/>Einstein Error . com</a>
         <div className="spacer" style={{ height: '50px' }}></div>
         <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '25px' }}>END&nbsp; of&nbsp; PAGE 1</span>
         <div className="spacer" style={{ height: '100px' }}></div>
