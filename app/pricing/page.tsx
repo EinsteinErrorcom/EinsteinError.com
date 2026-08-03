@@ -1,20 +1,29 @@
+import Link from 'next/link';
+
 export default function PricingPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4">
-      <h1 className="text-4xl font-bold mb-8">Choose Your Plan</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Example Plan Card */}
-        <div className="border p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-semibold">SUPERComputer Access</h2>
-          <p className="text-4xl font-bold my-4">$XX.XX</p>
-          <p className="mb-6 text-gray-600">Get full access to the power of the SUPERComputer.</p>
-          
-          <a href="https://www.EinsteinGravity.com/stripe-payment" className="block w-full py-3 bg-blue-600 text-white rounded hover:bg-blue-700">
-            Buy Now
-          </a>
+    <main className="pricing-page">
+      <a
+        href="/pricing/checkout"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="pricing-page__link"
+        aria-label="Open MAX-LIT Stripe checkout in a new tab"
+      >
+        <div className="pricing-page__frame">
+          <img
+            src="/PRICING.png"
+            alt="MAX-LIT Pricing — The World's Most Powerful PURE Physics Engine"
+            className="pricing-page__image"
+            width={600}
+            height={900}
+          />
         </div>
-      </div>
-    </div>
+      </a>
+
+      <Link href="/" className="pricing-page__home">
+        ← Back to Home
+      </Link>
+    </main>
   );
 }

@@ -1,39 +1,46 @@
 import { NextResponse } from 'next/server';
+import { AIAdapterError, processPrompt } from '@/lib/ai/adapter';
+import { enforceChatGatekeeper } from '@/lib/chat-gatekeeper';
+import { enforceChatRateLimit } from '@/lib/chat-rate-limit';
 import { createClient } from '@/lib/supabase/server';
-import { processPrompt } from '@/lib/ai/adapter';
+import { chatRequestSchema } from '@/lib/validations/chat';
 
 export async function POST(req: Request) {
   try {
-    const { message, modelType } = await req.json();
-    const supabase = await createClient();
+    const body = await req.json();
+    const parsed = chatRequestSchema.safeParse(body);
 
-    // 1. GATEKEEPER: Secure Authentication
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-
-    // 2. GATEKEEPER: Trial/Subscription Validation
-    const { data: profile, error } = await supabase
-      .from('profiles')
-      .select('trial_start_at, is_subscribed')
-      .eq('id', user.id)
-      .single();
-
-    if (error || !profile) return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
-
-    const isTrialActive = !profile.is_subscribed && 
-      (new Date().getTime() - new Date(profile.trial_start_at).getTime() < 7200000);
-
-    if (!profile.is_subscribed && !isTrialActive) {
-      return NextResponse.json({ error: 'Trial expired' }, { status: 403 });
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: parsed.error.issues[0]?.message ?? 'Invalid request' },
+        { status: 400 }
+      );
     }
 
-    // 3. SECURE BRIDGE: Model-Agnostic Adapter Processing
-    // We do NOT send system instructions from the client. 
-    // They are injected here, safely inside the server.
-    const response = await processPrompt(message, modelType);
-    
+    const supabase = await createClient();
+    await supabase.auth.getSession();
+
+    const authHeader = req.headers.get('Authorization');
+    const bearerToken = authHeader?.replace(/^Bearer\s+/i, '').trim() || null;
+
+    const gatekeeper = await enforceChatGatekeeper(supabase, bearerToken);
+    if (!gatekeeper.ok) {
+      return NextResponse.json({ error: gatekeeper.error }, { status: gatekeeper.status });
+    }
+
+    const rateLimit = await enforceChatRateLimit(supabase, gatekeeper.userId);
+    if (!rateLimit.ok) {
+      return NextResponse.json({ error: rateLimit.error }, { status: rateLimit.status });
+    }
+
+    const response = await processPrompt(parsed.data.message);
+
     return NextResponse.json({ response });
   } catch (err) {
+    if (err instanceof AIAdapterError) {
+      return NextResponse.json({ error: err.message }, { status: 503 });
+    }
+
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

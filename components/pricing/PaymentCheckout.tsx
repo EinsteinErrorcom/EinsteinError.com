@@ -1,0 +1,107 @@
+'use client';
+
+import Link from 'next/link';
+import { useCallback, useState } from 'react';
+import { PRICING_TIERS, type PricingTier } from '@/lib/stripe/pricing';
+
+export default function PaymentCheckout() {
+  const [selectedTierId, setSelectedTierId] = useState<string | null>(null);
+  const [loadingTierId, setLoadingTierId] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const startCheckout = useCallback(async (tier: PricingTier) => {
+    setSelectedTierId(tier.priceId);
+    setLoadingTierId(tier.priceId);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/stripe/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ priceId: tier.priceId }),
+      });
+
+      const data = (await response.json()) as {
+        url?: string;
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? 'Unable to start checkout');
+      }
+
+      if (!data.url) {
+        throw new Error('Missing Stripe checkout URL');
+      }
+
+      window.location.href = data.url;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to start checkout');
+      setSelectedTierId(null);
+      setLoadingTierId(null);
+    }
+  }, []);
+
+  return (
+    <div className="payment-checkout">
+      <p className="payment-checkout__intro">
+        Choose your MAX-LIT access cost
+        <br />
+        and your payment will be made secure on STRIPE.
+      </p>
+
+      <div className="payment-checkout__tiers">
+        {PRICING_TIERS.map((tier) => {
+          const isSelected = selectedTierId === tier.priceId;
+          const isLoading = loadingTierId === tier.priceId;
+
+          return (
+            <button
+              key={tier.priceId}
+              type="button"
+              className={`payment-checkout__tier${isSelected ? ' payment-checkout__tier--selected' : ''}`}
+              onClick={() => startCheckout(tier)}
+              disabled={Boolean(loadingTierId)}
+            >
+              <span className="payment-checkout__tier-label">{tier.label}</span>
+              <span className="payment-checkout__tier-desc">{tier.description}</span>
+              {isLoading && (
+                <span className="payment-checkout__tier-loading">
+                  Redirecting to Stripe…
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {error && (
+        <div className="payment-checkout__error-block" role="alert">
+          <p>{error}</p>
+          {error.includes('STRIPE_NOT_CONFIGURED') || error.includes('STRIPE_SECRET_KEY') ? (
+            <p className="payment-checkout__stripe-setup">
+              Open{' '}
+              <a
+                href="https://dashboard.stripe.com/apikeys"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="payment-checkout__sign-in"
+              >
+                Stripe Dashboard → API keys
+              </a>
+              , copy the <strong>Secret key</strong> (<code>sk_live_...</code>), paste into{' '}
+              <code>.env.local</code> as <code>STRIPE_SECRET_KEY=...</code>, then restart{' '}
+              <code>npm run dev</code>.
+            </p>
+          ) : null}
+          {error.includes('Sign in') && (
+            <Link href="/" className="payment-checkout__sign-in">
+              Sign in to continue
+            </Link>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}

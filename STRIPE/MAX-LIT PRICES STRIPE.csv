@@ -1,0 +1,4 @@
+Price ID,Product ID,Product Name,Product Statement Descriptor,Product Tax Code,Description,Created (UTC),Amount,Currency,Interval,Interval Count,Usage Type,Aggregate Usage,Billing Scheme,Trial Period Days,Tax Behavior
+price_1U0ACSC39oHx6wOFWoJosDHi,prod_V0AXYbWwPdLkwz,MAX-LIT SUPERComputer Access,,txcd_10000000,$80 = $3.50 / Hour,2026-08-03 00:57,,usd,,,,,per_unit,,inclusive
+price_1U0ACSC39oHx6wOFTQfZCCTF,prod_V0AXYbWwPdLkwz,MAX-LIT SUPERComputer Access,,txcd_10000000,$15 = $5 / Hour,2026-08-03 00:57,,usd,,,,,per_unit,,inclusive
+price_1U0ACSC39oHx6wOFgtNTWLNV,prod_V0AXYbWwPdLkwz,MAX-LIT SUPERComputer Access,,txcd_10000000,$420 = $2.50 / Hour,2026-08-03 00:57,,usd,,,,,per_unit,,inclusive

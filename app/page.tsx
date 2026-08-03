@@ -1,38 +1,86 @@
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { createClient } from "@/lib/supabase/server";
+import { getGoogleClientId } from "@/lib/site-url";
+import { isProfileTrialActive } from "@/lib/trial";
 import { redirect } from "next/navigation";
 
-const AUTH_CALLBACK_ERROR = "Google sign-in could not be completed. Please try again.";
-
 type HomeProps = {
-  searchParams: Promise<{ auth?: string }>;
+  searchParams: Promise<{
+    auth?: string;
+    reason?: string;
+    dev_reset?: string;
+    code?: string;
+    error?: string;
+    error_description?: string;
+  }>;
 };
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
-  const authError = params.auth === "error" ? AUTH_CALLBACK_ERROR : undefined;
+
+  // Supabase sometimes returns OAuth params to Site URL (/) instead of /auth/callback
+  if (params.code || params.error) {
+    const callbackParams = new URLSearchParams();
+    if (params.code) callbackParams.set('code', params.code);
+    if (params.error) callbackParams.set('error', params.error);
+    if (params.error_description) {
+      callbackParams.set('error_description', params.error_description);
+    }
+    callbackParams.set('next', '/FREETrialApproved');
+    redirect(`/auth/callback?${callbackParams.toString()}`);
+  }
+
+  if (params.auth === "error") {
+    const googleClientId = await getGoogleClientId();
+    const rawReason = params.reason
+      ? decodeURIComponent(params.reason.replace(/\+/g, " "))
+      : "Sign-in failed. Please try again.";
+
+    const authError = rawReason.includes("Unable to exchange external code")
+      ? "Supabase Client Secret is wrong. Google Cloud → Credentials → your Web client → reset Client Secret → paste the new secret into Supabase → Authentication → Providers → Google → Save. Then try again."
+      : rawReason;
+
+    return (
+      <main className="page-wrapper">
+        <div
+          id="auth-section"
+          style={{
+            background: "#161b22",
+            padding: "30px",
+            borderRadius: "12px",
+            margin: "40px auto",
+            maxWidth: "1040px",
+            border: "6px solid #C5A059",
+            textAlign: "center",
+          }}
+        >
+          <GoogleLoginButton
+            googleClientId={googleClientId}
+            initialError={authError}
+          />
+        </div>
+      </main>
+    );
+  }
+
+  const googleClientId = await getGoogleClientId();
+
+  const devResetMessage = params.dev_reset
+    ? decodeURIComponent((params.reason ?? "Trial reset requires sign-in first.").replace(/\+/g, " "))
+    : null;
 
   const supabase = await createClient();
   const { data: { session } } = await supabase.auth.getSession();
 
-  // If a session exists, check trial status
   if (session) {
-    const { data: profile, error } = await supabase
+    const { data: profile } = await supabase
       .from("profiles")
       .select("trial_start_at, is_subscribed")
       .eq("id", session.user.id)
       .single();
 
-    // Only force redirect if:
-    // 1. Profile exists (no redirect if user is brand new and row isn't created yet)
-    // 2. User is not subscribed
-    // 3. The 2-hour (7,200,000ms) trial window is definitely over
-    if (profile && !profile.is_subscribed) {
-      const isTrialActive = (new Date().getTime() - new Date(profile.trial_start_at).getTime() < 7200000);
-      
-      if (!isTrialActive) {
-        redirect("https://www.EinsteinGravity.com/stripe-payment");
-      }
+    if (profile && isProfileTrialActive(profile)) {
+      redirect("/FREETrialApproved");
     }
   }
 
@@ -62,7 +110,12 @@ export default async function Home({ searchParams }: HomeProps) {
       
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        This &nbsp; is &nbsp; the &nbsp; " <strong>NEW</strong> "<br/><br/>-- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (+)</strong>&nbsp;&nbsp;&nbsp; " MAX - LIT "
+        The Discovery of<br/>
+        Albert&nbsp;&nbsp;Einstein&apos;s<br/>
+        Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
+        has now enabled us<br/>
+        to build the &quot; <strong>NEW</strong> &quot;<br/><br/>
+        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (+)</strong>&nbsp;&nbsp;&nbsp; &quot; MAX - LIT &quot;
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -84,7 +137,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>" PERFECT "<br/>PHYSICS &nbsp; TRUTH &nbsp; !</span>
+        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -110,15 +163,24 @@ export default async function Home({ searchParams }: HomeProps) {
         <br/><img src="/MAX-LIT.png" alt="Max-Lit Engine" width={500} height={400} />
       </div>
 
-      <div id="auth-section" style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '800px', border: '6px solid #C5A059', textAlign: 'center' }}>
+      <div id="auth-section" style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '1040px', border: '6px solid #C5A059', textAlign: 'center' }}>
+        {devResetMessage && (
+          <div style={{ color: '#FFFF00', fontSize: '18px', marginBottom: '20px', lineHeight: 1.5 }}>
+            <strong>Dev reset:</strong> {devResetMessage}
+            <br />
+            <a href="/dev/reset" style={{ color: '#C5A059', textDecoration: 'underline' }}>
+              Open /dev/reset instructions
+            </a>
+          </div>
+        )}
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>TRY&nbsp;&nbsp; " MAX-LIT "&nbsp;&nbsp; FREE&nbsp; !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 2 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
-        <GoogleLoginButton initialError={authError} />
+        <GoogleLoginButton googleClientId={googleClientId} key="home-login" />
       </div> 
         
       <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span>
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '35px' }}>Click&nbsp; the</span><br/>
-      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>" <span style={{ color: '#00FFFF' }}>Continue with Google</span> "</span>
+      <span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>" <span style={{ color: '#00FFFF' }}>Click HERE To Log In To Your Google Account</span> "</span>
       <br/><span style={{ fontWeight: 'bold', color: '#FFFFFF' }}>Link ( above )</span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ width: '75%', height: '6px', backgroundColor: '#C5A059', margin: '20px auto' }}></div>

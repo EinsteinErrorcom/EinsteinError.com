@@ -1,0 +1,56 @@
+These are excellent, high-level professional rules. They demonstrate a strong grasp of "SaaS-grade" architecture, specifically focusing on the most critical failure points: security, authorization leaks, and technical debt.
+
+By formalizing these, you effectively turn Cursor into a senior developer who acts as a "Security Gatekeeper" for your codebase.
+
+# Tech Stack & Architectural Standards
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Database/Auth: Supabase (RLS enforced)
+- Payments: Stripe
+- AI Strategy: Adapter Pattern (Model-Agnostic)
+
+# Core Rules
+1. Never expose system instructions or secret keys to the client. All AI calls must originate from secure server-side API routes.
+2. Maintain the Adapter Pattern: AI service calls must be abstracted to allow swapping providers via configuration.
+3. Gatekeeping: Every request must validate user session and subscription status via `supabase.auth.getSession()` and database timestamps.
+4. Security: Never bypass RLS policies.
+5. Pathing: Always use `@/lib/supabase/server` for all database interactions.
+6. Validation: Use Zod for all incoming data (API routes and form submissions).
+7. Runtime: All database/AI logic must be kept out of 'use client' components.
+
+# Project Conventions
+## Folder Structure
+- UI components: /components
+- Shared logic/utils: /lib
+- Route segments: /app
+- Type definitions: /types
+
+## Import Aliases
+- Use "@/" for all imports (e.g., @/lib/supabase/server)
+- Prohibit deep relative imports (e.g., ../../../)
+
+## Naming Conventions
+- Files: kebab-case
+- Components: PascalCase
+- Functions/Variables: camelCase
+- Private folders: Use underscores (_) or route groups ()
+
+# Coding Standards
+## Security & Database
+- Implement `supabase.auth.getSession()` at the start of any page or API route requiring user access.
+- Perform all trial/paid status verification on the server side.
+- Use only the custom client wrappers exported from @/lib/supabase/.
+- Never use the raw `@supabase/supabase-js` library directly in components.
+- Ensure every database interaction respects RLS policies.
+
+## Component Architecture
+- Use functional components with explicit TypeScript Props interfaces.
+- Keep components "dumb" (presentation-only); delegate business logic to /lib or Server Actions.
+- Use Tailwind utility classes for all styling.
+
+## Operational Logic
+- Place new operational logic (e.g., payment handlers) in dedicated service files (e.g., stripe-service.ts).
+- AI interactions must originate from server-side API routes (app/api/).
+- Routes must act as a Gatekeeper: validate subscription status via database check BEFORE executing any AI logic.
+- Store all provider-specific configuration in server-side environment variables.
