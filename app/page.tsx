@@ -118,11 +118,11 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        This&nbsp; is<br/>The &nbsp; World's &nbsp; FIRST<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
+        This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '20px' }}>( Developed&nbsp; by&nbsp; Einstein Error . com )</div>
         <br/><br/>
         <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
-        ( Not&nbsp; Even&nbsp; Close )
+        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
