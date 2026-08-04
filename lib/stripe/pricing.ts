@@ -20,14 +20,14 @@ export const PRICING_TIERS: PricingTier[] = [
     priceId: 'price_1U0ACSC39oHx6wOFWoJosDHi',
     label: '$75 \t\t( for 24 Hours Time )\t( Cost = 4 dollars per Hour )',
     description: '',
-    amountCents: 8000,
+    amountCents: 7500,
     currency: 'usd',
   },
   {
     priceId: 'price_1U0ACSC39oHx6wOFgtNTWLNV',
     label: '$400\t( for 7 Days Time )  \t( Cost = 3 dollars per Hour )',
     description: '',
-    amountCents: 42000,
+    amountCents: 40000,
     currency: 'usd',
   },
 ];

@@ -75,7 +75,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/trialexpired8',
-        destination: '/maxchatbox8',
+        destination: '/trialexpired9',
         permanent: true,
       },
       {

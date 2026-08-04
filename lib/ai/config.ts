@@ -18,7 +18,7 @@ export function getProviderModel(provider: AIProvider): string {
 
   switch (provider) {
     case 'gemini':
-      return 'gemini-flash-latest';
+      return 'gemini-2.5-flash-lite';
     case 'openai':
       return 'gpt-4o-mini';
     case 'anthropic':

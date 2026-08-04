@@ -107,8 +107,10 @@ export async function updateSession(request: NextRequest) {
     return supabaseResponse
   }
 
+  let profile = null as Awaited<ReturnType<typeof fetchProfileTrial>>
+
   if (user) {
-    const profile = await fetchProfileTrial(supabase, user.id)
+    profile = await fetchProfileTrial(supabase, user.id)
     const trialExpired = shouldRedirectToPricing(profile)
 
     if (
@@ -135,6 +137,10 @@ export async function updateSession(request: NextRequest) {
   }
 
   if (user && !isTrialExemptPath(pathname)) {
+    if (profile?.is_subscribed) {
+      return supabaseResponse
+    }
+
     const trialStartedAt = parseTrialStartedAt(
       request.cookies.get(TRIAL_COOKIE)?.value
     )

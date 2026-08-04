@@ -5,12 +5,12 @@ import { getStripeClient } from '@/lib/stripe/stripe-service';
 
 export const runtime = 'nodejs';
 
-function getWebhookSecret(): string {
-  const secret = process.env.STRIPE_WEBHOOK_SIGNING_SECRET?.trim();
-  if (!secret) {
-    throw new Error('STRIPE_WEBHOOK_SIGNING_SECRET is not configured');
-  }
-  return secret;
+function getWebhookSecret(): string | null {
+  return (
+    process.env.STRIPE_WEBHOOK_SIGNING_SECRET?.trim() ||
+    process.env.STRIPE_WEBHOOK_SECRET?.trim() ||
+    null
+  );
 }
 
 function getServiceRoleClient() {
@@ -37,8 +37,22 @@ async function markUserSubscribed(userId: string) {
 }
 
 export async function POST(req: Request) {
-  const stripe = getStripeClient();
   const webhookSecret = getWebhookSecret();
+  if (!webhookSecret) {
+    return NextResponse.json(
+      { error: 'STRIPE_WEBHOOK_SIGNING_SECRET is not configured' },
+      { status: 503 }
+    );
+  }
+
+  let stripe: Stripe;
+  try {
+    stripe = getStripeClient();
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Stripe is not configured';
+    return NextResponse.json({ error: message }, { status: 503 });
+  }
+
   const signature = req.headers.get('stripe-signature');
 
   if (!signature) {
