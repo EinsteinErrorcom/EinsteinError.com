@@ -70,39 +70,50 @@ export function SiteTourBar() {
   const exitTour = () => {
     sessionStorage.removeItem(SITE_TOUR_STORAGE_KEY);
     setVisible(false);
+
+    if (window.opener && !window.opener.closed) {
+      window.close();
+      return;
+    }
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete(SITE_TOUR_QUERY);
+    window.location.replace(`${url.pathname}${url.search}`);
   };
 
   return (
-    <div className="site-tour-bar" role="region" aria-label="Site tour navigation">
-      <div className="site-tour-bar__inner">
-        <p className="site-tour-bar__title">
-          Site Tour — {step ? step.label : 'Off tour route'} ({displayIndex} of{' '}
-          {SITE_TOUR_STEPS.length})
-        </p>
-        <p className="site-tour-bar__note">
-          Preview only. Sign-in, checkout, and chat are disabled.
-        </p>
-        <div className="site-tour-bar__actions">
-          {prev ? (
-            <Link href={getTourHref(prev.path)} className="site-tour-bar__link">
-              ← Previous
-            </Link>
-          ) : (
-            <span className="site-tour-bar__link site-tour-bar__link--disabled">← Previous</span>
-          )}
-          {next ? (
-            <Link href={getTourHref(next.path)} className="site-tour-bar__link site-tour-bar__link--primary">
-              {onTourRoute ? 'Next →' : 'Back to tour start →'}
-            </Link>
-          ) : (
-            <button type="button" className="site-tour-bar__link site-tour-bar__link--primary" onClick={exitTour}>
-              Finish tour
-            </button>
-          )}
-          <button type="button" className="site-tour-bar__exit" onClick={exitTour}>
-            Exit tour
+    <div className="site-tour-float" role="region" aria-label="Site tour navigation">
+      <p className="site-tour-float__title">
+        Site Tour — {step ? step.label : 'Off route'} ({displayIndex}/{SITE_TOUR_STEPS.length})
+      </p>
+      <p className="site-tour-float__note">Preview only — nothing activates.</p>
+      <div className="site-tour-float__actions">
+        {prev ? (
+          <Link href={getTourHref(prev.path)} className="site-tour-float__btn">
+            Previous
+          </Link>
+        ) : (
+          <span className="site-tour-float__btn site-tour-float__btn--disabled">Previous</span>
+        )}
+        {next ? (
+          <Link
+            href={getTourHref(next.path)}
+            className="site-tour-float__btn site-tour-float__btn--primary"
+          >
+            Next
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className="site-tour-float__btn site-tour-float__btn--primary"
+            onClick={exitTour}
+          >
+            Finish
           </button>
-        </div>
+        )}
+        <button type="button" className="site-tour-float__btn site-tour-float__btn--exit" onClick={exitTour}>
+          Exit
+        </button>
       </div>
     </div>
   );
@@ -110,8 +121,13 @@ export function SiteTourBar() {
 
 export function SiteTourStartLink({ className }: { className?: string }) {
   return (
-    <Link href={getTourHref('/')} className={className ?? 'site-tour-start-link'}>
-      Start Site Tour (preview all pages — nothing activates)
-    </Link>
+    <a
+      href={getTourHref('/')}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className ?? 'site-tour-start-link'}
+    >
+      Site Tour
+    </a>
   );
 }
