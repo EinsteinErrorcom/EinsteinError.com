@@ -99,13 +99,11 @@ export default async function Home({ searchParams }: HomeProps) {
       </p>
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       <CheckoutBannerLink />
-      <br/><br/><br/><br/><br/><br/><br/>
-      <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px' }}>
-        Our Ai Engine is currently under Construction, give us 1 week.<br/><br/><br/>**&nbsp; Contact&nbsp; Us&nbsp; **
+      <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px', display: 'block', marginTop: '16px' }}>
+        **&nbsp; Contact&nbsp; Us&nbsp; **
       </span>
-      <br/>
       
-      <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px' }}>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px' }}>
         <span style={{ color: '#00FFFF' }}>WhatsApp</span><br/>
         <span style={{ color: '#FFFF00' }}>+17802707009</span>
         <br/><br/>
