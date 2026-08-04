@@ -793,14 +793,14 @@ p {
 
 .site-tour-start-link {
   display: inline-block;
-  color: #00ffff;
+  color: #e8b709;
   font-weight: 700;
   font-style: italic;
   text-decoration: underline;
 }
 
 .site-tour-start-link:hover {
-  color: #ffff00;
+  color: #40e0d0;
 }
 
 .users-onsite-box {
