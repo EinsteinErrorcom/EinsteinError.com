@@ -6,6 +6,7 @@ import {
   TRUTH_COUNTER_FALLBACK,
   TRUTH_COUNTER_KEY,
 } from "@/lib/truth-counter";
+import { isTourMode, SITE_TOUR_QUERY, SITE_TOUR_STORAGE_KEY } from "@/lib/site-tour";
 import { useEffect, useState } from "react";
 
 export function TruthCounter() {
@@ -66,7 +67,11 @@ export function TruthCounter() {
       )
       .subscribe();
 
-    if (!sessionStorage.getItem("hasCounted")) {
+    if (
+      !sessionStorage.getItem("hasCounted") &&
+      !isTourMode(sessionStorage.getItem(SITE_TOUR_STORAGE_KEY)) &&
+      !isTourMode(new URLSearchParams(window.location.search).get(SITE_TOUR_QUERY))
+    ) {
       void fetch("/api/counter", { method: "POST" })
         .then(async (response) => {
           if (!response.ok) {

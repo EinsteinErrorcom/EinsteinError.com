@@ -708,3 +708,94 @@ p {
 .payment-checkout__sign-in:hover {
   text-decoration: underline;
 }
+
+.payment-checkout__tour-note {
+  margin: 0 0 1rem;
+  color: #ffff00;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.site-tour-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0d1117;
+  border-bottom: 3px solid #c5a059;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.site-tour-bar__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+.site-tour-bar__title {
+  margin: 0;
+  color: #00ffff;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.site-tour-bar__note {
+  margin: 6px 0 10px;
+  color: #ffff00;
+  font-size: 0.9rem;
+}
+
+.site-tour-bar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-tour-bar__link {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid #c5a059;
+  border-radius: 8px;
+  color: #c5a059;
+  font-weight: 700;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.site-tour-bar__link--primary {
+  color: #000;
+  background: #00ffff;
+  border-color: #00ffff;
+}
+
+.site-tour-bar__link--disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.site-tour-bar__exit {
+  padding: 8px 14px;
+  border: 2px solid #ff6b6b;
+  border-radius: 8px;
+  color: #ff6b6b;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+  font: inherit;
+}
+
+.site-tour-start-link {
+  display: inline-block;
+  color: #00ffff;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.site-tour-start-link:hover {
+  color: #ffff00;
+}

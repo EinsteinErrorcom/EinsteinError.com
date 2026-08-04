@@ -1,16 +1,23 @@
 'use client';
 
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { PRICING_TIERS, type PricingTier } from '@/lib/stripe/pricing';
+import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import { SIGN_IN_PATH } from '@/lib/trial-gate';
 
 export default function PaymentCheckout() {
+  const searchParams = useSearchParams();
+  const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
   const [selectedTierId, setSelectedTierId] = useState<string | null>(null);
   const [loadingTierId, setLoadingTierId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const startCheckout = useCallback(async (tier: PricingTier) => {
+    if (tourMode) {
+      return;
+    }
     setSelectedTierId(tier.priceId);
     setLoadingTierId(tier.priceId);
     setError(null);
@@ -42,17 +49,22 @@ export default function PaymentCheckout() {
       setSelectedTierId(null);
       setLoadingTierId(null);
     }
-  }, []);
+  }, [tourMode]);
 
   return (
     <div className="payment-checkout">
+      {tourMode && (
+        <p className="payment-checkout__tour-note" role="status">
+          Tour preview — payment buttons are disabled.
+        </p>
+      )}
       <p className="payment-checkout__intro">
         Choose your MAX-LIT access cost
         <br />
         and your payment will be made secure on STRIPE.
       </p>
 
-      <div className="payment-checkout__tiers">
+      <div className="payment-checkout__tiers" data-tour-block={tourMode ? 'true' : undefined}>
         {PRICING_TIERS.map((tier) => {
           const isSelected = selectedTierId === tier.priceId;
           const isLoading = loadingTierId === tier.priceId;

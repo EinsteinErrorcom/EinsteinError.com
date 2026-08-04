@@ -1,9 +1,18 @@
 "use client";
 
+import { isTourMode, SITE_TOUR_QUERY } from "@/lib/site-tour";
 import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function Page7() {
+  const searchParams = useSearchParams();
+  const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
+
   useEffect(() => {
+    if (tourMode) {
+      return;
+    }
+
     const downloadPurchases = async () => {
       try {
         const res = await fetch("/api/get-purchases");
@@ -34,13 +43,17 @@ export default function Page7() {
     };
 
     downloadPurchases();
-  }, []);
+  }, [tourMode]);
 
   return (
     <div className="page-shell">
       <main className="page-wrapper" style={{ padding: "50px", textAlign: "center" }}>
         <h1 style={{ color: '#00FFFF' }}>Report Generating...</h1>
-        <p>Your purchase list is being downloaded automatically.</p>
+        <p>
+          {tourMode
+            ? 'Tour preview — CSV download is disabled on this page.'
+            : 'Your purchase list is being downloaded automatically.'}
+        </p>
         <footer className="page-footer">
           <a className="page-footer__back" href="/page6">← Back to Page 6</a>
           <a className="page-footer__back" href="/">← Back to Home</a>

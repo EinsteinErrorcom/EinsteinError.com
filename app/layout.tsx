@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
+import { SiteTourBar } from "@/components/site-tour-bar";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-K7RPBDYQYB";
@@ -38,6 +40,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-full">
+        <Suspense fallback={null}>
+          <SiteTourBar />
+        </Suspense>
         {children}
       </body>
     </html>

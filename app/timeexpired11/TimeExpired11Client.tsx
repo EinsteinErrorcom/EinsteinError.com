@@ -1,11 +1,14 @@
 'use client';
 
 import { CHECKOUT_PATH } from '@/lib/trial-gate';
+import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function TimeExpired11Client() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
 
   return (
     <main
@@ -16,11 +19,23 @@ export default function TimeExpired11Client() {
         minHeight: '100vh',
         padding: '24px 16px',
         boxSizing: 'border-box',
+        flexDirection: 'column',
+        gap: '16px',
       }}
     >
+      {tourMode && (
+        <p style={{ color: '#FFFF00', fontStyle: 'italic' }}>
+          Tour preview — image click to checkout is disabled.
+        </p>
+      )}
       <button
         type="button"
-        onClick={() => router.push(CHECKOUT_PATH)}
+        onClick={() => {
+          if (!tourMode) {
+            router.push(CHECKOUT_PATH);
+          }
+        }}
+        data-tour-block={tourMode ? 'true' : undefined}
         aria-label="Time expired — click to purchase MAX-LIT access"
         style={{
           border: 'none',
