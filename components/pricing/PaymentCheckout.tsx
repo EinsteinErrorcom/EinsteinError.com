@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { PRICING_TIERS, type PricingTier } from '@/lib/stripe/pricing';
+import { SIGN_IN_PATH } from '@/lib/trial-gate';
 
 export default function PaymentCheckout() {
   const [selectedTierId, setSelectedTierId] = useState<string | null>(null);
@@ -96,8 +97,8 @@ export default function PaymentCheckout() {
             </p>
           ) : null}
           {error.includes('Sign in') && (
-            <Link href="/" className="payment-checkout__sign-in">
-              Sign in to continue
+            <Link href={SIGN_IN_PATH} className="payment-checkout__sign-in">
+              Go to Sign-in
             </Link>
           )}
         </div>

@@ -14,6 +14,10 @@ export const TIME_EXPIRED_PATH = '/timeexpired11';
 /** Page 12 — spare / reserved */
 export const SPARE_PATH = '/spare12';
 
+/** Landing page anchor — scrolls to the Google Sign-In block */
+export const SIGN_IN_SECTION_ID = 'auth-section';
+export const SIGN_IN_PATH = `/#${SIGN_IN_SECTION_ID}`;
+
 export function shouldRedirectToPricing(
   profile: ProfileTrial | null | undefined
 ): boolean {

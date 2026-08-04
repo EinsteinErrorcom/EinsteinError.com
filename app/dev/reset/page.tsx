@@ -1,7 +1,7 @@
 import { resetTestUser, hasServiceRoleKey } from '@/lib/supabase/test-reset';
 import { createClient } from '@/lib/supabase/server';
 import { createTrialStartCookie } from '@/lib/supabase/middleware';
-import { CHAT_PATH } from '@/lib/trial-gate';
+import { CHAT_PATH, SIGN_IN_PATH } from '@/lib/trial-gate';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -73,7 +73,7 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           <li style={{ marginBottom: 12 }}>
             <strong style={{ color: '#FFFFFF' }}>Sign in first</strong>, then return here:
             <br />
-            <Link href="/" style={{ color: '#C5A059' }}>
+            <Link href={SIGN_IN_PATH} style={{ color: '#C5A059' }}>
               Go sign in with Google
             </Link>
             {' → then visit '}

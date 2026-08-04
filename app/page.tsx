@@ -1,10 +1,11 @@
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
 import { TruthCounter } from "@/components/truth-counter";
 import { createClient } from "@/lib/supabase/server";
 import { getGoogleClientId } from "@/lib/site-url";
 import { isProfileTrialActive } from "@/lib/trial";
-import { CHAT_PATH } from "@/lib/trial-gate";
+import { CHAT_PATH, SIGN_IN_SECTION_ID } from "@/lib/trial-gate";
 import { redirect } from "next/navigation";
 
 type HomeProps = {
@@ -45,8 +46,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
     return (
       <main className="page-wrapper">
+        <ScrollToAuthSection />
         <div
-          id="auth-section"
+          id={SIGN_IN_SECTION_ID}
           style={{
             background: "#161b22",
             padding: "30px",
@@ -89,6 +91,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main className="page-wrapper">
+      <ScrollToAuthSection />
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       <CheckoutBannerLink />
       <br/><br/><br/><br/><br/><br/><br/>
@@ -165,7 +168,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <br/><img src="/MAX-LIT.png" alt="Max-Lit Engine" width={500} height={400} />
       </div>
 
-      <div id="auth-section" style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '1040px', border: '6px solid #C5A059', textAlign: 'center' }}>
+      <div id={SIGN_IN_SECTION_ID} style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '1040px', border: '6px solid #C5A059', textAlign: 'center' }}>
         {devResetMessage && (
           <div style={{ color: '#FFFF00', fontSize: '18px', marginBottom: '20px', lineHeight: 1.5 }}>
             <strong>Dev reset:</strong> {devResetMessage}

@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import {
   fetchProfileTrial,
   shouldRedirectToPricing,
+  SIGN_IN_PATH,
   TRIAL_EXPIRED_PATH,
 } from '@/lib/trial-gate';
 import { redirect } from 'next/navigation';
@@ -12,7 +13,7 @@ export default async function MaxChatbox8Page() {
   const { data: { session } } = await supabase.auth.getSession();
 
   if (!session) {
-    redirect('/');
+    redirect(SIGN_IN_PATH);
   }
 
   const profile = await fetchProfileTrial(supabase, session.user.id);

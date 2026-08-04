@@ -25,6 +25,10 @@ html {
   scroll-behavior: smooth;
 }
 
+#auth-section {
+  scroll-margin-top: 24px;
+}
+
 body {
   margin: 0;
   padding: max(var(--space-sm), env(safe-area-inset-top, 0px))
