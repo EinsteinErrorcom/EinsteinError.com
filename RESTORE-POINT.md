@@ -69,7 +69,15 @@ Product ID: `prod_V0AXYbWwPdLkwz`
 
 ### If a payment succeeded but user wasn't subscribed
 
-Stripe Dashboard → Developers → Webhooks → select endpoint → **Resend** failed events from before env fix.
+Stripe Dashboard → Developers → Webhooks → select endpoint → **Resend** failed events.
+
+If webhook returns **500 permission denied for table profiles**, run in Supabase SQL Editor:
+
+```sql
+grant select, insert, update on table public.profiles to service_role;
+```
+
+(Migration: `supabase/migrations/20260804140000_grant_profiles_service_role.sql`)
 
 ## 12-page site routes
 
