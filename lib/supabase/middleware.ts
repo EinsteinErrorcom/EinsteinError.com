@@ -46,6 +46,13 @@ function isTrialExemptPath(pathname: string) {
   )
 }
 
+function isServerActionRequest(request: NextRequest) {
+  return (
+    request.method === 'POST' &&
+    (request.headers.has('next-action') || request.headers.has('Next-Action'))
+  )
+}
+
 function redirectWithCookies(
   url: URL,
   supabaseResponse: NextResponse
@@ -93,6 +100,12 @@ export async function updateSession(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
   const pathname = request.nextUrl.pathname
+
+  // Server Actions must not be redirected — otherwise the client shows
+  // "An unexpected response was received from the server."
+  if (isServerActionRequest(request)) {
+    return supabaseResponse
+  }
 
   if (user) {
     const profile = await fetchProfileTrial(supabase, user.id)
