@@ -23,7 +23,7 @@ export default async function MaxChatbox8Page() {
   return (
     <main className="p-8">
       <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">AI Chat Window</h1>
-      <Chatbox embedded />
+      <Chatbox embedded historyUserId={session.user.id} />
     </main>
   );
 }

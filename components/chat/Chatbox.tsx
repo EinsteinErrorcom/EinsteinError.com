@@ -1,24 +1,81 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getChatAccessToken } from '@/app/actions/chat';
 import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-billing-help';
 import { CHAT_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
 
+type ChatMessage = { role: 'user' | 'ai'; text: string };
+
 type ChatboxProps = {
   embedded?: boolean;
   onClose?: () => void;
+  /** When set, chat history is saved in this browser for this user id. */
+  historyUserId?: string;
 };
+
+const CHAT_STORAGE_PREFIX = 'maxlit-chat:';
+
+function loadStoredMessages(userId: string): ChatMessage[] {
+  try {
+    const raw = localStorage.getItem(`${CHAT_STORAGE_PREFIX}${userId}`);
+    if (!raw) {
+      return [];
+    }
+
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+
+    return parsed.filter(
+      (entry): entry is ChatMessage =>
+        typeof entry === 'object' &&
+        entry !== null &&
+        (entry.role === 'user' || entry.role === 'ai') &&
+        typeof entry.text === 'string'
+    );
+  } catch {
+    return [];
+  }
+}
+
+function saveStoredMessages(userId: string, messages: ChatMessage[]) {
+  try {
+    localStorage.setItem(`${CHAT_STORAGE_PREFIX}${userId}`, JSON.stringify(messages));
+  } catch {
+    // Ignore quota / private-mode errors — chat still works in memory.
+  }
+}
 
 export default function Chatbox({
   embedded = false,
   onClose,
+  historyUserId,
 }: ChatboxProps) {
   const [isOpen, setIsOpen] = useState(embedded);
-  const [messages, setMessages] = useState<{role: 'user' | 'ai', text: string}[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [historyLoaded, setHistoryLoaded] = useState(!historyUserId);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!historyUserId) {
+      return;
+    }
+
+    setMessages(loadStoredMessages(historyUserId));
+    setHistoryLoaded(true);
+  }, [historyUserId]);
+
+  useEffect(() => {
+    if (!historyUserId || !historyLoaded) {
+      return;
+    }
+
+    saveStoredMessages(historyUserId, messages);
+  }, [historyUserId, historyLoaded, messages]);
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
