@@ -6,14 +6,19 @@ import { getGeminiApiKeys } from '../gemini-keys';
 import type { AIProviderAdapter } from '../types';
 
 const GEMINI_MODEL_FALLBACKS = [
-  'gemini-2.5-flash-lite',
   'gemini-flash-latest',
-  'gemini-2.0-flash',
   'gemini-2.5-flash',
+  'gemini-3.1-flash-lite',
+  'gemini-3.5-flash',
 ];
 
 function isRetryableModelError(message: string): boolean {
-  return message.includes('404') && message.includes('not found');
+  const lower = message.toLowerCase();
+  return (
+    (lower.includes('404') && lower.includes('not found')) ||
+    lower.includes('no longer available') ||
+    lower.includes('is not supported')
+  );
 }
 
 export const geminiAdapter: AIProviderAdapter = {
