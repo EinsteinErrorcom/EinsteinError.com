@@ -1,13 +1,19 @@
 import { createServerClient } from '@supabase/ssr'
 import type { User } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
+import { getSupabaseEnv, SUPABASE_CONFIG_ERROR } from '@/lib/supabase/env'
 
 export async function createClient() {
+  const supabaseEnv = getSupabaseEnv()
+  if (!supabaseEnv) {
+    throw new Error(SUPABASE_CONFIG_ERROR)
+  }
+
   const cookieStore = await cookies()
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseEnv.supabaseUrl,
+    supabaseEnv.supabaseAnonKey,
     {
       cookies: {
         getAll() {
