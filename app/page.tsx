@@ -1,8 +1,10 @@
 import { GoogleLoginButton } from "@/components/google-login-button";
+import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { TruthCounter } from "@/components/truth-counter";
 import { createClient } from "@/lib/supabase/server";
 import { getGoogleClientId } from "@/lib/site-url";
 import { isProfileTrialActive } from "@/lib/trial";
+import { CHAT_PATH } from "@/lib/trial-gate";
 import { redirect } from "next/navigation";
 
 type HomeProps = {
@@ -27,7 +29,7 @@ export default async function Home({ searchParams }: HomeProps) {
     if (params.error_description) {
       callbackParams.set('error_description', params.error_description);
     }
-    callbackParams.set('next', '/FREETrialApproved');
+    callbackParams.set('next', CHAT_PATH);
     redirect(`/auth/callback?${callbackParams.toString()}`);
   }
 
@@ -81,13 +83,14 @@ export default async function Home({ searchParams }: HomeProps) {
       .single();
 
     if (profile && isProfileTrialActive(profile)) {
-      redirect("/FREETrialApproved");
+      redirect(CHAT_PATH);
     }
   }
 
   return (
     <main className="page-wrapper">
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
+      <CheckoutBannerLink />
       <br/><br/><br/><br/><br/><br/><br/>
       <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px' }}>
         Our Ai Engine is currently under Construction, give us 1 week.<br/><br/><br/>**&nbsp; Contact&nbsp; Us&nbsp; **

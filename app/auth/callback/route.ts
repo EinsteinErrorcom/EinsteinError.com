@@ -2,14 +2,13 @@ import { createTrialStartCookie } from '@/lib/supabase/middleware';
 import { getSiteOrigin } from '@/lib/site-url';
 import {
   fetchProfileTrial,
-  PRICING_PATH,
   shouldRedirectToPricing,
+  TRIAL_EXPIRED_PATH,
+  CHAT_PATH,
 } from '@/lib/trial-gate';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { NextResponse, type NextRequest } from 'next/server';
-
-const APPROVED_PATH = '/FREETrialApproved';
 
 function redirectTo(request: NextRequest, path: string) {
   return NextResponse.redirect(`${getSiteOrigin(request)}${path}`);
@@ -62,7 +61,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  let destination = APPROVED_PATH;
+  let destination = CHAT_PATH;
   const { data: { user } } = await supabase.auth.getUser();
 
   if (user) {
@@ -96,7 +95,7 @@ export async function GET(request: NextRequest) {
 
     const profile = await fetchProfileTrial(supabase, user.id);
     if (shouldRedirectToPricing(profile)) {
-      destination = PRICING_PATH;
+      destination = TRIAL_EXPIRED_PATH;
     }
   }
 

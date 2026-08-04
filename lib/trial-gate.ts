@@ -1,7 +1,18 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { isProfileTrialActive, type ProfileTrial } from './trial';
 
-export const PRICING_PATH = '/pricing';
+/** Site page routes (12-page structure) */
+/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 10 */
+export const CHECKOUT_PATH = '/checkout10';
+export const CHECKOUT10_PATH = CHECKOUT_PATH;
+/** @deprecated Use CHECKOUT_PATH — kept for trial-expired redirects */
+export const PRICING_PATH = CHECKOUT_PATH;
+export const CHAT8_PATH = '/chat8';
+export const CHAT_PATH = '/chat8';
+export const TRIAL_EXPIRED_PATH = '/trialexpired9';
+export const TIME_EXPIRED_PATH = '/timeexpired11';
+/** Page 12 — spare / reserved */
+export const SPARE_PATH = '/spare12';
 
 export function shouldRedirectToPricing(
   profile: ProfileTrial | null | undefined

@@ -1,3 +1,5 @@
+import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+
 export default function Page4() {
   return (
     <div className="page-wrapper">
@@ -8,6 +10,7 @@ export default function Page4() {
           <a className="page-nav__home" href="/">HOME</a>
         </nav>
         <figure className="media media--banner"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></figure>
+        <CheckoutBannerLink />
       </header>
       <section className="contact-block" aria-label="Contact information">
         <h2 className="contact-block__heading">Contact Us</h2>
@@ -895,8 +898,9 @@ Here, watch some Videos ...
       </div>
       <footer className="page-footer">
         <a className="page-footer__back" href="/page3">← Back to Page 3</a>
+        <a className="page-footer__next" href="/page5">Go to Next Page →</a>
         <a className="page-footer__back" href="/">← Back to Home</a>
-        <p className="page-footer__end">END  of  PAGE</p>
+        <p className="page-footer__end">END of PAGE</p>
       </footer>
       </main>
     </div>

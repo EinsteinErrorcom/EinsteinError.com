@@ -2,11 +2,10 @@
 
 import { useEffect } from "react";
 
-export default function Page5() {
+export default function Page7() {
   useEffect(() => {
     const downloadPurchases = async () => {
       try {
-        // 1. Fetch data from your API route
         const res = await fetch("/api/get-purchases");
         const data = await res.json();
 
@@ -15,12 +14,12 @@ export default function Page5() {
           return;
         }
 
-        // 2. Convert JSON array to CSV format
         const headers = ["ID", "Trial Start"];
-        const rows = data.map((row: any) => `${row.id},${row.trial_start_at}`);
+        const rows = data.map((row: { id: string; trial_start_at: string }) =>
+          `${row.id},${row.trial_start_at}`
+        );
         const csvContent = [headers.join(","), ...rows].join("\n");
 
-        // 3. Create a Blob and trigger the download
         const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -38,9 +37,15 @@ export default function Page5() {
   }, []);
 
   return (
-    <div style={{ padding: "50px", textAlign: "center", fontFamily: "sans-serif" }}>
-      <h1>Report Generating...</h1>
-      <p>Your purchase list is being downloaded automatically.</p>
+    <div className="page-shell">
+      <main className="page-wrapper" style={{ padding: "50px", textAlign: "center" }}>
+        <h1 style={{ color: '#00FFFF' }}>Report Generating...</h1>
+        <p>Your purchase list is being downloaded automatically.</p>
+        <footer className="page-footer">
+          <a className="page-footer__back" href="/page6">← Back to Page 6</a>
+          <a className="page-footer__back" href="/">← Back to Home</a>
+        </footer>
+      </main>
     </div>
   );
 }

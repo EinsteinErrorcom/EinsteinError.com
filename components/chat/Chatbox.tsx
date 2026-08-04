@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { getChatAccessToken } from '@/app/actions/chat';
 import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-billing-help';
+import { CHAT_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
 
 type ChatboxProps = {
   embedded?: boolean;
@@ -72,7 +73,7 @@ export default function Chatbox({
 
       if (!res.ok) {
         if (data.error === 'Trial expired') {
-          window.location.assign('/pricing');
+          window.location.assign(TRIAL_EXPIRED_PATH);
           return;
         }
         if (res.status === 429) {
@@ -135,7 +136,7 @@ export default function Chatbox({
           </span>
           {!embedded && (
             <Link
-              href="/chat"
+              href={CHAT_PATH}
               className="block text-[#C5A059] text-sm underline mt-1 hover:text-[#FFFF00]"
             >
               Go to Full-Screen Mode

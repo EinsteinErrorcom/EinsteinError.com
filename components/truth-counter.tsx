@@ -100,7 +100,7 @@ export function TruthCounter() {
         textShadow: "2px 2px 4px #000000",
       }}
     >
-      # of people who now
+      #&nbsp;&nbsp;of&nbsp;&nbsp;people&nbsp;&nbsp;who&nbsp;&nbsp;now
       <br />
       know the TRUTH &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
       {count !== null ? formatTruthCount(count) : "Loading..."}

@@ -3,8 +3,13 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { getSupabaseEnv } from '@/lib/supabase/env'
 import {
   fetchProfileTrial,
-  PRICING_PATH,
   shouldRedirectToPricing,
+  CHECKOUT_PATH,
+  CHAT8_PATH,
+  CHAT_PATH,
+  TRIAL_EXPIRED_PATH,
+  TIME_EXPIRED_PATH,
+  SPARE_PATH,
 } from '@/lib/trial-gate'
 import {
   isTrialExpired,
@@ -13,7 +18,15 @@ import {
   TRIAL_DURATION_MS,
 } from '@/lib/trial'
 
-const TRIAL_EXEMPT_PATHS = new Set(['/', '/pricing', '/trial-expired', '/dev/reset'])
+const TRIAL_EXEMPT_PATHS = new Set([
+  '/',
+  CHECKOUT_PATH,
+  CHAT8_PATH,
+  TRIAL_EXPIRED_PATH,
+  TIME_EXPIRED_PATH,
+  SPARE_PATH,
+  '/dev/reset',
+])
 
 function isDevPath(pathname: string) {
   return pathname.startsWith('/dev/')
@@ -23,6 +36,8 @@ function isTrialExemptPath(pathname: string) {
   return (
     TRIAL_EXEMPT_PATHS.has(pathname) ||
     pathname.startsWith('/pricing') ||
+    pathname.startsWith('/checkout') ||
+    pathname.startsWith('/chat') ||
     isDevPath(pathname) ||
     pathname.startsWith('/auth/') ||
     pathname.startsWith('/api/') ||
@@ -84,11 +99,11 @@ export async function updateSession(request: NextRequest) {
 
     if (
       trialExpired &&
-      (pathname === '/FREETrialApproved' || pathname === '/chat') &&
+      pathname === CHAT_PATH &&
       !request.nextUrl.searchParams.get('auth')
     ) {
       const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = PRICING_PATH
+      redirectUrl.pathname = TRIAL_EXPIRED_PATH
       redirectUrl.search = ''
       return redirectWithCookies(redirectUrl, supabaseResponse)
     }
@@ -99,7 +114,7 @@ export async function updateSession(request: NextRequest) {
       !request.nextUrl.searchParams.get('auth')
     ) {
       const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = '/FREETrialApproved'
+      redirectUrl.pathname = CHAT_PATH
       redirectUrl.search = ''
       return redirectWithCookies(redirectUrl, supabaseResponse)
     }
@@ -112,7 +127,7 @@ export async function updateSession(request: NextRequest) {
 
     if (trialStartedAt && isTrialExpired(trialStartedAt)) {
       const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = PRICING_PATH
+      redirectUrl.pathname = TIME_EXPIRED_PATH
       redirectUrl.search = ''
       return NextResponse.redirect(redirectUrl)
     }

@@ -78,6 +78,25 @@ body {
   outline-offset: 3px;
 }
 
+.checkout-banner-link {
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+.checkout-banner-link a {
+  color: #c5a059;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.checkout-banner-link a:hover,
+.checkout-banner-link a:focus-visible {
+  color: #e8c547;
+  text-decoration: underline;
+}
+
 main {
   display: flex;
   flex-direction: column;

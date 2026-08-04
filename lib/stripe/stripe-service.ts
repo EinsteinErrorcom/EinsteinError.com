@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import type { PricingTier } from '@/lib/stripe/pricing';
+import { CHAT_PATH, CHECKOUT_PATH } from '@/lib/trial-gate';
 
 let stripeClient: Stripe | null = null;
 
@@ -44,8 +45,8 @@ export async function createCheckoutSession({
   return stripe.checkout.sessions.create({
     mode: 'payment',
     line_items: [{ price: tier.priceId, quantity: 1 }],
-    success_url: `${siteUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${siteUrl}/pricing/checkout`,
+    success_url: `${siteUrl}${CHAT_PATH}?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${siteUrl}${CHECKOUT_PATH}`,
     metadata: {
       supabase_user_id: userId,
       price_id: tier.priceId,

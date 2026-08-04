@@ -1,3 +1,5 @@
+import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+
 export default function Page2() {
   return (
     <div className="page-wrapper">
@@ -8,6 +10,7 @@ export default function Page2() {
             <a className="page-nav__home" href="/">HOME</a>
           </nav>
           <figure className="media media--banner"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></figure>
+          <CheckoutBannerLink />
         </header>
         <p className="notice">
           We ask your patience as

@@ -4,6 +4,7 @@ import {
 } from '@/lib/supabase/test-reset';
 import { createServerClient } from '@supabase/ssr';
 import { TRIAL_COOKIE } from '@/lib/trial';
+import { CHAT_PATH } from '@/lib/trial-gate';
 import { NextResponse, type NextRequest } from 'next/server';
 
 const TEST_EMAIL = 'alwho@fastmail.com';
@@ -46,7 +47,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const response = NextResponse.redirect(`${origin}/FREETrialApproved`);
+  const response = NextResponse.redirect(`${origin}${CHAT_PATH}`);
   response.cookies.set(TRIAL_COOKIE, new Date().toISOString(), {
     path: '/',
     maxAge: 60 * 60 * 2,

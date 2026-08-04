@@ -61,6 +61,45 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/pricing9',
+        destination: '/checkout10',
+        permanent: true,
+      },
+      {
+        source: '/checkout9',
+        destination: '/checkout10',
+        permanent: true,
+      },
+      {
+        source: '/trialexpired8',
+        destination: '/chat8',
+        permanent: true,
+      },
+      {
+        source: '/timeexpired10',
+        destination: '/checkout10',
+        permanent: true,
+      },
+      {
+        source: '/chat11',
+        destination: '/timeexpired11',
+        permanent: true,
+      },
+      {
+        source: '/timeexpired',
+        destination: '/timeexpired11',
+        permanent: true,
+      },
+      {
+        source: '/spare',
+        destination: '/spare12',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

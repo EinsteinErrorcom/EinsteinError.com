@@ -1,6 +1,7 @@
 import { resetTestUser, hasServiceRoleKey } from '@/lib/supabase/test-reset';
 import { createClient } from '@/lib/supabase/server';
 import { createTrialStartCookie } from '@/lib/supabase/middleware';
+import { CHAT_PATH } from '@/lib/trial-gate';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -107,5 +108,5 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
   const trialCookie = createTrialStartCookie(new Date().toISOString());
   cookieStore.set(trialCookie.name, trialCookie.value, trialCookie.options);
 
-  redirect('/FREETrialApproved');
+  redirect(CHAT_PATH);
 }

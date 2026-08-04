@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CHAT_PATH } from '@/lib/trial-gate';
 import { GEMINI_QUOTA_FIX_STEPS } from '@/lib/ai/gemini-billing-help';
 import { getGeminiApiKeys } from '@/lib/ai/gemini-keys';
 import { testGeminiApiKey } from '@/lib/ai/test-gemini-key';
@@ -171,7 +172,7 @@ export default async function DevGeminiPage() {
             below. Turn off mock mode after a real key works: set{' '}
             <code>AI_DEV_MOCK_FALLBACK=false</code> in .env.local.
           </p>
-          <Link href="/chat" className="mt-3 inline-block text-[#00FFFF] underline font-semibold">
+          <Link href={CHAT_PATH} className="mt-3 inline-block text-[#00FFFF] underline font-semibold">
             Open chat now →
           </Link>
         </div>
@@ -215,12 +216,9 @@ export default async function DevGeminiPage() {
         </div>
       )}
 
-      <p className="text-sm space-x-4 pt-4 border-t border-gray-700">
-        <Link href="/chat" className="text-[#00FFFF] underline">
+      <p className="text-sm pt-4 border-t border-gray-700">
+        <Link href={CHAT_PATH} className="text-[#00FFFF] underline">
           Open chat
-        </Link>
-        <Link href="/FREETrialApproved" className="text-[#00FFFF] underline">
-          Back to Approved page
         </Link>
       </p>
     </main>

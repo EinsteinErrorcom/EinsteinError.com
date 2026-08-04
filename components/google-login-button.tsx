@@ -3,6 +3,7 @@
 import { ensureUserProfile } from "@/app/actions/profile";
 import { createClient } from "@/lib/supabase/client";
 import { getSupabaseEnv, SUPABASE_CONFIG_ERROR } from "@/lib/supabase/env";
+import { CHAT_PATH } from "@/lib/trial-gate";
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -162,7 +163,7 @@ export function GoogleLoginButton({
         throw new Error(profileResult.error);
       }
 
-      window.location.assign("/FREETrialApproved");
+      window.location.assign(CHAT_PATH);
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Google sign-in failed.";

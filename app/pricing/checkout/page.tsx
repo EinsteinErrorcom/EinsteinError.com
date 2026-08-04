@@ -1,16 +1,6 @@
-import PaymentCheckout from '@/components/pricing/PaymentCheckout';
-import Link from 'next/link';
+import { PRICING_PATH } from '@/lib/trial-gate';
+import { redirect } from 'next/navigation';
 
-export default function PricingCheckoutPage() {
-  return (
-    <main className="pricing-checkout-page">
-      <div className="pricing-checkout-page__inner">
-        <h1 className="pricing-checkout-page__title">MAX-LIT Secure Checkout</h1>
-        <PaymentCheckout />
-        <Link href="/pricing" className="pricing-checkout-page__back">
-          ← Back to pricing
-        </Link>
-      </div>
-    </main>
-  );
+export default function LegacyPricingCheckoutRedirect() {
+  redirect(PRICING_PATH);
 }
