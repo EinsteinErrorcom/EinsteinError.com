@@ -791,7 +791,8 @@ p {
   cursor: default;
 }
 
-.site-tour-start-link {
+a.site-tour-start-link,
+a.site-tour-start-link[target='_blank'] {
   display: inline-block;
   color: #e8b709;
   font-weight: 700;
@@ -799,7 +800,8 @@ p {
   text-decoration: underline;
 }
 
-.site-tour-start-link:hover {
+a.site-tour-start-link:hover,
+a.site-tour-start-link[target='_blank']:hover {
   color: #40e0d0;
 }
 
