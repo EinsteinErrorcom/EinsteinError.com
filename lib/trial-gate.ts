@@ -7,8 +7,8 @@ export const CHECKOUT_PATH = '/checkout10';
 export const CHECKOUT10_PATH = CHECKOUT_PATH;
 /** @deprecated Use CHECKOUT_PATH — kept for trial-expired redirects */
 export const PRICING_PATH = CHECKOUT_PATH;
-export const CHAT8_PATH = '/chat8';
-export const CHAT_PATH = '/chat8';
+export const CHAT8_PATH = '/maxchatbox8';
+export const CHAT_PATH = '/maxchatbox8';
 export const TRIAL_EXPIRED_PATH = '/trialexpired9';
 export const TIME_EXPIRED_PATH = '/timeexpired11';
 /** Page 12 — spare / reserved */

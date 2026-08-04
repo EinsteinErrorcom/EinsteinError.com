@@ -38,6 +38,7 @@ function isTrialExemptPath(pathname: string) {
     pathname.startsWith('/pricing') ||
     pathname.startsWith('/checkout') ||
     pathname.startsWith('/chat') ||
+    pathname.startsWith('/maxchatbox') ||
     isDevPath(pathname) ||
     pathname.startsWith('/auth/') ||
     pathname.startsWith('/api/') ||
