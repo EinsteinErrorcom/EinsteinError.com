@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { createClient } from '@supabase/supabase-js';
+import { markUserSubscribed } from '@/lib/stripe/subscription';
 import { getStripeClient } from '@/lib/stripe/stripe-service';
 
 export const runtime = 'nodejs';
@@ -11,29 +11,6 @@ function getWebhookSecret(): string | null {
     process.env.STRIPE_WEBHOOK_SECRET?.trim() ||
     null
   );
-}
-
-function getServiceRoleClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!url || !serviceRoleKey) {
-    throw new Error('Supabase service role credentials are not configured');
-  }
-
-  return createClient(url, serviceRoleKey);
-}
-
-async function markUserSubscribed(userId: string) {
-  const supabase = getServiceRoleClient();
-  const { error } = await supabase
-    .from('profiles')
-    .update({ is_subscribed: true })
-    .eq('id', userId);
-
-  if (error) {
-    throw new Error(`Failed to update profile subscription: ${error.message}`);
-  }
 }
 
 export async function POST(req: Request) {
