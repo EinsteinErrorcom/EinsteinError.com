@@ -3,6 +3,7 @@ import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
 import { SiteTourStartLink } from "@/components/site-tour-bar";
 import { TruthCounter } from "@/components/truth-counter";
+import { UsersOnsiteDisplay } from "@/components/users-onsite-display";
 import { createClient } from "@/lib/supabase/server";
 import { getGoogleClientId } from "@/lib/site-url";
 import { isProfileTrialActive } from "@/lib/trial";
@@ -108,6 +109,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px' }}>
         <span style={{ color: '#00FFFF' }}>WhatsApp</span><br/>
         <span style={{ color: '#FFFF00' }}>+17802707009</span>
+        <UsersOnsiteDisplay />
         <br/><br/>
         <span style={{ color: '#00FFFF' }}>Email</span><br/>
         <span style={{ color: '#FFFF00' }}>wild.book0719@fastmail.com</span>

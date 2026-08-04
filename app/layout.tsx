@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
+import { SitePresenceProvider } from "@/components/site-presence-provider";
 import { SiteTourBar } from "@/components/site-tour-bar";
 import "./globals.css";
 
@@ -40,10 +41,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-full">
-        <Suspense fallback={null}>
-          <SiteTourBar />
-        </Suspense>
-        {children}
+        <SitePresenceProvider>
+          <Suspense fallback={null}>
+            <SiteTourBar />
+          </Suspense>
+          {children}
+        </SitePresenceProvider>
       </body>
     </html>
   );
