@@ -1,11 +1,6 @@
 import type { NextRequest } from 'next/server';
 
 export function getSiteOrigin(request?: NextRequest) {
-  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, '');
-  if (configured) {
-    return configured;
-  }
-
   if (request) {
     const forwardedHost = request.headers.get('x-forwarded-host');
     const forwardedProto = request.headers.get('x-forwarded-proto') ?? 'https';
@@ -15,6 +10,11 @@ export function getSiteOrigin(request?: NextRequest) {
     }
 
     return new URL(request.url).origin;
+  }
+
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, '');
+  if (configured) {
+    return configured;
   }
 
   return 'http://localhost:3000';
