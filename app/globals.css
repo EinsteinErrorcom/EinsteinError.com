@@ -794,7 +794,7 @@ p {
 a.site-tour-start-link,
 a.site-tour-start-link[target='_blank'] {
   display: inline-block;
-  color: #c5a059;
+  color: #1a1a1a;
   font-weight: 700;
   font-style: italic;
   text-decoration: underline;
