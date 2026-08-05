@@ -1,4 +1,5 @@
 import { createTrialStartCookie } from '@/lib/supabase/middleware';
+import { applyPendingCookies, createRouteHandlerClient, type PendingAuthCookie } from '@/lib/supabase/route-handler';
 import { getSiteOrigin } from '@/lib/site-url';
 import {
   fetchProfileTrial,
@@ -6,8 +7,6 @@ import {
   TRIAL_EXPIRED_PATH,
   CHAT_PATH,
 } from '@/lib/trial-gate';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 import { NextResponse, type NextRequest } from 'next/server';
 
 function redirectTo(request: NextRequest, path: string) {
@@ -32,28 +31,16 @@ export async function GET(request: NextRequest) {
     return redirectTo(request, '/?auth=error');
   }
 
-  const cookieStore = await cookies();
-  const pendingCookies: { name: string; value: string; options: Parameters<typeof cookieStore.set>[2] }[] = [];
+  const pendingCookies: PendingAuthCookie[] = [];
+  const routeClient = createRouteHandlerClient(request, pendingCookies);
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options);
-            pendingCookies.push({ name, value, options });
-          });
-        },
-      },
-    }
-  );
+  if (!routeClient) {
+    return NextResponse.redirect(
+      `${siteOrigin}/?auth=error&reason=${encodeURIComponent('Sign-in is not configured')}`
+    );
+  }
 
-  const { error } = await supabase.auth.exchangeCodeForSession(code);
+  const { error } = await routeClient.supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
     return NextResponse.redirect(
@@ -62,10 +49,10 @@ export async function GET(request: NextRequest) {
   }
 
   let destination = CHAT_PATH;
-  const { data: { user } } = await supabase.auth.getUser();
+  const { data: { user } } = await routeClient.supabase.auth.getUser();
 
   if (user) {
-    const { data: existingProfile } = await supabase
+    const { data: existingProfile } = await routeClient.supabase
       .from('profiles')
       .select('id, trial_start_at')
       .eq('id', user.id)
@@ -73,7 +60,7 @@ export async function GET(request: NextRequest) {
 
     if (!existingProfile) {
       const trialStartAt = new Date().toISOString();
-      const { error: profileError } = await supabase.from('profiles').insert({
+      const { error: profileError } = await routeClient.supabase.from('profiles').insert({
         id: user.id,
         trial_start_at: trialStartAt,
         is_subscribed: false,
@@ -93,16 +80,13 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const profile = await fetchProfileTrial(supabase, user.id);
+    const profile = await fetchProfileTrial(routeClient.supabase, user.id);
     if (shouldRedirectToPricing(profile)) {
       destination = TRIAL_EXPIRED_PATH;
     }
   }
 
   const response = NextResponse.redirect(`${siteOrigin}${destination}`);
-  pendingCookies.forEach(({ name, value, options }) => {
-    response.cookies.set(name, value, options);
-  });
-
+  applyPendingCookies(response, pendingCookies);
   return response;
 }

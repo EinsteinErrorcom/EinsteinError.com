@@ -169,17 +169,13 @@ export function GoogleLoginButton({
   const [loginError, setLoginError] = useState<string | null>(initialError);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonReady, setButtonReady] = useState(false);
-  const [useOAuthFlow, setUseOAuthFlow] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
   const initializedRef = useRef(false);
   const handleCredentialRef = useRef<(response: CredentialResponse) => void>(() => {});
 
   useEffect(() => {
-    const mobile = isMobileDevice();
-    setUseOAuthFlow(mobile);
-    if (mobile) {
-      setButtonReady(true);
-    }
+    setIsMobile(isMobileDevice());
   }, []);
 
   useEffect(() => {
@@ -190,12 +186,6 @@ export function GoogleLoginButton({
         `${window.location.pathname}${window.location.search}`
       );
     }
-  }, []);
-
-  const handleOAuthSignIn = useCallback(() => {
-    setIsLoading(true);
-    setLoginError(null);
-    window.location.assign("/auth/google");
   }, []);
 
   const handleCredential = useCallback(async (response: CredentialResponse) => {
@@ -240,7 +230,7 @@ export function GoogleLoginButton({
   }, [handleCredential]);
 
   useEffect(() => {
-    if (useOAuthFlow || !overlayRef.current || initializedRef.current) {
+    if (!overlayRef.current || initializedRef.current) {
       return;
     }
 
@@ -301,15 +291,13 @@ export function GoogleLoginButton({
       cancelled = true;
       observer?.disconnect();
     };
-  }, [clientId, useOAuthFlow]);
+  }, [clientId]);
 
   const isInteractive = buttonReady && !isLoading;
 
   return (
     <>
-      {!useOAuthFlow && (
-        <Script src="https://accounts.google.com/gsi/client" strategy="afterInteractive" />
-      )}
+      <Script src="https://accounts.google.com/gsi/client" strategy="afterInteractive" />
 
       <div style={{ marginTop: "20px" }}>
         <div
@@ -317,51 +305,62 @@ export function GoogleLoginButton({
             position: "relative",
             width: "104%",
             margin: "0 auto",
-            minHeight: "88px",
+            minHeight: isMobile ? "48px" : "88px",
           }}
         >
-          <button
-            id="google-login-btn"
-            type="button"
-            tabIndex={useOAuthFlow ? 0 : -1}
-            aria-hidden={useOAuthFlow ? undefined : true}
-            aria-label={useOAuthFlow ? "Sign in with Google" : undefined}
-            disabled={!isInteractive}
-            onClick={useOAuthFlow ? () => void handleOAuthSignIn() : undefined}
-            style={{
-              pointerEvents: useOAuthFlow ? "auto" : "none",
-              width: "100%",
-              cursor: isInteractive ? "pointer" : "default",
-            }}
-          >
-            <span className="google-login-btn__logo google-login-btn__logo--spacer" aria-hidden="true">
-              <GoogleLogo />
-            </span>
-            <span className="google-login-btn__text">
-              <GoogleButtonLabel loading={!isInteractive} />
-            </span>
-            <span className="google-login-btn__logo">
-              <GoogleLogo />
-            </span>
-          </button>
+          {!isMobile && (
+            <button
+              id="google-login-btn"
+              type="button"
+              tabIndex={-1}
+              aria-hidden="true"
+              disabled={!isInteractive}
+              style={{ pointerEvents: "none", width: "100%" }}
+            >
+              <span className="google-login-btn__logo google-login-btn__logo--spacer" aria-hidden="true">
+                <GoogleLogo />
+              </span>
+              <span className="google-login-btn__text">
+                <GoogleButtonLabel loading={!isInteractive} />
+              </span>
+              <span className="google-login-btn__logo">
+                <GoogleLogo />
+              </span>
+            </button>
+          )}
 
-          {!useOAuthFlow && (
-            <div
-              ref={overlayRef}
-              aria-label="Sign in with Google"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 2,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden",
-                opacity: isInteractive ? 0.02 : 0,
-                pointerEvents: isInteractive ? "auto" : "none",
-                cursor: isInteractive ? "pointer" : "default",
-              }}
-            />
+          <div
+            ref={overlayRef}
+            aria-label="Sign in with Google"
+            style={
+              isMobile
+                ? {
+                    minHeight: "48px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    opacity: isInteractive ? 1 : 0.5,
+                    pointerEvents: isInteractive ? "auto" : "none",
+                  }
+                : {
+                    position: "absolute",
+                    inset: 0,
+                    zIndex: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflow: "hidden",
+                    opacity: isInteractive ? 0.02 : 0,
+                    pointerEvents: isInteractive ? "auto" : "none",
+                    cursor: isInteractive ? "pointer" : "default",
+                  }
+            }
+          />
+
+          {isMobile && !isInteractive && (
+            <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px" }}>
+              Loading Google sign-in...
+            </p>
           )}
         </div>
 
