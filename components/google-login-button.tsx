@@ -192,32 +192,10 @@ export function GoogleLoginButton({
     }
   }, []);
 
-  const handleOAuthSignIn = useCallback(async () => {
+  const handleOAuthSignIn = useCallback(() => {
     setIsLoading(true);
     setLoginError(null);
-
-    try {
-      if (!getSupabaseEnv()) {
-        throw new Error(SUPABASE_CONFIG_ERROR);
-      }
-
-      const supabase = createClient();
-      const redirectTo = `${window.location.origin}/auth/callback`;
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: { redirectTo },
-      });
-
-      if (error) {
-        throw error;
-      }
-    } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : "Google sign-in failed.";
-      console.error("Google OAuth sign-in failed:", err);
-      setLoginError(message);
-      setIsLoading(false);
-    }
+    window.location.assign("/auth/google");
   }, []);
 
   const handleCredential = useCallback(async (response: CredentialResponse) => {
