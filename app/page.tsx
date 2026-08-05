@@ -3,9 +3,7 @@ import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
 import { SiteTourStartLink } from "@/components/site-tour-bar";
 import { TruthCounter } from "@/components/truth-counter";
-import { createClient } from "@/lib/supabase/server";
 import { getGoogleClientId } from "@/lib/site-url";
-import { isProfileTrialActive } from "@/lib/trial";
 import { CHAT_PATH, SIGN_IN_SECTION_ID } from "@/lib/trial-gate";
 import { redirect } from "next/navigation";
 
@@ -75,21 +73,6 @@ export default async function Home({ searchParams }: HomeProps) {
   const devResetMessage = params.dev_reset
     ? decodeURIComponent((params.reason ?? "Trial reset requires sign-in first.").replace(/\+/g, " "))
     : null;
-
-  const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
-
-  if (session) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("trial_start_at, is_subscribed")
-      .eq("id", session.user.id)
-      .single();
-
-    if (profile && isProfileTrialActive(profile)) {
-      redirect(CHAT_PATH);
-    }
-  }
 
   return (
     <main className="page-wrapper">

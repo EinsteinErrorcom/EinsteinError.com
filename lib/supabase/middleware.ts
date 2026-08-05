@@ -20,6 +20,12 @@ import {
 
 const TRIAL_EXEMPT_PATHS = new Set([
   '/',
+  '/page2',
+  '/page3',
+  '/page4',
+  '/page5',
+  '/page6',
+  '/page7',
   CHECKOUT_PATH,
   CHAT8_PATH,
   TRIAL_EXPIRED_PATH,
@@ -120,17 +126,6 @@ export async function updateSession(request: NextRequest) {
     ) {
       const redirectUrl = request.nextUrl.clone()
       redirectUrl.pathname = TRIAL_EXPIRED_PATH
-      redirectUrl.search = ''
-      return redirectWithCookies(redirectUrl, supabaseResponse)
-    }
-
-    if (
-      !trialExpired &&
-      pathname === '/' &&
-      !request.nextUrl.searchParams.get('auth')
-    ) {
-      const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = CHAT_PATH
       redirectUrl.search = ''
       return redirectWithCookies(redirectUrl, supabaseResponse)
     }
