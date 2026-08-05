@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { getChatAccessToken } from '@/app/actions/chat';
 import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-billing-help';
+import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
 import { CHAT_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
 
 type ChatMessage = { role: 'user' | 'ai'; text: string };
@@ -47,6 +48,26 @@ function saveStoredMessages(userId: string, messages: ChatMessage[]) {
   } catch {
     // Ignore quota / private-mode errors — chat still works in memory.
   }
+}
+
+/** Each sentence starts on a new block separated by a blank line. */
+function formatAiReply(text: string): string {
+  const trimmed = text.trim();
+  if (!trimmed) {
+    return trimmed;
+  }
+
+  const sentences = trimmed.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length <= 1) {
+    return trimmed;
+  }
+
+  return sentences.map((sentence) => sentence.trim()).join('\n\n');
+}
+
+function displayMessageText(message: ChatMessage): string {
+  const text = message.role === 'ai' ? plainTextChatResponse(message.text) : message.text;
+  return message.role === 'ai' ? formatAiReply(text) : text;
 }
 
 export default function Chatbox({
@@ -150,7 +171,7 @@ export default function Chatbox({
 
       setMessages(prev => [
         ...prev,
-        { role: 'ai', text: data.response ?? 'No response received.' },
+        { role: 'ai', text: plainTextChatResponse(data.response ?? 'No response received.') },
       ]);
     } catch {
       setMessages(prev => [...prev, { role: 'ai', text: 'Error: Could not connect to AI.' }]);
@@ -214,8 +235,15 @@ export default function Chatbox({
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((m, i) => (
-          <div key={i} className={`p-2 rounded ${m.role === 'user' ? 'bg-[#C5A059] text-black self-end' : 'bg-[#0d1117] text-[#00FFFF]'}`}>
-            {m.text}
+          <div
+            key={i}
+            className={`p-2 rounded ${
+              m.role === 'user'
+                ? 'bg-[#C5A059] text-black self-end'
+                : 'bg-[#0d1117] text-[#00FFFF] whitespace-pre-wrap'
+            }`}
+          >
+            {displayMessageText(m)}
           </div>
         ))}
         {loading && <div className="text-[#FFFF00] italic">Max-Lit is thinking...</div>}

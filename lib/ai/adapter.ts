@@ -1,6 +1,7 @@
 import { getActiveProvider } from './config';
 import { generateDevMockResponse, isDevMockFallbackEnabled } from './dev-mock';
 import { isGeminiConfigError, isGeminiQuotaError } from './gemini-billing-help';
+import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
 import { anthropicAdapter } from './providers/anthropic';
 import { geminiAdapter } from './providers/gemini';
 import { grokAdapter, openaiAdapter } from './providers/openai-compatible';
@@ -43,13 +44,15 @@ export async function processPrompt(userPrompt: string): Promise<string> {
   const adapter = getProviderAdapter(provider);
 
   try {
-    return await adapter.generateResponse(userPrompt, MASTER_SYSTEM_INSTRUCTIONS);
+    return plainTextChatResponse(
+      await adapter.generateResponse(userPrompt, MASTER_SYSTEM_INSTRUCTIONS)
+    );
   } catch (err) {
     const message =
       err instanceof Error ? err.message : `${provider} request failed`;
 
     if (isDevMockFallbackEnabled() && shouldUseDevMockFallback(message)) {
-      return generateDevMockResponse(userPrompt);
+      return plainTextChatResponse(generateDevMockResponse(userPrompt));
     }
 
     throw new AIAdapterError(message);

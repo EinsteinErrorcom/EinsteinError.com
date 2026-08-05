@@ -100,15 +100,15 @@ export default async function Home({ searchParams }: HomeProps) {
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       <CheckoutBannerLink />
       <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px', display: 'block', marginTop: '16px' }}>
-        **&nbsp; Contact&nbsp; Us&nbsp; **
+        Contact&nbsp;&nbsp;Us
       </span>
       
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px' }}>
         <span style={{ color: '#00FFFF' }}>WhatsApp</span><br/>
-        <span style={{ color: '#FFFF00' }}>+17802707009</span>
+        <span style={{ color: '#C5A059' }}>+17802707009</span>
         <br/><br/>
         <span style={{ color: '#00FFFF' }}>Email</span><br/>
-        <span style={{ color: '#FFFF00' }}>wild.book0719@fastmail.com</span>
+        <span style={{ color: '#C5A059' }}>wild.book0719@fastmail.com</span>
       </div>
       
       <br/><br/>
@@ -149,7 +149,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        ( Not&nbsp; today's&nbsp; sad<br/>" Contaminated "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Physics )
+        Not&nbsp; like&nbsp; today's&nbsp; sad<br/>&quot; <span style={{ color: '#FF0000' }}>Contaminated</span> &quot;<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Physics.
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -165,7 +165,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        And if you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '35px' }}>$&nbsp; Money&nbsp; $</span><br/>by simply placing a small<br/>snippet onto your Website<br/>that displays this<br/><br/>
+        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/>by simply placing a small<br/>snippet onto your Website<br/>that displays this<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>* Monumental *<br/>Discovery&nbsp; !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div><br/><br/>
         <br/><img src="/MAX-LIT.png" alt="Max-Lit Engine" width={500} height={400} />
