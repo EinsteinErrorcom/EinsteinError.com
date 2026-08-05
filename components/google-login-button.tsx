@@ -1,9 +1,9 @@
 "use client";
 
-import { ensureUserProfile } from "@/app/actions/profile";
 import { createClient } from "@/lib/supabase/client";
 import { getSupabaseEnv, SUPABASE_CONFIG_ERROR } from "@/lib/supabase/env";
 import { CHAT_PATH } from "@/lib/trial-gate";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -47,6 +47,14 @@ declare global {
       };
     };
   }
+}
+
+function isMobileDevice() {
+  if (typeof navigator === "undefined") {
+    return false;
+  }
+
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
 function GoogleButtonLabel({ loading }: { loading?: boolean }) {
@@ -110,6 +118,49 @@ function audienceErrorHelp(): string {
   );
 }
 
+async function waitForAccessToken(supabase: SupabaseClient): Promise<string> {
+  for (let attempt = 0; attempt < 15; attempt += 1) {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.access_token) {
+      return session.access_token;
+    }
+
+    await new Promise((resolve) => {
+      window.setTimeout(resolve, 100 * (attempt + 1));
+    });
+  }
+
+  throw new Error(
+    "Sign-in succeeded but your session was not established. Please try again."
+  );
+}
+
+async function ensureProfileAfterSignIn(supabase: SupabaseClient): Promise<void> {
+  const accessToken = await waitForAccessToken(supabase);
+
+  for (let attempt = 0; attempt < 15; attempt += 1) {
+    const response = await fetch("/api/auth/ensure-profile", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (response.ok) {
+      return;
+    }
+
+    const body = (await response.json().catch(() => null)) as { error?: string } | null;
+    if (response.status !== 401 || attempt === 14) {
+      throw new Error(body?.error ?? "Could not create profile");
+    }
+
+    await new Promise((resolve) => {
+      window.setTimeout(resolve, 100 * (attempt + 1));
+    });
+  }
+}
+
 export function GoogleLoginButton({
   googleClientId,
   initialError = null,
@@ -118,9 +169,18 @@ export function GoogleLoginButton({
   const [loginError, setLoginError] = useState<string | null>(initialError);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonReady, setButtonReady] = useState(false);
+  const [useOAuthFlow, setUseOAuthFlow] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
   const initializedRef = useRef(false);
   const handleCredentialRef = useRef<(response: CredentialResponse) => void>(() => {});
+
+  useEffect(() => {
+    const mobile = isMobileDevice();
+    setUseOAuthFlow(mobile);
+    if (mobile) {
+      setButtonReady(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (window.location.hash.includes("error=")) {
@@ -129,6 +189,34 @@ export function GoogleLoginButton({
         "",
         `${window.location.pathname}${window.location.search}`
       );
+    }
+  }, []);
+
+  const handleOAuthSignIn = useCallback(async () => {
+    setIsLoading(true);
+    setLoginError(null);
+
+    try {
+      if (!getSupabaseEnv()) {
+        throw new Error(SUPABASE_CONFIG_ERROR);
+      }
+
+      const supabase = createClient();
+      const redirectTo = `${window.location.origin}/auth/callback`;
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo },
+      });
+
+      if (error) {
+        throw error;
+      }
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Google sign-in failed.";
+      console.error("Google OAuth sign-in failed:", err);
+      setLoginError(message);
+      setIsLoading(false);
     }
   }, []);
 
@@ -158,11 +246,7 @@ export function GoogleLoginButton({
         throw signInError;
       }
 
-      const profileResult = await ensureUserProfile();
-      if (profileResult.error) {
-        throw new Error(profileResult.error);
-      }
-
+      await ensureProfileAfterSignIn(supabase);
       window.location.assign(CHAT_PATH);
     } catch (err: unknown) {
       const message =
@@ -178,7 +262,7 @@ export function GoogleLoginButton({
   }, [handleCredential]);
 
   useEffect(() => {
-    if (!overlayRef.current || initializedRef.current) {
+    if (useOAuthFlow || !overlayRef.current || initializedRef.current) {
       return;
     }
 
@@ -239,13 +323,15 @@ export function GoogleLoginButton({
       cancelled = true;
       observer?.disconnect();
     };
-  }, [clientId]);
+  }, [clientId, useOAuthFlow]);
 
   const isInteractive = buttonReady && !isLoading;
 
   return (
     <>
-      <Script src="https://accounts.google.com/gsi/client" strategy="afterInteractive" />
+      {!useOAuthFlow && (
+        <Script src="https://accounts.google.com/gsi/client" strategy="afterInteractive" />
+      )}
 
       <div style={{ marginTop: "20px" }}>
         <div
@@ -259,10 +345,16 @@ export function GoogleLoginButton({
           <button
             id="google-login-btn"
             type="button"
-            tabIndex={-1}
-            aria-hidden="true"
+            tabIndex={useOAuthFlow ? 0 : -1}
+            aria-hidden={useOAuthFlow ? undefined : true}
+            aria-label={useOAuthFlow ? "Sign in with Google" : undefined}
             disabled={!isInteractive}
-            style={{ pointerEvents: "none", width: "100%" }}
+            onClick={useOAuthFlow ? () => void handleOAuthSignIn() : undefined}
+            style={{
+              pointerEvents: useOAuthFlow ? "auto" : "none",
+              width: "100%",
+              cursor: isInteractive ? "pointer" : "default",
+            }}
           >
             <span className="google-login-btn__logo google-login-btn__logo--spacer" aria-hidden="true">
               <GoogleLogo />
@@ -275,22 +367,24 @@ export function GoogleLoginButton({
             </span>
           </button>
 
-          <div
-            ref={overlayRef}
-            aria-label="Sign in with Google"
-            style={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              opacity: isInteractive ? 0.02 : 0,
-              pointerEvents: isInteractive ? "auto" : "none",
-              cursor: isInteractive ? "pointer" : "default",
-            }}
-          />
+          {!useOAuthFlow && (
+            <div
+              ref={overlayRef}
+              aria-label="Sign in with Google"
+              style={{
+                position: "absolute",
+                inset: 0,
+                zIndex: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                opacity: isInteractive ? 0.02 : 0,
+                pointerEvents: isInteractive ? "auto" : "none",
+                cursor: isInteractive ? "pointer" : "default",
+              }}
+            />
+          )}
         </div>
 
         {loginError && (
