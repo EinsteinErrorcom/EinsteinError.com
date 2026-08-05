@@ -1,4 +1,4 @@
-export const TRIAL_DURATION_MS = 2 * 60 * 60 * 1000;
+export const TRIAL_DURATION_MS = 1 * 60 * 60 * 1000;
 export const TRIAL_COOKIE = "maxlit_trial_started_at";
 
 export function getTrialEndsAt(startedAtMs: number): number {

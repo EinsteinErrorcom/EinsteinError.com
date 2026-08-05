@@ -67,7 +67,7 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           Dev Trial Reset
         </h1>
         <p style={{ marginBottom: 16 }}>
-          To reset your 2-hour trial for testing, choose one option:
+          To reset your 1-hour trial for testing, choose one option:
         </p>
         <ol style={{ paddingLeft: 24, marginBottom: 24 }}>
           <li style={{ marginBottom: 12 }}>

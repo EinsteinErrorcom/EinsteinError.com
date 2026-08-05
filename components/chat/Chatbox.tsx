@@ -208,7 +208,7 @@ export default function Chatbox({
       <div className="relative p-4 bg-[#0d1117] flex items-center justify-center border-b border-[#C5A059]">
         <div className="text-center px-8">
           <span className="text-[#00FFFF] font-bold italic">
-            Welcome to your &nbsp;2-Hour&nbsp; FREE&nbsp; trial of the
+            Welcome to your &nbsp;1-Hour&nbsp; FREE&nbsp; trial of the
             <br />
             World&apos;s most POWERFUL&nbsp;&nbsp;&quot;Pure&quot;&nbsp;&nbsp;Physics processor.
           </span>

@@ -182,7 +182,7 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         )}
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>TRY&nbsp;&nbsp; " MAX-LIT "&nbsp;&nbsp; FREE&nbsp; !</div>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 2 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 1 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" />
       </div>
       <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1 }}>
