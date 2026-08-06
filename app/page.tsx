@@ -1,3 +1,4 @@
+import { PageEndFooter } from "@/components/page-end-footer";
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
@@ -50,12 +51,8 @@ export default async function Home({ searchParams }: HomeProps) {
           id={SIGN_IN_SECTION_ID}
           data-tour-block="true"
           style={{
-            background: "#161b22",
-            padding: "30px",
-            borderRadius: "12px",
             margin: "40px auto",
             maxWidth: "1040px",
-            border: "6px solid #C5A059",
             textAlign: "center",
           }}
         >
@@ -104,21 +101,21 @@ export default async function Home({ searchParams }: HomeProps) {
         The Discovery of<br/>
         Albert&nbsp;&nbsp;Einstein&apos;s<br/>
         Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
-        has now enabled us<br/>
-        to build the &quot; <strong>NEW</strong> &quot;<br/><br/>
-        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; MAX - LIT &quot;
+        has now enabled the<br/>
+        production of<br/>
+        the &quot; <strong>NEW</strong> &quot;<br/><br/>
+        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#FFFFFF' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span><br/>
       </div>
-      <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '20px' }}>( Developed&nbsp; by&nbsp; Einstein Error . com )</div>
         <br/><br/>
-        <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
+        <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
         <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        <span style={{ color: '#FFFF00' }}>MAX-LIT</span><br/>
+        <span style={{ color: '#FFFFFF' }}>MAX-LIT</span><br/>
         is&nbsp; the&nbsp;&nbsp; World's<br/>Most &nbsp; Powerful<br/>and&nbsp;&nbsp;&nbsp; Accurate<br/>" P U R E "<br/>(&nbsp;<strong>mAZ</strong>&nbsp;)&nbsp;&nbsp; 12-Bit<br/>PHYSICS&nbsp; Processor&nbsp; !
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
@@ -148,13 +145,12 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/>by simply placing a small<br/>snippet onto your Website<br/>that displays this<br/><br/>
+        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '30px' }}>( while you sleep )</span><br/>by simply placing this image<br/>onto a Webpage.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>* Monumental *<br/>Discovery&nbsp; !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div><br/><br/>
-        <br/><img src="/MAX-LIT.png" alt="Max-Lit Engine" width={500} height={400} />
       </div>
 
-      <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ background: '#161b22', padding: '30px', borderRadius: '12px', margin: '40px auto', maxWidth: '1040px', border: '6px solid #C5A059', textAlign: 'center' }}>
+      <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ margin: '40px auto', maxWidth: '1040px', textAlign: 'center' }}>
         {devResetMessage && (
           <div style={{ color: '#FFFF00', fontSize: '18px', marginBottom: '20px', lineHeight: 1.5 }}>
             <strong>Dev reset:</strong> {devResetMessage}
@@ -164,8 +160,6 @@ export default async function Home({ searchParams }: HomeProps) {
             </a>
           </div>
         )}
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>TRY&nbsp;&nbsp; " MAX-LIT "&nbsp;&nbsp; FREE&nbsp; !</div>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', marginTop: '15px', marginBottom: '20px' }}>To access your&nbsp; 1 - Hour&nbsp; FREE&nbsp; trial<br/>Sign-in with your Google account.</div>
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" />
       </div>
       <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1 }}>
@@ -177,12 +171,10 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>YES&nbsp; !<br/><br/>This&nbsp; Website<br/><br/>has&nbsp; the&nbsp; absolute<br/><br/>answer&nbsp; to&nbsp; Einstein's<br/><br/>Monumental&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>ERROR&nbsp; !</span></div>
       <div className="spacer" style={{ height: '100px' }}></div>
       <img src="/TWISTED.png" width={500} height={700} alt="Twisted" />
-      <div style={{ textAlign: 'center', marginTop: '100px' }}>
-        <a href="/page2" style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '25px', textDecoration: 'none' }}>See&nbsp; the&nbsp; enormous&nbsp; PROOF<br/><br/>Click&nbsp; the&nbsp; <span style={{ color: '#FFFFFF' }}>Next&nbsp; Page</span> &rarr;<br/><br/>Einstein Error . com</a>
-        <div className="spacer" style={{ height: '50px' }}></div>
-        <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '25px' }}>END&nbsp; of&nbsp; PAGE 1</span>
-        <div className="spacer" style={{ height: '100px' }}></div>
-      </div>
+      <PageEndFooter
+        pageNumber={1}
+        leadText={<>See&nbsp; the&nbsp; enormous&nbsp; PROOF</>}
+      />
     </main>
   );
 }

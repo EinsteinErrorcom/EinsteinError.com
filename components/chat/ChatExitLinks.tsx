@@ -35,9 +35,6 @@ export function ChatExitLinks() {
       <Link href="/" style={{ color: "#00FFFF", textDecoration: "underline" }}>
         Home
       </Link>
-      <Link href="/page2" style={{ color: "#00FFFF", textDecoration: "underline" }}>
-        Site tour
-      </Link>
       <button
         type="button"
         onClick={() => void handleSignOut()}

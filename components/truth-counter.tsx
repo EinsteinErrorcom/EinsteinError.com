@@ -107,8 +107,19 @@ export function TruthCounter() {
     >
       #&nbsp;&nbsp;of&nbsp;&nbsp;people&nbsp;&nbsp;who&nbsp;&nbsp;now
       <br />
-      know the TRUTH &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
-      {count !== null ? formatTruthCount(count) : "Loading..."}
+      know the TRUTH
+      <br />
+      &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
+      <span
+        style={{
+          color: "#C5A059",
+          border: "3px solid #C5A059",
+          padding: "4px 12px",
+          display: "inline-block",
+        }}
+      >
+        {count !== null ? formatTruthCount(count) : "Loading..."}
+      </span>
     </h1>
   );
 }

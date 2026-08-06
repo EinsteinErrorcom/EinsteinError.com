@@ -1,5 +1,6 @@
 "use client";
 
+import { PageEndFooter } from "@/components/page-end-footer";
 import { isTourMode, SITE_TOUR_QUERY } from "@/lib/site-tour";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
@@ -54,10 +55,7 @@ export default function Page7() {
             ? 'Tour preview — CSV download is disabled on this page.'
             : 'Your purchase list is being downloaded automatically.'}
         </p>
-        <footer className="page-footer">
-          <a className="page-footer__back" href="/page6">← Back to Page 6</a>
-          <a className="page-footer__back" href="/">← Back to Home</a>
-        </footer>
+        <PageEndFooter pageNumber={7} />
       </main>
     </div>
   );

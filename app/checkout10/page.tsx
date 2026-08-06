@@ -1,4 +1,5 @@
 import PaymentCheckout from '@/components/pricing/PaymentCheckout';
+import { PageEndFooter } from '@/components/page-end-footer';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -14,6 +15,7 @@ export default function Checkout10Page() {
         <Link href="/" className="pricing-checkout-page__back">
           ← Back to Home
         </Link>
+        <PageEndFooter pageNumber={10} />
       </div>
     </main>
   );

@@ -1,4 +1,5 @@
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+import { PageEndFooter } from "@/components/page-end-footer";
 
 export default function Page2() {
   return (
@@ -36,11 +37,6 @@ export default function Page2() {
           Email
             <br />
             <span className="contact-block__value">wild.book0719@fastmail.com</span>
-          </p>
-          <p className="contact-block__counter">
-            
-          # of people given the TRUTH  =  5,731,486
-        
           </p>
         </section>
         <h2 className="f-medium">
@@ -1316,10 +1312,7 @@ export default function Page2() {
         
           <div className="spacer spacer--sm"></div>
         </div>
-        <footer className="page-footer">
-          <a className="page-footer__next" href="/page3">Go  to  Next  Page →</a>
-          <p className="page-footer__end">END  of  PAGE</p>
-        </footer>
+        <PageEndFooter pageNumber={2} />
       </main>
     </div>
   );

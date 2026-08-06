@@ -1,5 +1,6 @@
 'use client';
 
+import { PageEndFooter } from '@/components/page-end-footer';
 import { CHECKOUT_PATH } from '@/lib/trial-gate';
 import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import Image from 'next/image';
@@ -61,6 +62,7 @@ export default function TrialExpired9Client() {
           }}
         />
       </button>
+      <PageEndFooter pageNumber={9} />
     </main>
   );
 }

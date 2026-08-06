@@ -1,4 +1,5 @@
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+import { PageEndFooter } from "@/components/page-end-footer";
 
 export default function Page4() {
   return (
@@ -24,7 +25,6 @@ export default function Page4() {
           <br />
           <span className="contact-block__value">wild.book0719@fastmail.com</span>
         </p>
-        <p className="contact-block__counter"># of people given the TRUTH  =  5,731,486</p>
       </section>
       <div className="f-medium">
         
@@ -896,12 +896,7 @@ Here, watch some Videos ...
           </span>
         </div>
       </div>
-      <footer className="page-footer">
-        <a className="page-footer__back" href="/page3">← Back to Page 3</a>
-        <a className="page-footer__next" href="/page5">Go to Next Page →</a>
-        <a className="page-footer__back" href="/">← Back to Home</a>
-        <p className="page-footer__end">END of PAGE</p>
-      </footer>
+      <PageEndFooter pageNumber={4} />
       </main>
     </div>
   );

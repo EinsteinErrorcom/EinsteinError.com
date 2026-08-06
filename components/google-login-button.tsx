@@ -49,45 +49,6 @@ declare global {
   }
 }
 
-function isMobileDevice() {
-  if (typeof navigator === "undefined") {
-    return false;
-  }
-
-  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-}
-
-function GoogleButtonLabel({ loading }: { loading?: boolean }) {
-  if (loading) {
-    return <>Signing you in...</>;
-  }
-
-  return (
-    <>
-      Click HERE To Log In
-      <br />
-      To Your Google Account
-    </>
-  );
-}
-
-function GoogleLogo() {
-  return (
-    <svg
-      aria-hidden="true"
-      width="28"
-      height="28"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
-      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
-      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
-      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
-    </svg>
-  );
-}
-
 function waitForGoogleIdentity(): Promise<void> {
   if (window.google?.accounts?.id) {
     return Promise.resolve();
@@ -169,13 +130,47 @@ export function GoogleLoginButton({
   const [loginError, setLoginError] = useState<string | null>(initialError);
   const [isLoading, setIsLoading] = useState(false);
   const [buttonReady, setButtonReady] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const initializedRef = useRef(false);
   const handleCredentialRef = useRef<(response: CredentialResponse) => void>(() => {});
 
-  useEffect(() => {
-    setIsMobile(isMobileDevice());
+  const stretchGoogleButton = useCallback(() => {
+    const overlay = overlayRef.current;
+    if (!overlay) {
+      return;
+    }
+
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+
+    for (const node of overlay.querySelectorAll("div, iframe")) {
+      if (!(node instanceof HTMLElement)) {
+        continue;
+      }
+
+      node.style.setProperty("width", "100%", "important");
+      node.style.setProperty("height", "100%", "important");
+      node.style.setProperty("min-height", "100%", "important");
+      node.style.setProperty("border", "none", "important");
+      node.style.setProperty("margin", "0", "important");
+    }
+  }, []);
+
+  const triggerGoogleSignIn = useCallback(() => {
+    const overlay = overlayRef.current;
+    if (!overlay) {
+      return;
+    }
+
+    const clickTarget =
+      overlay.querySelector('div[role="button"]') ??
+      overlay.querySelector("iframe") ??
+      overlay.firstElementChild;
+
+    if (clickTarget instanceof HTMLElement) {
+      clickTarget.click();
+    }
   }, []);
 
   useEffect(() => {
@@ -260,13 +255,14 @@ export function GoogleLoginButton({
           size: "large",
           shape: "rectangular",
           text: "continue_with",
-          width: overlayRef.current.offsetWidth || 400,
+          width: containerRef.current?.clientWidth || 700,
         });
 
         initializedRef.current = true;
 
         const markReady = () => {
           if (overlayRef.current?.querySelector("iframe")) {
+            stretchGoogleButton();
             setButtonReady(true);
           }
         };
@@ -291,7 +287,17 @@ export function GoogleLoginButton({
       cancelled = true;
       observer?.disconnect();
     };
-  }, [clientId]);
+  }, [clientId, stretchGoogleButton]);
+
+  useEffect(() => {
+    if (!buttonReady) {
+      return;
+    }
+
+    stretchGoogleButton();
+    const timer = window.setTimeout(stretchGoogleButton, 250);
+    return () => window.clearTimeout(timer);
+  }, [buttonReady, stretchGoogleButton]);
 
   const isInteractive = buttonReady && !isLoading;
 
@@ -301,68 +307,66 @@ export function GoogleLoginButton({
 
       <div style={{ marginTop: "20px" }}>
         <div
+          ref={containerRef}
+          role="button"
+          tabIndex={isInteractive ? 0 : -1}
+          aria-label="Sign in with Google to access MAX-LIT"
+          onClick={() => {
+            if (isInteractive) {
+              triggerGoogleSignIn();
+            }
+          }}
+          onKeyDown={(event) => {
+            if (isInteractive && (event.key === "Enter" || event.key === " ")) {
+              event.preventDefault();
+              triggerGoogleSignIn();
+            }
+          }}
           style={{
             position: "relative",
-            width: "104%",
+            width: "100%",
+            maxWidth: "700px",
             margin: "0 auto",
-            minHeight: isMobile ? "48px" : "88px",
+            cursor: isInteractive ? "pointer" : "default",
           }}
         >
-          {!isMobile && (
-            <button
-              id="google-login-btn"
-              type="button"
-              tabIndex={-1}
-              aria-hidden="true"
-              disabled={!isInteractive}
-              style={{ pointerEvents: "none", width: "100%" }}
-            >
-              <span className="google-login-btn__logo google-login-btn__logo--spacer" aria-hidden="true">
-                <GoogleLogo />
-              </span>
-              <span className="google-login-btn__text">
-                <GoogleButtonLabel loading={!isInteractive} />
-              </span>
-              <span className="google-login-btn__logo">
-                <GoogleLogo />
-              </span>
-            </button>
-          )}
+          <img
+            src="/QCOMPUTER.png"
+            alt=""
+            aria-hidden="true"
+            width={700}
+            height={1000}
+            style={{
+              width: "100%",
+              maxWidth: "700px",
+              aspectRatio: "700 / 1000",
+              height: "auto",
+              display: "block",
+              opacity: isInteractive ? 1 : 0.5,
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          />
 
           <div
             ref={overlayRef}
-            aria-label="Sign in with Google"
-            style={
-              isMobile
-                ? {
-                    minHeight: "48px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    opacity: isInteractive ? 1 : 0.5,
-                    pointerEvents: isInteractive ? "auto" : "none",
-                  }
-                : {
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: 2,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    overflow: "hidden",
-                    opacity: isInteractive ? 0.02 : 0,
-                    pointerEvents: isInteractive ? "auto" : "none",
-                    cursor: isInteractive ? "pointer" : "default",
-                  }
-            }
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 2,
+              overflow: "hidden",
+              opacity: 0.01,
+              pointerEvents: "none",
+            }}
           />
-
-          {isMobile && !isInteractive && (
-            <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px" }}>
-              Loading Google sign-in...
-            </p>
-          )}
         </div>
+
+        {!isInteractive && (
+          <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px" }}>
+            {isLoading ? "Signing you in..." : "Loading sign-in..."}
+          </p>
+        )}
 
         {loginError && (
           <p style={{ color: "#FF6B6B", fontSize: "16px", marginTop: "16px", lineHeight: 1.5 }}>

@@ -1,4 +1,5 @@
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
+import { PageEndFooter } from "@/components/page-end-footer";
 
 export default function Page3() {
   return (
@@ -24,7 +25,6 @@ export default function Page3() {
             <br />
             <span className="contact-block__value">wild.book0719@fastmail.com</span>
           </p>
-          <p className="contact-block__counter"># of people given the TRUTH  =  5,731,486</p>
         </section>
         <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
           
@@ -1689,11 +1689,7 @@ export default function Page3() {
         <figure className="media"><img src="/NEWTONG.png" alt="Newton G" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <br />
         <figure className="media"><img src="/NEWTONG2.png" alt="Newton G2" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <footer className="page-footer">
-          <a className="page-footer__back" href="/">← Back to Home</a>
-          <a className="page-footer__next" href="/page4">Go  to  Next  Page →</a>
-          <p className="page-footer__end">END  of  PAGE</p>
-        </footer>
+        <PageEndFooter pageNumber={3} />
       </main>
     </div>
   );

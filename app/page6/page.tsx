@@ -1,3 +1,5 @@
+import { PageEndFooter } from '@/components/page-end-footer';
+
 export default function Page6() {
   return (
     <div className="page-shell">
@@ -6,11 +8,7 @@ export default function Page6() {
         <p style={{ color: '#FFFF00', marginTop: '24px', fontSize: '20px' }}>
           Content coming soon.
         </p>
-        <footer className="page-footer">
-          <a className="page-footer__back" href="/page5">← Back to Page 5</a>
-          <a className="page-footer__next" href="/page7">Go to Next Page →</a>
-          <a className="page-footer__back" href="/">← Back to Home</a>
-        </footer>
+        <PageEndFooter pageNumber={6} />
       </main>
     </div>
   );
