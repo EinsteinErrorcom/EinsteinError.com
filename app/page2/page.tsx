@@ -18,7 +18,7 @@ export default function Page2() {
           <br />
           these MESSED pages are being edited.
           <br />
-          Thankfully though from them you can still gleen
+          Thankfully though from them you can still EASILY gleen
           <br />
           Einstein's Monumental ERROR !
         </p>
@@ -107,31 +107,7 @@ export default function Page2() {
           <div className="spacer spacer--sm"></div>
           <span className="f-massive c-red">*   *   *   *   *</span>
         </div>
-        <div className="f-medium">
-          <i>
-            You   better   understand
-            <br />
-            ( Here   Below )
-            <br />
-            that  this  Unification  of
-            <br />
-            37   Fundamental
-            <br />
-            Physics  Constants, is
-            <br />
-            - absolute   PROOF -
-            <br />
-            far   beyond   anything
-            <br />
-            that  you  could
-            <br />
-            ever  Refute  !
-          </i>
-        </div>
         <div className="spacer spacer--lg"></div>
-        <br />
-        <figure className="media"><img src="/UNIFY.png" alt="Unification Table" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="spacer spacer--sm"></div>
         <div className="f-large letter-spaced">
           <span className="c-red"><strong>ATTENTION  !</strong></span>
           <br />
