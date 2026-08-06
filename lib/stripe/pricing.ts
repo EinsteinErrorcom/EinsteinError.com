@@ -1,5 +1,6 @@
 export type PricingTier = {
   priceId: string;
+  price: string;
   label: string;
   description: string;
   amountCents: number;
@@ -11,21 +12,24 @@ export const STRIPE_PRODUCT_ID = 'prod_V0AXYbWwPdLkwz';
 export const PRICING_TIERS: PricingTier[] = [
   {
     priceId: 'price_1U0ACSC39oHx6wOFTQfZCCTF',
-    label: '$15 \t\t( for 3 Hours Time ) \t( Cost = 5 dollars per Hour )',
+    price: '$15',
+    label: ' \t( for 3 Hours Time ) \t( Cost = 5 dollars per Hour )',
     description: '',
     amountCents: 1500,
     currency: 'usd',
   },
   {
     priceId: 'price_1U0ACSC39oHx6wOFWoJosDHi',
-    label: '$75 \t\t( for 24 Hours Time )\t( Cost = 4 dollars per Hour )',
+    price: '$75',
+    label: ' \t( for 24 Hours Time )\t( Cost = 4 dollars per Hour )',
     description: '',
     amountCents: 7500,
     currency: 'usd',
   },
   {
     priceId: 'price_1U0ACSC39oHx6wOFgtNTWLNV',
-    label: '$400\t( for 7 Days Time )  \t( Cost = 3 dollars per Hour )',
+    price: '$400',
+    label: ' \t( for 7 Days Time )  \t( Cost = 3 dollars per Hour )',
     description: '',
     amountCents: 40000,
     currency: 'usd',

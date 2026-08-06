@@ -77,7 +77,11 @@ export default function PaymentCheckout() {
               onClick={() => startCheckout(tier)}
               disabled={Boolean(loadingTierId)}
             >
-              <span className="payment-checkout__tier-label">{tier.label}</span>
+              <span className="payment-checkout__tier-label">
+                {'\t'}
+                <span className="payment-checkout__tier-price">{tier.price}</span>
+                {tier.label}
+              </span>
               <span className="payment-checkout__tier-desc">{tier.description}</span>
               {isLoading && (
                 <span className="payment-checkout__tier-loading">

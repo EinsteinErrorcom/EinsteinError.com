@@ -631,6 +631,12 @@ p {
   overflow-wrap: anywhere;
 }
 
+.payment-checkout__tier-price {
+  color: #ffffff;
+  font-size: calc(1.15rem + 5px);
+  font-weight: 700;
+}
+
 .payment-checkout__tier-desc {
   font-size: 0.95rem;
   color: #ddd;
