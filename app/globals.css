@@ -798,7 +798,8 @@ p {
 }
 
 a.site-tour-start-link,
-a.site-tour-start-link[target='_blank'] {
+a.site-tour-start-link[target='_blank'],
+button.site-tour-start-link {
   display: inline-block;
   color: #1a1a1a;
   font-weight: 700;
@@ -807,8 +808,93 @@ a.site-tour-start-link[target='_blank'] {
 }
 
 a.site-tour-start-link:hover,
-a.site-tour-start-link[target='_blank']:hover {
+a.site-tour-start-link[target='_blank']:hover,
+button.site-tour-start-link:hover {
   color: #40e0d0;
+}
+
+button.site-tour-start-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.purchases-float {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.purchases-float__panel {
+  width: min(520px, 100%);
+  max-height: min(70vh, 640px);
+  overflow: auto;
+  padding: 20px 18px 16px;
+  background: #161b22;
+  border: 3px solid #c5a059;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.purchases-float__title {
+  margin: 0 0 12px;
+  color: #00ffff;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.purchases-float__status {
+  margin: 0 0 16px;
+  color: #c5a059;
+  font-style: italic;
+}
+
+.purchases-float__error {
+  margin: 0 0 16px;
+  color: #ff6b6b;
+}
+
+.purchases-float__textarea {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 2px solid #c5a059;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  resize: vertical;
+  text-align: center;
+}
+
+.purchases-float__close {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: 2px solid #c5a059;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #00ffff;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.purchases-float__close:hover {
+  border-color: #00ffff;
 }
 
 .users-onsite-box {

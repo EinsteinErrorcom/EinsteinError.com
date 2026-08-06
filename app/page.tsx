@@ -2,6 +2,7 @@ import { PageEndFooter } from "@/components/page-end-footer";
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
+import { PurchasesLink } from "@/components/purchases-link";
 import { SiteTourStartLink } from "@/components/site-tour-bar";
 import { TruthCounter } from "@/components/truth-counter";
 import { getGoogleClientId } from "@/lib/site-url";
@@ -76,6 +77,8 @@ export default async function Home({ searchParams }: HomeProps) {
       <ScrollToAuthSection />
       <p style={{ margin: '16px auto 0', maxWidth: '1040px' }}>
         <SiteTourStartLink />
+        {'\u00A0'.repeat(12)}
+        <PurchasesLink />
       </p>
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       <CheckoutBannerLink />
@@ -104,7 +107,7 @@ export default async function Home({ searchParams }: HomeProps) {
         has now enabled the<br/>
         production of<br/>
         the &quot; <strong>NEW</strong> &quot;<br/><br/>
-        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#FFFFFF' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span><br/>
+        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#FFFFFF' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span><br/><br/>
       </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>

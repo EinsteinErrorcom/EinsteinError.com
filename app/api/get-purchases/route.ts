@@ -1,15 +1,61 @@
-import { createClient } from "@/lib/supabase/server";
-import { NextResponse } from "next/server";
+import { createServiceRoleClient } from '@/lib/supabase/admin';
+import { createClient } from '@/lib/supabase/server';
+import { NextResponse } from 'next/server';
+
+export const runtime = 'nodejs';
+
+type PurchaseRow = {
+  id: string;
+  trial_start_at: string | null;
+};
+
+async function readPurchasesWithServiceRole(): Promise<PurchaseRow[] | null> {
+  try {
+    const admin = createServiceRoleClient();
+    const { data, error } = await admin
+      .from('profiles')
+      .select('id, trial_start_at')
+      .eq('is_subscribed', true)
+      .order('trial_start_at', { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    return data ?? [];
+  } catch {
+    return null;
+  }
+}
+
+async function readPurchasesWithRpc(): Promise<PurchaseRow[] | null> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase.rpc('get_subscribed_purchases');
+
+    if (error) {
+      throw error;
+    }
+
+    return (data as PurchaseRow[] | null) ?? [];
+  } catch {
+    return null;
+  }
+}
 
 export async function GET() {
-  const supabase = await createClient();
-  
-  const { data, error } = await supabase
-    .from("profiles")
-    .select("id, trial_start_at")
-    .eq("is_subscribed", true);
+  const purchases =
+    (await readPurchasesWithServiceRole()) ?? (await readPurchasesWithRpc());
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (purchases === null) {
+    return NextResponse.json(
+      {
+        error:
+          'Unable to load purchases. Add SUPABASE_SERVICE_ROLE_KEY to .env.local (Supabase Dashboard → Settings → API → service_role), apply the latest Supabase migration, then restart npm run dev.',
+      },
+      { status: 500 }
+    );
+  }
 
-  return NextResponse.json(data);
+  return NextResponse.json(purchases);
 }

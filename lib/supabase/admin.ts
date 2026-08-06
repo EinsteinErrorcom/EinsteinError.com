@@ -7,7 +7,9 @@ export function createServiceRoleClient() {
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 
   if (!url || !serviceRoleKey) {
-    throw new Error("Supabase service role credentials are not configured");
+    throw new Error(
+      "Supabase service role credentials are not configured. Add SUPABASE_SERVICE_ROLE_KEY to .env.local (Supabase Dashboard → Settings → API → service_role), then restart npm run dev."
+    );
   }
 
   return createClient(url, serviceRoleKey);

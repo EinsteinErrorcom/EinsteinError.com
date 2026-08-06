@@ -1,60 +1,68 @@
 "use client";
 
 import { PageEndFooter } from "@/components/page-end-footer";
+import { PurchasesList } from "@/components/purchases-list";
+import { downloadPurchaseCsv, fetchPurchases, type PurchaseRow } from "@/lib/purchases";
 import { isTourMode, SITE_TOUR_QUERY } from "@/lib/site-tour";
-import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Page7() {
   const searchParams = useSearchParams();
   const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
+  const [purchases, setPurchases] = useState<PurchaseRow[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (tourMode) {
+      setLoading(false);
       return;
     }
 
-    const downloadPurchases = async () => {
+    const loadPurchases = async () => {
       try {
-        const res = await fetch("/api/get-purchases");
-        const data = await res.json();
-
-        if (data.error) {
-          console.error("Error fetching data:", data.error);
-          return;
-        }
-
-        const headers = ["ID", "Trial Start"];
-        const rows = data.map((row: { id: string; trial_start_at: string }) =>
-          `${row.id},${row.trial_start_at}`
-        );
-        const csvContent = [headers.join(","), ...rows].join("\n");
-
-        const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.setAttribute("href", url);
-        link.setAttribute("download", "purchase_list.csv");
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const rows = await fetchPurchases();
+        setPurchases(rows);
+        downloadPurchaseCsv(rows);
       } catch (err) {
-        console.error("Failed to download:", err);
+        setError(err instanceof Error ? err.message : "Unable to load purchases");
+      } finally {
+        setLoading(false);
       }
     };
 
-    downloadPurchases();
+    void loadPurchases();
   }, [tourMode]);
 
   return (
     <div className="page-shell">
-      <main className="page-wrapper" style={{ padding: "50px", textAlign: "center" }}>
-        <h1 style={{ color: '#00FFFF' }}>Report Generating...</h1>
-        <p>
-          {tourMode
-            ? 'Tour preview — CSV download is disabled on this page.'
-            : 'Your purchase list is being downloaded automatically.'}
-        </p>
+      <main className="page-wrapper" style={{ padding: "50px 16px", textAlign: "center" }}>
+        <h1 style={{ color: "#00FFFF", fontStyle: "italic" }}>All Purchases</h1>
+        {tourMode && (
+          <p style={{ color: "#FFFF00", fontStyle: "italic" }}>
+            Tour preview — purchase list and download are disabled.
+          </p>
+        )}
+        {loading && <p style={{ color: "#C5A059" }}>Loading purchases…</p>}
+        {error && <p style={{ color: "#FF6B6B" }}>{error}</p>}
+        {!loading && !error && !tourMode && (
+          <>
+            <p style={{ color: "#C5A059", marginBottom: "32px" }}>
+              Your purchase list has been downloaded automatically.
+            </p>
+            <div
+              style={{
+                fontWeight: "bold",
+                fontStyle: "italic",
+                color: "#00FFFF",
+                fontSize: "20px",
+              }}
+            >
+              <PurchasesList purchases={purchases} />
+            </div>
+          </>
+        )}
         <PageEndFooter pageNumber={7} />
       </main>
     </div>
