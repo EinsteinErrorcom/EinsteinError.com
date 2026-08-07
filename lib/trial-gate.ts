@@ -18,6 +18,16 @@ export const SPARE_PATH = '/spare12';
 export const SIGN_IN_SECTION_ID = 'auth-section';
 export const SIGN_IN_PATH = `/#${SIGN_IN_SECTION_ID}`;
 
+/** Query param preserved when Stripe returns before auth session is available */
+export const CHECKOUT_SESSION_QUERY = 'checkout_session_id';
+
+export function buildSignInPathWithCheckoutSession(checkoutSessionId: string): string {
+  const params = new URLSearchParams({
+    [CHECKOUT_SESSION_QUERY]: checkoutSessionId,
+  });
+  return `/?${params.toString()}#${SIGN_IN_SECTION_ID}`;
+}
+
 export function shouldRedirectToPricing(
   profile: ProfileTrial | null | undefined
 ): boolean {

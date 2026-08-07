@@ -10,6 +10,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 type GoogleLoginButtonProps = {
   googleClientId?: string | null;
   initialError?: string | null;
+  checkoutSessionId?: string | null;
 };
 
 type CredentialResponse = {
@@ -125,6 +126,7 @@ async function ensureProfileAfterSignIn(supabase: SupabaseClient): Promise<void>
 export function GoogleLoginButton({
   googleClientId,
   initialError = null,
+  checkoutSessionId = null,
 }: GoogleLoginButtonProps) {
   const clientId = googleClientId?.trim() || EXPECTED_CLIENT_ID;
   const [loginError, setLoginError] = useState<string | null>(initialError);
@@ -210,7 +212,10 @@ export function GoogleLoginButton({
       }
 
       await ensureProfileAfterSignIn(supabase);
-      window.location.assign(CHAT_PATH);
+      const destination = checkoutSessionId
+        ? `${CHAT_PATH}?session_id=${encodeURIComponent(checkoutSessionId)}`
+        : CHAT_PATH;
+      window.location.assign(destination);
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Google sign-in failed.";
@@ -218,7 +223,7 @@ export function GoogleLoginButton({
       setLoginError(message);
       setIsLoading(false);
     }
-  }, []);
+  }, [checkoutSessionId]);
 
   useEffect(() => {
     handleCredentialRef.current = handleCredential;

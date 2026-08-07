@@ -5,6 +5,7 @@ import { fulfillCheckoutSession } from '@/lib/stripe/subscription';
 import { createClient } from '@/lib/supabase/server';
 import { isTourMode } from '@/lib/site-tour';
 import {
+  buildSignInPathWithCheckoutSession,
   CHAT_PATH,
   fetchProfileTrial,
   shouldRedirectToPricing,
@@ -47,9 +48,12 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
   }
 
   const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { user } } = await supabase.auth.getUser();
 
-  if (!session) {
+  if (!user) {
+    if (params.session_id) {
+      redirect(buildSignInPathWithCheckoutSession(params.session_id));
+    }
     redirect(SIGN_IN_PATH);
   }
 
@@ -57,7 +61,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
     try {
       const fulfilled = await fulfillCheckoutSession(
         params.session_id,
-        session.user.id
+        user.id
       );
       if (fulfilled) {
         redirect(CHAT_PATH);
@@ -67,7 +71,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
     }
   }
 
-  const profile = await fetchProfileTrial(supabase, session.user.id);
+  const profile = await fetchProfileTrial(supabase, user.id);
   if (shouldRedirectToPricing(profile)) {
     redirect(TRIAL_EXPIRED_PATH);
   }
@@ -76,7 +80,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
     <main className="p-8">
       <ChatExitLinks />
       <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">AI Chat Window</h1>
-      <Chatbox embedded historyUserId={session.user.id} />
+      <Chatbox embedded historyUserId={user.id} />
       <PageEndFooter pageNumber={8} />
     </main>
   );

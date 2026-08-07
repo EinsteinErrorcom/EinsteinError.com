@@ -17,11 +17,13 @@ type HomeProps = {
     code?: string;
     error?: string;
     error_description?: string;
+    checkout_session_id?: string;
   }>;
 };
 
 export default async function Home({ searchParams }: HomeProps) {
   const params = await searchParams;
+  const checkoutSessionId = params.checkout_session_id?.trim() || null;
 
   // Supabase sometimes returns OAuth params to Site URL (/) instead of /auth/callback
   if (params.code || params.error) {
@@ -60,6 +62,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <GoogleLoginButton
             googleClientId={googleClientId}
             initialError={authError}
+            checkoutSessionId={checkoutSessionId}
           />
         </div>
       </main>
@@ -154,6 +157,11 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
 
       <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ margin: '40px auto', maxWidth: '1040px', textAlign: 'center' }}>
+        {checkoutSessionId && (
+          <div style={{ color: '#00FF00', fontSize: '20px', marginBottom: '20px', lineHeight: 1.5 }}>
+            <strong>Payment received.</strong> Sign in with Google below to activate your MAX-LIT access.
+          </div>
+        )}
         {devResetMessage && (
           <div style={{ color: '#FFFF00', fontSize: '18px', marginBottom: '20px', lineHeight: 1.5 }}>
             <strong>Dev reset:</strong> {devResetMessage}
@@ -163,7 +171,7 @@ export default async function Home({ searchParams }: HomeProps) {
             </a>
           </div>
         )}
-        <GoogleLoginButton googleClientId={googleClientId} key="home-login" />
+        <GoogleLoginButton googleClientId={googleClientId} key="home-login" checkoutSessionId={checkoutSessionId} />
       </div>
       <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1 }}>
         &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;<br /><span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in above.</span>
