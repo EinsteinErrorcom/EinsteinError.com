@@ -156,7 +156,15 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing this image<br/>onto a Webpage.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for Promoting the<br/>Biggest Physics Discovery in 100 Years !</div>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div><br/><br/>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
+        <br/><br/><br/>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
+          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}While using MAX-LIT, be sure to ask it;<br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }}>1.</span>{'\t'}List advancements in (mAZ) Gravitational Physics.<br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }}>2.</span>{'\t'}List advancements in (mAZ) Chemistry.<br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }}>3.</span>{'\t'}List advancements in (mAZ) Quantum Computing.
+        </div>
+        <br/><br/>
       </div>
 
       <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ margin: '40px auto', maxWidth: '1040px', textAlign: 'center' }}>
