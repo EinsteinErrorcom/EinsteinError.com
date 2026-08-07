@@ -89,6 +89,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/stripe-checkout.html',
+        destination: '/checkout10',
+        permanent: true,
+      },
+      {
         source: '/chat11',
         destination: '/timeexpired11',
         permanent: true,

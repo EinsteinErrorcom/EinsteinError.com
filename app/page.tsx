@@ -6,7 +6,7 @@ import { PurchasesLink } from "@/components/purchases-link";
 import { SiteTourStartLink } from "@/components/site-tour-bar";
 import { TruthCounter } from "@/components/truth-counter";
 import { getGoogleClientId } from "@/lib/site-url";
-import { CHAT_PATH, SIGN_IN_SECTION_ID } from "@/lib/trial-gate";
+import { CHECKOUT_SESSION_QUERY, CHAT_PATH, SIGN_IN_SECTION_ID } from "@/lib/trial-gate";
 import { redirect } from "next/navigation";
 
 type HomeProps = {
@@ -32,6 +32,9 @@ export default async function Home({ searchParams }: HomeProps) {
     if (params.error) callbackParams.set('error', params.error);
     if (params.error_description) {
       callbackParams.set('error_description', params.error_description);
+    }
+    if (checkoutSessionId) {
+      callbackParams.set(CHECKOUT_SESSION_QUERY, checkoutSessionId);
     }
     callbackParams.set('next', CHAT_PATH);
     redirect(`/auth/callback?${callbackParams.toString()}`);

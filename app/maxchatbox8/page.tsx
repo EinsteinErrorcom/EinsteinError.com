@@ -69,6 +69,28 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
     } catch (err) {
       console.error('[maxchatbox8] checkout fulfillment failed:', err);
     }
+
+    const profileAfterPayment = await fetchProfileTrial(supabase, user.id);
+    if (!shouldRedirectToPricing(profileAfterPayment)) {
+      redirect(CHAT_PATH);
+    }
+
+    const refreshPath = `${CHAT_PATH}?session_id=${encodeURIComponent(params.session_id)}`;
+    return (
+      <main className="p-8">
+        <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">Activating your payment</h1>
+        <p style={{ color: '#FFFF00', fontStyle: 'italic', marginBottom: '16px', lineHeight: 1.6 }}>
+          Your Stripe payment was received. We are activating your MAX-LIT access now.
+        </p>
+        <p style={{ color: '#00FFFF', marginBottom: '24px', lineHeight: 1.6 }}>
+          If chat does not open within a minute, refresh this page or contact us on WhatsApp (+17802707009).
+        </p>
+        <a href={refreshPath} style={{ color: '#C5A059', fontWeight: 'bold', textDecoration: 'underline' }}>
+          Refresh to open ChatBox
+        </a>
+        <PageEndFooter pageNumber={8} />
+      </main>
+    );
   }
 
   const profile = await fetchProfileTrial(supabase, user.id);

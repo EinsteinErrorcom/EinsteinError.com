@@ -2,7 +2,7 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { getSupabaseEnv, SUPABASE_CONFIG_ERROR } from "@/lib/supabase/env";
-import { CHAT_PATH } from "@/lib/trial-gate";
+import { buildChatPathWithCheckoutSession, CHAT_PATH } from "@/lib/trial-gate";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import Script from "next/script";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -213,7 +213,7 @@ export function GoogleLoginButton({
 
       await ensureProfileAfterSignIn(supabase);
       const destination = checkoutSessionId
-        ? `${CHAT_PATH}?session_id=${encodeURIComponent(checkoutSessionId)}`
+        ? buildChatPathWithCheckoutSession(checkoutSessionId)
         : CHAT_PATH;
       window.location.assign(destination);
     } catch (err: unknown) {

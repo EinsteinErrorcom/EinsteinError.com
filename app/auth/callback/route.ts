@@ -2,6 +2,9 @@ import { createTrialStartCookie } from '@/lib/supabase/middleware';
 import { applyPendingCookies, createRouteHandlerClient, type PendingAuthCookie } from '@/lib/supabase/route-handler';
 import { getSiteOrigin } from '@/lib/site-url';
 import {
+  buildAuthErrorPath,
+  buildChatPathWithCheckoutSession,
+  CHECKOUT_SESSION_QUERY,
   fetchProfileTrial,
   shouldRedirectToPricing,
   TRIAL_EXPIRED_PATH,
@@ -18,17 +21,22 @@ export async function GET(request: NextRequest) {
   const code = requestUrl.searchParams.get('code');
   const oauthError = requestUrl.searchParams.get('error');
   const errorDescription = requestUrl.searchParams.get('error_description');
+  const checkoutSessionId =
+    requestUrl.searchParams.get(CHECKOUT_SESSION_QUERY)?.trim() || null;
   const siteOrigin = getSiteOrigin(request);
 
   if (oauthError) {
     const reason = errorDescription || oauthError;
     return NextResponse.redirect(
-      `${siteOrigin}/?auth=error&reason=${encodeURIComponent(reason)}`
+      `${siteOrigin}${buildAuthErrorPath(reason, checkoutSessionId)}`
     );
   }
 
   if (!code) {
-    return redirectTo(request, '/?auth=error');
+    return redirectTo(
+      request,
+      buildAuthErrorPath('Missing OAuth code', checkoutSessionId)
+    );
   }
 
   const pendingCookies: PendingAuthCookie[] = [];
@@ -36,7 +44,7 @@ export async function GET(request: NextRequest) {
 
   if (!routeClient) {
     return NextResponse.redirect(
-      `${siteOrigin}/?auth=error&reason=${encodeURIComponent('Sign-in is not configured')}`
+      `${siteOrigin}${buildAuthErrorPath('Sign-in is not configured', checkoutSessionId)}`
     );
   }
 
@@ -44,7 +52,7 @@ export async function GET(request: NextRequest) {
 
   if (error) {
     return NextResponse.redirect(
-      `${siteOrigin}/?auth=error&reason=${encodeURIComponent(error.message)}`
+      `${siteOrigin}${buildAuthErrorPath(error.message, checkoutSessionId)}`
     );
   }
 
@@ -68,7 +76,7 @@ export async function GET(request: NextRequest) {
 
       if (profileError) {
         return NextResponse.redirect(
-          `${siteOrigin}/?auth=error&reason=${encodeURIComponent('Could not create profile')}`
+          `${siteOrigin}${buildAuthErrorPath('Could not create profile', checkoutSessionId)}`
         );
       }
 
@@ -80,9 +88,13 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const profile = await fetchProfileTrial(routeClient.supabase, user.id);
-    if (shouldRedirectToPricing(profile)) {
-      destination = TRIAL_EXPIRED_PATH;
+    if (checkoutSessionId) {
+      destination = buildChatPathWithCheckoutSession(checkoutSessionId);
+    } else {
+      const profile = await fetchProfileTrial(routeClient.supabase, user.id);
+      if (shouldRedirectToPricing(profile)) {
+        destination = TRIAL_EXPIRED_PATH;
+      }
     }
   }
 

@@ -28,6 +28,23 @@ export function buildSignInPathWithCheckoutSession(checkoutSessionId: string): s
   return `/?${params.toString()}#${SIGN_IN_SECTION_ID}`;
 }
 
+/** Stripe success redirect — fulfill subscription on the chat page */
+export function buildChatPathWithCheckoutSession(checkoutSessionId: string): string {
+  const params = new URLSearchParams({ session_id: checkoutSessionId });
+  return `${CHAT_PATH}?${params.toString()}`;
+}
+
+export function buildAuthErrorPath(reason: string, checkoutSessionId?: string | null): string {
+  const params = new URLSearchParams({
+    auth: 'error',
+    reason,
+  });
+  if (checkoutSessionId) {
+    params.set(CHECKOUT_SESSION_QUERY, checkoutSessionId);
+  }
+  return `/?${params.toString()}`;
+}
+
 export function shouldRedirectToPricing(
   profile: ProfileTrial | null | undefined
 ): boolean {
