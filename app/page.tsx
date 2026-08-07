@@ -175,16 +175,17 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
         )}
         <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1, marginBottom: '16px' }}>
-          <span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in below.<br/></span>
-          <span style={{ display: 'inline-block', transform: 'rotate(180deg)' }}>
+          <span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in below.</span><br/><br/>
+          <span style={{ display: 'inline-block', transform: 'rotate(180deg)', fontSize: '30px' }}>
             &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;
           </span>
         </span>
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" checkoutSessionId={checkoutSessionId} />
+        <br/>
+        <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1, fontSize: '30px', marginTop: '0' }}>
+          &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;<br/><span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in above.</span>
+        </span>
       </div>
-      <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1 }}>
-        &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;<br /><span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in above.</span>
-      </span>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ width: '75%', height: '6px', backgroundColor: '#C5A059', margin: '20px auto' }}></div>
       <div className="spacer" style={{ height: '100px' }}></div>

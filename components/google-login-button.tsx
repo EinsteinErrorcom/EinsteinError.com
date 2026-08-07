@@ -368,7 +368,7 @@ export function GoogleLoginButton({
         </div>
 
         {!isInteractive && (
-          <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px" }}>
+          <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px", marginBottom: "0" }}>
             {isLoading ? "Signing you in..." : "Loading sign-in..."}
           </p>
         )}
