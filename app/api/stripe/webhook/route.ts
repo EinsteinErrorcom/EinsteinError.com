@@ -53,7 +53,7 @@ export async function POST(req: Request) {
         session.metadata?.supabase_user_id ?? session.client_reference_id ?? null;
 
       if (userId) {
-        await markUserSubscribed(userId);
+        await markUserSubscribed(userId, session.metadata?.price_id ?? null);
       }
     }
 
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
       const userId = paymentIntent.metadata.supabase_user_id;
 
       if (userId) {
-        await markUserSubscribed(userId);
+        await markUserSubscribed(userId, paymentIntent.metadata.price_id ?? null);
       }
     }
 

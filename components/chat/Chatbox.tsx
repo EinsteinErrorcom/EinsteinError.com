@@ -5,7 +5,9 @@ import { useEffect, useState } from 'react';
 import { getChatAccessToken } from '@/app/actions/chat';
 import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-billing-help';
 import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
-import { CHAT_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
+import type { AccessTier } from '@/lib/access';
+import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
+import { CHAT_PATH, TIME_EXPIRED_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
 
 type ChatMessage = { role: 'user' | 'ai'; text: string };
 
@@ -14,6 +16,8 @@ type ChatboxProps = {
   onClose?: () => void;
   /** When set, chat history is saved in this browser for this user id. */
   historyUserId?: string;
+  accessTier?: AccessTier;
+  accessStartedAt?: string;
 };
 
 const CHAT_STORAGE_PREFIX = 'maxlit-chat:';
@@ -74,6 +78,8 @@ export default function Chatbox({
   embedded = false,
   onClose,
   historyUserId,
+  accessTier,
+  accessStartedAt,
 }: ChatboxProps) {
   const [isOpen, setIsOpen] = useState(embedded);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -151,7 +157,11 @@ export default function Chatbox({
 
       if (!res.ok) {
         if (data.error === 'Trial expired') {
-          window.location.assign(TRIAL_EXPIRED_PATH);
+          const expiredPath =
+            accessTier && accessTier !== 'trial'
+              ? TIME_EXPIRED_PATH
+              : TRIAL_EXPIRED_PATH;
+          window.location.assign(expiredPath);
           return;
         }
         if (res.status === 429) {
@@ -206,16 +216,17 @@ export default function Chatbox({
   return (
     <div className={containerClass}>
       <div className="relative p-4 bg-[#0d1117] flex items-center justify-center border-b border-[#C5A059]">
-        <div className="text-center px-8">
-          <span className="text-[#00FFFF] font-bold italic">
-            Welcome to your &nbsp;1-Hour&nbsp; FREE&nbsp; trial of the
-            <br />
-            World&apos;s most POWERFUL&nbsp;&nbsp;&quot;Pure&quot;&nbsp;&nbsp;Physics processor.
-          </span>
+        <div className="text-center px-8 w-full max-w-md">
+          {accessTier && accessStartedAt ? (
+            <CountdownTimerBox
+              accessTier={accessTier}
+              accessStartedAt={accessStartedAt}
+            />
+          ) : null}
           {!embedded && (
             <Link
               href={CHAT_PATH}
-              className="block text-[#C5A059] text-sm underline mt-1 hover:text-[#FFFF00]"
+              className="block text-[#C5A059] text-sm underline mt-3 hover:text-[#FFFF00]"
             >
               Go to Full-Screen Mode
             </Link>

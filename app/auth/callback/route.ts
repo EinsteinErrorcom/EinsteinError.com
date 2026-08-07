@@ -72,6 +72,7 @@ export async function GET(request: NextRequest) {
         id: user.id,
         trial_start_at: trialStartAt,
         is_subscribed: false,
+        access_tier: 'trial',
       });
 
       if (profileError) {

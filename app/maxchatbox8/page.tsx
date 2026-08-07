@@ -1,4 +1,5 @@
 import Chatbox from '@/components/chat/Chatbox';
+import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
 import { ChatExitLinks } from '@/components/chat/ChatExitLinks';
 import { PageEndFooter } from '@/components/page-end-footer';
 import { fulfillCheckoutSession } from '@/lib/stripe/subscription';
@@ -8,10 +9,11 @@ import {
   buildSignInPathWithCheckoutSession,
   CHAT_PATH,
   fetchProfileTrial,
+  getAccessExpiredPath,
   shouldRedirectToPricing,
   SIGN_IN_PATH,
-  TRIAL_EXPIRED_PATH,
 } from '@/lib/trial-gate';
+import { resolveCountdownProps } from '@/lib/access';
 import { redirect } from 'next/navigation';
 
 type MaxChatbox8PageProps = {
@@ -32,13 +34,16 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
           data-tour-block="true"
           className="w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#C5A059] rounded-xl shadow-2xl flex flex-col overflow-hidden"
         >
-          <div className="p-4 bg-[#0d1117] border-b border-[#C5A059] text-center text-[#00FFFF] font-bold italic">
-            MAX-LIT Chatbox preview
+          <div className="p-4 bg-[#0d1117] border-b border-[#C5A059] text-center">
+            <CountdownTimerBox
+              accessTier="trial"
+              accessStartedAt={new Date().toISOString()}
+            />
           </div>
           <div className="flex-1 p-4 text-[#00FFFF] text-left">
             <p>After Google Sign-In, users ask physics questions here.</p>
             <p style={{ marginTop: '16px', color: '#C5A059' }}>
-              Example: &quot;What is the velocity of gravity in mAZ physics?&quot;
+              Example: &quot;What is the Velocity of Gravity in PURE ( mAZ ) Physics?&quot;
             </p>
           </div>
         </div>
@@ -94,15 +99,22 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
   }
 
   const profile = await fetchProfileTrial(supabase, user.id);
-  if (shouldRedirectToPricing(profile)) {
-    redirect(TRIAL_EXPIRED_PATH);
+  if (profile && shouldRedirectToPricing(profile)) {
+    redirect(getAccessExpiredPath(profile));
   }
+
+  const countdown = profile ? resolveCountdownProps(profile) : null;
 
   return (
     <main className="p-8">
       <ChatExitLinks />
       <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">AI Chat Window</h1>
-      <Chatbox embedded historyUserId={user.id} />
+      <Chatbox
+        embedded
+        historyUserId={user.id}
+        accessTier={countdown?.accessTier}
+        accessStartedAt={countdown?.accessStartedAt}
+      />
       <PageEndFooter pageNumber={8} />
     </main>
   );

@@ -1,4 +1,4 @@
-import { isProfileTrialActive } from '@/lib/trial';
+import { isAccessActive } from '@/lib/access';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 export type ChatGatekeeperFailure = {
@@ -17,6 +17,7 @@ export type ChatGatekeeperResult = ChatGatekeeperFailure | ChatGatekeeperSuccess
 type ProfileRow = {
   trial_start_at: string | null;
   is_subscribed: boolean | null;
+  access_tier: string | null;
 };
 
 async function loadOrCreateProfile(
@@ -25,7 +26,7 @@ async function loadOrCreateProfile(
 ): Promise<ProfileRow | null> {
   const { data: existing } = await supabase
     .from('profiles')
-    .select('trial_start_at, is_subscribed')
+    .select('trial_start_at, is_subscribed, access_tier')
     .eq('id', userId)
     .maybeSingle();
 
@@ -40,8 +41,9 @@ async function loadOrCreateProfile(
       id: userId,
       trial_start_at: trialStartAt,
       is_subscribed: false,
+      access_tier: 'trial',
     })
-    .select('trial_start_at, is_subscribed')
+    .select('trial_start_at, is_subscribed, access_tier')
     .single();
 
   if (insertError || !created) {
@@ -61,7 +63,7 @@ export async function validateChatAccess(
     return { ok: false, status: 404, error: 'Profile not found' };
   }
 
-  if (!isProfileTrialActive(profile)) {
+  if (!isAccessActive(profile)) {
     return { ok: false, status: 403, error: 'Trial expired' };
   }
 

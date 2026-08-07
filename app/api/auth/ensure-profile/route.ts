@@ -26,6 +26,7 @@ export async function POST(req: Request) {
     id: user.id,
     trial_start_at: trialStartAt,
     is_subscribed: false,
+    access_tier: 'trial',
   });
 
   if (error) {

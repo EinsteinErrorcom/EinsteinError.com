@@ -1,4 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { isAccessActive, isPaidAccessTier, normalizeAccessTier } from '@/lib/access';
 import { isProfileTrialActive, type ProfileTrial } from './trial';
 
 /** Site page routes (12-page structure) */
@@ -55,15 +56,28 @@ export function shouldRedirectToPricing(
   return !isProfileTrialActive(profile);
 }
 
+export function getAccessExpiredPath(profile: ProfileTrial): string {
+  const tier = normalizeAccessTier(profile.access_tier, profile.is_subscribed);
+  return isPaidAccessTier(tier) ? TIME_EXPIRED_PATH : TRIAL_EXPIRED_PATH;
+}
+
 export async function fetchProfileTrial(
   supabase: SupabaseClient,
   userId: string
 ): Promise<ProfileTrial | null> {
   const { data } = await supabase
     .from('profiles')
-    .select('trial_start_at, is_subscribed')
+    .select('trial_start_at, is_subscribed, access_tier')
     .eq('id', userId)
     .maybeSingle();
 
   return data ?? null;
+}
+
+export function isProfileAccessActive(profile: ProfileTrial | null | undefined): boolean {
+  if (!profile) {
+    return false;
+  }
+
+  return isAccessActive(profile);
 }

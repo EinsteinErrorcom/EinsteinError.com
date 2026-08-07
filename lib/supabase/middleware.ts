@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { getSupabaseEnv } from '@/lib/supabase/env'
 import {
   fetchProfileTrial,
+  getAccessExpiredPath,
   shouldRedirectToPricing,
   CHECKOUT_PATH,
   CHAT8_PATH,
@@ -125,15 +126,20 @@ export async function updateSession(request: NextRequest) {
       !request.nextUrl.searchParams.get('auth')
     ) {
       const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = TRIAL_EXPIRED_PATH
+      redirectUrl.pathname = profile
+        ? getAccessExpiredPath(profile)
+        : TRIAL_EXPIRED_PATH
       redirectUrl.search = ''
       return redirectWithCookies(redirectUrl, supabaseResponse)
     }
   }
 
   if (user && !isTrialExemptPath(pathname)) {
-    if (profile?.is_subscribed) {
-      return supabaseResponse
+    if (profile && shouldRedirectToPricing(profile)) {
+      const redirectUrl = request.nextUrl.clone()
+      redirectUrl.pathname = getAccessExpiredPath(profile)
+      redirectUrl.search = ''
+      return NextResponse.redirect(redirectUrl)
     }
 
     const trialStartedAt = parseTrialStartedAt(

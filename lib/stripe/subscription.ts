@@ -1,4 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
+import {
+  getAccessTierFromPriceId,
+  type AccessTier,
+} from '@/lib/access';
 import { getStripeClient } from '@/lib/stripe/stripe-service';
 
 function getServiceRoleClient() {
@@ -14,16 +18,34 @@ function getServiceRoleClient() {
   return createClient(url, serviceRoleKey);
 }
 
-export async function markUserSubscribed(userId: string) {
+type GrantPaidAccessInput = {
+  userId: string;
+  accessTier: AccessTier;
+};
+
+export async function grantPaidAccess({ userId, accessTier }: GrantPaidAccessInput) {
   const supabase = getServiceRoleClient();
+  const accessStartedAt = new Date().toISOString();
   const { error } = await supabase
     .from('profiles')
-    .update({ is_subscribed: true })
+    .update({
+      is_subscribed: true,
+      access_tier: accessTier,
+      trial_start_at: accessStartedAt,
+    })
     .eq('id', userId);
 
   if (error) {
     throw new Error(`Failed to update profile subscription: ${error.message}`);
   }
+}
+
+export async function markUserSubscribed(userId: string, priceId?: string | null) {
+  const accessTier = priceId ? getAccessTierFromPriceId(priceId) : null;
+  await grantPaidAccess({
+    userId,
+    accessTier: accessTier ?? 'paid_3h',
+  });
 }
 
 export async function fulfillCheckoutSession(
@@ -44,6 +66,7 @@ export async function fulfillCheckoutSession(
     return false;
   }
 
-  await markUserSubscribed(userId);
+  const priceId = session.metadata?.price_id ?? null;
+  await markUserSubscribed(userId, priceId);
   return true;
 }

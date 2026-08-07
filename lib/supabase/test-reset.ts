@@ -109,6 +109,7 @@ async function resetViaSession(
       id: user.id,
       trial_start_at: trialStartAt,
       is_subscribed: false,
+      access_tier: 'trial',
     },
     { onConflict: 'id' }
   );
