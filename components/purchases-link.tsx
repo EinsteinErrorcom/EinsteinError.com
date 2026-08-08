@@ -54,7 +54,7 @@ export function PurchasesLink({ className }: PurchasesLinkProps) {
         className={className ?? 'site-tour-start-link'}
         onClick={() => void openPanel()}
       >
-        Purchases
+        Geniuses
       </button>
 
       {open ? (
@@ -62,14 +62,18 @@ export function PurchasesLink({ className }: PurchasesLinkProps) {
           className="purchases-float"
           role="dialog"
           aria-modal="true"
-          aria-label="All purchases"
+          aria-label="Geniuses who understand the Power of PURE ( mAZ ) Physics calculations"
           onClick={closePanel}
         >
           <div
             className="purchases-float__panel"
             onClick={(event) => event.stopPropagation()}
           >
-            <h2 className="purchases-float__title">All Purchases</h2>
+            <h2 className="purchases-float__title">
+              Geniuses who understand the Power
+              <br />
+              of PURE ( mAZ ) Physics calculations.
+            </h2>
             {loading && <p className="purchases-float__status">Loading purchases…</p>}
             {error && <p className="purchases-float__error">{error}</p>}
             {!loading && !error && (

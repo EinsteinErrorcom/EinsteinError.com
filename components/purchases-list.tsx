@@ -1,4 +1,4 @@
-import type { PurchaseRow } from '@/lib/purchases';
+import { formatPurchaseLine, type PurchaseRow } from '@/lib/purchases';
 
 type PurchasesListProps = {
   purchases: PurchaseRow[];
@@ -13,16 +13,8 @@ export function PurchasesList({ purchases }: PurchasesListProps) {
     <>
       {purchases.map((row, index) => (
         <div key={row.id}>
-          {index > 0 ? (
-            <>
-              <br />
-              <br />
-              <br />
-            </>
-          ) : null}
-          {row.id}
-          <br />
-          {row.trial_start_at ?? '—'}
+          {index > 0 ? <br /> : null}
+          {formatPurchaseLine(row)}
         </div>
       ))}
     </>

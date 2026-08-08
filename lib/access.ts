@@ -31,6 +31,20 @@ export const ACCESS_TIER_LABELS: Record<AccessTier, string> = {
   paid_7d: '7 Days',
 };
 
+export const ACCESS_TIER_AMOUNTS: Record<AccessTier, string> = {
+  trial: '$15',
+  paid_3h: '$15',
+  paid_24h: '$75',
+  paid_7d: '$400',
+};
+
+export function formatPurchaseAmount(
+  tier: string | null | undefined,
+  isSubscribed = true
+): string {
+  return ACCESS_TIER_AMOUNTS[normalizeAccessTier(tier, isSubscribed)];
+}
+
 const PRICE_ID_TO_ACCESS_TIER: Record<string, AccessTier> = {
   price_1U0ACSC39oHx6wOFTQfZCCTF: ACCESS_TIER_PAID_3H,
   price_1U0ACSC39oHx6wOFWoJosDHi: ACCESS_TIER_PAID_24H,

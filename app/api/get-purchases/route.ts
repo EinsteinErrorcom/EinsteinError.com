@@ -7,6 +7,7 @@ export const runtime = 'nodejs';
 type PurchaseRow = {
   id: string;
   trial_start_at: string | null;
+  access_tier: string | null;
 };
 
 async function readPurchasesWithServiceRole(): Promise<PurchaseRow[] | null> {
@@ -14,7 +15,7 @@ async function readPurchasesWithServiceRole(): Promise<PurchaseRow[] | null> {
     const admin = createServiceRoleClient();
     const { data, error } = await admin
       .from('profiles')
-      .select('id, trial_start_at')
+      .select('id, trial_start_at, access_tier')
       .eq('is_subscribed', true)
       .order('trial_start_at', { ascending: false });
 
