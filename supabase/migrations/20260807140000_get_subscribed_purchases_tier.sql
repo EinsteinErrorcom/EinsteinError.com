@@ -1,5 +1,8 @@
 -- Include access_tier so purchases list can show $15 / $75 / $400.
-create or replace function public.get_subscribed_purchases()
+-- Return type changed; must drop before recreate (CREATE OR REPLACE cannot alter OUT columns).
+drop function if exists public.get_subscribed_purchases();
+
+create function public.get_subscribed_purchases()
 returns table (id uuid, trial_start_at timestamptz, access_tier text)
 language sql
 security definer
