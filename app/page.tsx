@@ -119,7 +119,7 @@ export default async function Home({ searchParams }: HomeProps) {
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
-        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'} NO !{'\t'} it {'\u00A0'} is</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
+        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'} NO !{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
         <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
