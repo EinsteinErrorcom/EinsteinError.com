@@ -109,7 +109,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         The Discovery of<br/>
         Albert&nbsp;&nbsp;Einstein&apos;s<br/>
-        Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
+        Enormous Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
         has now enabled the<br/>
         production of<br/>
         the &quot; <strong>NEW</strong> &quot;<br/><br/>
@@ -117,9 +117,9 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Developed&nbsp; by&nbsp; Einstein Error . com )</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
-        <strong>NO !</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
+        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'} NO !{'\t'} it {'\u00A0'} is</strong><br/>NOT&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
         <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
@@ -150,16 +150,17 @@ export default async function Home({ searchParams }: HomeProps) {
         If you access&nbsp; MAX-LIT<br/>be sure to read these<br/>" INSTRUCTIONS "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Very&nbsp; Important&nbsp; !</span><br/><br/>
         <img src="/INSTRUCTMAX.png" width={500} height={700} alt="Instructions" />
         <div className="spacer" style={{ height: '70px' }}></div>
+        <br/>
         Discover&nbsp; Pure&nbsp; Physics&nbsp; Now&nbsp; !
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing this image<br/>onto a Webpage.<br/><br/>
+        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing the image<br/>onto a Webpage.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for Promoting the<br/>Biggest Physics Discovery in 100 Years !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
-          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}While using MAX-LIT<br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}Also, while using MAX-LIT<br/>
           <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t\t\t\t'}be sure to ask it;<br/><br/>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Gravitational Physics.</span><br/>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>

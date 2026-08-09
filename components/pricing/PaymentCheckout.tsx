@@ -7,6 +7,25 @@ import { PRICING_TIERS, type PricingTier } from '@/lib/stripe/pricing';
 import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import { SIGN_IN_PATH } from '@/lib/trial-gate';
 
+function renderTierLabel(label: string) {
+  const match = label.match(/^(.*?)(\( Cost = )(\d+)( dollars per Hour \))(.*)$/s);
+  if (!match) {
+    return label;
+  }
+
+  const [, before, costPrefix, costNumber, costSuffix, after] = match;
+
+  return (
+    <>
+      {before}
+      {costPrefix}
+      <span className="payment-checkout__cost-hour">{costNumber}</span>
+      {costSuffix}
+      {after}
+    </>
+  );
+}
+
 export default function PaymentCheckout() {
   const searchParams = useSearchParams();
   const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
@@ -80,7 +99,7 @@ export default function PaymentCheckout() {
               <span className="payment-checkout__tier-label">
                 {'\t'}
                 <span className="payment-checkout__tier-price">{tier.price}</span>
-                {tier.label}
+                {renderTierLabel(tier.label)}
               </span>
               <span className="payment-checkout__tier-desc">{tier.description}</span>
               {isLoading && (

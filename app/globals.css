@@ -637,6 +637,11 @@ p {
   font-weight: 700;
 }
 
+.payment-checkout__cost-hour {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .payment-checkout__tier-desc {
   font-size: 0.95rem;
   color: #ddd;

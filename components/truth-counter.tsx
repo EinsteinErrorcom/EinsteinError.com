@@ -105,9 +105,21 @@ export function TruthCounter() {
         textShadow: "2px 2px 4px #000000",
       }}
     >
-      #&nbsp;&nbsp;of&nbsp;&nbsp;people&nbsp;&nbsp;who&nbsp;&nbsp;now
-      <br />
-      know the TRUTH
+      <span
+        style={{
+          display: "inline-grid",
+          gridTemplateColumns: "auto auto",
+        }}
+      >
+        <span style={{ textAlign: "right" }}>
+          #&nbsp;&nbsp;of&nbsp;&nbsp;people&nbsp;&nbsp;who&nbsp;
+        </span>
+        <span>NOW</span>
+        <span style={{ textAlign: "right" }}>
+          know{"\u00A0\u00A0"}the{"\u00A0\u00A0\u00A0"}
+        </span>
+        <span>TRUTH</span>
+      </span>
       <br />
       &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
       <span
