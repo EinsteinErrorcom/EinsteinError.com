@@ -8,7 +8,7 @@ import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import { SIGN_IN_PATH } from '@/lib/trial-gate';
 
 function renderTierLabel(label: string) {
-  const match = label.match(/^(.*?)(\( Cost = )(\d+)( dollars per Hour \))(.*)$/s);
+  const match = label.match(/^([\s\S]*?)(\( Cost = )(\d+)( dollars per Hour \))([\s\S]*)$/);
   if (!match) {
     return label;
   }
