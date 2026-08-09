@@ -44,3 +44,6 @@ next-env.d.ts
 
 # supabase cli temp
 supabase/.temp/
+
+# full backup snapshots (large; copy off-site manually)
+FULL-SAAS-BACKUP/snapshots/

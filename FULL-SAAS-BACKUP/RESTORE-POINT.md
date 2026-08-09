@@ -3,10 +3,6 @@
 Complete save reference for GitHub code, Vercel secrets, and Stripe config.
 **Never commit secret values to GitHub** — they live in Vercel and Stripe dashboards only.
 
-> **SaaS path flow chart:** see image below, or open [`public/max-lit-saas-paths-chart.png`](public/max-lit-saas-paths-chart.png) in the file tree.
-
-![MAX-LIT SaaS Paths flow chart](public/max-lit-saas-paths-chart.png)
-
 ## GitHub
 
 - **Repo:** https://github.com/EinsteinErrorcom/EinsteinError.com
@@ -103,8 +99,3 @@ curl -s -o /dev/null -w "%{http_code}\n" https://www.einsteingravity.com/
 ```
 
 Both should return `200`.
-
-## Related docs
-
-- [HANDOFF-CHART.md](./HANDOFF-CHART.md) — visual handoff chart (project, deploy, site flow, AI, Stripe)
-- [USER-FLOWS.md](./USER-FLOWS.md) — all user paths, redirects, intentional vs legacy quirks

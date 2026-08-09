@@ -159,10 +159,11 @@ export default async function Home({ searchParams }: HomeProps) {
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
-          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}While using MAX-LIT, be sure to ask it;<br/>
-          <span style={{ display: 'inline-block', width: '1.5em' }}>1.</span>{'\t'}List advancements in (mAZ) Gravitational Physics.<br/>
-          <span style={{ display: 'inline-block', width: '1.5em' }}>2.</span>{'\t'}List advancements in (mAZ) Chemistry.<br/>
-          <span style={{ display: 'inline-block', width: '1.5em' }}>3.</span>{'\t'}List advancements in (mAZ) Quantum Computing.
+          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}While using MAX-LIT<br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t\t\t\t'}be sure to ask it;<br/><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Gravitational Physics.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Quantum Computing.</span>
         </div>
         <br/><br/>
       </div>
