@@ -119,7 +119,7 @@ export default async function Home({ searchParams }: HomeProps) {
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
-        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'} NO !{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
+        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'}<span style={{ color: '#FF0000' }}>NO !</span>{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
         <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
@@ -132,6 +132,11 @@ export default async function Home({ searchParams }: HomeProps) {
         Constructed &nbsp; via&nbsp; the<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '30px' }}>Unification&nbsp; of<br/>137&nbsp; Physics&nbsp; Constants</span>
       </div>
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
+        <br/>
+        Be&nbsp;sure&nbsp;to&nbsp;understand{'\u00A0\u00A0\u00A0\u00A0'}(&nbsp;mAZ&nbsp;)<br/>
+        {'\u00A0'}m&nbsp;=&nbsp;mass{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}A&nbsp;=&nbsp;Acceleration{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Z&nbsp;=&nbsp;Time&nbsp;and&nbsp;Tension
+      </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
@@ -161,10 +166,13 @@ export default async function Home({ searchParams }: HomeProps) {
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
           <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t'}Also, while using MAX-LIT<br/>
-          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t\t\t\t'}be sure to ask it;<br/><br/>
+          <span style={{ display: 'inline-block', width: '1.5em' }} aria-hidden="true">{'\u00A0'}</span>{'\t\t\t\t'}be sure to ask it to ;<br/><br/>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Gravitational Physics.</span><br/>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Quantum Computing.</span>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Quantum Computing.</span><br/>
+        </div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '40px' }}>
+          TRY&nbsp;THE&nbsp;MAX-LIT&nbsp;SUPERComputer&nbsp;NOW&nbsp;!
         </div>
         <br/><br/>
       </div>
