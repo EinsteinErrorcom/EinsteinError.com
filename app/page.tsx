@@ -112,7 +112,7 @@ export default async function Home({ searchParams }: HomeProps) {
         Enormous Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
         has now enabled the<br/>
         production of<br/>
-        the &quot; <strong>NEW</strong> &quot;<br/><br/>
+        the&nbsp;&nbsp;&nbsp;&quot; <strong>NEW</strong> &quot;<br/><br/>
         -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#C5A059' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span><br/><br/>
       </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -161,17 +161,17 @@ export default async function Home({ searchParams }: HomeProps) {
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing the image<br/>onto a Webpage.<br/><br/>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for Promoting the<br/>Biggest Physics Discovery in 100 Years !</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for<br/>promoting the<br/>Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
           <div style={{ textAlign: 'center' }}>
-            Also,<br/>while using MAX-LIT<br/>
+            Also,<br/>while using<br/>MAX-LIT<br/>
             be sure to ask it to ;<br/><br/>
           </div>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Gravitational Physics.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific advancements<br/>{'\u00A0\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0\u00A0'}via (mAZ) Quantum Computing.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ) Gravitational<br/>Physics.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ) Chemistry.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ)<br/>Quantum Computing.</span><br/>
         </div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '40px' }}>
           <br/>Try&nbsp;&nbsp;&nbsp;the&nbsp;&nbsp;&nbsp;MAX-LIT<br/>SUPERComputer&nbsp;&nbsp;&nbsp;NOW&nbsp;!
