@@ -109,7 +109,8 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         The Discovery of<br/>
         Albert&nbsp;&nbsp;Einstein&apos;s<br/>
-        Enormous Historic&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
+        &nbsp;&quot; Enormous &quot;&nbsp;<br/>
+        Historic&nbsp;&nbsp;&nbsp; <span style={{ color: '#FF0000' }}>ERROR</span><br/>
         has now enabled the<br/>
         production of<br/>
         the&nbsp;&nbsp;&nbsp;&quot; <strong>NEW</strong> &quot;<br/><br/>
@@ -120,7 +121,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
         <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'}<span style={{ color: '#FF0000' }}>NO !</span>{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
-        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )<br/>MAX-LIT surpasses Standard Ai<br/>the same way the Computer<br/>surpasses the Abacus !</span>
+        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )<br/>MAX-LIT surpasses Standard Ai<br/>in the same way that<br/>the Computer<br/>surpasses the Abacus !</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -169,9 +170,9 @@ export default async function Home({ searchParams }: HomeProps) {
             Also,<br/>while using<br/>MAX-LIT<br/>
             be sure to ask it to ;<br/><br/>
           </div>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ) Gravitational<br/>Physics.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ) Chemistry.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List scientific<br/>advancements<br/>via (mAZ)<br/>Quantum Computing.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>via (mAZ) Gravitational<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}Physics.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ)<br/>{'\u00A0\u00A0'}Quantum Computing.</span><br/>
         </div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '40px' }}>
           <br/>Try&nbsp;&nbsp;&nbsp;the&nbsp;&nbsp;&nbsp;MAX-LIT<br/>SUPERComputer&nbsp;&nbsp;&nbsp;NOW&nbsp;!
