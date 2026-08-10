@@ -806,7 +806,7 @@ a.site-tour-start-link,
 a.site-tour-start-link[target='_blank'],
 button.site-tour-start-link {
   display: inline-block;
-  color: #1a1a1a;
+  color: #000000;
   font-weight: 700;
   font-style: italic;
   text-decoration: underline;

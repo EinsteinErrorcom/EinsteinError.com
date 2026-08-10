@@ -120,7 +120,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
         <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'}<span style={{ color: '#FF0000' }}>NO !</span>{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; Ai<br/>
-        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span>
+        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )<br/>MAX-LIT surpasses Standard Ai<br/>the same way the Computer<br/>surpasses the Abacus !</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
