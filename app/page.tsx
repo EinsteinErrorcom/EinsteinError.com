@@ -88,13 +88,13 @@ export default async function Home({ searchParams }: HomeProps) {
       </p>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <span style={{ color: '#FFFFFF', fontSize: '50px' }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has been officially<br/>shut down and</span><br/>
+        <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
         <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#C5A059' }}>E = m ( Acceleration x Time )<sup>2</sup><br/>E = m ( Acceleration x Time )<sup>2</sup><br/>E = m ( Acceleration x Time )<sup>2</sup><br/><br/>is the absolute&nbsp;&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy Equation</span><br/><br/>
+        <span style={{ color: '#C5A059' }}><span style={{ fontSize: '25px' }}>E = m ( <span style={{ fontSize: '15px' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '15px' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '15px' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px' }}>Time</span> )<sup>2</sup></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;! !</span><br/><br/>
         <span style={{ color: '#FFFFFF' }}>James&apos; MAXWELL&apos;s<br/>
         &quot; Constant Velocity &quot;<br/>
         of&nbsp;&nbsp;Light<br/>
-        is now a 100 %</span><br/><br/>
+        is now a 100 %</span><br/>
         <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;! !</span><br/><br/>
       </div>
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
