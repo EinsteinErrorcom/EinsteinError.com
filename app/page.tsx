@@ -86,6 +86,17 @@ export default async function Home({ searchParams }: HomeProps) {
         {'\u00A0'.repeat(12)}
         <PurchasesLink />
       </p>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
+        <span style={{ color: '#FFFFFF', fontSize: '50px' }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has been officially<br/>shut down and</span><br/>
+        <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#C5A059' }}>E = m ( Acceleration x Time )<sup>2</sup><br/>E = m ( Acceleration x Time )<sup>2</sup><br/>E = m ( Acceleration x Time )<sup>2</sup><br/><br/>is the absolute&nbsp;&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy Equation</span><br/><br/>
+        <span style={{ color: '#FFFFFF' }}>James&apos; MAXWELL&apos;s<br/>
+        &quot; Constant Velocity &quot;<br/>
+        of&nbsp;&nbsp;Light<br/>
+        is now a 100 %</span><br/><br/>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;! !</span><br/><br/>
+      </div>
       <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       <CheckoutBannerLink />
       <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px', display: 'block', marginTop: '16px' }}>
