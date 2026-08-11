@@ -148,7 +148,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        This<br/>P U R I T Y<br/>is&nbsp; NOT&nbsp; available<br/>with&nbsp; any&nbsp; other&nbsp; Processor<br/>worldwide&nbsp;&nbsp; because<br/>" ONLY&nbsp; we "<br/>have&nbsp; Unified&nbsp; 137<br/>Physics&nbsp; Constants.
+        This<br/>P U R I T Y<br/>is&nbsp; NOT&nbsp; available&nbsp; with<br/>any&nbsp; other&nbsp; Processor<br/>worldwide&nbsp;&nbsp; because<br/>" only&nbsp; we "<br/>have&nbsp; Unified&nbsp; 137<br/>Physics&nbsp; Constants.
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -162,7 +162,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing the image<br/>onto a Webpage.<br/><br/>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for<br/>promoting the<br/>Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid<br/>for promoting<br/>the&nbsp;&nbsp;&nbsp;Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
