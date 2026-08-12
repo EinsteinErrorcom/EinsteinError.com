@@ -99,8 +99,8 @@ export default async function Home({ searchParams }: HomeProps) {
         <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/>
         <span style={{ color: '#C5A059' }}><span style={{ fontSize: '30px' }}>E = m ( <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Acc. due to Gravity</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '20px', color: '#FFFFFF' }}>orbit Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '21px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '21px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;! !</span><br/><br/><span style={{ color: '#8A2BE2', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#FFFFFF' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#FFFFFF' }}>&quot;</span><br/>you are only<br/>blowing hot air&nbsp;&nbsp;!</span><br/><br/>
         <span style={{ color: '#FFFFFF' }}>James&nbsp;&nbsp;&nbsp;MAXWELL&apos;s<br/>
-        &quot; Constant Velocity &quot;<br/>
-        of&nbsp;&nbsp;Light<br/>
+        [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
+        Light<br/>
         is now a 100 %</span><br/>
         <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;! !</span><br/><br/>
       </div>
