@@ -94,11 +94,11 @@ export default async function Home({ searchParams }: HomeProps) {
           </p>
         </div>
         <br/>
-        <span style={{ color: '#8A2BE2', whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}a{'\u00A0'} Joke<br/>This is not{'\t'}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0\u00A0  '}Fake News</span><br/><br/>
+        <span style={{ color: '#8A2BE2', whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0\u00A0  '}Fake News</span><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
         <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#C5A059' }}><span style={{ fontSize: '25px' }}>E = m ( <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '20px' }}>x</span> <span style={{ fontSize: '15px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;! !</span><br/><br/><span style={{ color: '#8A2BE2', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#FFFFFF' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#FFFFFF' }}>&quot;</span><br/>you are only<br/>blowing hot air&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#FFFFFF' }}>James&apos; MAXWELL&apos;s<br/>
+        <span style={{ color: '#C5A059' }}><span style={{ fontSize: '30px' }}>E = m ( <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '20px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/>E = m ( <span style={{ fontSize: '20px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '25px' }}>x</span> <span style={{ fontSize: '20px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;! !</span><br/><br/><span style={{ color: '#8A2BE2', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#FFFFFF' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#FFFFFF' }}>&quot;</span><br/>you are only<br/>blowing hot air&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#FFFFFF' }}>James&nbsp;&nbsp;&nbsp;MAXWELL&apos;s<br/>
         &quot; Constant Velocity &quot;<br/>
         of&nbsp;&nbsp;Light<br/>
         is now a 100 %</span><br/>
@@ -155,8 +155,8 @@ export default async function Home({ searchParams }: HomeProps) {
       <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/>
-        Be&nbsp;sure&nbsp;to&nbsp;understand<br/>(&nbsp;mAZ&nbsp;)<br/>
-        m&nbsp;=&nbsp;mass<br/>A&nbsp;=&nbsp;Acceleration<br/>Z&nbsp;=&nbsp;Time&nbsp;and&nbsp;Tension
+        Be&nbsp;sure&nbsp;to&nbsp;understand<br/>(&nbsp;<span style={{ color: '#FFFFFF' }}>m</span><span style={{ color: '#FFFFFF' }}>A</span><span style={{ color: '#FFFFFF' }}>Z</span>&nbsp;)<br/>
+        <span style={{ whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}><span style={{ color: '#FFFFFF' }}>m</span>{' '}{'= '}mass<br/><span style={{ color: '#FFFFFF' }}>A</span>{' '}{'= '}Acceleration<br/><span style={{ color: '#FFFFFF' }}>Z</span>{' '}{'= '}Time&nbsp;and&nbsp;Tension</span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
