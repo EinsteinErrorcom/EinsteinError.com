@@ -90,7 +90,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span>
         <div className="checkout-banner-link" style={{ marginTop: 0, position: 'relative', top: '-12px' }}>
           <p className="checkout-banner-link__text">
-            <a href={CHECKOUT_PATH}>Link to MAX-LIT SUPERComputer</a>
+            <a href={CHECKOUT_PATH}>Link&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp;MAX-LIT&nbsp;&nbsp;&nbsp;&nbsp;SUPERComputer</a>
           </p>
         </div>
         <br/>
@@ -217,14 +217,14 @@ export default async function Home({ searchParams }: HomeProps) {
         )}
         <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1, marginBottom: '16px' }}>
           <span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in below.</span><br/><br/>
-          <span style={{ display: 'inline-block', transform: 'rotate(180deg)', fontSize: '30px' }}>
+          <span style={{ display: 'inline-block', transform: 'rotate(180deg)', fontSize: '30px', color: '#C5A059' }}>
             &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;
           </span>
         </span>
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" checkoutSessionId={checkoutSessionId} />
         <br/>
         <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1, fontSize: '30px', marginTop: '0' }}>
-          &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;<br/><span style={{ fontSize: '25px', fontStyle: 'italic' }}>Click the Google Log-in above.</span>
+          <span style={{ color: '#C5A059' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span><br/><span style={{ fontSize: '25px', fontStyle: 'italic', color: '#FFFFFF' }}>Click the Google Log-in above.</span>
         </span>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>

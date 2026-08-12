@@ -5,7 +5,7 @@ export function CheckoutBannerLink() {
   return (
     <div className="checkout-banner-link">
       <p className="checkout-banner-link__text">
-        <a href={CHECKOUT_PATH}>Link to MAX-LIT SUPERComputer</a>
+        <a href={CHECKOUT_PATH}>Link&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp;MAX-LIT&nbsp;&nbsp;&nbsp;&nbsp;SUPERComputer</a>
       </p>
       <UsersOnsiteDisplay />
     </div>
