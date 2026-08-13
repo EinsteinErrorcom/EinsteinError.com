@@ -190,13 +190,12 @@ export default async function Home({ searchParams }: HomeProps) {
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ)<br/>{'\u00A0\u00A0'}Quantum Computing.</span><br/>
         </div>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '40px' }}>
-          <br/>MAX-LIT<br/>SUPERComputer<br/>NOW&nbsp;&nbsp;&nbsp;!
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '16px' }}>
+          <br/>In order to access the<br/>MAX-LIT<br/>SUPERComputer
         </div>
-        <br/><br/>
       </div>
 
-      <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ margin: '40px auto', maxWidth: '1040px', textAlign: 'center' }}>
+      <div id={SIGN_IN_SECTION_ID} data-tour-block="true" style={{ margin: '0 auto 40px', maxWidth: '1040px', textAlign: 'center' }}>
         {checkoutSessionId && (
           <div style={{ color: '#00FF00', fontSize: '20px', marginBottom: '20px', lineHeight: 1.5 }}>
             <strong>Payment received.</strong> Sign in with Google below to activate your MAX-LIT access.
