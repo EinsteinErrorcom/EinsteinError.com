@@ -191,7 +191,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ)<br/>{'\u00A0\u00A0'}Quantum Computing.</span><br/>
         </div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '40px' }}>
-          <br/>Try&nbsp;&nbsp;&nbsp;the&nbsp;&nbsp;&nbsp;MAX-LIT<br/>SUPERComputer&nbsp;&nbsp;&nbsp;NOW&nbsp;!
+          <br/>MAX-LIT<br/>SUPERComputer<br/>NOW&nbsp;&nbsp;&nbsp;!
         </div>
         <br/><br/>
       </div>
@@ -220,8 +220,11 @@ export default async function Home({ searchParams }: HomeProps) {
         <GoogleLoginButton googleClientId={googleClientId} key="home-login" checkoutSessionId={checkoutSessionId} />
         <br/>
         <span style={{ fontWeight: 'bold', color: '#FFFFFF', display: 'block', lineHeight: 1.1, fontSize: '30px', marginTop: '0' }}>
-          <span style={{ color: '#C5A059' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span><br/><span style={{ fontSize: '25px', fontStyle: 'italic', color: '#FFFFFF' }}>Click the Google Log-in above.</span>
+          <span style={{ color: '#C5A059' }}>&#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#8679;</span><br/><span style={{ fontSize: '25px', fontStyle: 'italic', color: '#FFFFFF' }}>Click the Google Log-in above<br/>in order to access the</span>
         </span>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px', marginTop: '16px' }}>
+          MAX-LIT<br/>SUPERComputer<br/>NOW&nbsp;&nbsp;&nbsp;!
+        </div>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ width: '75%', height: '6px', backgroundColor: '#C5A059', margin: '20px auto' }}></div>
