@@ -124,8 +124,8 @@ export function TruthCounter() {
       &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
       <span
         style={{
-          color: "#B89047",
-          border: "3px solid #B89047",
+          color: "#D0AB47",
+          border: "3px solid #D0AB47",
           padding: "4px 12px",
           display: "inline-block",
         }}

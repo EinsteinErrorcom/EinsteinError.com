@@ -29,7 +29,7 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           margin: '80px auto',
           padding: '32px',
           background: '#161b22',
-          border: '4px solid #B89047',
+          border: '4px solid #D0AB47',
           borderRadius: 12,
           color: '#00FFFF',
           lineHeight: 1.6,
@@ -39,7 +39,7 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           Dev Reset Failed
         </h1>
         <p style={{ marginBottom: 24 }}>{decodeURIComponent(params.error)}</p>
-        <Link href="/dev/reset" style={{ color: '#B89047', marginRight: 16 }}>
+        <Link href="/dev/reset" style={{ color: '#D0AB47', marginRight: 16 }}>
           Try again
         </Link>
         <Link href="/" style={{ color: '#00FFFF' }}>
@@ -57,7 +57,7 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           margin: '80px auto',
           padding: '32px',
           background: '#161b22',
-          border: '4px solid #B89047',
+          border: '4px solid #D0AB47',
           borderRadius: 12,
           color: '#00FFFF',
           lineHeight: 1.6,
@@ -73,11 +73,11 @@ export default async function DevResetPage({ searchParams }: DevResetPageProps) 
           <li style={{ marginBottom: 12 }}>
             <strong style={{ color: '#FFFFFF' }}>Sign in first</strong>, then return here:
             <br />
-            <Link href={SIGN_IN_PATH} style={{ color: '#B89047' }}>
+            <Link href={SIGN_IN_PATH} style={{ color: '#D0AB47' }}>
               Go sign in with Google
             </Link>
             {' → then visit '}
-            <Link href="/dev/reset" style={{ color: '#B89047' }}>
+            <Link href="/dev/reset" style={{ color: '#D0AB47' }}>
               /dev/reset
             </Link>
           </li>

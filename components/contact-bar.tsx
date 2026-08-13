@@ -22,7 +22,7 @@ export function ContactBar({ style }: ContactBarProps) {
         style={{
           display: 'inline-block',
           padding: '2px 10px',
-          backgroundColor: '#B89047',
+          backgroundColor: '#D0AB47',
           color: '#000000',
         }}
       >
@@ -31,7 +31,7 @@ export function ContactBar({ style }: ContactBarProps) {
       <br />
       <span style={{ color: '#00FFFF' }}>Email</span>
       {'\u00A0'.repeat(4)}
-      <span style={{ color: '#B89047' }}>wild.book0719@fastmail.com</span>
+      <span style={{ color: '#D0AB47' }}>wild.book0719@fastmail.com</span>
     </div>
   );
 }

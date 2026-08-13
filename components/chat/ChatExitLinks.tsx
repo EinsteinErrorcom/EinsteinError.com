@@ -42,7 +42,7 @@ export function ChatExitLinks() {
         style={{
           background: "transparent",
           border: "none",
-          color: "#B89047",
+          color: "#D0AB47",
           textDecoration: "underline",
           cursor: signingOut ? "default" : "pointer",
           font: "inherit",
