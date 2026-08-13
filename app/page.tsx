@@ -1,4 +1,6 @@
+import { ContactBar } from "@/components/contact-bar";
 import { PageEndFooter } from "@/components/page-end-footer";
+import { PageSectionNav } from "@/components/page-section-nav";
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { UsersOnsiteDisplay } from "@/components/users-onsite-display";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
@@ -86,20 +88,14 @@ export default async function Home({ searchParams }: HomeProps) {
         {'\u00A0'.repeat(12)}
         <PurchasesLink />
       </p>
+      <nav className="page-nav" aria-label="Page navigation" style={{ marginTop: '16px' }}>
+        <a className="page-nav__home" href="/">HOME</a>
+        <PageSectionNav />
+      </nav>
       <a href={CHECKOUT_PATH} className="banner-image-link">
         <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       </a>
-      <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px', textAlign: 'center' }}>
-        <span style={{ color: '#FFFF00', fontSize: '25px' }}>Contact&nbsp;&nbsp;Us</span>
-        {'\u00A0'.repeat(6)}
-        <span style={{ color: '#00FFFF' }}>WhatsApp</span>
-        {'\u00A0'}
-        <span style={{ color: '#C5A059' }}>+17802707009</span>
-        {'\u00A0'.repeat(6)}
-        <span style={{ color: '#00FFFF' }}>Email</span>
-        {'\u00A0'}
-        <span style={{ color: '#C5A059' }}>wild.book0719@fastmail.com</span>
-      </div>
+      <ContactBar />
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>

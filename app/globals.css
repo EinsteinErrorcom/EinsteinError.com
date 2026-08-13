@@ -82,6 +82,28 @@ body {
   outline-offset: 3px;
 }
 
+.page-nav__section {
+  color: var(--color-cyan);
+  font-size: calc(var(--text-base) - 2px);
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.page-nav__section:hover,
+.page-nav__section:focus-visible {
+  text-decoration: underline;
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+}
+
+.page-nav__sections {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
 .checkout-banner-link {
   margin: 12px 0 0;
   text-align: center;

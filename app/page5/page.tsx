@@ -1,14 +1,29 @@
-import { PageEndFooter } from '@/components/page-end-footer';
+import { ContactBar } from "@/components/contact-bar";
+import { PageEndFooter } from "@/components/page-end-footer";
+import { PageSectionNav } from "@/components/page-section-nav";
+import { CHECKOUT_PATH } from "@/lib/trial-gate";
 
 export default function Page5() {
   return (
-    <div className="page-shell">
-      <main className="page-wrapper" style={{ textAlign: 'center', padding: '48px 16px' }}>
-        <h1 style={{ color: '#00FFFF', fontSize: '28px', fontStyle: 'italic' }}>Page 5</h1>
-        <p style={{ color: '#FFFF00', marginTop: '24px', fontSize: '20px' }}>
-          Content coming soon.
-        </p>
-        <PageEndFooter pageNumber={5} />
+    <div className="page-wrapper">
+      <main id="main-content">
+        <header className="site-header">
+          <nav className="page-nav" aria-label="Page navigation">
+            <span className="page-nav__label">Page 5 of 7</span>
+            <a className="page-nav__home" href="/">HOME</a>
+            <PageSectionNav hidePage={5} />
+          </nav>
+          <figure className="media media--banner"><a href={CHECKOUT_PATH}><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></a></figure>
+          <ContactBar />
+        </header>
+        <br/><br/>
+        <div style={{ textAlign: "center", padding: "48px 16px" }}>
+          <h1 style={{ color: "#00FFFF", fontSize: "28px", fontStyle: "italic" }}>Page 5</h1>
+          <p style={{ color: "#FFFF00", marginTop: "24px", fontSize: "20px" }}>
+            Content coming soon.
+          </p>
+          <PageEndFooter pageNumber={5} />
+        </div>
       </main>
     </div>
   );
