@@ -86,12 +86,9 @@ export default async function Home({ searchParams }: HomeProps) {
         {'\u00A0'.repeat(12)}
         <PurchasesLink />
       </p>
-      <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
-      <div className="checkout-banner-link" style={{ marginTop: 0, position: 'relative', top: '-12px' }}>
-        <p className="checkout-banner-link__text">
-          <a href={CHECKOUT_PATH}>Link&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp;MAX-LIT&nbsp;&nbsp;&nbsp;&nbsp;SUPERComputer</a>
-        </p>
-      </div>
+      <a href={CHECKOUT_PATH} className="banner-image-link">
+        <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
+      </a>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px', textAlign: 'center' }}>
         <span style={{ color: '#FFFF00', fontSize: '25px' }}>Contact&nbsp;&nbsp;Us</span>
         {'\u00A0'.repeat(6)}
@@ -114,7 +111,7 @@ export default async function Home({ searchParams }: HomeProps) {
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#C5A059', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS are on PAGE 2 * * *</a><br/><br/><br/><br/><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#C5A059', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS are on PAGE 2 * * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
       </div>
       <div className="checkout-banner-link" style={{ marginTop: 0 }}>
         <UsersOnsiteDisplay />

@@ -159,6 +159,18 @@ canvas {
   width: min(700px, 100%);
 }
 
+.media--banner a,
+.banner-image-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.media--banner a img,
+.banner-image-link img {
+  display: block;
+}
+
 a {
   color: var(--color-text);
   font-style: italic;

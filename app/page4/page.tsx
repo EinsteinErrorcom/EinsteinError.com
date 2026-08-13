@@ -1,5 +1,6 @@
-import { CheckoutBannerLink } from "@/components/checkout-banner-link";
 import { PageEndFooter } from "@/components/page-end-footer";
+import { PageSectionNav } from "@/components/page-section-nav";
+import { CHECKOUT_PATH } from "@/lib/trial-gate";
 
 export default function Page4() {
   return (
@@ -9,23 +10,22 @@ export default function Page4() {
         <nav className="page-nav" aria-label="Page navigation">
           <span className="page-nav__label">Page 4 of 4</span>
           <a className="page-nav__home" href="/">HOME</a>
+          <PageSectionNav />
         </nav>
-        <figure className="media media--banner"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></figure>
-        <CheckoutBannerLink />
+        <figure className="media media--banner"><a href={CHECKOUT_PATH}><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></a></figure>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: 0, textAlign: 'center' }}>
+          <span style={{ color: '#FFFF00', fontSize: '25px' }}>Contact&nbsp;&nbsp;Us</span>
+          {'\u00A0'.repeat(6)}
+          <span style={{ color: '#00FFFF' }}>WhatsApp</span>
+          {'\u00A0'}
+          <span style={{ color: '#C5A059' }}>+17802707009</span>
+          {'\u00A0'.repeat(6)}
+          <span style={{ color: '#00FFFF' }}>Email</span>
+          {'\u00A0'}
+          <span style={{ color: '#C5A059' }}>wild.book0719@fastmail.com</span>
+        </div>
       </header>
-      <section className="contact-block" aria-label="Contact information">
-        <h2 className="contact-block__heading">Contact Us</h2>
-        <p className="contact-block__item">
-          WhatsApp
-          <br />
-          <span className="contact-block__value">+17802707009</span>
-        </p>
-        <p className="contact-block__item">
-          Email
-          <br />
-          <span className="contact-block__value">wild.book0719@fastmail.com</span>
-        </p>
-      </section>
+      <br/><br/>
       <div className="f-medium">
         
         Don't forget the 3 most important letters in Physics . . .
