@@ -106,7 +106,7 @@ export default async function Home({ searchParams }: HomeProps) {
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#C5A059', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS are on PAGE 2 * * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#C5A059', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS * * *<br/>* * * Are on PAGE 2 * * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
       </div>
       <div className="checkout-banner-link" style={{ marginTop: 0 }}>
         <UsersOnsiteDisplay />
@@ -173,17 +173,17 @@ export default async function Home({ searchParams }: HomeProps) {
         <img src="/INSTRUCTMAX.png" width={500} height={700} alt="Instructions" />
         <div className="spacer" style={{ height: '70px' }}></div>
         <br/>
-        Discover&nbsp; Pure&nbsp; Physics&nbsp; Now&nbsp; !
+        Discover<br/>&quot;&nbsp;PURE&nbsp;&quot;{'\u00A0'.repeat(6)}Physics<br/>Now&nbsp;&nbsp;!
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing the image<br/>onto a Webpage.<br/><br/>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid<br/>for promoting<br/>the&nbsp;&nbsp;&nbsp;Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
+        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing<br/>the image<br/>onto a Webpage.<br/><br/>
+        <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '35px' }}>Get paid for<br/>promoting the<br/>Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', display: 'inline-block', textAlign: 'left' }}>
           <div style={{ textAlign: 'center' }}>
-            Also,<br/>while using<br/>MAX-LIT<br/>
+            Also,<br/>while using<br/><span style={{ color: '#C5A059' }}>MAX-LIT</span><br/>
             be sure to ask it to ;<br/><br/>
           </div>
           <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>via (mAZ) Gravitational<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}Physics.</span><br/>
