@@ -32,9 +32,9 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
         </p>
         <div
           data-tour-block="true"
-          className="w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#C5A059] rounded-xl shadow-2xl flex flex-col overflow-hidden"
+          className="w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#B89047] rounded-xl shadow-2xl flex flex-col overflow-hidden"
         >
-          <div className="p-4 bg-[#0d1117] border-b border-[#C5A059] text-center">
+          <div className="p-4 bg-[#0d1117] border-b border-[#B89047] text-center">
             <CountdownTimerBox
               accessTier="trial"
               accessStartedAt={new Date().toISOString()}
@@ -42,7 +42,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
           </div>
           <div className="flex-1 p-4 text-[#00FFFF] text-left">
             <p>After Google Sign-In, users ask physics questions here.</p>
-            <p style={{ marginTop: '16px', color: '#C5A059' }}>
+            <p style={{ marginTop: '16px', color: '#B89047' }}>
               Example: &quot;What is the Velocity of Gravity in PURE ( mAZ ) Physics?&quot;
             </p>
           </div>
@@ -90,7 +90,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
         <p style={{ color: '#00FFFF', marginBottom: '24px', lineHeight: 1.6 }}>
           If chat does not open within a minute, refresh this page or contact us on WhatsApp (+17802707009).
         </p>
-        <a href={refreshPath} style={{ color: '#C5A059', fontWeight: 'bold', textDecoration: 'underline' }}>
+        <a href={refreshPath} style={{ color: '#B89047', fontWeight: 'bold', textDecoration: 'underline' }}>
           Refresh to open ChatBox
         </a>
         <PageEndFooter pageNumber={8} />

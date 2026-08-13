@@ -120,7 +120,7 @@ body {
 }
 
 .checkout-banner-link a {
-  color: #c5a059;
+  color: #b89047;
   font-size: 14.5px;
   font-style: italic;
   font-weight: bold;
@@ -129,7 +129,7 @@ body {
 
 .checkout-banner-link a:hover,
 .checkout-banner-link a:focus-visible {
-  color: #e8c547;
+  color: #b89047;
   text-decoration: underline;
 }
 
@@ -779,7 +779,7 @@ p {
   width: min(280px, calc(100vw - 32px));
   padding: 12px 14px;
   background: rgba(13, 17, 23, 0.96);
-  border: 3px solid #c5a059;
+  border: 3px solid #b89047;
   border-radius: 12px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
   text-align: center;
@@ -814,9 +814,9 @@ p {
   justify-content: center;
   min-height: 34px;
   padding: 6px 8px;
-  border: 2px solid #c5a059;
+  border: 2px solid #b89047;
   border-radius: 8px;
-  color: #c5a059;
+  color: #b89047;
   font-weight: 700;
   font-size: 0.75rem;
   text-decoration: none;
@@ -883,7 +883,7 @@ button.site-tour-start-link {
   overflow: auto;
   padding: 20px 18px 16px;
   background: #161b22;
-  border: 3px solid #c5a059;
+  border: 3px solid #b89047;
   border-radius: 12px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
   text-align: center;
@@ -899,7 +899,7 @@ button.site-tour-start-link {
 
 .purchases-float__status {
   margin: 0 0 16px;
-  color: #c5a059;
+  color: #b89047;
   font-style: italic;
 }
 
@@ -914,7 +914,7 @@ button.site-tour-start-link {
   min-height: 220px;
   margin-bottom: 12px;
   padding: 12px;
-  border: 2px solid #c5a059;
+  border: 2px solid #b89047;
   border-radius: 8px;
   background: #0d1117;
   color: #ffffff;
@@ -929,7 +929,7 @@ button.site-tour-start-link {
 .purchases-float__close {
   margin-top: 8px;
   padding: 8px 16px;
-  border: 2px solid #c5a059;
+  border: 2px solid #b89047;
   border-radius: 8px;
   background: #0d1117;
   color: #00ffff;
@@ -946,7 +946,7 @@ button.site-tour-start-link {
   margin: 10px auto 0;
   max-width: 140px;
   padding: 7px 9px;
-  border: 2px solid #c5a059;
+  border: 2px solid #b89047;
   border-radius: 5px;
   background: #161b22;
 }

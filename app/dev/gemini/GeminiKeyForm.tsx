@@ -46,8 +46,8 @@ export default function GeminiKeyForm({ initialOk, initialMessage }: Props) {
   };
 
   return (
-    <div className="space-y-4 rounded-lg border border-[#C5A059] p-4 bg-black/20">
-      <h2 className="text-lg font-semibold text-[#C5A059]">Paste a working Gemini key</h2>
+    <div className="space-y-4 rounded-lg border border-[#B89047] p-4 bg-black/20">
+      <h2 className="text-lg font-semibold text-[#B89047]">Paste a working Gemini key</h2>
       <p className="text-sm text-gray-300">
         Create one at Google AI Studio using <strong>Create in new project</strong> (not the
         depleted MAX-LIT project). Paste it here — takes effect immediately, no restart needed.
@@ -66,7 +66,7 @@ export default function GeminiKeyForm({ initialOk, initialMessage }: Props) {
         value={apiKey}
         onChange={(e) => setApiKey(e.target.value)}
         placeholder="Paste GEMINI_API_KEY here (AQ... or AIza...)"
-        className="w-full rounded bg-[#161b22] border border-[#C5A059] p-3 text-white"
+        className="w-full rounded bg-[#161b22] border border-[#B89047] p-3 text-white"
       />
 
       <button

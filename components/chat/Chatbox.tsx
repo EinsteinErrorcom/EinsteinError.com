@@ -210,12 +210,12 @@ export default function Chatbox({
   }
 
   const containerClass = embedded
-    ? "w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#C5A059] rounded-xl shadow-2xl flex flex-col overflow-hidden"
-    : "fixed bottom-6 right-6 w-96 h-[500px] bg-[#161b22] border-4 border-[#C5A059] rounded-xl shadow-2xl flex flex-col overflow-hidden";
+    ? "w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#B89047] rounded-xl shadow-2xl flex flex-col overflow-hidden"
+    : "fixed bottom-6 right-6 w-96 h-[500px] bg-[#161b22] border-4 border-[#B89047] rounded-xl shadow-2xl flex flex-col overflow-hidden";
 
   return (
     <div className={containerClass}>
-      <div className="relative p-4 bg-[#0d1117] flex items-center justify-center border-b border-[#C5A059]">
+      <div className="relative p-4 bg-[#0d1117] flex items-center justify-center border-b border-[#B89047]">
         <div className="text-center px-8 w-full max-w-md">
           {accessTier && accessStartedAt ? (
             <CountdownTimerBox
@@ -226,7 +226,7 @@ export default function Chatbox({
           {!embedded && (
             <Link
               href={CHAT_PATH}
-              className="block text-[#C5A059] text-sm underline mt-3 hover:text-[#FFFF00]"
+              className="block text-[#B89047] text-sm underline mt-3 hover:text-[#FFFF00]"
             >
               Go to Full-Screen Mode
             </Link>
@@ -250,7 +250,7 @@ export default function Chatbox({
             key={i}
             className={`p-2 rounded ${
               m.role === 'user'
-                ? 'bg-[#C5A059] text-black self-end'
+                ? 'bg-[#B89047] text-black self-end'
                 : 'bg-[#0d1117] text-[#00FFFF] whitespace-pre-wrap'
             }`}
           >
@@ -260,12 +260,12 @@ export default function Chatbox({
         {loading && <div className="text-[#FFFF00] italic">Max-Lit is thinking...</div>}
       </div>
 
-      <div className="p-4 border-t border-[#C5A059] bg-[#0d1117]">
+      <div className="p-4 border-t border-[#B89047] bg-[#0d1117]">
         <textarea 
           value={input} 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="w-full p-2 bg-[#161b22] text-white border border-[#C5A059] rounded"
+          className="w-full p-2 bg-[#161b22] text-white border border-[#B89047] rounded"
           placeholder="Ask your Physics question HERE and then Get Ready !"
         />
         <button 

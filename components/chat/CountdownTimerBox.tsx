@@ -73,7 +73,7 @@ export function CountdownTimerBox({
     totalMs > 0 ? Math.min(100, Math.max(0, (remainingMs / totalMs) * 100)) : 0;
 
   return (
-    <div className="rounded-lg border-2 border-[#C5A059] bg-[#0d1117] px-4 py-3 text-center">
+    <div className="rounded-lg border-2 border-[#B89047] bg-[#0d1117] px-4 py-3 text-center">
       <p className="text-[#FFFF00] text-xs font-bold uppercase tracking-wide">
         Count-Down Timer Box
       </p>

@@ -150,7 +150,7 @@ export default async function DevGeminiPage() {
 
   return (
     <main className="min-h-screen bg-[#0d1117] text-white p-8 max-w-2xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold text-[#C5A059]">Fix Gemini chat — step by step</h1>
+      <h1 className="text-2xl font-bold text-[#B89047]">Fix Gemini chat — step by step</h1>
 
       <div
         className={`rounded-lg border p-4 ${
@@ -193,9 +193,9 @@ export default async function DevGeminiPage() {
         {STEPS.map((step, index) => (
           <section
             key={step.title}
-            className="rounded-lg border border-[#C5A059]/40 p-5 bg-black/20"
+            className="rounded-lg border border-[#B89047]/40 p-5 bg-black/20"
           >
-            <h2 className="text-lg font-bold text-[#C5A059] mb-3">
+            <h2 className="text-lg font-bold text-[#B89047] mb-3">
               {index + 1}. {step.title.replace(/^Step \d+ — /, '')}
             </h2>
             {step.body}
