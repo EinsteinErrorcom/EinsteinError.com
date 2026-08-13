@@ -92,35 +92,33 @@ export default async function Home({ searchParams }: HomeProps) {
           <a href={CHECKOUT_PATH}>Link&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp;MAX-LIT&nbsp;&nbsp;&nbsp;&nbsp;SUPERComputer</a>
         </p>
       </div>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px', textAlign: 'center' }}>
+        <span style={{ color: '#FFFF00', fontSize: '25px' }}>Contact&nbsp;&nbsp;Us</span>
+        {'\u00A0'.repeat(6)}
+        <span style={{ color: '#00FFFF' }}>WhatsApp</span>
+        {'\u00A0'}
+        <span style={{ color: '#C5A059' }}>+17802707009</span>
+        {'\u00A0'.repeat(6)}
+        <span style={{ color: '#00FFFF' }}>Email</span>
+        {'\u00A0'}
+        <span style={{ color: '#C5A059' }}>wild.book0719@fastmail.com</span>
+      </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
         <span style={{ color: '#808080', whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0\u00A0  '}Fake News</span><br/><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
-        <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/><br/>
         <span style={{ color: '#C5A059' }}><span style={{ fontSize: '31px' }}>E = m ( <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '29px' }}>x</span> <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '25px' }}>E = m</span> ( <span style={{ fontSize: '17px', color: '#FFFFFF' }}>Acc. due to Gravity</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '17px', color: '#FFFFFF' }}>orbit Time</span> )<sup>2</sup></span><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '23px' }}>E = m</span> ( <span style={{ fontSize: '18px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '18px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;!</span><br/><br/><span style={{ color: '#808080', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#808080' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#808080' }}>&quot;</span><br/>you are only<br/>blowing hot air&nbsp;&nbsp;!</span><br/><br/>
         <span style={{ color: '#FFFFFF' }}>James&nbsp;&nbsp;&nbsp;MAXWELL&apos;s<br/>
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#C5A059', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS are on PAGE 2 * * *</a><br/><br/><br/><br/><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
       </div>
-      <div className="checkout-banner-link">
+      <div className="checkout-banner-link" style={{ marginTop: 0 }}>
         <UsersOnsiteDisplay />
       </div>
-      <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '25px', display: 'block', marginTop: '16px' }}>
-        Contact&nbsp;&nbsp;Us
-      </span>
-      
-      <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', marginTop: '12px' }}>
-        <span style={{ color: '#00FFFF' }}>WhatsApp</span><br/>
-        <span style={{ color: '#C5A059' }}>+17802707009</span>
-        <br/><br/>
-        <span style={{ color: '#00FFFF' }}>Email</span><br/>
-        <span style={{ color: '#C5A059' }}>wild.book0719@fastmail.com</span>
-      </div>
-      
-      <br/><br/>
       <div className="spacer" style={{ height: '20px' }}></div>
       
       <TruthCounter />
@@ -134,14 +132,20 @@ export default async function Home({ searchParams }: HomeProps) {
         has now enabled the<br/>
         production of<br/>
         the&nbsp;&nbsp;&nbsp;&quot; <strong>NEW</strong> &quot;<br/><br/>
-        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#C5A059' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span><br/><br/>
+        -- &nbsp; <strong>MONUMENTAL</strong> &nbsp; --<br/><br/><strong>Ai (</strong><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>+</span><strong>)</strong>&nbsp;&nbsp;&nbsp; &quot; <span style={{ color: '#C5A059' }}>MAX - LIT</span>&nbsp;&quot;<br/><span style={{ color: '#FFFFFF' }}>SUPERComputer</span>
+        <div className="checkout-banner-link">
+          <p className="checkout-banner-link__text">
+            <a href={CHECKOUT_PATH}>Link&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;&nbsp;&nbsp;&nbsp;MAX-LIT&nbsp;&nbsp;&nbsp;&nbsp;SUPERComputer</a>
+          </p>
+        </div>
+        <br/>
       </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#C5A059', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
         <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'}<span style={{ color: '#FF0000' }}>NO !</span>{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Ai</span><br/>
-        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span><br/><br/><span style={{ color: '#C5A059' }}>MAX-LIT</span><br/>surpasses Standard Ai<br/>in the exact same way<br/>that any Computer<br/>surpasses the Abacus !
+        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span><br/><br/><br/><span style={{ color: '#C5A059' }}>MAX-LIT</span><br/>surpasses Standard Ai<br/>in the exact same way<br/>that any Computer<br/>surpasses the Abacus !
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
