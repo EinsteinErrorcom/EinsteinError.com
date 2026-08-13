@@ -89,7 +89,6 @@ export default async function Home({ searchParams }: HomeProps) {
         <PurchasesLink />
       </p>
       <nav className="page-nav" aria-label="Page navigation" style={{ marginTop: '16px' }}>
-        <a className="page-nav__home" href="/">HOME</a>
         <PageSectionNav />
       </nav>
       <a href={CHECKOUT_PATH} className="banner-image-link">

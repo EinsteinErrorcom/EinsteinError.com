@@ -67,9 +67,15 @@ body {
   font-style: italic;
 }
 
+.page-nav__label--top {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
 .page-nav__home {
   color: var(--color-cyan);
-  font-size: var(--text-base);
+  font-size: calc(var(--text-base) - 2px);
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
@@ -84,7 +90,7 @@ body {
 
 .page-nav__section {
   color: var(--color-cyan);
-  font-size: calc(var(--text-base) - 2px);
+  font-size: calc(var(--text-base) - 4px);
   font-weight: 700;
   font-style: italic;
   text-decoration: none;

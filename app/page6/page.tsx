@@ -1,5 +1,6 @@
 import { ContactBar } from "@/components/contact-bar";
 import { PageEndFooter } from "@/components/page-end-footer";
+import { PageNavLabel } from "@/components/page-nav-label";
 import { PageSectionNav } from "@/components/page-section-nav";
 import { CHECKOUT_PATH } from "@/lib/trial-gate";
 
@@ -8,8 +9,8 @@ export default function Page6() {
     <div className="page-wrapper">
       <main id="main-content">
         <header className="site-header">
+          <PageNavLabel page={6} />
           <nav className="page-nav" aria-label="Page navigation">
-            <span className="page-nav__label">Page 6 of 7</span>
             <a className="page-nav__home" href="/">HOME</a>
             <PageSectionNav hidePage={6} />
           </nav>
