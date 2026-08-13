@@ -1,4 +1,5 @@
 import { ContactBar } from "@/components/contact-bar";
+import { GoldLinesDivider } from "@/components/gold-lines-divider";
 import { PageEndFooter } from "@/components/page-end-footer";
 import { PageSectionNav } from "@/components/page-section-nav";
 import { GoogleLoginButton } from "@/components/google-login-button";
@@ -226,7 +227,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
-      <div style={{ width: '75%', height: '6px', backgroundColor: '#D0AB47', margin: '20px auto' }}></div>
+      <GoldLinesDivider />
       <div className="spacer" style={{ height: '100px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>YES&nbsp; !<br/><br/>This&nbsp; Website<br/><br/>has&nbsp; the&nbsp; absolute<br/><br/>answer&nbsp; to&nbsp; Einstein's<br/><br/>Monumental&nbsp;&nbsp;&nbsp;&nbsp;<span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>ERROR&nbsp; !</span></div>
       <div className="spacer" style={{ height: '100px' }}></div>

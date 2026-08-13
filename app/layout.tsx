@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
+import { GoldLinesDivider } from "@/components/gold-lines-divider";
 import { SitePresenceProvider } from "@/components/site-presence-provider";
 import { SiteTourBar } from "@/components/site-tour-bar";
 import "./globals.css";
@@ -46,6 +47,7 @@ export default function RootLayout({
             <SiteTourBar />
           </Suspense>
           {children}
+          <GoldLinesDivider />
         </SitePresenceProvider>
       </body>
     </html>
