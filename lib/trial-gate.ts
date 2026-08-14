@@ -3,17 +3,21 @@ import { isAccessActive, isPaidAccessTier, normalizeAccessTier } from '@/lib/acc
 import { isProfileTrialActive, type ProfileTrial } from './trial';
 
 /** Site page routes (12-page structure) */
-/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 10 */
-export const CHECKOUT_PATH = '/checkout10';
+/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 11 */
+export const CHECKOUT_PATH = '/checkout11';
+export const CHECKOUT11_PATH = CHECKOUT_PATH;
+/** @deprecated Use CHECKOUT_PATH */
 export const CHECKOUT10_PATH = CHECKOUT_PATH;
 /** @deprecated Use CHECKOUT_PATH — kept for trial-expired redirects */
 export const PRICING_PATH = CHECKOUT_PATH;
-export const CHAT8_PATH = '/maxchatbox8';
-export const CHAT_PATH = '/maxchatbox8';
-export const TRIAL_EXPIRED_PATH = '/trialexpired9';
-export const TIME_EXPIRED_PATH = '/timeexpired11';
-/** Page 12 — spare / reserved */
-export const SPARE_PATH = '/spare12';
+export const CHAT9_PATH = '/maxchatbox9';
+export const CHAT_PATH = '/maxchatbox9';
+/** @deprecated Use CHAT_PATH */
+export const CHAT8_PATH = CHAT_PATH;
+export const TRIAL_EXPIRED_PATH = '/trialexpired10';
+export const TIME_EXPIRED_PATH = '/timeexpired12';
+/** @deprecated spare12 removed — redirects to time expired */
+export const SPARE_PATH = TIME_EXPIRED_PATH;
 
 /** Landing page anchor — scrolls to the Google Sign-In block */
 export const SIGN_IN_SECTION_ID = 'auth-section';

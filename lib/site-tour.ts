@@ -14,11 +14,11 @@ export const SITE_TOUR_STEPS: SiteTourStep[] = [
   { path: '/page5', label: 'Page 5' },
   { path: '/page6', label: 'Page 6' },
   { path: '/page7', label: 'Page 7' },
-  { path: '/maxchatbox8', label: 'AI Chatbox' },
-  { path: '/trialexpired9', label: 'Trial Expired' },
-  { path: '/checkout10', label: 'Checkout' },
-  { path: '/timeexpired11', label: 'Time Expired' },
-  { path: '/spare12', label: 'Spare' },
+  { path: '/page8', label: 'Page 8' },
+  { path: '/maxchatbox9', label: 'AI Chatbox' },
+  { path: '/trialexpired10', label: 'Trial Expired' },
+  { path: '/checkout11', label: 'Checkout' },
+  { path: '/timeexpired12', label: 'Time Expired' },
 ];
 
 export function getTourHref(path: string): string {

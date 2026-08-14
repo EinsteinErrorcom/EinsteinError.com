@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
-import TrialExpired9Client from './TrialExpired9Client';
+import TrialExpired10Client from './TrialExpired10Client';
 
-export default function TrialExpired9Page() {
+export default function TrialExpired10Page() {
   return (
     <Suspense fallback={null}>
-      <TrialExpired9Client />
+      <TrialExpired10Client />
     </Suspense>
   );
 }

@@ -6,7 +6,7 @@ import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 
-export default function TrialExpired9Client() {
+export default function TrialExpired10Client() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const tourMode = isTourMode(searchParams.get(SITE_TOUR_QUERY));
@@ -62,7 +62,7 @@ export default function TrialExpired9Client() {
           }}
         />
       </button>
-      <PageEndFooter pageNumber={9} />
+      <PageEndFooter pageNumber={10} />
     </main>
   );
 }

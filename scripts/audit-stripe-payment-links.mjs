@@ -6,13 +6,13 @@
  *   STRIPE_SECRET_KEY=sk_live_... node scripts/audit-stripe-payment-links.mjs
  *
  * Optional:
- *   EXPECTED_SUCCESS_URL=https://www.einsteinerror.com/maxchatbox8?session_id={CHECKOUT_SESSION_ID}
+ *   EXPECTED_SUCCESS_URL=https://www.einsteinerror.com/maxchatbox9?session_id={CHECKOUT_SESSION_ID}
  */
 
 const secretKey = process.env.STRIPE_SECRET_KEY?.trim();
 const expectedSuccessUrl =
   process.env.EXPECTED_SUCCESS_URL?.trim() ||
-  'https://www.einsteinerror.com/maxchatbox8?session_id={CHECKOUT_SESSION_ID}';
+  'https://www.einsteinerror.com/maxchatbox9?session_id={CHECKOUT_SESSION_ID}';
 
 if (!secretKey) {
   console.error('Missing STRIPE_SECRET_KEY. Run:');
@@ -91,7 +91,7 @@ function printLink(link, index) {
   if (!ok) {
     console.log(`   expected: ${expectedSuccessUrl}`);
     if (!link.active) {
-      console.log('   note: inactive link — safest fix is to leave it off and use /checkout10 only');
+      console.log('   note: inactive link — safest fix is to leave it off and use /checkout11 only');
     } else {
       console.log('   fix: Stripe Dashboard → Payment Links → Edit → After payment → Redirect to URL');
     }
@@ -125,8 +125,8 @@ async function main() {
   console.log('Important: Stripe Buy Buttons are backed by Payment Links.');
   console.log('Edit the Payment Link (not the embed HTML) to change the success redirect.');
   console.log('');
-  console.log('Recommended: deactivate legacy buy-button payment links and use /checkout10 only,');
-  console.log('because /checkout10 attaches supabase_user_id so paid access activates correctly.');
+  console.log('Recommended: deactivate legacy buy-button payment links and use /checkout11 only,');
+  console.log('because /checkout11 attaches supabase_user_id so paid access activates correctly.');
 }
 
 main().catch((err) => {

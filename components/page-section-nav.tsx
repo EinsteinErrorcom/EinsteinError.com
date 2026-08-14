@@ -1,5 +1,5 @@
 type PageSectionNavProps = {
-  hidePage?: 2 | 3 | 4 | 5 | 6 | 7;
+  hidePage?: 2 | 3 | 4 | 5 | 6 | 7 | 8;
 };
 
 const PAGE_LINKS = [
@@ -9,6 +9,7 @@ const PAGE_LINKS = [
   { page: 5, href: "/page5", label: "PAGE5" },
   { page: 6, href: "/page6", label: "PAGE6" },
   { page: 7, href: "/page7", label: "PAGE7" },
+  { page: 8, href: "/page8", label: "PAGE8" },
 ] as const;
 
 export function PageSectionNav({ hidePage }: PageSectionNavProps) {

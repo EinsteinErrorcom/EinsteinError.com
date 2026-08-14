@@ -16,11 +16,11 @@ import {
 import { resolveCountdownProps } from '@/lib/access';
 import { redirect } from 'next/navigation';
 
-type MaxChatbox8PageProps = {
+type MaxChatbox9PageProps = {
   searchParams: Promise<{ session_id?: string; tour?: string }>;
 };
 
-export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageProps) {
+export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageProps) {
   const params = await searchParams;
 
   if (isTourMode(params.tour)) {
@@ -47,7 +47,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
             </p>
           </div>
         </div>
-        <PageEndFooter pageNumber={8} />
+        <PageEndFooter pageNumber={9} />
       </main>
     );
   }
@@ -72,7 +72,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
         redirect(CHAT_PATH);
       }
     } catch (err) {
-      console.error('[maxchatbox8] checkout fulfillment failed:', err);
+      console.error('[maxchatbox9] checkout fulfillment failed:', err);
     }
 
     const profileAfterPayment = await fetchProfileTrial(supabase, user.id);
@@ -93,7 +93,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
         <a href={refreshPath} style={{ color: '#D0AB47', fontWeight: 'bold', textDecoration: 'underline' }}>
           Refresh to open ChatBox
         </a>
-        <PageEndFooter pageNumber={8} />
+        <PageEndFooter pageNumber={9} />
       </main>
     );
   }
@@ -115,7 +115,7 @@ export default async function MaxChatbox8Page({ searchParams }: MaxChatbox8PageP
         accessTier={countdown?.accessTier}
         accessStartedAt={countdown?.accessStartedAt}
       />
-      <PageEndFooter pageNumber={8} />
+      <PageEndFooter pageNumber={9} />
     </main>
   );
 }

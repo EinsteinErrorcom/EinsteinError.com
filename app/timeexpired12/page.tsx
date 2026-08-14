@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
-import TimeExpired11Client from './TimeExpired11Client';
+import TimeExpired12Client from './TimeExpired12Client';
 
-export default function TimeExpired11Page() {
+export default function TimeExpired12Page() {
   return (
     <Suspense fallback={null}>
-      <TimeExpired11Client />
+      <TimeExpired12Client />
     </Suspense>
   );
 }

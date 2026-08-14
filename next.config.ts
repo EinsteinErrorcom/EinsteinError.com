@@ -64,48 +64,78 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/maxchatbox8',
+        destination: '/maxchatbox9',
+        permanent: true,
+      },
+      {
+        source: '/trialexpired9',
+        destination: '/trialexpired10',
+        permanent: true,
+      },
+      {
+        source: '/checkout10',
+        destination: '/checkout11',
+        permanent: true,
+      },
+      {
+        source: '/timeexpired11',
+        destination: '/timeexpired12',
+        permanent: true,
+      },
+      {
+        source: '/spare12',
+        destination: '/timeexpired12',
+        permanent: true,
+      },
+      {
         source: '/pricing9',
-        destination: '/checkout10',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/checkout9',
-        destination: '/checkout10',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/trialexpired8',
-        destination: '/trialexpired9',
+        destination: '/trialexpired10',
         permanent: true,
       },
       {
         source: '/chat8',
-        destination: '/maxchatbox8',
+        destination: '/maxchatbox9',
+        permanent: true,
+      },
+      {
+        source: '/chat9',
+        destination: '/maxchatbox9',
         permanent: true,
       },
       {
         source: '/timeexpired10',
-        destination: '/checkout10',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/stripe-checkout.html',
-        destination: '/checkout10',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/chat11',
-        destination: '/timeexpired11',
+        destination: '/timeexpired12',
         permanent: true,
       },
       {
         source: '/timeexpired',
-        destination: '/timeexpired11',
+        destination: '/timeexpired12',
         permanent: true,
       },
       {
         source: '/spare',
-        destination: '/spare12',
+        destination: '/timeexpired12',
         permanent: true,
       },
     ];

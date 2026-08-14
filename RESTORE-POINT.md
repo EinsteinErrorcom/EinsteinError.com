@@ -85,15 +85,16 @@ grant select, insert, update on table public.profiles to service_role;
 
 ## 12-page site routes
 
-| # | Route |
-|---|---|
-| 1 | `/` |
-| 2–7 | `/page2` … `/page7` |
-| 8 | `/maxchatbox8` |
-| 9 | `/trialexpired9` |
-| 10 | `/checkout10` |
-| 11 | `/timeexpired11` |
-| 12 | `/spare12` |
+| # | Route | Role |
+|---|---|---|
+| 1 | `/` | Home |
+| 2–8 | `/page2` … `/page8` | Content |
+| 9 | `/maxchatbox9` | AI chat (TRY) |
+| 10 | `/trialexpired10` | Trial expired (EXPIRE) |
+| 11 | `/checkout11` | Stripe checkout (PAY) |
+| 12 | `/timeexpired12` | Time expired (EXPIRE) |
+
+Legacy URLs (`/maxchatbox8`, `/checkout10`, `/spare12`, etc.) redirect to the routes above via `next.config.ts`.
 
 ## Quick health check
 

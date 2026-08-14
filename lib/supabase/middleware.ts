@@ -6,11 +6,9 @@ import {
   getAccessExpiredPath,
   shouldRedirectToPricing,
   CHECKOUT_PATH,
-  CHAT8_PATH,
   CHAT_PATH,
   TRIAL_EXPIRED_PATH,
   TIME_EXPIRED_PATH,
-  SPARE_PATH,
 } from '@/lib/trial-gate'
 import {
   isTrialExpired,
@@ -27,11 +25,11 @@ const TRIAL_EXEMPT_PATHS = new Set([
   '/page5',
   '/page6',
   '/page7',
+  '/page8',
   CHECKOUT_PATH,
-  CHAT8_PATH,
+  CHAT_PATH,
   TRIAL_EXPIRED_PATH,
   TIME_EXPIRED_PATH,
-  SPARE_PATH,
   '/dev/reset',
 ])
 
