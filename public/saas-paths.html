@@ -103,7 +103,7 @@
 
         <!-- TOP: HOMEPage -->
         <div class="row">
-          <div class="branch left"><b>Content</b> /page2–7 → HOME<br/><b>Footer</b> Next Page chain<br/><b>Tour</b> ?tour=1 (preview)</div>
+          <div class="branch left"><b>Content</b> /page2–8 → HOME<br/><b>Footer</b> Next Page chain<br/><b>Tour</b> ?tour=1 (preview)</div>
           <div class="spine"><div class="main c-home"><b>HOMEPage</b><i>/</i></div></div>
           <div class="branch right"><b>Banner</b> → Price Page<br/><b>Purchases</b> panel (no route)<br/><b>Content</b> no login OK</div>
         </div>
@@ -125,27 +125,27 @@
 
         <div class="row">
           <div class="branch left"><b>Home</b> → HOMEPage<br/><b>Sign out</b> → HOMEPage<br/><b>/api/chat</b> gatekeeper</div>
-          <div class="spine"><div class="main c-chat"><b>MAX-LIT ChatBox</b><i>/maxchatbox8</i></div></div>
+          <div class="spine"><div class="main c-chat"><b>MAX-LIT ChatBox</b><i>/maxchatbox9</i></div></div>
           <div class="branch right"><b>Paid user</b> → Chat PAID<br/><b>Trial &gt; 1 hr</b> → Trial Expired<br/><b>API</b> 403 if expired</div>
         </div>
         <div class="down">↓</div>
 
         <div class="row">
           <div class="branch left"><b>Click</b> TRIALEXPIRED → Price<br/><b>Footer Next</b> → Price Page<br/><b>Sign-in redirect</b> from chat</div>
-          <div class="spine"><div class="main c-expired"><b>Trial Expired</b><i>/trialexpired9</i></div></div>
-          <div class="branch right"><b>Auto</b> after 1 hr<br/>logged in, not paid<br/><b>Middleware</b> on /maxchatbox8</div>
+          <div class="spine"><div class="main c-expired"><b>Trial Expired</b><i>/trialexpired10</i></div></div>
+          <div class="branch right"><b>Auto</b> after 1 hr<br/>logged in, not paid<br/><b>Middleware</b> on /maxchatbox9</div>
         </div>
         <div class="down">↓</div>
 
         <div class="row">
           <div class="branch left"><b>Footer Next</b> → Time Exp.<br/><b>Cancel</b> from Stripe → here<br/><b>F6</b> banner skip from HOME</div>
-          <div class="spine"><div class="main c-price"><b>Price Page</b><i>/checkout10 · $15 / $75 / $400</i></div></div>
-          <div class="branch right"><b>Not signed in</b> → Log-In<br/><b>Pick tier</b> → Stripe<br/><b>Pages 1–7</b> readable w/o login</div>
+          <div class="spine"><div class="main c-price"><b>Price Page</b><i>/checkout11 · $15 / $75 / $400</i></div></div>
+          <div class="branch right"><b>Not signed in</b> → Log-In<br/><b>Pick tier</b> → Stripe<br/><b>Pages 1–8</b> readable w/o login</div>
         </div>
         <div class="down">↓</div>
 
         <div class="row">
-          <div class="branch left"><b>Cancel</b> → Price Page (F4)<br/><b>cancel_url</b> /checkout10</div>
+          <div class="branch left"><b>Cancel</b> → Price Page (F4)<br/><b>cancel_url</b> /checkout11</div>
           <div class="spine"><div class="main c-stripe"><b>Stripe Checkout</b><i>hosted · 3 hr / 24 hr / 7 day tiers</i></div></div>
           <div class="branch right"><b>Success</b> → Chat PAID (F1)<br/><b>No session</b> → Log-In (F2)<br/><b>Webhook</b> sets is_subscribed</div>
         </div>
@@ -154,15 +154,15 @@
         <div class="row">
           <div class="branch left"><b>Sign out</b> → HOMEPage<br/><b>Re-sign-in</b> → ChatBox<br/><b>No trial expiry</b> redirects</div>
           <div class="spine"><div class="main c-chat"><b>MAX-LIT ChatBox PAID</b><i>is_subscribed = true</i></div></div>
-          <div class="branch right"><b>session_id</b> fulfill on load<br/><b>/maxchatbox8?session_id=</b><br/><b>Always</b> chat access</div>
+          <div class="branch right"><b>session_id</b> fulfill on load<br/><b>/maxchatbox9?session_id=</b><br/><b>Always</b> chat access</div>
         </div>
         <div class="down">↓</div>
 
         <!-- BOTTOM: ChatBox Time Expired -->
         <div class="row">
           <div class="branch left"><b>Click</b> TIMEEXPIRED → Price<br/><b>/chat11</b> legacy redirect<br/><b>Cookie gate</b> expired</div>
-          <div class="spine"><div class="main c-time"><b>ChatBox Time Expired</b><i>/timeexpired11</i></div></div>
-          <div class="branch right"><b>Footer chain</b> from Price<br/><b>Site Tour</b> step-through<br/><b>Next Page</b> → /spare12</div>
+          <div class="spine"><div class="main c-time"><b>ChatBox Time Expired</b><i>/timeexpired12</i></div></div>
+          <div class="branch right"><b>Footer chain</b> from Price<br/><b>Site Tour</b> step-through<br/><b>Next Page</b> → end of site tour</div>
         </div>
 
       </div>

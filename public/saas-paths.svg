@@ -20,7 +20,7 @@
 
   <!-- 1 HOMEPage -->
   <rect x="130" y="68" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
-  <text x="138" y="82" class="br"><tspan class="brb">Content</tspan> /page2–7</text>
+  <text x="138" y="82" class="br"><tspan class="brb">Content</tspan> /page2–8</text>
   <text x="138" y="94" class="br"><tspan class="brb">Tour</tspan> ?tour=1</text>
   <text x="138" y="106" class="br"><tspan class="brb">Banner</tspan> → Price</text>
 
@@ -75,7 +75,7 @@
 
   <rect x="325" y="270" width="170" height="38" rx="7" fill="#2563eb" stroke="#1d4ed8" stroke-width="2"/>
   <text x="410" y="287" text-anchor="middle" class="box">MAX-LIT ChatBox</text>
-  <text x="410" y="300" text-anchor="middle" class="url">/maxchatbox8</text>
+  <text x="410" y="300" text-anchor="middle" class="url">/maxchatbox9</text>
 
   <rect x="560" y="270" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="284" class="br"><tspan class="brb">Paid</tspan> → Chat PAID</text>
@@ -92,7 +92,7 @@
 
   <rect x="325" y="344" width="170" height="38" rx="7" fill="#f97316" stroke="#ea580c" stroke-width="2"/>
   <text x="410" y="361" text-anchor="middle" class="box">Trial Expired</text>
-  <text x="410" y="374" text-anchor="middle" class="url">/trialexpired9</text>
+  <text x="410" y="374" text-anchor="middle" class="url">/trialexpired10</text>
 
   <rect x="560" y="344" width="130" height="40" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="360" class="br"><tspan class="brb">Auto</tspan> after 1 hr</text>
@@ -108,19 +108,19 @@
 
   <rect x="325" y="418" width="170" height="38" rx="7" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
   <text x="410" y="435" text-anchor="middle" class="box">Price Page</text>
-  <text x="410" y="448" text-anchor="middle" class="url">/checkout10 · $15/$75/$400</text>
+  <text x="410" y="448" text-anchor="middle" class="url">/checkout11 · $15/$75/$400</text>
 
   <rect x="560" y="418" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="432" class="br"><tspan class="brb">Not signed in</tspan> → Log-In</text>
   <text x="568" y="444" class="br"><tspan class="brb">Pick tier</tspan> → Stripe</text>
-  <text x="568" y="456" class="br">pages 1–7 no login</text>
+  <text x="568" y="456" class="br">pages 1–8 no login</text>
 
   <text x="410" y="484" class="dn">↓</text>
 
   <!-- 7 Stripe -->
   <rect x="130" y="492" width="130" height="40" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="138" y="508" class="br"><tspan class="brb">Cancel</tspan> → Price (F4)</text>
-  <text x="138" y="520" class="br">cancel_url checkout10</text>
+  <text x="138" y="520" class="br">cancel_url checkout11</text>
 
   <rect x="325" y="492" width="170" height="38" rx="7" fill="#14b8a6" stroke="#0d9488" stroke-width="2"/>
   <text x="410" y="509" text-anchor="middle" class="box">Stripe Checkout</text>
@@ -145,7 +145,7 @@
 
   <rect x="560" y="566" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="580" class="br"><tspan class="brb">session_id</tspan> fulfill</text>
-  <text x="568" y="592" class="br">maxchatbox8?session_id=</text>
+  <text x="568" y="592" class="br">maxchatbox9?session_id=</text>
   <text x="568" y="604" class="br">always chat access</text>
 
   <text x="410" y="632" class="dn">↓</text>
@@ -158,12 +158,12 @@
 
   <rect x="325" y="640" width="170" height="38" rx="7" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
   <text x="410" y="655" text-anchor="middle" class="box">ChatBox Time Expired</text>
-  <text x="410" y="668" text-anchor="middle" class="url">/timeexpired11</text>
+  <text x="410" y="668" text-anchor="middle" class="url">/timeexpired12</text>
 
   <rect x="560" y="640" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="654" class="br"><tspan class="brb">Footer chain</tspan> from Price</text>
   <text x="568" y="666" class="br"><tspan class="brb">Site Tour</tspan> step-through</text>
-  <text x="568" y="678" class="br"><tspan class="brb">Next Page</tspan> → /spare12</text>
+  <text x="568" y="678" class="br"><tspan class="brb">Next Page</tspan> → end of site tour</text>
 
   <!-- spine arrows -->
   <line x1="410" y1="106" x2="410" y2="136" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>

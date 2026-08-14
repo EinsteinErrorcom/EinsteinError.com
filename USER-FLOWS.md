@@ -14,12 +14,13 @@ Footer **“Next Page →”** on each page follows this order (`lib/site-pages.
 | # | URL | Purpose |
 |---|-----|---------|
 | 1 | `/` | Home, Google Sign-In, truth counter |
-| 2–7 | `/page2` … `/page7` | Marketing / proof content |
-| 8 | `/maxchatbox8` | MAX-LIT AI Chatbox |
-| 9 | `/trialexpired9` | Free 1-hour trial expired |
-| 10 | `/checkout10` | Stripe checkout ($15 / $75 / $400) |
-| 11 | `/timeexpired11` | Time expired (cookie gate) |
-| 12 | `/spare12` | Reserved placeholder |
+| 2–8 | `/page2` … `/page8` | Marketing / proof content |
+| 9 | `/maxchatbox9` | MAX-LIT AI Chatbox (TRY) |
+| 10 | `/trialexpired10` | Free 1-hour trial expired (EXPIRE) |
+| 11 | `/checkout11` | Stripe checkout ($15 / $75 / $400) (PAY) |
+| 12 | `/timeexpired12` | Time expired — cookie gate (EXPIRE) |
+
+Legacy URLs (`/maxchatbox8`, `/checkout10`, `/spare12`, etc.) redirect to the routes above via `next.config.ts`.
 
 ---
 
@@ -34,13 +35,13 @@ flowchart TB
   Home["HOMEPAGE /"]
   Login["Google Log-In<br/>#auth-section"]
   Trial["1-Hour FREE Trial"]
-  Chat["MAX-LIT ChatBox<br/>/maxchatbox8"]
-  Expired["Trial Expired<br/>/trialexpired9"]
-  Price["Price Page<br/>/checkout10"]
+  Chat["MAX-LIT ChatBox<br/>/maxchatbox9"]
+  Expired["Trial Expired<br/>/trialexpired10"]
+  Price["Price Page<br/>/checkout11"]
   Stripe["Stripe Checkout"]
   ChatPaid["MAX-LIT ChatBox PAID"]
-  Time["Time Expired<br/>/timeexpired11"]
-  Content["Content pages<br/>/page2 to /page7"]
+  Time["Time Expired<br/>/timeexpired12"]
+  Content["Content pages<br/>/page2 to /page8"]
 
   Home --> Login --> Trial --> Chat --> Expired --> Price --> Stripe --> ChatPaid
   Home -->|"browse, no login"| Content --> Home
@@ -50,7 +51,7 @@ flowchart TB
   Chat -->|"is_subscribed"| ChatPaid
   Stripe -->|"cancel"| Price
   Stripe -->|"success, no session"| Login
-  Price --> Time --> Price
+  Price --> Time
 
   style Home fill:#eff6ff,stroke:#3b82f6
   style Login fill:#ecfdf5,stroke:#10b981
@@ -73,21 +74,21 @@ flowchart TB
 
 ### A. Content browsing (no sign-in)
 
-- `/` → `/page2` → … → `/page7` via footer **Next Page**
-- Pages 2–7: **HOME** link → `/`
-- **Checkout banner** on `/` and `/page2` → `/checkout10` (skips pages 3–9)
-- Pages 1–7, checkout, trial/time-expired pages are readable without logging in
+- `/` → `/page2` → … → `/page8` via footer **Next Page**
+- Pages 2–8: **HOME** link → `/`
+- **Checkout banner** on `/` and `/page2` → `/checkout11` (skips pages 3–10)
+- Pages 1–8, checkout, trial/time-expired pages are readable without logging in
 
 ### B. Sign-in entry points
 
 | Entry | Flow | Lands on |
 |-------|------|----------|
-| Google button on home (primary) | Client `signInWithIdToken` → ensure profile | `/maxchatbox8` |
-| `/auth/google` | OAuth → `/auth/callback` | `/maxchatbox8` or `/trialexpired9`* |
-| Visit `/maxchatbox8` while logged out | Server redirect | `/#auth-section` |
+| Google button on home (primary) | Client `signInWithIdToken` → ensure profile | `/maxchatbox9` |
+| `/auth/google` | OAuth → `/auth/callback` | `/maxchatbox9` or `/trialexpired10`* |
+| Visit `/maxchatbox9` while logged out | Server redirect | `/#auth-section` |
 | Stripe return, auth missing | Preserve `checkout_session_id` | `/?checkout_session_id=…#auth-section` |
 
-\*Returning user whose 1-hour trial already expired → `/trialexpired9`.
+\*Returning user whose 1-hour trial already expired → `/trialexpired10`.
 
 **Sign-in errors:** `/?auth=error&reason=…`
 
@@ -96,71 +97,71 @@ flowchart TB
 ### C. Free trial chat (happy path)
 
 ```
-/ → Google Sign-In → /maxchatbox8 → /api/chat
+/ → Google Sign-In → /maxchatbox9 → /api/chat
 ```
 
 - First sign-in creates `profiles` with `trial_start_at = now`, `is_subscribed = false`
 - Chat allowed for **1 hour** while trial active
 
-### D. Free trial expired (page 9)
+### D. Free trial expired (page 10)
 
 **Automatic:**
 
 ```
-Logged in + trial > 1 hr + not paid + visit /maxchatbox8
-  → /trialexpired9
+Logged in + trial > 1 hr + not paid + visit /maxchatbox9
+  → /trialexpired10
 ```
 
-Also enforced by middleware on `/maxchatbox8` and by `/api/chat` (403 “Trial expired”).
+Also enforced by middleware on `/maxchatbox9` and by `/api/chat` (403 “Trial expired”).
 
 **After sign-in when trial already used:**
 
 ```
-Google Sign-In → /maxchatbox8 → redirect → /trialexpired9
+Google Sign-In → /maxchatbox9 → redirect → /trialexpired10
 ```
 
-**From page 9:**
+**From page 10:**
 
-- Click TRIALEXPIRED image → `/checkout10`
-- Footer **Next Page** → `/checkout10`
+- Click TRIALEXPIRED image → `/checkout11`
+- Footer **Next Page** → `/checkout11`
 
-### E. Time expired (page 11)
+### E. Time expired (page 12)
 
 ```
 Logged in + not paid + trial cookie expired + visit non-exempt URL
-  → /timeexpired11
+  → /timeexpired12
 ```
 
-Most routes are **trial-exempt** (`lib/supabase/middleware.ts`), so page 11 is commonly reached via:
+Most routes are **trial-exempt** (`lib/supabase/middleware.ts`), so page 12 is commonly reached via:
 
-- Footer chain: `/checkout10` → **Next Page** → `/timeexpired11`
+- Footer chain: `/checkout11` → **Next Page** → `/timeexpired12`
 - Site Tour step-through
-- Legacy `/chat11` → `/timeexpired11`
+- Legacy `/chat11` → `/timeexpired12`
 
-**From page 11:** click TIMEEXPIRED image → `/checkout10`
+**From page 12:** click TIMEEXPIRED image → `/checkout11`
 
-> **Important:** Stripe tiers are labeled 3 hr / 24 hr / 7 days, but code today only sets `is_subscribed = true` with **no paid-duration countdown**. Page 11 uses the 1-hour **trial cookie**, not paid-tier hours.
+> **Important:** Stripe tiers are labeled 3 hr / 24 hr / 7 days, but code today only sets `is_subscribed = true` with **no paid-duration countdown**. Page 12 uses the 1-hour **trial cookie**, not paid-tier hours.
 
-### F. Paid checkout
+### F. Paid checkout (page 11)
 
 | Path | Steps |
 |------|--------|
-| **F1 Standard** | `/checkout10` → tier → Stripe → `/maxchatbox8?session_id=cs_…` → fulfill → chat |
-| **F2 Session lost after Stripe** | Stripe → `/maxchatbox8?session_id=…` → `/?checkout_session_id=…#auth-section` → sign in → `/maxchatbox8?session_id=…` → fulfill → chat |
+| **F1 Standard** | `/checkout11` → tier → Stripe → `/maxchatbox9?session_id=cs_…` → fulfill → chat |
+| **F2 Session lost after Stripe** | Stripe → `/maxchatbox9?session_id=…` → `/?checkout_session_id=…#auth-section` → sign in → `/maxchatbox9?session_id=…` → fulfill → chat |
 | **F3 Webhook only** | Webhook sets `is_subscribed = true`; user signs in later → chat |
-| **F4 Cancel** | Stripe cancel → `/checkout10` |
+| **F4 Cancel** | Stripe cancel → `/checkout11` |
 | **F5 Not signed in at checkout** | Click tier → “Sign in required” → `/#auth-section` |
-| **F6 Skip to pricing** | Home banner “Link to MAX-LIT SUPERComputer” → `/checkout10` |
+| **F6 Skip to pricing** | Home banner “Link to MAX-LIT SUPERComputer” → `/checkout11` |
 
-**Stripe config:** `success_url` → `/maxchatbox8?session_id={CHECKOUT_SESSION_ID}`; `cancel_url` → `/checkout10` (`lib/stripe/stripe-service.ts`).
+**Stripe config:** `success_url` → `/maxchatbox9?session_id={CHECKOUT_SESSION_ID}`; `cancel_url` → `/checkout11` (`lib/stripe/stripe-service.ts`).
 
 ### G. Subscribed user
 
 ```
-is_subscribed = true → /maxchatbox8 always works; no trial-expiry redirects
+is_subscribed = true → /maxchatbox9 always works; no trial-expiry redirects
 ```
 
-Sign out from chat → `/`. Sign in again → `/maxchatbox8`.
+Sign out from chat → `/`. Sign in again → `/maxchatbox9`.
 
 ### H. Site Tour (`?tour=1`)
 
@@ -172,7 +173,7 @@ Sign-in, chat, payments, and trial/time-expired clicks are **disabled** (preview
 
 ### I. Chat exit
 
-From `/maxchatbox8`:
+From `/maxchatbox9`:
 
 - **Home** → `/`
 - **Sign out** → `/`
@@ -186,7 +187,7 @@ From `/maxchatbox8`:
 
 | Route | Purpose |
 |-------|---------|
-| `/dev/reset` | Reset 1-hour trial → `/maxchatbox8` |
+| `/dev/reset` | Reset 1-hour trial → `/maxchatbox9` |
 | `/dev/gemini` | Gemini API setup help |
 
 ---
@@ -196,11 +197,11 @@ From `/maxchatbox8`:
 | Condition | Destination |
 |-----------|-------------|
 | Not logged in, visit chat | `/#auth-section` |
-| Logged in, trial active | `/maxchatbox8` |
-| Logged in, trial expired, not paid | `/trialexpired9` |
-| Paid (`is_subscribed`) | `/maxchatbox8` |
-| Stripe success | `/maxchatbox8?session_id=…` |
-| Stripe cancel | `/checkout10` |
+| Logged in, trial active | `/maxchatbox9` |
+| Logged in, trial expired, not paid | `/trialexpired10` |
+| Paid (`is_subscribed`) | `/maxchatbox9` |
+| Stripe success | `/maxchatbox9?session_id=…` |
+| Stripe cancel | `/checkout11` |
 | Sign-in error | `/?auth=error` |
 
 ---
@@ -211,11 +212,11 @@ From `/maxchatbox8`:
 
 | Item | Notes |
 |------|--------|
-| 12-page chain `/` … `/spare12` | Primary site structure; constants in `lib/trial-gate.ts` |
-| `/maxchatbox8` | Canonical chat (page 8) |
-| `/trialexpired9` | Free trial expired (page 9) |
-| `/checkout10` | Stripe checkout (page 10) |
-| `/timeexpired11` | Time expired (page 11) |
+| 12-page chain `/` … `/timeexpired12` | 8 content + 4 product; constants in `lib/trial-gate.ts` |
+| `/maxchatbox9` | Canonical chat (page 9) |
+| `/trialexpired10` | Free trial expired (page 10) |
+| `/checkout11` | Stripe checkout (page 11) |
+| `/timeexpired12` | Time expired (page 12) |
 | `/#auth-section` | Sign-in anchor on home |
 | `/?checkout_session_id=…` | Post-Stripe sign-in handoff |
 | Site Tour `?tour=1` | Preview all pages without real auth/pay |
@@ -225,14 +226,12 @@ From `/maxchatbox8`:
 
 | URL / behavior | Current behavior | Issue | Suggested fix |
 |----------------|------------------|-------|----------------|
-| `/trialexpired`, `/trial-expired` | Redirect → `/maxchatbox8` | Name implies page 9 but sends users to **chat** | Redirect to `/trialexpired9` instead |
-| `/trialexpired8/page.tsx` | Redirect → `/maxchatbox8` | Same mismatch (config sends `/trialexpired8` → page 9, but app route overrides to chat) | Align app route with `next.config.ts` |
-| `/success`, `/TrialApproved`, `/FREETrialApproved` | Redirect → chat | Orphan names; no dedicated success UI | Remove or redirect to `/maxchatbox8?session_id=…` handler |
-| `/pricing`, `/checkout`, `/checkout9` | Redirect → `/checkout10` | Fine as aliases; duplicate app-level redirects | Consolidate to `next.config.ts` only |
-| `/chat`, `/chat8` | Redirect → `/maxchatbox8` | Fine as aliases | Keep |
-| `/timeexpired10` | Config → `/checkout10` | Skips page 11 entirely | Confirm intentional (shortcut to pay) |
+| `/success`, `/TrialApproved`, `/FREETrialApproved` | Redirect → chat | Orphan names; no dedicated success UI | Remove or redirect to `/maxchatbox9?session_id=…` handler |
+| `/pricing`, `/checkout`, `/checkout9` | Redirect → `/checkout11` | Fine as aliases; duplicate app-level redirects | Consolidate to `next.config.ts` only |
+| `/chat`, `/chat8`, `/chat9` | Redirect → `/maxchatbox9` | Fine as aliases | Keep |
+| `/timeexpired10` | Config → `/checkout11` | Skips trial/time pages | Confirm intentional (shortcut to pay) |
 | Paid tier duration (3 hr / 24 hr / 7 days) | Only `is_subscribed = true` | Marketing labels ≠ enforced access time | Add `subscription_expires_at` + gate chat/API |
-| Page 11 vs page 9 | Two “expired” pages, similar UX | Confusing; page 11 rarely hit in normal browsing | Document or merge UX |
+| Page 10 vs page 12 | Two “expired” pages, similar UX | Confusing; page 12 rarely hit in normal browsing | Document or merge UX |
 | Dual trial tracking | DB `trial_start_at` + cookie `maxlit_trial_started_at` | Two 1-hour clocks can diverge | Single source of truth |
 | `/auth/google` OAuth route | Exists alongside GIS button | Two sign-in code paths | Prefer one primary path |
 
@@ -240,14 +239,21 @@ From `/maxchatbox8`:
 
 | Source | Destination |
 |--------|-------------|
-| `/pricing9` | `/checkout10` |
-| `/checkout9` | `/checkout10` |
-| `/trialexpired8` | `/trialexpired9` |
-| `/chat8` | `/maxchatbox8` |
-| `/timeexpired10` | `/checkout10` |
-| `/chat11` | `/timeexpired11` |
-| `/timeexpired` | `/timeexpired11` |
-| `/spare` | `/spare12` |
+| `/maxchatbox8` | `/maxchatbox9` |
+| `/trialexpired9` | `/trialexpired10` |
+| `/checkout10` | `/checkout11` |
+| `/timeexpired11` | `/timeexpired12` |
+| `/spare12` | `/timeexpired12` |
+| `/pricing9` | `/checkout11` |
+| `/checkout9` | `/checkout11` |
+| `/trialexpired8` | `/trialexpired10` |
+| `/chat8` | `/maxchatbox9` |
+| `/chat9` | `/maxchatbox9` |
+| `/timeexpired10` | `/checkout11` |
+| `/chat11` | `/timeexpired12` |
+| `/timeexpired` | `/timeexpired12` |
+| `/spare` | `/timeexpired12` |
+| `/stripe-checkout.html` | `/checkout11` |
 
 ### App-level legacy redirects (duplicate aliases)
 
@@ -263,7 +269,7 @@ Many routes under `app/*/page.tsx` only call `redirect()` — see grep for `redi
 | 12-page order | `lib/site-pages.ts` |
 | Trial duration (1 hr) | `lib/trial.ts` |
 | Middleware gates | `lib/supabase/middleware.ts` |
-| Chat page + Stripe fulfill | `app/maxchatbox8/page.tsx` |
+| Chat page + Stripe fulfill | `app/maxchatbox9/page.tsx` |
 | Google sign-in | `components/google-login-button.tsx` |
 | OAuth callback | `app/auth/callback/route.ts` |
 | Stripe success/cancel URLs | `lib/stripe/stripe-service.ts` |
