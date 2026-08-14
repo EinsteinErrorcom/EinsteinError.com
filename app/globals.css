@@ -754,6 +754,15 @@ p {
   gap: 0.5rem;
 }
 
+.payment-checkout__sign-in-prompt {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
 .payment-checkout__sign-in {
   color: #00ffff;
   font-weight: 700;

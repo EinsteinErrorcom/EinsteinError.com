@@ -11,6 +11,9 @@ type GoogleLoginButtonProps = {
   googleClientId?: string | null;
   initialError?: string | null;
   checkoutSessionId?: string | null;
+  redirectPath?: string | null;
+  variant?: 'banner' | 'link';
+  linkLabel?: string;
 };
 
 type CredentialResponse = {
@@ -127,6 +130,9 @@ export function GoogleLoginButton({
   googleClientId,
   initialError = null,
   checkoutSessionId = null,
+  redirectPath = null,
+  variant = 'banner',
+  linkLabel = 'SIGN-IN HERE',
 }: GoogleLoginButtonProps) {
   const clientId = googleClientId?.trim() || EXPECTED_CLIENT_ID;
   const [loginError, setLoginError] = useState<string | null>(initialError);
@@ -214,7 +220,7 @@ export function GoogleLoginButton({
       await ensureProfileAfterSignIn(supabase);
       const destination = checkoutSessionId
         ? buildChatPathWithCheckoutSession(checkoutSessionId)
-        : CHAT_PATH;
+        : redirectPath ?? CHAT_PATH;
       window.location.assign(destination);
     } catch (err: unknown) {
       const message =
@@ -223,7 +229,7 @@ export function GoogleLoginButton({
       setLoginError(message);
       setIsLoading(false);
     }
-  }, [checkoutSessionId]);
+  }, [checkoutSessionId, redirectPath]);
 
   useEffect(() => {
     handleCredentialRef.current = handleCredential;
@@ -305,76 +311,129 @@ export function GoogleLoginButton({
   }, [buttonReady, stretchGoogleButton]);
 
   const isInteractive = buttonReady && !isLoading;
+  const isLinkVariant = variant === 'link';
 
   return (
     <>
       <Script src="https://accounts.google.com/gsi/client" strategy="afterInteractive" />
 
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: isLinkVariant ? 0 : '20px' }}>
+        {isLinkVariant ? (
+          <button
+            type="button"
+            className="payment-checkout__sign-in"
+            disabled={!isInteractive}
+            onClick={() => {
+              if (isInteractive) {
+                triggerGoogleSignIn();
+              }
+            }}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              cursor: isInteractive ? 'pointer' : 'default',
+              font: 'inherit',
+            }}
+          >
+            {isLoading ? 'Signing you in...' : linkLabel}
+          </button>
+        ) : null}
+
         <div
           ref={containerRef}
-          role="button"
-          tabIndex={isInteractive ? 0 : -1}
-          aria-label="Sign in with Google to access MAX-LIT"
-          onClick={() => {
-            if (isInteractive) {
-              triggerGoogleSignIn();
-            }
-          }}
-          onKeyDown={(event) => {
-            if (isInteractive && (event.key === "Enter" || event.key === " ")) {
-              event.preventDefault();
-              triggerGoogleSignIn();
-            }
-          }}
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "700px",
-            margin: "0 auto",
-            cursor: isInteractive ? "pointer" : "default",
-          }}
+          role={isLinkVariant ? undefined : 'button'}
+          tabIndex={isLinkVariant ? undefined : isInteractive ? 0 : -1}
+          aria-label={isLinkVariant ? undefined : 'Sign in with Google to access MAX-LIT'}
+          onClick={
+            isLinkVariant
+              ? undefined
+              : () => {
+                  if (isInteractive) {
+                    triggerGoogleSignIn();
+                  }
+                }
+          }
+          onKeyDown={
+            isLinkVariant
+              ? undefined
+              : (event) => {
+                  if (isInteractive && (event.key === 'Enter' || event.key === ' ')) {
+                    event.preventDefault();
+                    triggerGoogleSignIn();
+                  }
+                }
+          }
+          style={
+            isLinkVariant
+              ? {
+                  position: 'absolute',
+                  width: 1,
+                  height: 1,
+                  overflow: 'hidden',
+                  clip: 'rect(0 0 0 0)',
+                  clipPath: 'inset(50%)',
+                  whiteSpace: 'nowrap',
+                }
+              : {
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                  cursor: isInteractive ? 'pointer' : 'default',
+                }
+          }
         >
-          <img
-            src="/QCOMPUTER.png"
-            alt=""
-            aria-hidden="true"
-            width={700}
-            height={1000}
-            style={{
-              width: "100%",
-              maxWidth: "700px",
-              aspectRatio: "700 / 1000",
-              height: "auto",
-              display: "block",
-              opacity: isInteractive ? 1 : 0.5,
-              pointerEvents: "none",
-              userSelect: "none",
-            }}
-          />
+          {!isLinkVariant ? (
+            <img
+              src="/QCOMPUTER.png"
+              alt=""
+              aria-hidden="true"
+              width={700}
+              height={1000}
+              style={{
+                width: '100%',
+                maxWidth: '700px',
+                aspectRatio: '700 / 1000',
+                height: 'auto',
+                display: 'block',
+                opacity: isInteractive ? 1 : 0.5,
+                pointerEvents: 'none',
+                userSelect: 'none',
+              }}
+            />
+          ) : null}
 
           <div
             ref={overlayRef}
             aria-hidden="true"
             style={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 2,
-              overflow: "hidden",
-              opacity: 0.01,
-              pointerEvents: "none",
+              position: isLinkVariant ? 'static' : 'absolute',
+              inset: isLinkVariant ? undefined : 0,
+              zIndex: isLinkVariant ? undefined : 2,
+              overflow: 'hidden',
+              opacity: isLinkVariant ? 0 : 0.01,
+              pointerEvents: 'none',
+              width: isLinkVariant ? 240 : undefined,
+              height: isLinkVariant ? 44 : undefined,
             }}
           />
         </div>
 
-        {!isInteractive && (
-          <p style={{ color: "#00FFFF", fontSize: "16px", marginTop: "12px", marginBottom: "0" }}>
-            {isLoading ? "Signing you in..." : "Loading sign-in..."}
+        {!isLinkVariant && !isInteractive && (
+          <p style={{ color: '#00FFFF', fontSize: '16px', marginTop: '12px', marginBottom: '0' }}>
+            {isLoading ? 'Signing you in...' : 'Loading sign-in...'}
+          </p>
+        )}
+
+        {isLinkVariant && !isInteractive && !isLoading && (
+          <p style={{ color: '#00FFFF', fontSize: '16px', marginTop: '12px', marginBottom: '0' }}>
+            Loading sign-in...
           </p>
         )}
 
         {loginError && (
-          <p style={{ color: "#FF6B6B", fontSize: "16px", marginTop: "16px", lineHeight: 1.5 }}>
+          <p style={{ color: '#FF6B6B', fontSize: '16px', marginTop: '16px', lineHeight: 1.5 }}>
             {loginError}
           </p>
         )}
