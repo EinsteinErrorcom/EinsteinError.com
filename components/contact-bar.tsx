@@ -18,16 +18,7 @@ export function ContactBar({ style }: ContactBarProps) {
       <br />
       <span style={{ color: '#00FFFF' }}>WhatsApp</span>
       {'\u00A0'.repeat(4)}
-      <span
-        style={{
-          display: 'inline-block',
-          padding: '2px 10px',
-          backgroundColor: '#D0AB47',
-          color: '#000000',
-        }}
-      >
-        +17802707009
-      </span>
+      <span style={{ color: '#D0AB47' }}>+17802707009</span>
       <br />
       <span style={{ color: '#00FFFF' }}>Email</span>
       {'\u00A0'.repeat(4)}

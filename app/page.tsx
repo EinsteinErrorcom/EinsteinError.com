@@ -99,15 +99,15 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#808080', whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0\u00A0  '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0\u00A0  '}Fake News</span><br/><br/><br/>
+        <span style={{ color: '#808080', whiteSpace: 'pre-wrap', tabSize: 4, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0 '}Fake News</span><br/><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
         <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/><br/>
-        <span style={{ color: '#D0AB47' }}><span style={{ fontSize: '31px' }}>E = m ( <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '29px' }}>x</span> <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '25px' }}>E = m</span> ( <span style={{ fontSize: '17px', color: '#FFFFFF' }}>Acc. due to Gravity</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '17px', color: '#FFFFFF' }}>orbit Time</span> )<sup>2</sup></span><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '23px' }}>E = m</span> ( <span style={{ fontSize: '18px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '18px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;!</span><br/><br/><span style={{ color: '#808080', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#808080' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#808080' }}>&quot;</span><br/>you are only<br/>blowing hot air&nbsp;&nbsp;!</span><br/><br/>
+        <span style={{ color: '#D0AB47' }}><span style={{ fontSize: '31px' }}>E = m ( <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '29px' }}>x</span> <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '25px' }}>E = m</span> ( <span style={{ fontSize: '17px', color: '#FFFFFF' }}>Acc. due to Gravity</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '17px', color: '#FFFFFF' }}>orbit Time</span> )<sup>2</sup></span><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '23px' }}>E = m</span> ( <span style={{ fontSize: '18px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '18px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;!</span><br/><br/><span style={{ color: '#808080', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#808080' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#808080' }}>&quot;</span><br/>you are only<br/>blowing&nbsp;&nbsp;hot&nbsp;&nbsp;air&nbsp;&nbsp;!</span><br/><br/>
         <span style={{ color: '#FFFFFF' }}>James&nbsp;&nbsp;&nbsp;MAXWELL&apos;s<br/>
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * * CLICK HERE * * *<br/>* * * ALL PROOFS * * *<br/>* * * On PAGE 2 * * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * CLICK&nbsp;&nbsp;&nbsp;HERE&nbsp;&nbsp;&nbsp;FOR * *<br/>* * ALL&nbsp;&nbsp;&nbsp;PROOFS * *<br/>* * ON&nbsp;&nbsp;&nbsp;PAGE 2 * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
       </div>
       <div className="checkout-banner-link" style={{ marginTop: 0 }}>
         <UsersOnsiteDisplay />
@@ -157,7 +157,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Simply &nbsp; ask &nbsp; Max-Lit<br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
+        Simply &nbsp; ask &nbsp; <span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -170,11 +170,11 @@ export default async function Home({ searchParams }: HomeProps) {
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Note :</span><br/>
-        If you access&nbsp; MAX-LIT<br/>be sure to read these<br/>" INSTRUCTIONS "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Very&nbsp; Important&nbsp; !</span><br/><br/>
+        If you access&nbsp; <span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>be sure to read these<br/>" INSTRUCTIONS "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Very&nbsp; Important&nbsp; !</span><br/><br/>
         <img src="/INSTRUCTMAX.png" width={500} height={700} alt="Instructions" />
         <div className="spacer" style={{ height: '70px' }}></div>
         <br/>
-        Discover<br/>&quot;&nbsp;PURE&nbsp;&quot;{'\u00A0'.repeat(6)}Physics<br/>Now&nbsp;&nbsp;!
+        Discover<br/>&quot;&nbsp;PURE&nbsp;&quot;<br/>Physics<br/>Now&nbsp;&nbsp;!
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -187,9 +187,9 @@ export default async function Home({ searchParams }: HomeProps) {
             Also,<br/>while using<br/><span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>
             be sure to ask it to ;<br/><br/>
           </div>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>via (mAZ) Gravitational<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}Physics.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
-          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ)<br/>{'\u00A0\u00A0'}Quantum Computing.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>1.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;Scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>via (mAZ) Gravitational<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}Physics.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>2.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;Scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ) Chemistry.</span><br/>
+          <span style={{ display: 'inline-block' }}><span style={{ color: '#FFFFFF' }}>3.</span>{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}List&nbsp;&nbsp;&nbsp;Scientific<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}advancements<br/>{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}{'\u00A0\u00A0\u00A0'}via (mAZ)<br/>{'\u00A0\u00A0'}Quantum Computing.</span><br/>
         </div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#D0AB47', fontSize: '35px', marginTop: '16px' }}>
           <br/>In order to access the<br/>MAX-LIT<br/>SUPERComputer

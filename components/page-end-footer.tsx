@@ -29,7 +29,8 @@ export function PageEndFooter({ pageNumber, leadText }: PageEndFooterProps) {
               <br />
             </>
           ) : null}
-          Click&nbsp; the&nbsp; <span style={{ color: '#FFFFFF' }}>Next&nbsp; Page</span>{' '}
+          Click&nbsp;&nbsp;to&nbsp;&nbsp;Next&nbsp;&nbsp;
+          <span style={{ color: '#FFFFFF' }}>Page&nbsp;{pageNumber + 1}</span>{' '}
           &rarr;
           <br />
           <br />
