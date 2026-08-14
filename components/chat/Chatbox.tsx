@@ -274,7 +274,7 @@ export default function Chatbox({
           disabled={loading || !input.trim()}
           className="w-full mt-2 p-2 bg-[#00FFFF] text-black font-bold rounded disabled:opacity-50"
         >
-          {loading ? 'Processing...' : 'Send to MAX-LIT'}
+          {loading ? 'Processing...' : 'PUSH Your Question To MAX'}
         </button>
       </div>
     </div>

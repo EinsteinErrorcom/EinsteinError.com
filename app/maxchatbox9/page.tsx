@@ -26,7 +26,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
   if (isTourMode(params.tour)) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">AI Chat Window</h1>
+        <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">MAX Ai Chat Window</h1>
         <p style={{ color: '#FFFF00', fontStyle: 'italic', marginBottom: '24px' }}>
           Tour preview — sign-in and chat are disabled on this page.
         </p>
@@ -108,7 +108,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
   return (
     <main className="p-8">
       <ChatExitLinks />
-      <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">AI Chat Window</h1>
+      <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">MAX Ai Chat Window</h1>
       <Chatbox
         embedded
         historyUserId={user.id}
