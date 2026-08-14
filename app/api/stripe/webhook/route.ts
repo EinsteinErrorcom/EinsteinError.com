@@ -5,6 +5,14 @@ import { getStripeClient } from '@/lib/stripe/stripe-service';
 
 export const runtime = 'nodejs';
 
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    endpoint: '/api/stripe/webhook',
+    note: 'Stripe delivers events via POST with a stripe-signature header.',
+  });
+}
+
 function getWebhookSecret(): string | null {
   return (
     process.env.STRIPE_WEBHOOK_SIGNING_SECRET?.trim() ||

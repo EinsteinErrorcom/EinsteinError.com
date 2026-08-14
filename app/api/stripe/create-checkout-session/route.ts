@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { getPricingTier } from '@/lib/stripe/pricing';
-import { createCheckoutSession } from '@/lib/stripe/stripe-service';
+import {
+  createCheckoutSession,
+  formatStripeError,
+  resolveSiteUrl,
+} from '@/lib/stripe/stripe-service';
 import { createClient, getAuthenticatedUser } from '@/lib/supabase/server';
 import { createPaymentIntentSchema } from '@/lib/validations/stripe';
 
@@ -35,6 +39,7 @@ export async function POST(req: Request) {
       tier,
       userId: user.id,
       email: user.email,
+      siteUrl: resolveSiteUrl(req),
     });
 
     if (!session.url) {
@@ -47,8 +52,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ url: session.url });
   } catch (err) {
     console.error('[stripe/create-checkout-session]', err);
-    const message =
-      err instanceof Error ? err.message : 'Failed to create checkout session';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json(
+      { error: formatStripeError(err) },
+      { status: 500 }
+    );
   }
 }

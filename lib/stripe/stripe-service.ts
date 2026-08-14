@@ -20,33 +20,75 @@ export function getStripeClient(): Stripe {
   return stripeClient;
 }
 
-function getSiteUrl(): string {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (siteUrl) {
-    return siteUrl.replace(/\/$/, '');
+export function resolveSiteUrl(req?: Request): string {
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (configured) {
+    return configured.replace(/\/$/, '');
   }
+
+  if (req) {
+    const forwardedHost = req.headers.get('x-forwarded-host');
+    const forwardedProto = req.headers.get('x-forwarded-proto')?.split(',')[0]?.trim();
+
+    if (forwardedHost) {
+      const host = forwardedHost.split(',')[0].trim();
+      const proto =
+        forwardedProto || (host.includes('localhost') ? 'http' : 'https');
+      return `${proto}://${host}`;
+    }
+
+    try {
+      return new URL(req.url).origin;
+    } catch {
+      // fall through to Vercel/local defaults
+    }
+  }
+
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  if (vercelUrl) {
+    return `https://${vercelUrl.replace(/\/$/, '')}`;
+  }
+
   return 'http://localhost:3000';
+}
+
+export function formatStripeError(err: unknown): string {
+  if (err instanceof Stripe.errors.StripeError) {
+    if (err.statusCode === 404) {
+      return `Stripe price or product not found (${err.message}). Check price IDs in lib/stripe/pricing.ts match your Stripe Dashboard and that STRIPE_SECRET_KEY uses the same mode (test vs live).`;
+    }
+
+    return err.message;
+  }
+
+  if (err instanceof Error) {
+    return err.message;
+  }
+
+  return 'Stripe request failed';
 }
 
 type CheckoutSessionInput = {
   tier: PricingTier;
   userId: string;
   email?: string | null;
+  siteUrl?: string;
 };
 
 export async function createCheckoutSession({
   tier,
   userId,
   email,
+  siteUrl,
 }: CheckoutSessionInput): Promise<Stripe.Checkout.Session> {
   const stripe = getStripeClient();
-  const siteUrl = getSiteUrl();
+  const resolvedSiteUrl = siteUrl ?? resolveSiteUrl();
 
   return stripe.checkout.sessions.create({
     mode: 'payment',
     line_items: [{ price: tier.priceId, quantity: 1 }],
-    success_url: `${siteUrl}${CHAT_PATH}?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${siteUrl}${CHECKOUT_PATH}`,
+    success_url: `${resolvedSiteUrl}${CHAT_PATH}?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${resolvedSiteUrl}${CHECKOUT_PATH}`,
     metadata: {
       supabase_user_id: userId,
       price_id: tier.priceId,

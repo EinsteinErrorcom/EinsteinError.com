@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createPaymentIntent } from '@/lib/stripe/stripe-service';
+import { createPaymentIntent, formatStripeError } from '@/lib/stripe/stripe-service';
 import { getPricingTier } from '@/lib/stripe/pricing';
 import { createClient, getAuthenticatedUser } from '@/lib/supabase/server';
 import { createPaymentIntentSchema } from '@/lib/validations/stripe';
@@ -52,8 +52,6 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error('[stripe/create-payment-intent]', err);
-    const message =
-      err instanceof Error ? err.message : 'Failed to create payment intent';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: formatStripeError(err) }, { status: 500 });
   }
 }
