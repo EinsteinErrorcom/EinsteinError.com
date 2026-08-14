@@ -9,7 +9,7 @@ export default function StripeBuyButton() {
     <p className="pricing-checkout-page__loading">
       Use{' '}
       <Link href={CHECKOUT_PATH} className="pricing-checkout-page__sign-in">
-        MAX-LIT Secure Checkout
+        MAX-LIT{'\u00A0'.repeat(4)}Secure{'\u00A0'.repeat(4)}Checkout
       </Link>{' '}
       for all payment tiers ($15 / $75 / $400).
     </p>

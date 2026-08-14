@@ -757,16 +757,23 @@ p {
 .payment-checkout__sign-in-prompt {
   margin: 0 0 1.25rem;
   text-align: center;
-  color: #ffffff;
+  color: #ff0000;
   font-weight: 700;
   font-style: italic;
   font-size: 1.5rem;
+}
+
+.payment-checkout__sign-in-link {
+  margin-top: 1.5rem;
 }
 
 .payment-checkout__sign-in {
   color: #00ffff;
   font-weight: 700;
   text-decoration: none;
+  border: 2px solid #ffffff;
+  padding: 0.4rem 0.9rem;
+  display: inline-block;
 }
 
 .payment-checkout__sign-in:hover {

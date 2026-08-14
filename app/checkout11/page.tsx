@@ -24,7 +24,9 @@ export default async function Checkout11Page() {
   return (
     <main className="pricing-checkout-page">
       <div className="pricing-checkout-page__inner">
-        <h1 className="pricing-checkout-page__title">MAX-LIT Secure Checkout</h1>
+        <h1 className="pricing-checkout-page__title">
+          MAX-LIT{'\u00A0'.repeat(4)}Secure{'\u00A0'.repeat(4)}Checkout
+        </h1>
         {!isSignedIn ? (
           <CheckoutSignInPrompt googleClientId={googleClientId} />
         ) : null}

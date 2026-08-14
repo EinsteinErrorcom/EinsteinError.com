@@ -330,8 +330,6 @@ export function GoogleLoginButton({
             }}
             style={{
               background: 'none',
-              border: 'none',
-              padding: 0,
               cursor: isInteractive ? 'pointer' : 'default',
               font: 'inherit',
             }}
