@@ -23,7 +23,11 @@ export function PageNav({ page, className }: PageNavProps) {
           HOME
         </a>
       )}
-      <PageSectionNav hidePage={page > 1 ? page : undefined} />
+      {page === 1 ? (
+        <PageSectionNav />
+      ) : (
+        <PageSectionNav hidePage={page} />
+      )}
     </nav>
   );
 }
