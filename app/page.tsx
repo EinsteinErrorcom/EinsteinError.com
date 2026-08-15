@@ -1,7 +1,6 @@
-import { ContactBar } from "@/components/contact-bar";
 import { GoldLinesDivider } from "@/components/gold-lines-divider";
 import { PageEndFooter } from "@/components/page-end-footer";
-import { PageSectionNav } from "@/components/page-section-nav";
+import { SiteHeader } from "@/components/site-header";
 import { GoogleLoginButton } from "@/components/google-login-button";
 import { UsersOnsiteDisplay } from "@/components/users-onsite-display";
 import { ScrollToAuthSection } from "@/components/scroll-to-auth-section";
@@ -84,18 +83,12 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <main className="page-wrapper">
       <ScrollToAuthSection />
-      <p style={{ margin: '16px auto 0', maxWidth: '1040px' }}>
+      <div style={{ margin: '16px auto 0', maxWidth: '1040px' }}>
         <SiteTourStartLink />
         {'\u00A0'.repeat(12)}
         <PurchasesLink />
-      </p>
-      <nav className="page-nav" aria-label="Page navigation" style={{ marginTop: '16px' }}>
-        <PageSectionNav />
-      </nav>
-      <a href={CHECKOUT_PATH} className="banner-image-link">
-        <img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} />
-      </a>
-      <ContactBar />
+      </div>
+      <SiteHeader page={1} />
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>

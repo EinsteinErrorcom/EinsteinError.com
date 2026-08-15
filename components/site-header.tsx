@@ -1,0 +1,28 @@
+import { ContactBar } from "@/components/contact-bar";
+import { PageNav } from "@/components/page-nav";
+import { CHECKOUT_PATH } from "@/lib/trial-gate";
+
+type SiteHeaderProps = {
+  page: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+};
+
+export function SiteHeader({ page }: SiteHeaderProps) {
+  return (
+    <header className="site-header">
+      <PageNav page={page} />
+      <figure className="media media--banner">
+        <a href={CHECKOUT_PATH}>
+          <img
+            src="/TITLE2.png"
+            alt="Einstein Error Title Banner"
+            width={700}
+            height={150}
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+      </figure>
+      <ContactBar />
+    </header>
+  );
+}

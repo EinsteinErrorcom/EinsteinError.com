@@ -1,22 +1,11 @@
-import { ContactBar } from "@/components/contact-bar";
 import { PageEndFooter } from "@/components/page-end-footer";
-import { PageNavLabel } from "@/components/page-nav-label";
-import { PageSectionNav } from "@/components/page-section-nav";
-import { CHECKOUT_PATH } from "@/lib/trial-gate";
+import { SiteHeader } from "@/components/site-header";
 
 export default function Page4() {
   return (
     <div className="page-wrapper">
       <main id="main-content">
-      <header className="site-header">
-        <PageNavLabel page={4} />
-        <nav className="page-nav" aria-label="Page navigation">
-          <a className="page-nav__home" href="/">HOME</a>
-          <PageSectionNav hidePage={4} />
-        </nav>
-        <figure className="media media--banner"><a href={CHECKOUT_PATH}><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></a></figure>
-        <ContactBar />
-      </header>
+      <SiteHeader page={4} />
       <br/><br/>
       <div className="f-medium">
         
@@ -298,9 +287,17 @@ Here, watch some Videos ...
         
       </div>
       <div className="spacer spacer--sm"></div>
-      <p style={{ textAlign: 'center' }}><a href="/https://rumble.com/v4t9oht--1-overview" target="_blank" rel="noopener noreferrer"><figure className="media"><img src="/1VIDEO.png" alt="Video 1" width="500" height="300" loading="lazy" decoding="async" /></figure></a></p>
+      <figure className="media">
+        <a href="https://rumble.com/v4t9oht--1-overview" target="_blank" rel="noopener noreferrer">
+          <img src="/1VIDEO.png" alt="Video 1" width="500" height="300" loading="lazy" decoding="async" />
+        </a>
+      </figure>
       <div className="spacer spacer--sm"></div>
-      <p style={{ textAlign: 'center' }}><a href="/https://rumble.com/v4tbd4i--2-proof" target="_blank" rel="noopener noreferrer"><figure className="media"><img src="/2VIDEO.png" alt="Video 2" width="500" height="300" loading="lazy" decoding="async" /></figure></a></p>
+      <figure className="media">
+        <a href="https://rumble.com/v4tbd4i--2-proof" target="_blank" rel="noopener noreferrer">
+          <img src="/2VIDEO.png" alt="Video 2" width="500" height="300" loading="lazy" decoding="async" />
+        </a>
+      </figure>
       <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#FFFF00', textAlign: 'center' }}>COMING SOON !</div>
       <figure className="media"><img src="/3VIDEO.png" alt="Video 3" width="500" height="300" loading="lazy" decoding="async" /></figure>

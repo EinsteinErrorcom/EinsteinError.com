@@ -3,9 +3,5 @@ type PageNavLabelProps = {
 };
 
 export function PageNavLabel({ page }: PageNavLabelProps) {
-  return (
-    <p className="page-nav__label page-nav__label--top">
-      Page {page} of 8
-    </p>
-  );
+  return <span className="page-nav__label">Page {page} of 8</span>;
 }

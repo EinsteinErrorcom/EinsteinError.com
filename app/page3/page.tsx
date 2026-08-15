@@ -1,22 +1,11 @@
-import { ContactBar } from "@/components/contact-bar";
 import { PageEndFooter } from "@/components/page-end-footer";
-import { PageNavLabel } from "@/components/page-nav-label";
-import { PageSectionNav } from "@/components/page-section-nav";
-import { CHECKOUT_PATH } from "@/lib/trial-gate";
+import { SiteHeader } from "@/components/site-header";
 
 export default function Page3() {
   return (
     <div className="page-wrapper">
       <main id="main-content">
-        <header className="site-header">
-          <PageNavLabel page={3} />
-          <nav className="page-nav" aria-label="Page navigation">
-            <a className="page-nav__home" href="/">HOME</a>
-            <PageSectionNav hidePage={3} />
-          </nav>
-          <figure className="media media--banner"><a href={CHECKOUT_PATH}><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></a></figure>
-          <ContactBar />
-        </header>
+        <SiteHeader page={3} />
         <br/><br/>
         <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
           

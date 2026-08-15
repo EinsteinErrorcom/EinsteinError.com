@@ -1,22 +1,11 @@
-import { ContactBar } from "@/components/contact-bar";
 import { PageEndFooter } from "@/components/page-end-footer";
-import { PageNavLabel } from "@/components/page-nav-label";
-import { PageSectionNav } from "@/components/page-section-nav";
-import { CHECKOUT_PATH } from "@/lib/trial-gate";
+import { SiteHeader } from "@/components/site-header";
 
 export default function Page6() {
   return (
     <div className="page-wrapper">
       <main id="main-content">
-        <header className="site-header">
-          <PageNavLabel page={6} />
-          <nav className="page-nav" aria-label="Page navigation">
-            <a className="page-nav__home" href="/">HOME</a>
-            <PageSectionNav hidePage={6} />
-          </nav>
-          <figure className="media media--banner"><a href={CHECKOUT_PATH}><img src="/TITLE2.png" alt="Einstein Error Title Banner" width="700" height="150" loading="eager" decoding="async" /></a></figure>
-          <ContactBar />
-        </header>
+          <SiteHeader page={6} />
         <br/><br/>
         <div style={{ textAlign: "center", padding: "48px 16px" }}>
           <h1 style={{ color: "#00FFFF", fontSize: "28px", fontStyle: "italic" }}>Page 6</h1>
