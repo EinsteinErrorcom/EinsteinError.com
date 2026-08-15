@@ -2,27 +2,51 @@ type PageSectionNavProps = {
   hidePage?: 2 | 3 | 4 | 5 | 6 | 7 | 8;
 };
 
-const PAGE_LINKS_ROW1 = [
+type PageLink = {
+  page: number;
+  href: string;
+  label: string;
+};
+
+const PAGE_LINKS: readonly PageLink[] = [
   { page: 2, href: "/page2", label: "PAGE2" },
   { page: 3, href: "/page3", label: "PAGE3" },
   { page: 4, href: "/page4", label: "PAGE4" },
-] as const;
-
-const PAGE_LINKS_ROW2 = [
   { page: 5, href: "/page5", label: "PAGE5" },
   { page: 6, href: "/page6", label: "PAGE6" },
   { page: 7, href: "/page7", label: "PAGE7" },
   { page: 8, href: "/page8", label: "PAGE8" },
-] as const;
+];
+
+function getPageRows(hidePage?: PageSectionNavProps["hidePage"]) {
+  if (
+    hidePage === undefined ||
+    hidePage === 6 ||
+    hidePage === 7 ||
+    hidePage === 8
+  ) {
+    return {
+      row1Pages: [2, 3, 4],
+      row2Pages: [5, 6, 7, 8],
+    };
+  }
+
+  return {
+    row1Pages: [2, 3, 4, 5],
+    row2Pages: [6, 7, 8],
+  };
+}
 
 function PageSectionRow({
-  links,
+  pages,
   hidePage,
 }: {
-  links: readonly { page: number; href: string; label: string }[];
+  pages: readonly number[];
   hidePage?: PageSectionNavProps["hidePage"];
 }) {
-  const visibleLinks = links.filter(({ page }) => page !== hidePage);
+  const visibleLinks = PAGE_LINKS.filter(
+    ({ page }) => pages.includes(page) && page !== hidePage,
+  );
 
   if (visibleLinks.length === 0) {
     return null;
@@ -40,10 +64,12 @@ function PageSectionRow({
 }
 
 export function PageSectionNav({ hidePage }: PageSectionNavProps) {
+  const { row1Pages, row2Pages } = getPageRows(hidePage);
+
   return (
     <span className="page-nav__sections">
-      <PageSectionRow links={PAGE_LINKS_ROW1} hidePage={hidePage} />
-      <PageSectionRow links={PAGE_LINKS_ROW2} hidePage={hidePage} />
+      <PageSectionRow pages={row1Pages} hidePage={hidePage} />
+      <PageSectionRow pages={row2Pages} hidePage={hidePage} />
     </span>
   );
 }
