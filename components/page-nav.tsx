@@ -7,11 +7,16 @@ type PageNavProps = {
 };
 
 export function PageNav({ page, className }: PageNavProps) {
+  const navClassName = [
+    "page-nav",
+    page === 1 ? "page-nav--home" : null,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <nav
-      className={className ? `page-nav ${className}` : "page-nav"}
-      aria-label="Page navigation"
-    >
+    <nav className={navClassName} aria-label="Page navigation">
       <PageNavLabel page={page} />
       {page > 1 && (
         <a className="page-nav__home" href="/">

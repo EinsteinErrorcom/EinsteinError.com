@@ -115,6 +115,10 @@ body {
   gap: var(--space-nav);
 }
 
+.page-nav--home .page-nav__sections-row:first-child {
+  align-self: flex-start;
+}
+
 .checkout-banner-link {
   margin: 12px 0 0;
   text-align: center;
