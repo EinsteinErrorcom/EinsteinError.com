@@ -4,14 +4,14 @@ import { SiteHeader } from "@/components/site-header";
 export default function Page2() {
   return (
     <div className="page-wrapper">
-      <main id="main-content">
+      <main id="main-content" className="content-page">
         <SiteHeader page={2} />
         <p className="notice">
           We ask your patience as
           <br />
           these MESSED pages are being edited.
           <br />
-          Thankfully though from them you can still EASILY gleen
+          Thankfully from the mess you can still EASILY gleen
           <br />
           Einstein's Monumental ERROR !
         </p>
@@ -21,15 +21,17 @@ export default function Page2() {
           <div className="spacer spacer--sm"></div>
           
    
-   This  WEBSITE  has  the
+   This  WEBSITE
           <br />
-          absolute  " CORRECT "
+          has  the  absolute
+          <br />
+          " CORRECT "
           <br />
           
 
             answer  to  Einstein's
           <br />
-          monumental   ERROR !
+          monumental   <span className="c-red">ERROR</span> !
           <div className="spacer spacer--sm"></div>
           
 
@@ -44,9 +46,12 @@ export default function Page2() {
           <span className="c-red">
             " Throughout History,
             <br />
-            Einstein  has  always  been  proven  correct. "
+            Einstein  has  always
+            <br />
+            been  proven  correct. "
           </span>
         </h2>
+        <div className="spacer spacer--md"></div>
         <div className="f-medium">
           
 
@@ -85,6 +90,8 @@ export default function Page2() {
           <div className="spacer spacer--sm"></div>
           <span className="f-massive c-red">*   *   *   *   *</span>
         </div>
+        <div className="spacer spacer--sm"></div>
+        <figure className="media"><img src="/ENTIRE.png" alt="Einstein Shut Down" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--lg"></div>
         <div className="f-large letter-spaced">
           <span className="c-red"><strong>ATTENTION  !</strong></span>
@@ -100,23 +107,48 @@ export default function Page2() {
         <div className="f-small letter-spaced">
           
 
-            Because Einstein's Monumental ERROR is "EVERY DAY" ( worldwide )
+            Because Einstein's
           <br />
-          sustaining 100 MILLION $$ worth of "useless" salaries, the international
+          Monumental <span className="c-red">ERROR</span>
+          <br />
+          is "EVERY DAY"
+          <br />
+          ( worldwide )
+          <br />
+          sustaining
+          <br />
+          100 MILLION $$
+          <br />
+          worth of "useless" salaries,
+          <br />
+          the international
           <br />
           <span className="c-red"><strong>G A T E K E E P E R S</strong></span>
           <br />
           of Einstein's 
           <span className="c-red">ERROR</span>
-           indeed may attempt to suppress this Website
           <br />
-          and its Mathematically PROVEN FACTS.
+          indeed may attempt to
+          <br />
+          suppress this Website
+          <br />
+          and its Mathematically
+          <br />
+          PROVEN FACTS.
           <div className="spacer spacer--sm"></div>
           
 
-            To prevent any shutdown of this Monumental Discovery
+            To prevent any
           <br />
-          follow these 3 steps to replicate and harbor "Einstein Error . com"
+          shutdown of this
+          <br />
+          Monumental Discovery
+          <br />
+          follow these 3 steps
+          <br />
+          to replicate and harbor
+          <br />
+          " Einstein Error . com "
           <div className="spacer spacer--sm"></div>
           <span className="c-cyan">
             1.  
@@ -328,8 +360,6 @@ export default function Page2() {
           </h6>
         </div>
         <div className="spacer spacer--xl"></div>
-        <figure className="media"><img src="/ENTIRE.png" alt="Einstein Shut Down" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="spacer spacer--sm"></div>
         <figure className="media"><img src="/TWISTED.png" alt="Twisted Argument" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--sm"></div>
         <div className="f-medium">
