@@ -70,9 +70,9 @@ export default function Page2() {
           <br />
           he has produced
           <br />
-          some{'\u00A0\u00A0'}CORRECT
+          "some"
           <br />
-          results.
+          CORRECT{'\u00A0\u00A0'}results.
 
         
         </div>
@@ -116,19 +116,23 @@ export default function Page2() {
 
             Because Einstein's
           <br />
-          Monumental <span className="c-red">ERROR</span>
+          Monumental
           <br />
-          is "EVERY DAY"
+          <span className="c-red">ERROR</span>
+          <br />
+          "EVERY DAY"
           <br />
           ( worldwide )
           <br />
-          sustaining
+          is sustaining
           <br />
-          100 MILLION $$
+          1{'\u00A0\u00A0'}BILLION{'\u00A0\u00A0'}$$
           <br />
-          worth of "useless" salaries,
+          worth of{'\u00A0\u00A0'}"useless"
           <br />
-          the international
+          salaries,{'\u00A0\u00A0'}the
+          <br />
+          International
           <br />
           <span className="c-red"><strong>G A T E K E E P E R S</strong></span>
           <br />
