@@ -106,8 +106,8 @@ Universe =			    The total 12-bit grid in mechanical equilibrium.
 					    immediately then pushes those Electrons into the earth as Gravity.
 4TCirc =			    9,170,971,125,945,192.2 meters long.  The ultimate yardstick of the 
 ( 9.17x10^15 )		    Universe representing the total linear distance Gravity travels during one 
-( Toroid )			    full Lattice Tension ( Z ) cycle.  The "unrolled" length of the Helix.  In a 
-					    12-bit digital architecture, you must have a linear count to define the 
+( Toroid )			    full Lattice Tension ( Z ) cycle.  The "unrolled" length of the Helix.
+                        In a 12-bit digital architecture, you must have a linear count to define the 
 					    LatticeStep ( 0.211 m ).  It is the Capacity.  The "rim" of the universal 
 					    wheel that has a Radius of ( Sun to Earth ) 149,417,011,105.817 meters.
 					    That TRadius when squared = the Pressure of the Universe.
@@ -120,8 +120,8 @@ Universe =			    The total 12-bit grid in mechanical equilibrium.
 ( 9.38x10^11 )		    The electrical Volt of earth's Electrical equation.
 
 6HPath =			    The Hpath is 708,137,493,392.5 meters long.  The Helix path that the 
-( 7.08x10^11 )		    earth travels as it follows the sun.  TRadius / Hpath = the LatticeStep, a
-					    distance of .211 meters.  For every 1 meter of TRadius the Qfluid must 
+( 7.08x10^11 )		    earth travels as it follows the sun.  TRadius / Hpath = the LatticeStep,
+                        a distance of .211 meters.  For every 1 meter of TRadius the Qfluid must 
 					    travel 4.739 meters along the Helix Hpath.  The circle of the Helix is
 					    what we call the Orbit of the earth = 983,814,773,206.93260 meters.
 			
@@ -189,10 +189,10 @@ Universe =			    The total 12-bit grid in mechanical equilibrium.
 					    The AZLamb is the "sweet spot" of Resonance.
 
 14ZLamb =			    The discrete sub-segment of the the AZLamb, the pulse that is locked 
-( 32.69 ns )		    to the Lattice Tension ( Z ).  It is the "Micro-Step".  If the AZLamb is the 
-					    full swing of the pendulum, the ZLamb is the individual "click" of the 
-					    12-bit timer during that swing.  It is the smallest mechanical division 
-					    of the LatticeStep ( 0.211 m ).
+( 32.69 ns )		    to the Lattice Tension ( Z ).  It is the "Micro-Step".  If the AZLamb
+                        is the full swing of the pendulum, the ZLamb is the individual "click"
+                        of the 12-bit timer during that swing.  It is the smallest mechanical
+                        division of the LatticeStep ( 0.211 m ).
 
 15Proton =			    The Proton is NOT an individual Particle, it is a "Flow-State".
 ( 1.6834 nm )		    A Proton is a combusting Neutron, giving it Out-flow Gravity
