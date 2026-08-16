@@ -662,7 +662,11 @@ p {
   align-items: center;
   justify-content: flex-start;
   overflow: visible;
-  padding: 0.2rem 2rem 1rem;
+  padding: 0.75rem 2rem 0.25rem;
+}
+
+.pricing-checkout-page ~ .gold-lines-divider {
+  margin-top: 0 !important;
 }
 
 .pricing-checkout-page__inner {
@@ -676,7 +680,7 @@ p {
 }
 
 .pricing-checkout-page__gold-header {
-  margin: -1.25rem 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;

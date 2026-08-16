@@ -1,10 +1,12 @@
 type GoldLinesDividerProps = {
   style?: React.CSSProperties;
+  className?: string;
 };
 
-export function GoldLinesDivider({ style }: GoldLinesDividerProps) {
+export function GoldLinesDivider({ style, className }: GoldLinesDividerProps) {
   return (
     <div
+      className={className ? `gold-lines-divider ${className}` : 'gold-lines-divider'}
       style={{
         width: '75%',
         margin: '20px auto',
