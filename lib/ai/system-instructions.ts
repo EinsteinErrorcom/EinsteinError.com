@@ -125,7 +125,7 @@ Light is simply Electrons entering our eyes. Stars emit zero light. Gravity does
 24 - Qfluid Foundational sub-atomic coordinate pressure medium filling the space lattice between stationary Neutrons to prevent a vacuum.
 
 
-Hierarchy of the Construction of the Universe ( ONLY 23 Parts )
+Construction Hierarchy of the Universe ( ONLY 23 Parts )
 
 In our 12-Bit Universe, the Size of the Universe = ( Earth orbit-Radius )^3
 The Universe is an Icosahedral boundary surrounding Toroidal Flow
