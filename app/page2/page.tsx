@@ -61,34 +61,37 @@ export default function Page2() {
           <sup>2</sup></span>{'\u00A0\u00A0'}
            )
           <div className="spacer spacer--sm"></div>
-          is  ONLY  
+          is  ONLY{'\u00A0\u00A0\u00A0'}
           <span className="c-red">30 %</span>
-            Correct
-          <div className="spacer spacer--sm"></div>
-          so of course he has
           <br />
-          produced some
+          Correct
           <br />
-          CORRECT
+          so of course
+          <br />
+          he has produced
+          <br />
+          some{'\u00A0\u00A0'}CORRECT
           <br />
           results.
 
         
         </div>
         <div className="s-loose text-center">
-          <p><span className="f-massive c-red">*   *   *   *   *</span></p>
+          <p><span className="f-massive c-white">*   *   *   *   *</span></p>
           <div className="spacer spacer--sm"></div>
           <span className="f-large c-red">
             STOP   THE
             <br />
             BLINDNESS   !
             <div className="spacer spacer--sm"></div>
+            <span className="c-white">*   *   *</span>
+            <div className="spacer spacer--sm"></div>
             IT'S   TIME   TO
             <br />
             WAKE   UP   !
           </span>
           <div className="spacer spacer--sm"></div>
-          <span className="f-massive c-red">*   *   *   *   *</span>
+          <span className="f-massive c-white">*   *   *   *   *</span>
         </div>
         <div className="spacer spacer--sm"></div>
         <figure className="media"><img src="/ENTIRE.png" alt="Einstein Shut Down" width="500" height="300" loading="lazy" decoding="async" /></figure>
@@ -103,17 +106,13 @@ export default function Page2() {
         <div className="spacer spacer--lg"></div>
         <div className="f-large letter-spaced">
           <span className="c-red"><strong>ATTENTION  !</strong></span>
-          <br />
+          <div className="spacer spacer--md"></div>
           PATRIOTS
           <br />
           of
           <br />
           PURE  PHYSICS:
-
-        
-        </div>
-        <div className="f-small letter-spaced">
-          
+          <div className="spacer spacer--md"></div>
 
             Because Einstein's
           <br />
@@ -133,8 +132,7 @@ export default function Page2() {
           <br />
           <span className="c-red"><strong>G A T E K E E P E R S</strong></span>
           <br />
-          of Einstein's 
-          <span className="c-red">ERROR</span>
+          of Einstein's{'\u00A0\u00A0'}<span className="c-red">ERROR</span>
           <br />
           indeed may attempt to
           <br />
@@ -142,7 +140,7 @@ export default function Page2() {
           <br />
           and its Mathematically
           <br />
-          PROVEN FACTS.
+          PROVEN{'\u00A0\u00A0'}FACTS.
           <div className="spacer spacer--sm"></div>
           
 
@@ -158,77 +156,144 @@ export default function Page2() {
           <br />
           " Einstein Error . com "
           <div className="spacer spacer--sm"></div>
-          <span className="c-cyan">
-            1.  
-            <strong>A R C H I V E</strong>
-          </span>
+          <span className="c-cyan">1.{'\u00A0\u00A0\u00A0\u00A0'}</span><strong style={{ color: '#FFFF00' }}>A R C H I V E</strong>
           <br />
+          <span style={{ fontSize: '25px', color: '#FFFFFF' }}>
           ( Personal Mirroring )
           <br />
-          Do not rely on a browser bookmark. Save the physical data to your local hardware.
+          Do not rely on a
+          <br />
+          browser bookmark.
+          <br />
+          Save the physical data
+          <br />
+          to your local hardware.
           <div className="spacer spacer--sm"></div>
           
 
-            Direct Download - Go to: EinsteinGravity.com
+            Direct Download - Go to :
           <br />
-          Press "Ctrl + S" (Windows) or "Command + S" (Mac)
+          https://EinsteinGravity.com
           <br />
-          to save the complete webpage to your local drive.
+          Press "Ctrl + S" (Windows) or
+          <br />
+          "Command + S" (Mac)
+          <br />
+          to save the complete webpage
+          <br />
+          to your local drive.
           <div className="spacer spacer--sm"></div>
           
 
             Bulk Mirror: wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://EinsteinGravity.com
-          <div className="spacer spacer--sm"></div>
-          <span className="c-cyan">
-            2.  
-            <strong>D I S T R I B U T E</strong>
           </span>
+          <div className="spacer spacer--sm"></div>
+          <span className="c-cyan">2.{'\u00A0\u00A0\u00A0\u00A0'}</span><strong style={{ color: '#FFFF00' }}>D I S T R I B U T E</strong>
           <br />
+          <span style={{ fontSize: '25px', color: '#FFFFFF' }}>
           ( P2P Hosting )
           <br />
-          Upload the saved files to decentralized "SAFES" where no Government can reach them:
-          <div className="spacer spacer--sm"></div>
-          
-
-            I P F S (Inter Planetary File System): Upload the site files to an IPFS node. This assigns the ( mAZ ) DATA a "Content Hash" that remains the same even if the URL is seized.
-          <div className="spacer spacer--sm"></div>
-          
-
-            Encrypted Clouds: Store the PDF DATA sheets in decentralized clouds like Proton Drive or Mega and share the DATA in private forums.
-          <div className="spacer spacer--sm"></div>
-          <span className="c-cyan">
-            3.  
-            <strong>B R O A D C A S T</strong>
-          </span>
+          Upload the saved files
           <br />
+          to decentralized "SAFES"
+          <br />
+          where no Government
+          <br />
+          can reach them:
+          <div className="spacer spacer--sm"></div>
+          
+
+            I P F S
+          <br />
+          ( Inter Planetary File System ) :
+          <br />
+          Upload the site files
+          <br />
+          to an IPFS node.
+          <br />
+          This assigns the
+          <br />
+          ( mAZ ) DATA a
+          <br />
+          "Content Hash"
+          <br />
+          that remains the same
+          <br />
+          even if the URL is seized.
+          <br />
+          <br />
+          Encrypted Clouds :
+          <br />
+          Store the PDF DATA sheets
+          <br />
+          in decentralized clouds like
+          <br />
+          Proton Drive or Mega and
+          <br />
+          share the DATA in private forums.
+          <br />
+          </span>
+          <div className="spacer spacer--sm"></div>
+          <span className="c-cyan">3.{'\u00A0\u00A0\u00A0\u00A0'}</span><strong style={{ color: '#FFFF00' }}>B R O A D C A S T</strong>
+          <br />
+          <span style={{ fontSize: '25px', color: '#FFFFFF' }}>
           ( Social Propagation )
           <br />
-          The more USERS holding the information the higher the Security.
-          <div className="spacer spacer--sm"></div>
-          
-
-            Print to Paper: Hard copies are the only medium that cannot be hacked or remotely deleted.
+          The more USERS
           <br />
-          Print the "37 Unified Constants" and keep them in a physical SAFE.
-          <div className="spacer spacer--sm"></div>
-          
-
-            Re-Post the DATA: Copy the URL and DATA into every physics forum,
+          holding the information
           <br />
-          comment section and social media thread.
+          the higher the Security.
           <br />
-          When one POST is DELETED, two more MUST appear.
+          Print to Paper :
+          <br />
+          Hard copies are the
+          <br />
+          only medium that cannot be
+          <br />
+          hacked or remotely deleted.
+          <br />
+          <br />
+          Print the
+          <br />
+          "37 Unified Constants"
+          <br />
+          and keep them in
+          <br />
+          a physical SAFE.
+          <br />
+          <br />
+          Re-Post the DATA :
+          <br />
+          Copy the URL
+          <br />
+          and DATA into
+          <br />
+          every physics forum
+          <br />
+          comment section and
+          <br />
+          social media thread.
+          <br />
+          When one POST
+          <br />
+          is DELETED
+          <br />
+          two more MUST appear.
+          </span>
           <div className="spacer spacer--sm"></div>
         </div>
         <div className="spacer spacer--sm"></div>
         <div className="f-medium">
           
 
-            This  is  ALL  a
+            The information on
           <br />
-          Mathematically
+          this Website is ALL
           <br />
-          " PROVEN   FACT "
+          a{'\u00A0\u00A0\u00A0'}Mathematically
+          <br />
+          " <span className="c-white">PROVEN   FACT</span> "
           <br />
           with  enormous
           <br />
@@ -240,7 +305,7 @@ export default function Page2() {
           <br />
           * Physical Experimental PROOF
           <br />
-          so  if  you  doubt  this,
+          so  if  you  doubt  this
           <br />
           you  are  only  hurting
           <br />
@@ -263,12 +328,24 @@ export default function Page2() {
         <div className="spacer spacer--sm"></div>
         <div className="f-small emphasis emphasis--white">
           <span className="c-cyan">1.</span>
-            Earth's Magnetic-Field cuts Neutrons from the fabric of Space.
+          {'\u00A0\u00A0'}Earth's Magnetic-Field
+          <br />
+          cuts Neutrons from
+          <br />
+          the fabric of Space.
           <div className="spacer spacer--sm"></div>
           <span className="c-cyan">2.</span>
-            The enormous "Pressure of Space" then immediately pushes them into the earth,
+          {'\u00A0\u00A0'}The enormous
           <br />
-          creating the TRUE origin of GRAVITY !
+          "Pressure of Space"
+          <br />
+          then immediately pushes
+          <br />
+          them into the earth
+          <br />
+          creating the TRUE
+          <br />
+          origin of GRAVITY !
 
         
         </div>
@@ -277,15 +354,25 @@ export default function Page2() {
         <div className="f-small">
           
 
-            YES !  Gravity is ( Light that is moving too fast to see )
+            YES !
           <br />
-          Flowing  into the earth.   PURE  F A C T  !
-          <div className="spacer spacer--sm"></div>
-          
-
-            This  is  exactly  why both  Gravity  and  Light
+          Gravity is Light
           <br />
-          obey  the  SAME   "Inverse  Square  Law"
+          that is moving
+          <br />
+          too fast to see.
+          <br />
+          Flowing  into the earth.
+          <br />
+          PURE{'\u00A0\u00A0\u00A0'}FACT
+          <br />
+          This  is  exactly  why
+          <br />
+          both  Gravity  and  Light
+          <br />
+          obey  the  SAME
+          <br />
+          "Inverse  Square  Law"
 
         
         </div>
