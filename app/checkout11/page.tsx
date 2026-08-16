@@ -40,10 +40,12 @@ export default async function Checkout11Page() {
             <PaymentCheckout />
           </Suspense>
           <div className="pricing-checkout-page__tail">
-            <Link href="/" className="pricing-checkout-page__home">
-              HOME
-            </Link>
-            <PageEndFooter pageNumber={10} compact />
+            <div className="pricing-checkout-page__tail-group">
+              <Link href="/" className="pricing-checkout-page__home">
+                HOME
+              </Link>
+              <PageEndFooter pageNumber={10} compact />
+            </div>
           </div>
         </div>
       </div>

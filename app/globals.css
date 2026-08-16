@@ -658,14 +658,16 @@ p {
   min-height: 100vh;
   background: #000;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem;
 }
 
 .pricing-checkout-page__inner {
   width: min(100%, 704px);
   min-width: min(100%, 704px);
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -708,7 +710,6 @@ p {
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
-  grid-row: 2;
   margin: 0;
 }
 
@@ -718,22 +719,32 @@ p {
 
 .pricing-checkout-page__checkout-block {
   width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .pricing-checkout-page__tail {
   width: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto 1fr auto;
+  flex: 1;
+  display: flex;
   align-items: center;
-  justify-items: center;
-  min-height: 180px;
+  justify-content: center;
+}
+
+.pricing-checkout-page__tail-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
 }
 
 .pricing-checkout-page__tail .page-end-footer {
-  grid-row: 4;
   width: 100%;
+}
+
+.pricing-checkout-page__tail .page-end-footer .spacer:last-child {
+  height: 0;
 }
 
 .pricing-checkout-page__back {
