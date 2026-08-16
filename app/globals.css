@@ -1291,9 +1291,21 @@ h1.max-lit-chatbox-page-title {
 
 .page7 {
   --page7-tab-width: 2.5rem;
-  --page7-primary-tabs: 3;
-  --page7-numbered-hang-left-shift: 16;
-  --page7-numbered-hang-min-chars: 8;
+}
+
+.page7__edit-banner {
+  max-width: min(2400px, 100%);
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--max-lit-gold);
+  color: #ffffff;
+  text-align: center;
+  font-style: italic;
+}
+
+.page7__edit-banner a {
+  color: var(--max-lit-gold);
+  text-decoration: underline;
 }
 
 .page7__title {
@@ -1305,76 +1317,131 @@ h1.max-lit-chatbox-page-title {
   text-underline-offset: 0.35em;
 }
 
-.page7__summary {
+.page7__document {
   max-width: min(2400px, 100%);
-  margin: 0 auto 3rem;
-  padding: 0 1rem;
-}
-
-.page7__summary-body,
-.page7__hierarchy-intro,
-.page7__hierarchy-body {
-  white-space: pre-wrap;
+  margin: 0 auto 2rem;
+  padding: 0 1rem 2rem;
+  overflow-x: auto;
+  white-space: pre;
   tab-size: 4;
   -moz-tab-size: 4;
-  overflow-wrap: anywhere;
-  font-family: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
   font-size: var(--text-base);
   font-weight: 700;
   font-style: italic;
   line-height: 1.45;
+  color: #ffffff;
   background: transparent;
   border: 0;
-  margin: 0 auto 2rem;
-  padding: 0;
   text-align: left;
 }
 
-.page7__summary-body {
-  color: #ffffff;
-}
-
-.page7__summary-number {
-  color: #d0ab47;
-  font-size: calc(var(--text-base) + 5px);
-}
-
-.page7__summary-line,
-.page7__hierarchy-line {
+.page7__document-line {
   display: block;
 }
 
-.page7__summary-line--primary,
-.page7__hierarchy-line--primary {
-  padding-left: calc(var(--page7-tab-width) * var(--page7-primary-tabs));
+.page7__line-number {
+  color: var(--max-lit-gold);
 }
 
-.page7__summary-line--continuation,
-.page7__hierarchy-line--continuation {
-  padding-left: calc(var(--page7-tab-width) * var(--page7-primary-tabs));
+.page7-editor-page {
+  min-height: 100vh;
+  background: #000000;
+  padding: 1rem;
 }
 
-.page7__hierarchy {
+.page7-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   max-width: min(2400px, 100%);
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 2rem);
 }
 
-.page7__hierarchy-title {
-  color: #d0ab47;
-  font-size: calc(var(--text-base) + 6px);
+.page7-editor__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--max-lit-gold);
+}
+
+.page7-editor__title {
+  margin: 0 0 0.35rem;
+  color: var(--max-lit-gold);
+  font-size: 1.35rem;
+}
+
+.page7-editor__hint {
+  margin: 0;
+  color: #ffffff;
+  font-style: italic;
+  max-width: 42rem;
+}
+
+.page7-editor__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.page7-editor__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 2px solid var(--max-lit-gold);
+  background: #000000;
+  color: var(--max-lit-gold);
   font-weight: 700;
   font-style: italic;
-  text-align: center;
-  margin: 0 0 1.5rem;
-  line-height: 1.35;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.page7__hierarchy-intro {
-  color: #ffffff;
-  max-width: min(2400px, 100%);
+.page7-editor__button--save {
+  background: var(--max-lit-gold);
+  color: #000000;
 }
 
-.page7__hierarchy-body {
+.page7-editor__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.page7-editor__error {
+  margin: 0;
+  color: #ff6b6b;
+  font-style: italic;
+}
+
+.page7-editor__saved {
+  margin: 0;
+  color: var(--max-lit-gold);
+  font-style: italic;
+}
+
+.page7-editor__textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 70vh;
+  padding: 1rem;
+  border: 1px solid #444444;
+  background: #000000;
   color: #ffffff;
+  resize: vertical;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  white-space: pre;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
 }
