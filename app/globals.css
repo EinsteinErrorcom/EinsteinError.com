@@ -1291,6 +1291,45 @@ h1.max-lit-chatbox-page-title {
 
 .page7 {
   --page7-tab-width: 2.5rem;
+  text-align: left;
+}
+
+.content-page.page7 {
+  max-width: min(2400px, 100%);
+}
+
+.page7__scroll {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page7__document {
+  display: inline-block;
+  min-width: 100%;
+  width: max-content;
+  margin: 0;
+  padding: 0 0 2rem;
+  white-space: pre;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.45;
+  color: #ffffff;
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+
+.page7__document-line {
+  display: block;
 }
 
 .page7__edit-banner {
@@ -1315,30 +1354,6 @@ h1.max-lit-chatbox-page-title {
   text-decoration: underline;
   text-decoration-color: #ffffff;
   text-underline-offset: 0.35em;
-}
-
-.page7__document {
-  max-width: min(2400px, 100%);
-  margin: 0 auto 2rem;
-  padding: 0 1rem 2rem;
-  overflow-x: auto;
-  white-space: pre;
-  tab-size: 4;
-  -moz-tab-size: 4;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
-  font-size: var(--text-base);
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1.45;
-  color: #ffffff;
-  background: transparent;
-  border: 0;
-  text-align: left;
-}
-
-.page7__document-line {
-  display: block;
 }
 
 .page7__line-number {

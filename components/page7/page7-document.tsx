@@ -22,13 +22,15 @@ export function Page7Document({ raw }: Page7DocumentProps) {
   const lines = raw.replace(/\r\n/g, '\n').split('\n');
 
   return (
-    <pre className="page7__document">
-      {lines.map((line, index) => (
-        <span key={index} className="page7__document-line">
-          {renderLine(line)}
-          {'\n'}
-        </span>
-      ))}
-    </pre>
+    <div className="page7__scroll">
+      <pre className="page7__document">
+        {lines.map((line, index) => (
+          <span key={index} className="page7__document-line">
+            {renderLine(line)}
+            {'\n'}
+          </span>
+        ))}
+      </pre>
+    </div>
   );
 }
