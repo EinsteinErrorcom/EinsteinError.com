@@ -46,9 +46,7 @@ export function CountdownTimerBox({
 }: CountdownTimerBoxProps) {
   const profile = buildProfile(accessTier, accessStartedAt);
   const tierLabel = ACCESS_TIER_LABELS[accessTier];
-  const [remainingMs, setRemainingMs] = useState(() =>
-    getRemainingAccessMs(profile)
-  );
+  const [remainingMs, setRemainingMs] = useState<number | null>(null);
 
   useEffect(() => {
     const tick = () => {
@@ -68,21 +66,28 @@ export function CountdownTimerBox({
 
   const totalMs = getAccessDurationMs(profile);
   const progress =
-    totalMs > 0 ? Math.min(100, Math.max(0, (remainingMs / totalMs) * 100)) : 0;
+    remainingMs === null
+      ? 100
+      : totalMs > 0
+        ? Math.min(100, Math.max(0, (remainingMs / totalMs) * 100))
+        : 0;
 
   return (
-    <div className="rounded-lg border-2 border-[#D0AB47] bg-[#0d1117] px-4 py-3 text-center">
-      <p className="text-[#FFFF00] text-xs font-bold uppercase tracking-wide">
+    <div className="max-lit-chatbox__timer rounded-lg bg-[#0d1117] px-4 py-3 text-center">
+      <p className="max-lit-chatbox__timer-label text-xs font-bold uppercase tracking-wide">
         Count-Down Timer Box
       </p>
       <p className="text-[#00FFFF] font-bold italic mt-1">
-        MAX-LIT Access&nbsp;&nbsp;=&nbsp;&nbsp;{tierLabel}
+        MAX-LIT Access
+        <br />
+        ={'\u00A0'.repeat(2)}
+        {tierLabel}
       </p>
       <p
         className="text-[#FFFFFF] text-2xl font-bold tabular-nums mt-2"
         aria-live="polite"
       >
-        {formatRemaining(remainingMs)}
+        {remainingMs === null ? '00:59:59' : formatRemaining(remainingMs)}
       </p>
       <div className="mt-2 h-2 w-full rounded bg-[#161b22] overflow-hidden">
         <div

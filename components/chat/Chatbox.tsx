@@ -7,6 +7,7 @@ import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-b
 import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
 import type { AccessTier } from '@/lib/access';
 import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
+import { MAX_LIT_GOLD } from '@/components/chat/chat-theme';
 import { CHECKOUT_PATH, CHAT_PATH } from '@/lib/trial-gate';
 
 type ChatMessage = { role: 'user' | 'ai'; text: string };
@@ -206,12 +207,12 @@ export default function Chatbox({
   }
 
   const containerClass = embedded
-    ? "w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#D0AB47] rounded-xl shadow-2xl flex flex-col overflow-hidden"
-    : "fixed bottom-6 right-6 w-96 h-[500px] bg-[#161b22] border-4 border-[#D0AB47] rounded-xl shadow-2xl flex flex-col overflow-hidden";
+    ? 'max-lit-chatbox max-lit-chatbox--embedded'
+    : 'max-lit-chatbox max-lit-chatbox--floating';
 
   return (
     <div className={containerClass}>
-      <div className="relative p-4 bg-[#0d1117] flex items-center justify-center border-b border-[#D0AB47]">
+      <div className="max-lit-chatbox__header">
         <div className="text-center px-8 w-full max-w-md">
           {accessTier && accessStartedAt ? (
             <CountdownTimerBox
@@ -222,7 +223,7 @@ export default function Chatbox({
           {!embedded && (
             <Link
               href={CHAT_PATH}
-              className="block text-[#D0AB47] text-sm underline mt-3 hover:text-[#FFFF00]"
+              className="max-lit-chatbox__gold-link mt-3"
             >
               Go to Full-Screen Mode
             </Link>
@@ -246,31 +247,41 @@ export default function Chatbox({
             key={i}
             className={`p-2 rounded ${
               m.role === 'user'
-                ? 'bg-[#D0AB47] text-black self-end'
+                ? 'max-lit-chatbox__user-message self-end'
                 : 'bg-[#0d1117] text-[#00FFFF] whitespace-pre-wrap'
             }`}
           >
             {displayMessageText(m)}
           </div>
         ))}
-        {loading && <div className="text-[#FFFF00] italic">Max-Lit is thinking...</div>}
+        {loading && <div className="max-lit-chatbox__thinking italic">Max-Lit is thinking...</div>}
       </div>
 
-      <div className="p-4 border-t border-[#D0AB47] bg-[#0d1117]">
+      <div className="max-lit-chatbox__footer">
         <textarea 
           value={input} 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="w-full p-2 bg-[#161b22] text-white border border-[#D0AB47] rounded"
-          placeholder="Ask your Physics question HERE and then Get Ready !"
+          className="max-lit-chatbox__input w-full p-2 bg-[#161b22] text-white rounded"
+          placeholder={'Ask Physics Question HERE\nThen PUSH it and Get Ready !'}
         />
         <button 
           type="button"
-          onClick={() => void sendMessage()} 
-          disabled={loading || !input.trim()}
-          className="w-full mt-2 p-2 bg-[#00FFFF] text-black font-bold rounded disabled:opacity-50"
+          onClick={() => {
+            if (loading || !input.trim()) return;
+            void sendMessage();
+          }}
+          aria-disabled={loading || !input.trim()}
+          className={`max-lit-chatbox__push-button w-full mt-2 p-2 font-bold rounded-lg${
+            loading || !input.trim() ? ' max-lit-chatbox__push-button--inactive' : ''
+          }`}
         >
-          {loading ? 'Processing...' : 'PUSH Your Question To MAX'}
+          <span
+            className="max-lit-chatbox__push-button-label"
+            style={{ color: MAX_LIT_GOLD, WebkitTextFillColor: MAX_LIT_GOLD }}
+          >
+            {loading ? 'Processing...' : 'PUSH Your Question To - "MAX"'}
+          </span>
         </button>
       </div>
     </div>

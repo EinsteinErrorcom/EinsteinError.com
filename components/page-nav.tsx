@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageNavLabel } from "@/components/page-nav-label";
 import { PageSectionNav } from "@/components/page-section-nav";
 
@@ -19,9 +20,9 @@ export function PageNav({ page, className }: PageNavProps) {
     <nav className={navClassName} aria-label="Page navigation">
       <PageNavLabel page={page} />
       {page > 1 && (
-        <a className="page-nav__home" href="/">
+        <Link className="page-nav__home" href="/">
           HOME
-        </a>
+        </Link>
       )}
       {page === 1 ? (
         <PageSectionNav />

@@ -1,5 +1,4 @@
 import Chatbox from '@/components/chat/Chatbox';
-import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
 import { ChatExitLinks } from '@/components/chat/ChatExitLinks';
 import { PageEndFooter } from '@/components/page-end-footer';
 import { fulfillCheckoutSession } from '@/lib/stripe/subscription';
@@ -26,26 +25,18 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
   if (isTourMode(params.tour)) {
     return (
       <main className="p-8">
-        <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">MAX Ai Chat Window</h1>
+        <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
+          MAX-LIT{'\u00A0'.repeat(3)}Chat{'\u00A0'.repeat(3)}WINDOW
+        </h1>
         <p style={{ color: '#FFFF00', fontStyle: 'italic', marginBottom: '24px' }}>
           Tour preview — sign-in and chat are disabled on this page.
         </p>
-        <div
-          data-tour-block="true"
-          className="w-full max-w-2xl mx-auto h-[600px] bg-[#161b22] border-4 border-[#D0AB47] rounded-xl shadow-2xl flex flex-col overflow-hidden"
-        >
-          <div className="p-4 bg-[#0d1117] border-b border-[#D0AB47] text-center">
-            <CountdownTimerBox
-              accessTier="trial"
-              accessStartedAt={new Date().toISOString()}
-            />
-          </div>
-          <div className="flex-1 p-4 text-[#00FFFF] text-left">
-            <p>After Google Sign-In, users ask physics questions here.</p>
-            <p style={{ marginTop: '16px', color: '#D0AB47' }}>
-              Example: &quot;What is the Velocity of Gravity in PURE ( mAZ ) Physics?&quot;
-            </p>
-          </div>
+        <div data-tour-block="true">
+          <Chatbox
+            embedded
+            accessTier="trial"
+            accessStartedAt={new Date().toISOString()}
+          />
         </div>
         <PageEndFooter pageNumber={9} />
       </main>
@@ -90,7 +81,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
         <p style={{ color: '#00FFFF', marginBottom: '24px', lineHeight: 1.6 }}>
           If chat does not open within a minute, refresh this page or contact us on WhatsApp (+17802707009).
         </p>
-        <a href={refreshPath} style={{ color: '#D0AB47', fontWeight: 'bold', textDecoration: 'underline' }}>
+        <a href={refreshPath} className="max-lit-chatbox-exit-signout font-bold underline">
           Refresh to open ChatBox
         </a>
         <PageEndFooter pageNumber={9} />
@@ -108,7 +99,9 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
   return (
     <main className="p-8">
       <ChatExitLinks />
-      <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">MAX Ai Chat Window</h1>
+      <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
+        MAX-LIT{'\u00A0'.repeat(3)}Chat{'\u00A0'.repeat(3)}WINDOW
+      </h1>
       <Chatbox
         embedded
         historyUserId={user.id}

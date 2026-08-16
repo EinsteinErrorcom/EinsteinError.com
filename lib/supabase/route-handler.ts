@@ -17,7 +17,7 @@ export function createRouteHandlerClient(
     return null;
   }
 
-  let response = NextResponse.next({ request });
+  const response = NextResponse.next({ request });
 
   const supabase = createServerClient(
     supabaseEnv.supabaseUrl,

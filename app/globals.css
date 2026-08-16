@@ -12,6 +12,7 @@
   --color-orange: #fc6a03;
   --color-red: #f00;
   --color-magenta: #f0f;
+  --max-lit-gold: #d0ab47;
   --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --text-base: 20px;
   --space-sm: clamp(0.75rem, 2vw, 1.25rem);
@@ -1152,4 +1153,138 @@ button.site-tour-start-link {
   font-style: italic;
   font-size: 0.875rem;
   line-height: 1.1;
+}
+
+.max-lit-chatbox {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #161b22;
+  border: 4px solid #d0ab47;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.max-lit-chatbox--embedded {
+  width: 100%;
+  max-width: 42rem;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.max-lit-chatbox--floating {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 24rem;
+  height: 500px;
+}
+
+.max-lit-chatbox__header,
+.max-lit-chatbox__footer {
+  position: relative;
+  padding: 1rem;
+  background: #0d1117;
+}
+
+.max-lit-chatbox__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d0ab47;
+}
+
+.max-lit-chatbox__footer {
+  border-top: 1px solid #d0ab47;
+}
+
+.max-lit-chatbox__input {
+  border: 1px solid #d0ab47;
+  text-align: center;
+}
+
+.max-lit-chatbox__gold-link {
+  display: block;
+  color: #d0ab47;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.max-lit-chatbox__gold-link:hover,
+.max-lit-chatbox__gold-link:focus-visible {
+  color: #d0ab47;
+  text-decoration: underline;
+}
+
+.max-lit-chatbox__user-message {
+  background-color: #d0ab47;
+  color: #000;
+}
+
+.max-lit-chatbox__thinking {
+  color: #d0ab47;
+}
+
+.max-lit-chatbox__push-button {
+  background-color: #000;
+  border: 4px solid #d0ab47;
+  font-style: italic;
+}
+
+.max-lit-chatbox__push-button-label {
+  display: inline-block;
+  color: #d0ab47 !important;
+  -webkit-text-fill-color: #d0ab47 !important;
+  font-style: italic;
+}
+
+.max-lit-chatbox__push-button--inactive {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.max-lit-chatbox__timer {
+  border: 2px solid #d0ab47;
+}
+
+.max-lit-chatbox__timer-label {
+  color: #d0ab47;
+}
+
+.max-lit-chatbox-exit-signout {
+  color: #d0ab47;
+}
+
+.max-lit-chatbox-page-title {
+  color: #d0ab47;
+  font-style: italic;
+}
+
+h1.max-lit-chatbox-page-title {
+  font-size: calc(1.5rem + 5px);
+}
+
+/* Lock chatbox gold to match page title "WINDOW" — beats Tailwind/global link styles */
+.max-lit-chatbox-page-title,
+.max-lit-chatbox-exit-signout,
+.max-lit-chatbox .max-lit-chatbox__timer-label,
+.max-lit-chatbox .max-lit-chatbox__gold-link,
+.max-lit-chatbox .max-lit-chatbox__thinking {
+  color: #d0ab47 !important;
+}
+
+.max-lit-chatbox .max-lit-chatbox__push-button-label {
+  color: #d0ab47 !important;
+  -webkit-text-fill-color: #d0ab47 !important;
+}
+
+.max-lit-chatbox,
+.max-lit-chatbox .max-lit-chatbox__timer,
+.max-lit-chatbox .max-lit-chatbox__input,
+.max-lit-chatbox .max-lit-chatbox__push-button {
+  border-color: #d0ab47 !important;
+}
+
+.max-lit-chatbox .max-lit-chatbox__user-message {
+  background-color: #d0ab47 !important;
 }

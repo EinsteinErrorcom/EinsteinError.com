@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { createClient } from "@/lib/supabase/client";
-import Link from "next/link";
-import { useState } from "react";
+import { createClient } from '@/lib/supabase/client';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export function ChatExitLinks() {
   const [signingOut, setSigningOut] = useState(false);
@@ -12,7 +12,7 @@ export function ChatExitLinks() {
     try {
       const supabase = createClient();
       await supabase.auth.signOut();
-      window.location.assign("/");
+      window.location.assign('/');
     } catch {
       setSigningOut(false);
     }
@@ -22,33 +22,33 @@ export function ChatExitLinks() {
     <nav
       aria-label="Chat navigation"
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        gap: "16px",
-        marginBottom: "16px",
-        fontSize: "18px",
-        fontWeight: "bold",
-        fontStyle: "italic",
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '16px',
+        marginBottom: '16px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        fontStyle: 'italic',
       }}
     >
-      <Link href="/" style={{ color: "#00FFFF", textDecoration: "underline" }}>
+      <Link href="/" style={{ color: '#00FFFF', textDecoration: 'underline' }}>
         Home
       </Link>
       <button
         type="button"
         onClick={() => void handleSignOut()}
         disabled={signingOut}
+        className="max-lit-chatbox-exit-signout"
         style={{
-          background: "transparent",
-          border: "none",
-          color: "#D0AB47",
-          textDecoration: "underline",
-          cursor: signingOut ? "default" : "pointer",
-          font: "inherit",
+          background: 'transparent',
+          border: 'none',
+          textDecoration: 'underline',
+          cursor: signingOut ? 'default' : 'pointer',
+          font: 'inherit',
         }}
       >
-        {signingOut ? "Signing out..." : "Sign out"}
+        {signingOut ? 'Signing out...' : 'Sign out'}
       </button>
     </nav>
   );
