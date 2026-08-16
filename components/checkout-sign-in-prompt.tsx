@@ -10,8 +10,9 @@ type CheckoutSignInPromptProps = {
 export function CheckoutSignInPrompt({ googleClientId }: CheckoutSignInPromptProps) {
   return (
     <div className="payment-checkout__sign-in-prompt">
-      You MUST be Signed-In to Google in order to use
-      {'\u00A0'.repeat(3)}
+      You MUST be Signed-In to Google
+      <br />
+      in order to use{'\u00A0'.repeat(3)}
       <span style={{ color: '#D0AB47' }}>MAX-LIT</span>
       <div className="payment-checkout__sign-in-link">
         <GoogleLoginButton

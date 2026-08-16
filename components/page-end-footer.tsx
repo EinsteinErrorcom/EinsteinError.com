@@ -4,13 +4,18 @@ import type { ReactNode } from 'react';
 type PageEndFooterProps = {
   pageNumber: number;
   leadText?: ReactNode;
+  /** Tighter footer for checkout tail (no top margin / lead spacer) */
+  compact?: boolean;
 };
 
-export function PageEndFooter({ pageNumber, leadText }: PageEndFooterProps) {
+export function PageEndFooter({ pageNumber, leadText, compact }: PageEndFooterProps) {
   const nextPath = getNextSitePagePath(pageNumber);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
+    <div
+      className="page-end-footer"
+      style={{ textAlign: 'center', marginTop: compact ? 0 : '100px' }}
+    >
       {nextPath ? (
         <a
           href={nextPath}
@@ -37,7 +42,7 @@ export function PageEndFooter({ pageNumber, leadText }: PageEndFooterProps) {
           Einstein Error . com
         </a>
       ) : null}
-      <div className="spacer" style={{ height: '50px' }}></div>
+      {!compact ? <div className="spacer" style={{ height: '50px' }}></div> : null}
       <span
         style={{
           fontWeight: 'bold',

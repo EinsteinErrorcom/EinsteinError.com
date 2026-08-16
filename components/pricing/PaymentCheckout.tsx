@@ -7,7 +7,7 @@ import { PRICING_TIERS, type PricingTier } from '@/lib/stripe/pricing';
 import { isTourMode, SITE_TOUR_QUERY } from '@/lib/site-tour';
 import { SIGN_IN_PATH } from '@/lib/trial-gate';
 
-function renderTierLabel(label: string) {
+function renderTierLabelLine(label: string) {
   const match = label.match(/^([\s\S]*?)(\( Cost = )(\d+)( dollars per Hour \))([\s\S]*)$/);
   if (!match) {
     return label;
@@ -22,6 +22,41 @@ function renderTierLabel(label: string) {
       <span className="payment-checkout__cost-hour">{costNumber}</span>
       {costSuffix}
       {after}
+    </>
+  );
+}
+
+function renderTierLabel(label: string) {
+  const lines = label.split('\n').map((line) => line.replace(/^\t+/, ''));
+
+  if (lines.length > 1) {
+    return (
+      <>
+        <span>{renderTierLabelLine(lines[0])}</span>
+        <span aria-hidden="true" />
+        <span>{renderTierLabelLine(lines[1])}</span>
+      </>
+    );
+  }
+
+  return renderTierLabelLine(lines[0] ?? label);
+}
+
+function renderTierLabelContent(tier: PricingTier) {
+  if (tier.label.includes('\n')) {
+    return (
+      <span className="payment-checkout__tier-label-grid">
+        <span className="payment-checkout__tier-price">{tier.price}</span>
+        {renderTierLabel(tier.label)}
+      </span>
+    );
+  }
+
+  return (
+    <>
+      {'\t'}
+      <span className="payment-checkout__tier-price">{tier.price}</span>
+      {renderTierLabel(tier.label)}
     </>
   );
 }
@@ -97,9 +132,7 @@ export default function PaymentCheckout() {
               disabled={Boolean(loadingTierId)}
             >
               <span className="payment-checkout__tier-label">
-                {'\t'}
-                <span className="payment-checkout__tier-price">{tier.price}</span>
-                {renderTierLabel(tier.label)}
+                {renderTierLabelContent(tier)}
               </span>
               <span className="payment-checkout__tier-desc">{tier.description}</span>
               {isLoading && (
