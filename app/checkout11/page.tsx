@@ -7,7 +7,7 @@ import { getGoogleClientId } from '@/lib/site-url';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-/** MAX-LIT Secure Checkout — 3 Stripe tiers ($15 / $75 / $400) — Page 11 */
+/** MAX-LIT Secure Checkout — 3 Stripe tiers ($15 / $75 / $400) — Page 10 */
 export default async function Checkout11Page() {
   let isSignedIn = false;
 
@@ -36,7 +36,7 @@ export default async function Checkout11Page() {
         <Link href="/" className="pricing-checkout-page__back">
           ← Back to Home
         </Link>
-        <PageEndFooter pageNumber={11} />
+        <PageEndFooter pageNumber={10} />
       </div>
     </main>
   );

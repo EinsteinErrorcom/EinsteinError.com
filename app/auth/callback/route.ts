@@ -7,7 +7,7 @@ import {
   CHECKOUT_SESSION_QUERY,
   fetchProfileTrial,
   shouldRedirectToPricing,
-  TRIAL_EXPIRED_PATH,
+  CHECKOUT_PATH,
   CHAT_PATH,
 } from '@/lib/trial-gate';
 import { NextResponse, type NextRequest } from 'next/server';
@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
     } else {
       const profile = await fetchProfileTrial(routeClient.supabase, user.id);
       if (shouldRedirectToPricing(profile)) {
-        destination = TRIAL_EXPIRED_PATH;
+        destination = CHECKOUT_PATH;
       }
     }
   }

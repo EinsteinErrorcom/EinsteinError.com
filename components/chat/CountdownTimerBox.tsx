@@ -6,7 +6,7 @@ import {
   getRemainingAccessMs,
   type AccessTier,
 } from '@/lib/access';
-import { TIME_EXPIRED_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
+import { CHECKOUT_PATH } from '@/lib/trial-gate';
 import { useEffect, useState } from 'react';
 
 type CountdownTimerBoxProps = {
@@ -57,9 +57,7 @@ export function CountdownTimerBox({
       setRemainingMs(next);
 
       if (next <= 0) {
-        window.location.assign(
-          accessTier === 'trial' ? TRIAL_EXPIRED_PATH : TIME_EXPIRED_PATH
-        );
+        window.location.assign(CHECKOUT_PATH);
       }
     };
 

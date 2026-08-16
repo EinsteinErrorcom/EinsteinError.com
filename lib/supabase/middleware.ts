@@ -7,8 +7,6 @@ import {
   shouldRedirectToPricing,
   CHECKOUT_PATH,
   CHAT_PATH,
-  TRIAL_EXPIRED_PATH,
-  TIME_EXPIRED_PATH,
 } from '@/lib/trial-gate'
 import {
   isTrialExpired,
@@ -28,8 +26,6 @@ const TRIAL_EXEMPT_PATHS = new Set([
   '/page8',
   CHECKOUT_PATH,
   CHAT_PATH,
-  TRIAL_EXPIRED_PATH,
-  TIME_EXPIRED_PATH,
   '/dev/reset',
 ])
 
@@ -126,7 +122,7 @@ export async function updateSession(request: NextRequest) {
       const redirectUrl = request.nextUrl.clone()
       redirectUrl.pathname = profile
         ? getAccessExpiredPath(profile)
-        : TRIAL_EXPIRED_PATH
+        : CHECKOUT_PATH
       redirectUrl.search = ''
       return redirectWithCookies(redirectUrl, supabaseResponse)
     }
@@ -146,7 +142,7 @@ export async function updateSession(request: NextRequest) {
 
     if (trialStartedAt && isTrialExpired(trialStartedAt)) {
       const redirectUrl = request.nextUrl.clone()
-      redirectUrl.pathname = TIME_EXPIRED_PATH
+      redirectUrl.pathname = CHECKOUT_PATH
       redirectUrl.search = ''
       return NextResponse.redirect(redirectUrl)
     }

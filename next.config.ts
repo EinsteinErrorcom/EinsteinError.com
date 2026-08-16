@@ -70,7 +70,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/trialexpired9',
-        destination: '/trialexpired10',
+        destination: '/checkout11',
+        permanent: true,
+      },
+      {
+        source: '/trialexpired10',
+        destination: '/checkout11',
         permanent: true,
       },
       {
@@ -80,12 +85,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/timeexpired11',
-        destination: '/timeexpired12',
+        destination: '/checkout11',
+        permanent: true,
+      },
+      {
+        source: '/timeexpired12',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/spare12',
-        destination: '/timeexpired12',
+        destination: '/checkout11',
         permanent: true,
       },
       {
@@ -100,7 +110,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/trialexpired8',
-        destination: '/trialexpired10',
+        destination: '/checkout11',
+        permanent: true,
+      },
+      {
+        source: '/trialexpired',
+        destination: '/checkout11',
+        permanent: true,
+      },
+      {
+        source: '/trial-expired',
+        destination: '/checkout11',
         permanent: true,
       },
       {
@@ -125,17 +145,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/chat11',
-        destination: '/timeexpired12',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/timeexpired',
-        destination: '/timeexpired12',
+        destination: '/checkout11',
         permanent: true,
       },
       {
         source: '/spare',
-        destination: '/timeexpired12',
+        destination: '/checkout11',
         permanent: true,
       },
     ];

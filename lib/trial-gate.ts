@@ -1,23 +1,19 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { isAccessActive, isPaidAccessTier, normalizeAccessTier } from '@/lib/access';
+import { isAccessActive } from '@/lib/access';
 import { isProfileTrialActive, type ProfileTrial } from './trial';
 
-/** Site page routes (12-page structure) */
-/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 11 */
+/** Site page routes (10-page structure: 8 content + chat + checkout) */
+/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 10 */
 export const CHECKOUT_PATH = '/checkout11';
 export const CHECKOUT11_PATH = CHECKOUT_PATH;
 /** @deprecated Use CHECKOUT_PATH */
 export const CHECKOUT10_PATH = CHECKOUT_PATH;
-/** @deprecated Use CHECKOUT_PATH — kept for trial-expired redirects */
+/** @deprecated Use CHECKOUT_PATH */
 export const PRICING_PATH = CHECKOUT_PATH;
 export const CHAT9_PATH = '/maxchatbox9';
 export const CHAT_PATH = '/maxchatbox9';
 /** @deprecated Use CHAT_PATH */
 export const CHAT8_PATH = CHAT_PATH;
-export const TRIAL_EXPIRED_PATH = '/trialexpired10';
-export const TIME_EXPIRED_PATH = '/timeexpired12';
-/** @deprecated spare12 removed — redirects to time expired */
-export const SPARE_PATH = TIME_EXPIRED_PATH;
 
 /** Landing page anchor — scrolls to the Google Sign-In block */
 export const SIGN_IN_SECTION_ID = 'auth-section';
@@ -60,9 +56,8 @@ export function shouldRedirectToPricing(
   return !isProfileTrialActive(profile);
 }
 
-export function getAccessExpiredPath(profile: ProfileTrial): string {
-  const tier = normalizeAccessTier(profile.access_tier, profile.is_subscribed);
-  return isPaidAccessTier(tier) ? TIME_EXPIRED_PATH : TRIAL_EXPIRED_PATH;
+export function getAccessExpiredPath(_profile: ProfileTrial): string {
+  return CHECKOUT_PATH;
 }
 
 export async function fetchProfileTrial(

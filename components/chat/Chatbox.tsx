@@ -7,7 +7,7 @@ import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-b
 import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
 import type { AccessTier } from '@/lib/access';
 import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
-import { CHAT_PATH, TIME_EXPIRED_PATH, TRIAL_EXPIRED_PATH } from '@/lib/trial-gate';
+import { CHECKOUT_PATH, CHAT_PATH } from '@/lib/trial-gate';
 
 type ChatMessage = { role: 'user' | 'ai'; text: string };
 
@@ -157,11 +157,7 @@ export default function Chatbox({
 
       if (!res.ok) {
         if (data.error === 'Trial expired') {
-          const expiredPath =
-            accessTier && accessTier !== 'trial'
-              ? TIME_EXPIRED_PATH
-              : TRIAL_EXPIRED_PATH;
-          window.location.assign(expiredPath);
+          window.location.assign(CHECKOUT_PATH);
           return;
         }
         if (res.status === 429) {
