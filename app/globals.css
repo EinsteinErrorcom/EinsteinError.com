@@ -655,27 +655,36 @@ p {
 }
 
 .pricing-checkout-page {
-  min-height: 100vh;
+  min-height: auto;
   background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 2rem;
+  overflow: visible;
+  padding: 0.2rem 2rem 1rem;
 }
 
 .pricing-checkout-page__inner {
   width: min(100%, 704px);
   min-width: min(100%, 704px);
-  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
+  overflow: visible;
+}
+
+.pricing-checkout-page__gold-header {
+  margin: -1.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .pricing-checkout-page__expired-notice {
-  margin: 0 0 0.75rem;
+  margin: 0;
   color: #d0ab47;
   font-size: 35px;
   font-style: italic;
@@ -686,7 +695,7 @@ p {
 }
 
 .pricing-checkout-page__title {
-  margin: 0;
+  margin: 1.25rem 0 0;
   color: #d0ab47;
   font-size: 1.5rem;
   font-style: italic;
@@ -710,23 +719,17 @@ p {
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
-  margin: 0;
+  margin: 1.25rem 0 0;
 }
 
 .pricing-checkout-page__home:hover {
   text-decoration: underline;
 }
 
-.pricing-checkout-page__checkout-block {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 .pricing-checkout-page__tail {
   width: 100%;
-  flex: 1;
+  min-height: 12vh;
+  padding-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -736,7 +739,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
 .pricing-checkout-page__tail .page-end-footer {
@@ -918,7 +921,7 @@ p {
 }
 
 .payment-checkout__sign-in-prompt {
-  margin: 0 0 1.25rem;
+  margin: 1.25rem 0 1.25rem;
   text-align: center;
   color: #ff0000;
   font-weight: 700;

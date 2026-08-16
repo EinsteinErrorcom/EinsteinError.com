@@ -24,28 +24,28 @@ export default async function Checkout11Page() {
   return (
     <main className="pricing-checkout-page">
       <div className="pricing-checkout-page__inner">
-        <p className="pricing-checkout-page__expired-notice">
-          Sorry, your Time has run out.
-          <br />
-          Choose an option below ...
-        </p>
-        <h1 className="pricing-checkout-page__title">
-          MAX-LIT{'\u00A0'.repeat(4)}Secure{'\u00A0'.repeat(4)}CHECK-OUT
-        </h1>
+        <div className="pricing-checkout-page__gold-header">
+          <p className="pricing-checkout-page__expired-notice">
+            Sorry, your Time has run out.
+            <br />
+            Choose an option below ...
+          </p>
+          <h1 className="pricing-checkout-page__title">
+            MAX-LIT{'\u00A0'.repeat(4)}Secure{'\u00A0'.repeat(4)}CHECK-OUT
+          </h1>
+        </div>
         {!isSignedIn ? (
           <CheckoutSignInPrompt googleClientId={googleClientId} />
         ) : null}
-        <div className="pricing-checkout-page__checkout-block">
-          <Suspense fallback={null}>
-            <PaymentCheckout />
-          </Suspense>
-          <div className="pricing-checkout-page__tail">
-            <div className="pricing-checkout-page__tail-group">
-              <Link href="/" className="pricing-checkout-page__home">
-                HOME
-              </Link>
-              <PageEndFooter pageNumber={10} compact />
-            </div>
+        <Suspense fallback={null}>
+          <PaymentCheckout />
+        </Suspense>
+        <div className="pricing-checkout-page__tail">
+          <div className="pricing-checkout-page__tail-group">
+            <Link href="/" className="pricing-checkout-page__home">
+              HOME
+            </Link>
+            <PageEndFooter pageNumber={10} compact />
           </div>
         </div>
       </div>
