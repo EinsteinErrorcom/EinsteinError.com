@@ -1353,7 +1353,12 @@ h1.max-lit-chatbox-page-title {
   margin: 0 0 2rem;
   text-decoration: underline;
   text-decoration-color: #ffffff;
+  text-decoration-thickness: 0.14em;
   text-underline-offset: 0.35em;
+}
+
+.page7__scroll + .page7__title {
+  margin-top: 2.5rem;
 }
 
 .page7__line-number {

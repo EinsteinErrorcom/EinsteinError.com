@@ -13,7 +13,8 @@ export type Page7Hierarchy = {
 };
 
 const PAGE7_PATH = path.join(process.cwd(), 'content/page7.txt');
-const HIERARCHY_MARKER = 'Construction Hierarchy of the Universe';
+export const PAGE7_HIERARCHY_MARKER = 'Construction Hierarchy of the Universe';
+const HIERARCHY_MARKER = PAGE7_HIERARCHY_MARKER;
 const PAGE7_TAB_INDENT = 3;
 const PAGE7_CONTINUATION_TABS = 8;
 
@@ -41,6 +42,39 @@ export function indentWithTabs(text: string, tabs = PAGE7_TAB_INDENT): string {
     .map((line) => (line.trim() === '' ? '' : `${prefix}${line}`))
     .join('\n');
 }
+
+export function isPage7HierarchyTitleLine(line: string): boolean {
+  return line.trim().startsWith(PAGE7_HIERARCHY_MARKER);
+}
+
+export function splitPage7DocumentLines(lines: string[]): Page7DocumentChunk[] {
+  const chunks: Page7DocumentChunk[] = [];
+  let currentLines: string[] = [];
+
+  for (const line of lines) {
+    if (isPage7HierarchyTitleLine(line)) {
+      if (currentLines.length > 0) {
+        chunks.push({ kind: 'pre', lines: currentLines });
+        currentLines = [];
+      }
+
+      chunks.push({ kind: 'title', text: line.trim() });
+      continue;
+    }
+
+    currentLines.push(line);
+  }
+
+  if (currentLines.length > 0) {
+    chunks.push({ kind: 'pre', lines: currentLines });
+  }
+
+  return chunks;
+}
+
+export type Page7DocumentChunk =
+  | { kind: 'pre'; lines: string[] }
+  | { kind: 'title'; text: string };
 
 export function loadPage7Content(): string {
   return fs.readFileSync(PAGE7_PATH, 'utf8').replace(/\r\n/g, '\n');
