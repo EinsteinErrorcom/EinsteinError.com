@@ -32,7 +32,7 @@ export default function Page2() {
             answer  to  Einstein's
           <br />
           monumental   <span className="c-red">ERROR</span> !
-          <div className="spacer spacer--sm"></div>
+          <div className="spacer spacer--lg"></div>
           
 
             And   Please . . .
@@ -57,8 +57,8 @@ export default function Page2() {
 
             Einstein's  equation
           <div className="spacer spacer--sm"></div>
-          ( E = mc
-          <sup>2</sup>
+          ({'\u00A0\u00A0'}<span className="c-white">E = mc
+          <sup>2</sup></span>{'\u00A0\u00A0'}
            )
           <div className="spacer spacer--sm"></div>
           is  ONLY  
@@ -92,6 +92,14 @@ export default function Page2() {
         </div>
         <div className="spacer spacer--sm"></div>
         <figure className="media"><img src="/ENTIRE.png" alt="Einstein Shut Down" width="500" height="300" loading="lazy" decoding="async" /></figure>
+        <div className="spacer spacer--lg"></div>
+        <figure className="media"><img src="/UNACCEPTABLE.png" alt="Unacceptable Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
+        <div className="spacer spacer--lg"></div>
+        <figure className="media"><img src="/TWISTS.png" alt="Twisted Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
+        <div className="spacer spacer--lg"></div>
+        <figure className="media"><img src="/ACCXTIME.png" alt="Acceleration x Time" width="500" height="700" loading="lazy" decoding="async" /></figure>
+        <div className="spacer spacer--lg"></div>
+        <figure className="media"><img src="/ACCXTIME2.png" alt="Einstein Error Acceleration x Time" width="500" height="700" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--lg"></div>
         <div className="f-large letter-spaced">
           <span className="c-red"><strong>ATTENTION  !</strong></span>
@@ -475,9 +483,6 @@ export default function Page2() {
 
         
         </div>
-        <figure className="media"><img src="/UNACCEPTABLE.png" alt="Unacceptable Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="spacer spacer--sm"></div>
-        <figure className="media"><img src="/TWISTS.png" alt="Twisted Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--sm"></div>
         <figure className="media"><img src="/TWISTED.png" alt="Twisted Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--sm"></div>
@@ -1260,8 +1265,6 @@ export default function Page2() {
 
         
         </div>
-        <div className="spacer spacer--md"></div>
-        <figure className="media"><img src="/UNACCEPTABLE.png" alt="Unacceptable Physics" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div className="spacer spacer--sm"></div>
         <div className="f-x-large f-x-large--white">
           
