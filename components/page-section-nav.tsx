@@ -1,5 +1,5 @@
 type PageSectionNavProps = {
-  hidePage?: 2 | 3 | 4 | 5 | 6 | 8;
+  hidePage?: 2 | 3 | 4 | 5 | 6 | 7 | 8;
 };
 
 type PageLink = {
@@ -14,20 +14,26 @@ const PAGE_LINKS: readonly PageLink[] = [
   { page: 4, href: "/page4", label: "PAGE4" },
   { page: 5, href: "/page5", label: "PAGE5" },
   { page: 6, href: "/page6", label: "PAGE6" },
+  { page: 7, href: "/page7", label: "PAGE7" },
   { page: 8, href: "/page8", label: "PAGE8" },
 ];
 
 function getPageRows(hidePage?: PageSectionNavProps["hidePage"]) {
-  if (hidePage === undefined || hidePage === 6 || hidePage === 8) {
+  if (
+    hidePage === undefined ||
+    hidePage === 6 ||
+    hidePage === 7 ||
+    hidePage === 8
+  ) {
     return {
       row1Pages: [2, 3, 4],
-      row2Pages: [5, 6, 8],
+      row2Pages: [5, 6, 7, 8],
     };
   }
 
   return {
     row1Pages: [2, 3, 4, 5],
-    row2Pages: [6, 8],
+    row2Pages: [6, 7, 8],
   };
 }
 
