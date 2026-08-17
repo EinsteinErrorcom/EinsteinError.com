@@ -13,7 +13,11 @@
   --color-red: #f00;
   --color-magenta: #f0f;
   --max-lit-gold: #d0ab47;
+  /* UI text: San Francisco on Apple, Segoe UI on Windows, Roboto on Android */
   --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Page 7 WYSIWYG .txt blocks only — not used for general UI */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --text-base: 20px;
   --space-sm: clamp(0.75rem, 2vw, 1.25rem);
   --space-nav: clamp(0.6rem, 1.5vw, 1rem);
@@ -1316,8 +1320,7 @@ h1.max-lit-chatbox-page-title {
   white-space: pre;
   tab-size: 4;
   -moz-tab-size: 4;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: var(--text-base);
   font-weight: 700;
   font-style: italic;
@@ -1458,8 +1461,7 @@ h1.max-lit-chatbox-page-title {
   -moz-tab-size: 4;
   white-space: pre;
   overflow: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  font-family: var(--font-mono);
   font-size: var(--text-base);
   font-weight: 700;
   font-style: italic;

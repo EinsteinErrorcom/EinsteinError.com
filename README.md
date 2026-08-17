@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project for **MAX-LIT** (EinsteinError.com).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Typography
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The live app uses the **system font stack** (no custom web fonts loaded):
 
-## Learn More
+- **Apple (iPhone/Mac):** San Francisco via `-apple-system`
+- **Windows:** Segoe UI
+- **Android:** Roboto
 
-To learn more about Next.js, take a look at the following resources:
+Defined in `app/globals.css` as `--font-base`. Page 7 document text uses `--font-mono` for WYSIWYG `.txt` rendering only.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`/font-compare.html` is a local dev reference for comparing alternative SaaS fonts — it does **not** affect the live site.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Page 7 content editing
 
-## Deploy on Vercel
+1. `npm run dev`
+2. Edit at [http://localhost:3000/dev/page7-edit](http://localhost:3000/dev/page7-edit) or `content/page7.txt`
+3. Preview at [http://localhost:3000/page7](http://localhost:3000/page7)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy on [Vercel](https://vercel.com/new) or your preferred host. See [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
