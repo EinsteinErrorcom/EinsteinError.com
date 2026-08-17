@@ -724,7 +724,7 @@ p {
 
 .pricing-checkout-page__home {
   color: #00ffff;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
@@ -1492,4 +1492,80 @@ h1.max-lit-chatbox-page-title {
   color: #ffff00;
   font-size: var(--text-base);
   text-align: center;
+}
+
+.page8__numbers {
+  max-width: min(700px, 100%);
+  margin: 2.5rem auto 0;
+  padding: 0 1rem 2rem;
+}
+
+.page8__numbers-title {
+  color: var(--max-lit-gold);
+  text-align: center;
+  margin: 0 0 1.25rem;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.35em;
+}
+
+.page8__numbers-list {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--max-lit-gold);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 2.2vw, 0.95rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.15;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.content-page.page7 {
+  text-align: left;
+}
+
+.content-page.page7 .page7__intro {
+  max-width: min(calc(455px * 1.331), 100%);
+  margin: 0 auto 1.25rem;
+  color: #00ffff;
+  font-size: 23px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.content-page.page7 .page7__intro-warning {
+  color: var(--color-red);
+}
+
+.page7__numbers-list {
+  max-width: min(910px, 100%);
+  margin: 0 auto 2rem;
+  padding: 0.5rem 0.65rem;
+  border: 5px solid var(--max-lit-gold);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: calc(clamp(0.7rem, 2.2vw, 0.95rem) + 5px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.15;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.page7__numbers-note {
+  padding-left: 2.5em;
+  font-size: 18px;
+  color: #999999;
+  white-space: pre-wrap;
+}
+
+.page7__numbers-note--red {
+  color: var(--color-red);
 }
