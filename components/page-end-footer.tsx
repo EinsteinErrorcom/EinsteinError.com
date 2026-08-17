@@ -6,10 +6,20 @@ type PageEndFooterProps = {
   leadText?: ReactNode;
   /** Tighter footer for checkout tail (no top margin / lead spacer) */
   compact?: boolean;
+  /** Override default “Next Page N” link label */
+  nextLabel?: ReactNode;
+  /** Override default next-page href */
+  nextHref?: string;
 };
 
-export function PageEndFooter({ pageNumber, leadText, compact }: PageEndFooterProps) {
-  const nextPath = getNextSitePagePath(pageNumber);
+export function PageEndFooter({
+  pageNumber,
+  leadText,
+  compact,
+  nextLabel,
+  nextHref,
+}: PageEndFooterProps) {
+  const nextPath = nextHref ?? getNextSitePagePath(pageNumber);
 
   return (
     <div
@@ -34,9 +44,13 @@ export function PageEndFooter({ pageNumber, leadText, compact }: PageEndFooterPr
               <br />
             </>
           ) : null}
-          Click&nbsp;&nbsp;to&nbsp;&nbsp;Next&nbsp;&nbsp;
-          <span style={{ color: '#FFFFFF' }}>Page&nbsp;{pageNumber + 1}</span>{' '}
-          &rarr;
+          {nextLabel ?? (
+            <>
+              Click&nbsp;&nbsp;to&nbsp;&nbsp;Next&nbsp;&nbsp;
+              <span style={{ color: '#FFFFFF' }}>Page&nbsp;{pageNumber + 1}</span>{' '}
+              &rarr;
+            </>
+          )}
           <br />
           <br />
           Einstein Error . com

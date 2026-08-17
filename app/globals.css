@@ -1467,3 +1467,29 @@ h1.max-lit-chatbox-page-title {
   font-style: italic;
   line-height: 1.45;
 }
+
+.page8__intro {
+  max-width: min(700px, 100%);
+  margin: 0 auto 1.5rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.page8__gallery {
+  max-width: min(700px, 100%);
+  margin: 0 auto;
+}
+
+.page8__gallery .media + .media {
+  margin-top: 1rem;
+}
+
+.page8__gallery img {
+  width: min(700px, 100%);
+}
+
+.page8__empty {
+  color: #ffff00;
+  font-size: var(--text-base);
+  text-align: center;
+}
