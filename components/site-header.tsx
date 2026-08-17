@@ -1,5 +1,5 @@
 import { ContactBar } from "@/components/contact-bar";
-import { PageNav } from "@/components/page-nav";
+import { PageNavLabel } from "@/components/page-nav-label";
 import { CHECKOUT_PATH } from "@/lib/trial-gate";
 
 type SiteHeaderProps = {
@@ -9,7 +9,9 @@ type SiteHeaderProps = {
 export function SiteHeader({ page }: SiteHeaderProps) {
   return (
     <header className="site-header">
-      <PageNav page={page} />
+      <div className="site-header__page-label">
+        <PageNavLabel page={page} />
+      </div>
       <figure className="media media--banner">
         <a href={CHECKOUT_PATH}>
           <img
@@ -22,7 +24,7 @@ export function SiteHeader({ page }: SiteHeaderProps) {
           />
         </a>
       </figure>
-      <ContactBar />
+      <ContactBar page={page} />
     </header>
   );
 }

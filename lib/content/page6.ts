@@ -30,7 +30,7 @@ function getPage6ContinuationIndent(): string {
   return '\t'.repeat(PAGE6_TAB_INDENT + PAGE6_CONTINUATION_TABS);
 }
 
-function isPage6HierarchyPrimaryLine(line: string): boolean {
+export function isPage6HierarchyPrimaryLine(line: string): boolean {
   return PAGE6_HIERARCHY_PRIMARY_LINE.test(line.trimStart());
 }
 
@@ -44,21 +44,44 @@ export function indentWithTabs(text: string, tabs = PAGE6_TAB_INDENT): string {
 }
 
 export function isPage6HierarchyTitleLine(line: string): boolean {
-  return line.trim().startsWith(PAGE6_HIERARCHY_MARKER);
+  const trimmed = line.trim();
+  return (
+    trimmed.startsWith(PAGE6_HIERARCHY_MARKER) ||
+    trimmed === 'Construction Hierarchy of'
+  );
+}
+
+function normalizePage6HierarchyTitle(firstLine: string, secondLine?: string): string {
+  const first = firstLine.trim();
+  const second = secondLine?.trim();
+
+  if (first === 'Construction Hierarchy of' && second?.startsWith('the Universe')) {
+    return `${first}\n${second}`;
+  }
+
+  return first;
 }
 
 export function splitPage6DocumentLines(lines: string[]): Page6DocumentChunk[] {
   const chunks: Page6DocumentChunk[] = [];
   let currentLines: string[] = [];
 
-  for (const line of lines) {
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+
     if (isPage6HierarchyTitleLine(line)) {
       if (currentLines.length > 0) {
         chunks.push({ kind: 'pre', lines: currentLines });
         currentLines = [];
       }
 
-      chunks.push({ kind: 'title', text: line.trim() });
+      const nextLine = lines[index + 1];
+      const titleText = normalizePage6HierarchyTitle(line, nextLine);
+      if (titleText.includes('\n')) {
+        index += 1;
+      }
+
+      chunks.push({ kind: 'title', text: titleText });
       continue;
     }
 
@@ -231,13 +254,19 @@ export function parsePage6Hierarchy(raw: string): Page6Hierarchy | null {
   }
 
   const lines = raw.slice(hierarchyIndex).split('\n');
-  const title = lines[0]?.trim() ?? '';
+  const title =
+    lines[0]?.trim() === 'Construction Hierarchy of' && lines[1]?.trim().startsWith('the Universe')
+      ? normalizePage6HierarchyTitle(lines[0], lines[1])
+      : (lines[0]?.trim() ?? '');
+  const titleLineCount = title.includes('\n') ? 2 : 1;
   const universeIndex = lines.findIndex((line) => /^Universe\s*=/.test(line.trim()));
 
   const introLines =
-    universeIndex > 1 ? lines.slice(1, universeIndex).join('\n').replace(/\s+$/u, '') : '';
+    universeIndex > titleLineCount
+      ? lines.slice(titleLineCount, universeIndex).join('\n').replace(/\s+$/u, '')
+      : '';
 
-  const bodyLines = universeIndex >= 0 ? lines.slice(universeIndex) : lines.slice(1);
+  const bodyLines = universeIndex >= 0 ? lines.slice(universeIndex) : lines.slice(titleLineCount);
 
   return {
     title,

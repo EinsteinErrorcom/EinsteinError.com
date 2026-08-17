@@ -1,76 +1,77 @@
-1 - Universe Total 12-bit grid in mechanical equilibrium.
+1 - Universe  =  Total 12-bit grid in mechanical equilibrium.
     Icosahedral volume equals TRadius^3 ( 3.33 x 10^33 m^3 ).
     Contains 4.4721359 x 10^52 Neutrons, and 8.875 x 10^104 Q(PE)trons.
 
-2 - Space Pressurized 12-bit grid medium containing stationary Neutrons.
+2 - Space  =  Pressurized 12-bit grid medium containing stationary Neutrons.
     Functions as a finite, non-expanding fluid sea and s-state conductor of gravity.
 
-3 - Pressure of Space The Strong Force and origin of all energy (4.60 \times 10^{12}).
+3 - Pressure of Space  =  The Strong Force and origin of all energy (4.60 \times 10^{12}).
     Fuel source for the Sun, terminating the infinite space error.
 
-4 - Gravity Localized lattice medium in-flow (mA) created when Earth's magnetic field
+4 - Gravity  =  Localized lattice medium in-flow (mA) created when Earth's magnetic field
     cuts free stationary Neutrons, which are then pushed into Earth by space pressure.
 
-5 - TCirc Total linear distance gravity travels during one Z cycle (9.17 \times 10^{15}\text{ m}).
+5 - TCirc  =  Total linear distance gravity travels during one Z cycle (9.17 \times 10^{15}\text{ m}).
     Functions as the capacity yardstick and rim of the universal wheel.
 
-6 - ECirc Earth orbit circumference (9.83 \times 10^{11}\text{ m}).
+6 - ECirc  =  Earth orbit circumference (9.83 \times 10^{11}\text{ m}).
     Defines the absolute electrical Volt path of Earth's orbital equation.
 
-7 - HPath The 7.08 \times 10^{11} meter long helix path traveled by Earth.
+7 - HPath  =  The 7.08 \times 10^{11} meter long helix path traveled by Earth.
     Maintains the master ratio where TRadius / HPath equals the 0.211-meter LatticeStep.
 
-8 - TRadius Pressurized tension rod distance between Sun and Earth (1.49 \times 10^{11}\text{ m}).
+8 - TRadius  =  Pressurized tension rod distance between Sun and Earth (1.49 \times 10^{11}\text{ m}).
     Controls structural volume, surface area, and embeds the Golden Ratio.
 
-9 - EORad Radius of the Toroid-Tube and Earth's helix orbital path around the Sun (3.15 \times 10^{10}\text{ m}).
+9 - EORad  =  Radius of the Toroid-Tube and Earth's helix orbital path around the Sun (3.15 \times 10^{10}\text{ m}).
 
-10 - FSGear Mechanical pinion gear (28.918 m) with 5,167,525,270.817 teeth.
+10 - FSGear  =  Mechanical pinion gear (28.918 m) with 5,167,525,270.817 teeth.
      Acts as the sub-atomic timing divisor controlling the 137.035999 Q(PE)tron blink ratio.
 
-11 - PGear Macro organizing gear (486,280 m) holding 810 parity stability points.
+11 - PGear  =  Macro organizing gear (486,280 m) holding 810 parity stability points.
      Scales symetrically with microscopic structures by a factor of 307,268.
 
-12 - SunGear Primary structural transition ratio (1554.73203)
+12 - SunGear  =  Primary structural transition ratio (1554.73203)
      governing Sun internal dynamics to Earth orbital lattice transition.
 
-13 - LatticeStep The 0.211-meter macro-ruler master unit calibrating
+13 - LatticeStep  =  The 0.211-meter macro-ruler master unit calibrating
      all displacement coordinates across the 12-bit universal grid.
 
-14 - AZLamb Micro-gear resonance bridge (686.84 nm) spanning
+14 - AZLamb  =  Micro-gear resonance bridge (686.84 nm) spanning
      34 Neutron anchors that explicitly defines EM-wave frequency.
 
-15 - ZLamb Discrete 32.69 ns sub-segment pulse of the AZLamb
+15 - ZLamb  =  Discrete 32.69 ns sub-segment pulse of the AZLamb
      acting as the fundamental 12-bit timer click.
 
-16 - Proton Out-flowing gravity flow-state (mA) from a
+16 - Proton  =  Out-flowing gravity flow-state (mA) from a
      combusting Neutron, exhibiting positive charge. True diameter is 1.6834 nm.
 
-17 - Electron In-flowing gravity flow-state (mA) from a moving Neutron,
+17 - Electron  =  In-flowing gravity flow-state (mA) from a moving Neutron,
      exhibiting negative charge. True diameter is 1.6834 nm.
 
-18 - Neutron Stationary 20.20 nm lattice anchor providing core mass and inertia.
+18 - Neutron  =  Stationary 20.20 nm lattice anchor providing core mass and inertia.
      Contains a 12-bit cluster of 12 Q(PE)trons with zero native charge.
 
-19 - NeutronGear Primary 20.20 nm universal gear tooth
+19 - NeutronGear  =  Primary 20.20 nm universal gear tooth
      coordinating Neutron spacing via 408 teeth, establishing the core unification constant.
 
-20 - Q(PE)tron Zero-volume coordinate address marker (1.6834 nm diameter)
+20 - Q(PE)tron  =  Zero-volume coordinate address marker (1.6834 nm diameter)
      yielding alternating proton/electron pressure points across the lattice.
 
-21 - Q(PE)Link Absolute 1.0 nm structural bridge
+21 - Q(PE)Link  =  Absolute 1.0 nm structural bridge
      linking individual Q(PE)tron clusters within the network.
 
-22 - Q(PE)track Unbroken 1 nm wide linear mechanical rail
+22 - Q(PE)track  =  Unbroken 1 nm wide linear mechanical rail
      guiding gravity flow from Sun to Earth. Medium friction along this track generates resistance.
 
-23 - AddyBit Fixed 1373.68 nm digital local coordinate cup address that a Q(PE)tron must occupy.
+23 - AddyBit  =  Fixed 1373.68 nm digital local coordinate cup address that a Q(PE)tron must occupy.
 
-24 - Qfluid Foundational sub-atomic coordinate pressure medium filling the space lattice
+24 - Qfluid  =  Foundational sub-atomic coordinate pressure medium filling the space lattice
      between stationary Neutrons to prevent a vacuum.
 
 
-Construction Hierarchy of the Universe ( ONLY 23 Parts )
+Construction Hierarchy of
+the Universe ( ONLY 23 Parts )
 
 In our 12-Bit Universe, the Size of the Universe = ( Earth orbit-Radius )^3
 The Universe is an Icosahedral boundary surrounding Toroidal Flow

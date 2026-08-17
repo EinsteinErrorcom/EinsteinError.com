@@ -1,10 +1,14 @@
+import { PageNav } from "@/components/page-nav";
+
 type ContactBarProps = {
+  page: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
   style?: React.CSSProperties;
 };
 
-export function ContactBar({ style }: ContactBarProps) {
+export function ContactBar({ page, style }: ContactBarProps) {
   return (
     <div
+      className="contact-bar"
       style={{
         fontWeight: 'bold',
         fontStyle: 'italic',
@@ -23,6 +27,7 @@ export function ContactBar({ style }: ContactBarProps) {
       <span style={{ color: '#00FFFF' }}>Email</span>
       {'\u00A0'.repeat(4)}
       <span style={{ color: '#D0AB47' }}>wild.book0719@fastmail.com</span>
+      <PageNav page={page} className="contact-bar__nav" />
     </div>
   );
 }

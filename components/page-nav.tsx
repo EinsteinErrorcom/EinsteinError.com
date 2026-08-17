@@ -1,34 +1,70 @@
 import Link from "next/link";
-import { PageNavLabel } from "@/components/page-nav-label";
-import { PageSectionNav } from "@/components/page-section-nav";
+import { StyledEquals } from "@/components/styled-equals";
 
 type PageNavProps = {
   page: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
   className?: string;
 };
 
+type PageLink = {
+  page: number;
+  href: string;
+  prefix: string;
+  suffix: string;
+};
+
+const PAGE_LINKS: readonly PageLink[] = [
+  { page: 2, href: "/page2", prefix: "PAGE2", suffix: "PROOFS of Einstein's ERROR" },
+  { page: 3, href: "/page3", prefix: "PAGE3", suffix: "PROOFS of Einstein's ERROR" },
+  { page: 4, href: "/page4", prefix: "PAGE4", suffix: "Videos of PROOF" },
+  { page: 5, href: "/page5", prefix: "PAGE5", suffix: "Amazing Physics" },
+  { page: 6, href: "/page6", prefix: "PAGE6", suffix: "The TRUE Universe" },
+  { page: 7, href: "/page7", prefix: "PAGE7", suffix: "Numbers of the TRUE Universe" },
+  { page: 8, href: "/page8", prefix: "PAGE8", suffix: "SolarMath CHARTS" },
+];
+
+const TAB_SIZE = 4;
+
+function getTabGap(prefix: string) {
+  const nextStop = Math.ceil(prefix.length / TAB_SIZE) * TAB_SIZE;
+  return nextStop === prefix.length ? TAB_SIZE : nextStop - prefix.length;
+}
+
+function NavLinkLabel({ prefix, suffix }: { prefix: string; suffix: string }) {
+  const gap = getTabGap(prefix);
+  const afterEq = "\u00A0".repeat(prefix === "PAGE8" ? 3 : gap);
+
+  return (
+    <>
+      <span className="page-nav__prefix">{prefix}</span>
+      {'\t'}
+      <StyledEquals />
+      {afterEq}
+      {suffix}
+    </>
+  );
+}
+
 export function PageNav({ page, className }: PageNavProps) {
-  const navClassName = [
-    "page-nav",
-    page === 1 ? "page-nav--home" : null,
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const navClassName = ["page-nav", className].filter(Boolean).join(" ");
+  const pageLinks = PAGE_LINKS.filter(({ page: linkPage }) => linkPage !== page);
 
   return (
     <nav className={navClassName} aria-label="Page navigation">
-      <PageNavLabel page={page} />
-      {page > 1 && (
-        <Link className="page-nav__home" href="/">
-          HOME
-        </Link>
-      )}
-      {page === 1 ? (
-        <PageSectionNav />
-      ) : (
-        <PageSectionNav hidePage={page} />
-      )}
+      <ul className="page-nav__list">
+        <li>
+          <Link className="page-nav__link page-nav__home" href="/">
+            <NavLinkLabel prefix="HOME" suffix="MAX-LIT SUPERComputer" />
+          </Link>
+        </li>
+        {pageLinks.map(({ page: linkPage, href, prefix, suffix }) => (
+          <li key={linkPage}>
+            <Link className="page-nav__link" href={href}>
+              <NavLinkLabel prefix={prefix} suffix={suffix} />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }

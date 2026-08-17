@@ -6,6 +6,7 @@ export const SITE_PAGES = [
   '/page4',
   '/page5',
   '/page6',
+  '/page7',
   '/page8',
   '/maxchatbox9',
   '/checkout11',
@@ -17,7 +18,8 @@ const NEXT_PAGE_PATH: Partial<Record<number, string>> = {
   3: '/page4',
   4: '/page5',
   5: '/page6',
-  6: '/page8',
+  6: '/page7',
+  7: '/page8',
   8: '/maxchatbox9',
 };
 
