@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-export default function Page7Layout({
+export default function Page6Layout({
   children,
 }: {
   children: React.ReactNode;

@@ -158,6 +158,16 @@ const nextConfig: NextConfig = {
         destination: '/checkout11',
         permanent: true,
       },
+      {
+        source: '/page7',
+        destination: '/page6',
+        permanent: true,
+      },
+      {
+        source: '/dev/page7-edit',
+        destination: '/dev/page6-edit',
+        permanent: true,
+      },
     ];
   },
   async headers() {

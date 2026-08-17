@@ -1293,16 +1293,16 @@ h1.max-lit-chatbox-page-title {
   background-color: #d0ab47 !important;
 }
 
-.page7 {
-  --page7-tab-width: 2.5rem;
+.page6 {
+  --page6-tab-width: 2.5rem;
   text-align: left;
 }
 
-.content-page.page7 {
+.content-page.page6 {
   max-width: min(2400px, 100%);
 }
 
-.page7__scroll {
+.page6__scroll {
   width: 100%;
   max-width: 100%;
   margin: 0 auto 2rem;
@@ -1311,7 +1311,7 @@ h1.max-lit-chatbox-page-title {
   -webkit-overflow-scrolling: touch;
 }
 
-.page7__document {
+.page6__document {
   display: inline-block;
   min-width: 100%;
   width: max-content;
@@ -1331,11 +1331,11 @@ h1.max-lit-chatbox-page-title {
   text-align: left;
 }
 
-.page7__document-line {
+.page6__document-line {
   display: block;
 }
 
-.page7__edit-banner {
+.page6__edit-banner {
   max-width: min(2400px, 100%);
   margin: 0 auto 1.5rem;
   padding: 0.75rem 1rem;
@@ -1345,12 +1345,12 @@ h1.max-lit-chatbox-page-title {
   font-style: italic;
 }
 
-.page7__edit-banner a {
+.page6__edit-banner a {
   color: var(--max-lit-gold);
   text-decoration: underline;
 }
 
-.page7__title {
+.page6__title {
   color: var(--max-lit-gold);
   text-align: center;
   margin: 0 0 2rem;
@@ -1360,21 +1360,21 @@ h1.max-lit-chatbox-page-title {
   text-underline-offset: 0.35em;
 }
 
-.page7__scroll + .page7__title {
+.page6__scroll + .page6__title {
   margin-top: 2.5rem;
 }
 
-.page7__line-number {
+.page6__line-number {
   color: var(--max-lit-gold);
 }
 
-.page7-editor-page {
+.page6-editor-page {
   min-height: 100vh;
   background: #000000;
   padding: 1rem;
 }
 
-.page7-editor {
+.page6-editor {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -1383,7 +1383,7 @@ h1.max-lit-chatbox-page-title {
   min-height: calc(100vh - 2rem);
 }
 
-.page7-editor__toolbar {
+.page6-editor__toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -1393,26 +1393,26 @@ h1.max-lit-chatbox-page-title {
   border: 1px solid var(--max-lit-gold);
 }
 
-.page7-editor__title {
+.page6-editor__title {
   margin: 0 0 0.35rem;
   color: var(--max-lit-gold);
   font-size: 1.35rem;
 }
 
-.page7-editor__hint {
+.page6-editor__hint {
   margin: 0;
   color: #ffffff;
   font-style: italic;
   max-width: 42rem;
 }
 
-.page7-editor__actions {
+.page6-editor__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.page7-editor__button {
+.page6-editor__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1426,29 +1426,29 @@ h1.max-lit-chatbox-page-title {
   cursor: pointer;
 }
 
-.page7-editor__button--save {
+.page6-editor__button--save {
   background: var(--max-lit-gold);
   color: #000000;
 }
 
-.page7-editor__button:disabled {
+.page6-editor__button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.page7-editor__error {
+.page6-editor__error {
   margin: 0;
   color: #ff6b6b;
   font-style: italic;
 }
 
-.page7-editor__saved {
+.page6-editor__saved {
   margin: 0;
   color: var(--max-lit-gold);
   font-style: italic;
 }
 
-.page7-editor__textarea {
+.page6-editor__textarea {
   flex: 1;
   width: 100%;
   min-height: 70vh;

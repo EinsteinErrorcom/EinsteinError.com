@@ -1,40 +1,40 @@
 import fs from 'fs';
 import path from 'path';
 
-export type Page7SummaryItem = {
+export type Page6SummaryItem = {
   number: string;
   text: string;
 };
 
-export type Page7Hierarchy = {
+export type Page6Hierarchy = {
   title: string;
   intro: string;
   body: string;
 };
 
-const PAGE7_PATH = path.join(process.cwd(), 'content/page7.txt');
-export const PAGE7_HIERARCHY_MARKER = 'Construction Hierarchy of the Universe';
-const HIERARCHY_MARKER = PAGE7_HIERARCHY_MARKER;
-const PAGE7_TAB_INDENT = 3;
-const PAGE7_CONTINUATION_TABS = 8;
+const PAGE6_PATH = path.join(process.cwd(), 'content/page6.txt');
+export const PAGE6_HIERARCHY_MARKER = 'Construction Hierarchy of the Universe';
+const HIERARCHY_MARKER = PAGE6_HIERARCHY_MARKER;
+const PAGE6_TAB_INDENT = 3;
+const PAGE6_CONTINUATION_TABS = 8;
 
-const PAGE7_SUMMARY_NUMBERED_LINE = /^(\d+)(\s*-\s*)(.*)$/;
-const PAGE7_HIERARCHY_PRIMARY_LINE =
+const PAGE6_SUMMARY_NUMBERED_LINE = /^(\d+)(\s*-\s*)(.*)$/;
+const PAGE6_HIERARCHY_PRIMARY_LINE =
   /^(Universe|\d+[A-Za-z][A-Za-z0-9 ()]*)\s*=\s*/;
 
-function getPage7PrimaryIndent(): string {
-  return '\t'.repeat(PAGE7_TAB_INDENT);
+function getPage6PrimaryIndent(): string {
+  return '\t'.repeat(PAGE6_TAB_INDENT);
 }
 
-function getPage7ContinuationIndent(): string {
-  return '\t'.repeat(PAGE7_TAB_INDENT + PAGE7_CONTINUATION_TABS);
+function getPage6ContinuationIndent(): string {
+  return '\t'.repeat(PAGE6_TAB_INDENT + PAGE6_CONTINUATION_TABS);
 }
 
-function isPage7HierarchyPrimaryLine(line: string): boolean {
-  return PAGE7_HIERARCHY_PRIMARY_LINE.test(line.trimStart());
+function isPage6HierarchyPrimaryLine(line: string): boolean {
+  return PAGE6_HIERARCHY_PRIMARY_LINE.test(line.trimStart());
 }
 
-export function indentWithTabs(text: string, tabs = PAGE7_TAB_INDENT): string {
+export function indentWithTabs(text: string, tabs = PAGE6_TAB_INDENT): string {
   const prefix = '\t'.repeat(tabs);
 
   return text
@@ -43,16 +43,16 @@ export function indentWithTabs(text: string, tabs = PAGE7_TAB_INDENT): string {
     .join('\n');
 }
 
-export function isPage7HierarchyTitleLine(line: string): boolean {
-  return line.trim().startsWith(PAGE7_HIERARCHY_MARKER);
+export function isPage6HierarchyTitleLine(line: string): boolean {
+  return line.trim().startsWith(PAGE6_HIERARCHY_MARKER);
 }
 
-export function splitPage7DocumentLines(lines: string[]): Page7DocumentChunk[] {
-  const chunks: Page7DocumentChunk[] = [];
+export function splitPage6DocumentLines(lines: string[]): Page6DocumentChunk[] {
+  const chunks: Page6DocumentChunk[] = [];
   let currentLines: string[] = [];
 
   for (const line of lines) {
-    if (isPage7HierarchyTitleLine(line)) {
+    if (isPage6HierarchyTitleLine(line)) {
       if (currentLines.length > 0) {
         chunks.push({ kind: 'pre', lines: currentLines });
         currentLines = [];
@@ -72,37 +72,37 @@ export function splitPage7DocumentLines(lines: string[]): Page7DocumentChunk[] {
   return chunks;
 }
 
-export type Page7DocumentChunk =
+export type Page6DocumentChunk =
   | { kind: 'pre'; lines: string[] }
   | { kind: 'title'; text: string };
 
-export function loadPage7Content(): string {
-  return fs.readFileSync(PAGE7_PATH, 'utf8').replace(/\r\n/g, '\n');
+export function loadPage6Content(): string {
+  return fs.readFileSync(PAGE6_PATH, 'utf8').replace(/\r\n/g, '\n');
 }
 
-export function getPage7SummaryText(raw: string): string {
+export function getPage6SummaryText(raw: string): string {
   const hierarchyIndex = raw.indexOf(HIERARCHY_MARKER);
   const summaryText = hierarchyIndex >= 0 ? raw.slice(0, hierarchyIndex) : raw;
 
   return summaryText.replace(/\s+$/u, '');
 }
 
-export type Page7SummaryLine =
+export type Page6SummaryLine =
   | { kind: 'blank' }
   | { kind: 'numbered'; indent: string; number: string; separator: string; text: string }
   | { kind: 'continuation'; indent: string; text: string };
 
-export function parsePage7SummaryLines(raw: string): Page7SummaryLine[] {
-  return getPage7SummaryText(raw).split('\n').map((line) => {
+export function parsePage6SummaryLines(raw: string): Page6SummaryLine[] {
+  return getPage6SummaryText(raw).split('\n').map((line) => {
     if (line.trim() === '') {
       return { kind: 'blank' as const };
     }
 
-    const numberedMatch = line.match(PAGE7_SUMMARY_NUMBERED_LINE);
+    const numberedMatch = line.match(PAGE6_SUMMARY_NUMBERED_LINE);
     if (numberedMatch) {
       return {
         kind: 'numbered' as const,
-        indent: getPage7PrimaryIndent(),
+        indent: getPage6PrimaryIndent(),
         number: numberedMatch[1],
         separator: numberedMatch[2],
         text: numberedMatch[3],
@@ -111,48 +111,48 @@ export function parsePage7SummaryLines(raw: string): Page7SummaryLine[] {
 
     return {
       kind: 'continuation' as const,
-      indent: getPage7ContinuationIndent(),
+      indent: getPage6ContinuationIndent(),
       text: line.trimStart(),
     };
   });
 }
 
-export type Page7HierarchyLine =
+export type Page6HierarchyLine =
   | { kind: 'blank' }
   | { kind: 'primary'; indent: string; text: string }
   | { kind: 'continuation'; indent: string; text: string };
 
-export function parsePage7HierarchyBodyLines(body: string): Page7HierarchyLine[] {
+export function parsePage6HierarchyBodyLines(body: string): Page6HierarchyLine[] {
   return body.split('\n').map((line) => {
     if (line.trim() === '') {
       return { kind: 'blank' as const };
     }
 
     const trimmed = line.trimStart();
-    if (isPage7HierarchyPrimaryLine(line)) {
+    if (isPage6HierarchyPrimaryLine(line)) {
       return {
         kind: 'primary' as const,
-        indent: getPage7PrimaryIndent(),
+        indent: getPage6PrimaryIndent(),
         text: trimmed,
       };
     }
 
     return {
       kind: 'continuation' as const,
-      indent: getPage7ContinuationIndent(),
+      indent: getPage6ContinuationIndent(),
       text: trimmed,
     };
   });
 }
 
-export type Page7RenderLine =
+export type Page6RenderLine =
   | { kind: 'blank' }
   | { kind: 'primary'; text: string; number?: string; separator?: string }
   | { kind: 'continuation'; text: string };
 
-export function toPage7RenderLines(
-  lines: Array<Page7SummaryLine | Page7HierarchyLine>,
-): Page7RenderLine[] {
+export function toPage6RenderLines(
+  lines: Array<Page6SummaryLine | Page6HierarchyLine>,
+): Page6RenderLine[] {
   return lines.map((line) => {
     if (line.kind === 'blank') {
       return { kind: 'blank' as const };
@@ -181,7 +181,7 @@ export function toPage7RenderLines(
   });
 }
 
-export function parsePage7HierarchyIntroLines(intro: string): Page7HierarchyLine[] {
+export function parsePage6HierarchyIntroLines(intro: string): Page6HierarchyLine[] {
   let sawPrimary = false;
 
   return intro.split('\n').map((line) => {
@@ -194,22 +194,22 @@ export function parsePage7HierarchyIntroLines(intro: string): Page7HierarchyLine
       sawPrimary = true;
       return {
         kind: 'primary' as const,
-        indent: getPage7PrimaryIndent(),
+        indent: getPage6PrimaryIndent(),
         text: trimmed,
       };
     }
 
     return {
       kind: 'continuation' as const,
-      indent: getPage7ContinuationIndent(),
+      indent: getPage6ContinuationIndent(),
       text: trimmed,
     };
   });
 }
 
-/** @deprecated Use getPage7SummaryText for full multi-line summary blocks */
-export function parsePage7Summary(raw: string): Page7SummaryItem[] {
-  return getPage7SummaryText(raw)
+/** @deprecated Use getPage6SummaryText for full multi-line summary blocks */
+export function parsePage6Summary(raw: string): Page6SummaryItem[] {
+  return getPage6SummaryText(raw)
     .split('\n')
     .map((line) => line.trim())
     .filter(Boolean)
@@ -221,10 +221,10 @@ export function parsePage7Summary(raw: string): Page7SummaryItem[] {
 
       return { number: match[1], text: match[2] };
     })
-    .filter((item): item is Page7SummaryItem => item !== null);
+    .filter((item): item is Page6SummaryItem => item !== null);
 }
 
-export function parsePage7Hierarchy(raw: string): Page7Hierarchy | null {
+export function parsePage6Hierarchy(raw: string): Page6Hierarchy | null {
   const hierarchyIndex = raw.indexOf(HIERARCHY_MARKER);
   if (hierarchyIndex < 0) {
     return null;

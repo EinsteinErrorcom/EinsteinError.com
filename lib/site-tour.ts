@@ -13,7 +13,6 @@ export const SITE_TOUR_STEPS: SiteTourStep[] = [
   { path: '/page4', label: 'Page 4' },
   { path: '/page5', label: 'Page 5' },
   { path: '/page6', label: 'Page 6' },
-  { path: '/page7', label: 'Page 7' },
   { path: '/page8', label: 'Page 8' },
   { path: '/maxchatbox9', label: 'AI Chatbox' },
   { path: '/checkout11', label: 'Checkout' },

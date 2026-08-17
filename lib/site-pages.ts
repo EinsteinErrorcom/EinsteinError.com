@@ -6,16 +6,21 @@ export const SITE_PAGES = [
   '/page4',
   '/page5',
   '/page6',
-  '/page7',
   '/page8',
   '/maxchatbox9',
   '/checkout11',
 ] as const;
 
-export function getNextSitePagePath(pageNumber: number): string | null {
-  if (pageNumber < 1 || pageNumber >= SITE_PAGES.length) {
-    return null;
-  }
+const NEXT_PAGE_PATH: Partial<Record<number, string>> = {
+  1: '/page2',
+  2: '/page3',
+  3: '/page4',
+  4: '/page5',
+  5: '/page6',
+  6: '/page8',
+  8: '/maxchatbox9',
+};
 
-  return SITE_PAGES[pageNumber] ?? null;
+export function getNextSitePagePath(pageNumber: number): string | null {
+  return NEXT_PAGE_PATH[pageNumber] ?? null;
 }

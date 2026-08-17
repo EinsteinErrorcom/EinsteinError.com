@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 
-export function Page7Editor() {
+export function Page6Editor() {
   const [content, setContent] = useState('');
   const [status, setStatus] = useState<'loading' | 'ready' | 'saving' | 'saved' | 'error'>(
     'loading',
@@ -15,9 +15,9 @@ export function Page7Editor() {
 
     async function load() {
       try {
-        const response = await fetch('/api/dev/page7-content');
+        const response = await fetch('/api/dev/page6-content');
         if (!response.ok) {
-          throw new Error('Could not load page7.txt');
+          throw new Error('Could not load page6.txt');
         }
 
         const data = (await response.json()) as { content: string };
@@ -45,7 +45,7 @@ export function Page7Editor() {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/dev/page7-content', {
+      const response = await fetch('/api/dev/page6-content', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content }),
@@ -76,22 +76,22 @@ export function Page7Editor() {
   }, [save]);
 
   return (
-    <div className="page7-editor">
-      <header className="page7-editor__toolbar">
+    <div className="page6-editor">
+      <header className="page6-editor__toolbar">
         <div>
-          <h1 className="page7-editor__title">Edit Page 7</h1>
-          <p className="page7-editor__hint">
+          <h1 className="page6-editor__title">Edit Page 6</h1>
+          <p className="page6-editor__hint">
             What you type here is what appears on the page — spaces and line breaks are kept.
             Press Cmd+S to save.
           </p>
         </div>
-        <div className="page7-editor__actions">
-          <Link href="/page7" className="page7-editor__button page7-editor__button--ghost" target="_blank">
-            Preview /page7
+        <div className="page6-editor__actions">
+          <Link href="/page6" className="page6-editor__button page6-editor__button--ghost" target="_blank">
+            Preview /page6
           </Link>
           <button
             type="button"
-            className="page7-editor__button page7-editor__button--save"
+            className="page6-editor__button page6-editor__button--save"
             onClick={() => void save()}
             disabled={status === 'loading' || status === 'saving'}
           >
@@ -100,11 +100,11 @@ export function Page7Editor() {
         </div>
       </header>
 
-      {status === 'error' ? <p className="page7-editor__error">{errorMessage}</p> : null}
-      {status === 'saved' ? <p className="page7-editor__saved">Saved — refresh /page7 to see changes.</p> : null}
+      {status === 'error' ? <p className="page6-editor__error">{errorMessage}</p> : null}
+      {status === 'saved' ? <p className="page6-editor__saved">Saved — refresh /page6 to see changes.</p> : null}
 
       <textarea
-        className="page7-editor__textarea"
+        className="page6-editor__textarea"
         value={content}
         onChange={(event) => {
           setContent(event.target.value);
@@ -114,7 +114,7 @@ export function Page7Editor() {
         }}
         spellCheck={false}
         disabled={status === 'loading'}
-        aria-label="Page 7 content"
+        aria-label="Page 6 content"
       />
     </div>
   );

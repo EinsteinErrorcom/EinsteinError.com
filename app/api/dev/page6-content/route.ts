@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 
-const PAGE7_PATH = resolve(process.cwd(), 'content/page7.txt');
+const PAGE6_PATH = resolve(process.cwd(), 'content/page6.txt');
 
 function isDevRouteAllowed() {
   return process.env.NODE_ENV !== 'production' || process.env.VERCEL_ENV !== 'production';
@@ -18,7 +18,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Not available in production' }, { status: 404 });
   }
 
-  const content = readFileSync(PAGE7_PATH, 'utf8').replace(/\r\n/g, '\n');
+  const content = readFileSync(PAGE6_PATH, 'utf8').replace(/\r\n/g, '\n');
   return NextResponse.json({ content });
 }
 
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  writeFileSync(PAGE7_PATH, body.content.replace(/\r\n/g, '\n'), 'utf8');
+  writeFileSync(PAGE6_PATH, body.content.replace(/\r\n/g, '\n'), 'utf8');
 
   return NextResponse.json({ ok: true });
 }

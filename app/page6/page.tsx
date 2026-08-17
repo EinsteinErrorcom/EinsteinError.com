@@ -1,19 +1,33 @@
-import { PageEndFooter } from "@/components/page-end-footer";
-import { SiteHeader } from "@/components/site-header";
+import { Page6Document } from '@/components/page6/page6-document';
+import { PageEndFooter } from '@/components/page-end-footer';
+import { SiteHeader } from '@/components/site-header';
+import { loadPage6Content } from '@/lib/content/page6';
+import Link from 'next/link';
 
 export default function Page6() {
+  const raw = loadPage6Content();
+  const isDev = process.env.NODE_ENV === 'development';
+
   return (
     <div className="page-wrapper">
-      <main id="main-content">
-          <SiteHeader page={6} />
-        <br/><br/>
-        <div style={{ textAlign: "center", padding: "48px 16px" }}>
-          <h1 style={{ color: "#00FFFF", fontSize: "28px", fontStyle: "italic" }}>Page 6</h1>
-          <p style={{ color: "#FFFF00", marginTop: "24px", fontSize: "20px" }}>
-            Content coming soon.
+      <main id="main-content" className="content-page page6">
+        <SiteHeader page={6} />
+        <br />
+        <br />
+
+        {isDev ? (
+          <p className="page6__edit-banner">
+            <Link href="/dev/page6-edit">Edit this page visually</Link>
+            {' — '}
+            easier than editing the raw file or asking AI.
           </p>
-          <PageEndFooter pageNumber={6} />
-        </div>
+        ) : null}
+
+        <h1 className="page6__title f-x-large">23 Parts of the Universe</h1>
+
+        <Page6Document raw={raw} />
+
+        <PageEndFooter pageNumber={6} />
       </main>
     </div>
   );

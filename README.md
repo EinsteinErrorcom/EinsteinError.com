@@ -16,15 +16,15 @@ The live app uses the **system font stack** (no custom web fonts loaded):
 - **Windows:** Segoe UI
 - **Android:** Roboto
 
-Defined in `app/globals.css` as `--font-base`. Page 7 document text uses `--font-mono` for WYSIWYG `.txt` rendering only.
+Defined in `app/globals.css` as `--font-base`. Page 6 document text uses `--font-mono` for WYSIWYG `.txt` rendering only.
 
 `/font-compare.html` is a local dev reference for comparing alternative SaaS fonts — it does **not** affect the live site.
 
-## Page 7 content editing
+## Page 6 content editing
 
 1. `npm run dev`
-2. Edit at [http://localhost:3000/dev/page7-edit](http://localhost:3000/dev/page7-edit) or `content/page7.txt`
-3. Preview at [http://localhost:3000/page7](http://localhost:3000/page7)
+2. Edit at [http://localhost:3000/dev/page6-edit](http://localhost:3000/dev/page6-edit) or `content/page6.txt`
+3. Preview at [http://localhost:3000/page6](http://localhost:3000/page6)
 
 ## Deploy
 
