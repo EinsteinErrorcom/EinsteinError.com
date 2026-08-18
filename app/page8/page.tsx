@@ -1,19 +1,10 @@
 import { Page8Gallery } from '@/components/page8/page8-gallery';
-import { Page8NumberList } from '@/components/page8/page8-number-list';
 import { PageEndFooter } from '@/components/page-end-footer';
 import { SiteHeader } from '@/components/site-header';
-import { loadSortedPage8Numbers } from '@/lib/content/page8-numbers';
 import { listPage8Images } from '@/lib/content/page8';
-
-const PAGE8_INTRO = `This is SOLARMath.
-The Perfect Mathematics that is derived from the Unification of ALL Physics Constants.
-This Math is "Relative" to the Orbit-Time of the earth. This Math is NOT Subjective !
-It is absolute according to our FINITE Universe which declares that
-" Pi " is a FINITE 12 digit number.`;
 
 export default function Page8() {
   const images = listPage8Images();
-  const sortedNumbers = loadSortedPage8Numbers(PAGE8_INTRO);
 
   return (
     <div className="page-wrapper">
@@ -23,20 +14,27 @@ export default function Page8() {
         <br />
 
         <div className="page8__intro f-medium">
-          This is SOLARMath.
+          This is{'\u00A0'.repeat(4)}<span className="page8__solar-math">SOLARMath&trade;</span>
           <br />
-          The Perfect Mathematics that is derived from the Unification of ALL Physics Constants.
+          The Perfect Mathematics that is derived from the{' '}
+          <span className="page8__intro-white">Unification of ALL Physics Constants</span>.
           <br />
-          This Math is &quot;Relative&quot; to the Orbit-Time of the earth. This Math is NOT Subjective !
+          This Math is &quot;Relative&quot; to the Orbit-Time of the earth. This Math is
           <br />
-          It is absolute according to our FINITE Universe which declares that
+          NOT Subjective !
           <br />
-          &quot; Pi &quot; is a FINITE 12 digit number.
+          It is absolute according to our
+          <br />
+          FINITE{'\u00A0'.repeat(2)}Universe{'\u00A0'.repeat(4)}which declares that
+          <br />
+          because all Circles are Polygons,
+          <br />
+          &quot; Pi &quot;{'\u00A0'.repeat(4)}is a{'\u00A0'.repeat(2)}FINITE
+          <br />
+          12 digit number.
         </div>
 
         <Page8Gallery images={images} />
-
-        <Page8NumberList numbers={sortedNumbers} />
 
         <PageEndFooter pageNumber={8} nextLabel="HOME" nextHref="/" />
       </main>

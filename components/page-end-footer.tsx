@@ -29,13 +29,7 @@ export function PageEndFooter({
       {nextPath ? (
         <a
           href={nextPath}
-          style={{
-            fontWeight: 'bold',
-            fontStyle: 'italic',
-            color: '#00FFFF',
-            fontSize: '25px',
-            textDecoration: 'none',
-          }}
+          className="page-end-footer__next-link"
         >
           {leadText}
           {leadText ? (
@@ -51,11 +45,11 @@ export function PageEndFooter({
               &rarr;
             </>
           )}
-          <br />
-          <br />
-          Einstein Error . com
         </a>
       ) : null}
+      <br />
+      <br />
+      <span className="page-end-footer__brand">Einstein Error . com</span>
       {!compact ? <div className="spacer" style={{ height: '50px' }}></div> : null}
       <span
         style={{

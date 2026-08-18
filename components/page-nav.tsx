@@ -13,14 +13,16 @@ type PageLink = {
   suffix: string;
 };
 
+const W = "\u00A0\u00A0";
+
 const PAGE_LINKS: readonly PageLink[] = [
-  { page: 2, href: "/page2", prefix: "PAGE2", suffix: "PROOFS of Einstein's ERROR" },
-  { page: 3, href: "/page3", prefix: "PAGE3", suffix: "PROOFS of Einstein's ERROR" },
+  { page: 2, href: "/page2", prefix: "PAGE2", suffix: `PROOFS${W}of${W}Einstein's${W}ERROR` },
+  { page: 3, href: "/page3", prefix: "PAGE3", suffix: `PROOFS${W}of${W}Einstein's${W}ERROR` },
   { page: 4, href: "/page4", prefix: "PAGE4", suffix: "Videos of PROOF" },
-  { page: 5, href: "/page5", prefix: "PAGE5", suffix: "Amazing Physics" },
-  { page: 6, href: "/page6", prefix: "PAGE6", suffix: "The TRUE Universe" },
-  { page: 7, href: "/page7", prefix: "PAGE7", suffix: "Numbers of the TRUE Universe" },
-  { page: 8, href: "/page8", prefix: "PAGE8", suffix: "SolarMath CHARTS" },
+  { page: 5, href: "/page5", prefix: "PAGE5", suffix: `Videos${W}of${W}PROOF` },
+  { page: 6, href: "/page6", prefix: "PAGE6", suffix: `The${W}TRUE${W}Universe` },
+  { page: 7, href: "/page7", prefix: "PAGE7", suffix: `Numbers${W}of${W}the${W}TRUE${W}Universe` },
+  { page: 8, href: "/page8", prefix: "PAGE8", suffix: `SolarMath${W}CHARTS` },
 ];
 
 const TAB_SIZE = 4;
@@ -32,7 +34,9 @@ function getTabGap(prefix: string) {
 
 function NavLinkLabel({ prefix, suffix }: { prefix: string; suffix: string }) {
   const gap = getTabGap(prefix);
-  const afterEq = "\u00A0".repeat(prefix === "PAGE8" ? 3 : gap);
+  const afterEqCount =
+    prefix === "PAGE8" ? 3 : prefix === "HOME" ? gap - 1 : gap;
+  const afterEq = "\u00A0".repeat(afterEqCount);
 
   return (
     <>
@@ -54,7 +58,7 @@ export function PageNav({ page, className }: PageNavProps) {
       <ul className="page-nav__list">
         <li>
           <Link className="page-nav__link page-nav__home" href="/">
-            <NavLinkLabel prefix="HOME" suffix="MAX-LIT SUPERComputer" />
+            <NavLinkLabel prefix="HOME" suffix={`MAX-LIT${W}SUPERComputer`} />
           </Link>
         </li>
         {pageLinks.map(({ page: linkPage, href, prefix, suffix }) => (
