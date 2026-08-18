@@ -7,8 +7,53 @@ export default function Page4() {
       <main id="main-content">
       <SiteHeader page={4} />
       <br/><br/>
+      <div className="page4-content-25px">
       <div className="f-medium">
         
+        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>"Perfect Fitting" piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given orbit "Radius".<br/>They are held in their orbits in the exact same way as a<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>.
+      
+      </div>
+      <figure className="media"><img src="/ORBITDENSITY.png" alt="Orbit Density" width="500" height="300" loading="lazy" decoding="async" /></figure>
+      <figure className="media"><img src="/HELIX.png" alt="Helix" width="500" height="300" loading="lazy" decoding="async" /></figure>
+      <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
+        <div style={{ display: 'inline-block', textAlign: 'center' }}>
+        
+        In our 12-Bit Universe, the Size of the Universe = ( Earth orbit-Radius )<sup>3</sup>
+        <br />
+        The Universe is an Icosahedral boundary surrounding Toroidal Flow
+        <br />
+        ( Volume of the Toroid = 3.226 x 10<sup>41</sup> cubic meters )
+        <br />
+        DIVIDED  BY
+        <br />
+        ( Volume of Icosahedron 1.054 x 10<sup>34</sup> cubic meters )
+        <br />
+        ={'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}earth orbit-TIME{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}={'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}30,591,067
+        <br />
+        ( which is the same as the Lattice Tension, 30591067 )
+        <br />
+        <br />
+        The difference between ( TRadius )<sup>3</sup> ( Icosahedral Volume ) and<br />
+        ( TRadius )<sup>3</sup>  ×  Pi ( Toroidal Volume ) is what produces the<br />
+        30591067 Hz Lattice Frequency.
+        <div style={{ height: '4.5em' }} aria-hidden="true" />
+        <div style={{ width: '100%', height: '6px', backgroundColor: '#FB8809' }} aria-hidden="true" />
+        <div style={{ height: '4.5em' }} aria-hidden="true" />
+        
+        </div>
+      </div>
+      <div className="f-medium">
+        
+        That orbit "Path" that the earth follows<br />
+        contains one of the most AMAZING Physics realities<br />
+        as the "two" exact Physics Circumferences<br />
+        ( Radius x Tau ) and ( Acceleration x Time<sup>2</sup> )<br />
+        should theoretically be the exact same Distance but they are NOT !<br />
+        The difference between the two is the exact<br />
+        IMPEDANCE of Free SPACE !
+        <br />
+        <br />
+        <br />
         Don't forget the 3 most important letters in Physics . . .
         
         <div className="spacer spacer--sm"></div>
@@ -28,7 +73,6 @@ export default function Page4() {
          Time
       
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/NATURALG.png" alt="Natural G" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
@@ -41,19 +85,16 @@ export default function Page4() {
 
         
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/NEWTONG3.png" alt="Newton G3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
+      <div className="page4-narrow-column">
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
 
-            So, once those Neutrons of the fabric of Space are cut free, they are then Accelerated into Electrons that are thrown down onto the earth where they reflect around at near-zero friction before entering your eyes as TRUE 
-        <span className="c-white">L i g h t</span>
-         !!
+            Once those Neutrons of the fabric of Space are cut free,<br />
+        they are then Accelerated into Electrons that are thrown down onto the earth where they reflect around at near-zero friction before entering your eyes as TRUE Light !
 
         
       </div>
-      <br />
       <figure className="media"><img src="/EMWave.gif" alt="EM Wave" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
@@ -76,18 +117,15 @@ export default function Page4() {
 
         
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/MIRROR3.png" alt="Mirror 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
 
-            The "number" within Einstein's Velocity is correct, but the "natures" of 
-        <span className="c-white">Gravity</span>
-         and 
-        <span className="c-white">Light</span>
-         are reversed. And this 
+            The "number" within Einstein's Velocity is correct<br />
+        <span className="page4-line-override">but the very "Natures" of Gravity and Light are then reversed.</span><br />
+        And this{' '}
         <span className="c-red">REVERSAL</span>
-         happened because when you HIDE the "Physics" origin of Velocity, you then open the ability to designate that Velocity to whatever you want.
+        {' '}happened because when you HIDE the "Physics" origin of Velocity, you then open the ability to designate that Velocity to whatever you want.
         <div className="spacer spacer--sm"></div>
         <span className="c-cyan">
           Just like if you ONLY say ... " I'm 66. "
@@ -96,17 +134,18 @@ export default function Page4() {
           <div className="spacer spacer--sm"></div>
           or 66 [ Kilos ] ??
           <div className="spacer spacer--sm"></div>
-          By only saying "66" you then enable the CROSS - MIX between [ Years ] and [ Kilos ] !!
+          By only saying "66" you then enable the <span className="c-red">CROSS - MIX</span> between [ Years ] and [ Kilos ] !!
           <div className="spacer spacer--sm"></div>
-          And exactly the same when using "Velocity" instead of ( 
+          same when using "Velocity" instead of<br />({' '}
           <span className="c-white">Acceleration</span>
-           x 
+          {' '}x{' '}
           <span className="c-white">Time</span>
-           ) you then enable the CROSS - MIX between 
+          {' '}) you then enable the{' '}
+          <span className="c-red">CROSS - MIX</span>
+          {' '}between{' '}
           <span className="c-white">Gravity</span>
-           and 
-          <span className="c-white">Light</span>
-          .
+          {' '}and{' '}
+          <span className="c-white">Light</span>.
         </span>
       </div>
       <div className="spacer spacer--sm"></div>
@@ -123,21 +162,15 @@ export default function Page4() {
 
             When Albert Einstein "
         <span className="c-red">HID</span>
-        " the ORIGIN of his Velocity, he was then able to re-assign it to whatever he wanted,
+        " the ORIGIN of his Velocity<br />
+        he was then able to re-assign it to whatever he wanted,
         <div className="spacer spacer--sm"></div>
-        and A l b e r t E i n s t e i n ( the smartest man in the world )
+        and Albert Einstein ( the smartest man in the world )<br />
         <div className="spacer spacer--sm"></div>
-        <span className="c-red">
-          FALSELY Re-assigned it to 
-          <span className="c-white">LIGHT</span>
-           !!
-        </span>
+        <span className="c-red">FALSELY Re-assigned it to <span className="c-white">LIGHT</span> !</span>
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/CROSSMIX.png" alt="Cross Mix" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/REALITYG.png" alt="Reality G" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
 
@@ -196,7 +229,6 @@ export default function Page4() {
 
         
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/THEERROR2.png" alt="The Error 2" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
@@ -209,11 +241,11 @@ export default function Page4() {
         <span className="c-cyan">source</span>
         " of the Velocity. And so that then BLINDED Albert as to the reality of the Universe !! And of course we now know what the "
         <span className="c-cyan">source</span>
-        " of that Velocity is. The CORRECT Velocity is absolutely
+        " of that Velocity is.<br />
+        The CORRECT Velocity is absolutely
         <div className="spacer spacer--sm"></div>
         <span className="c-white">O N L Y . . .</span>
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/NEUCUT.png" alt="Neu Cut" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
@@ -230,17 +262,11 @@ export default function Page4() {
         <span className="c-cyan">- ORIGIN -</span>
          of ALL of the others !!
         <div className="spacer spacer--sm"></div>
-        You will clearly see later on how the 
-        <span className="c-cyan">" Flow of Electrons "</span>
-         into the earth
+        You will clearly see later on how the<br />
+        <span className="c-cyan">" Flow of electrons into the earth "</span><br />
+        " C R E A T E S "<br />
 
         
-      </div>
-      <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
-        
-
-            "C R E A T E S"
-        <div className="spacer spacer--sm"></div>
       </div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
@@ -265,43 +291,28 @@ export default function Page4() {
         <span className="c-gray">
           If you deny the PROVEN TRUTH above, you are only keeping yourself on the -
           <span className="c-red">LOSING</span>
-          - side of History, just like those who mocked the Great Ignaz Semmelweis or Nicholas Copernicus or Galileo Galilei.
+          - side of History<br />
+          just like those who mocked the Great Ignaz Semmelweis<br />
+          or Nicholas Copernicus or Galileo Galilei.
         </span>
       </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media"><img src="/BIGGEST3.png" alt="Biggest 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/FINISHED.png" alt="Finished" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE.png" alt="9 Coincidence" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE2.png" alt="10 Coincidence 2" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE3.png" alt="11 Coincidence 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
-      <div className="f-x-large" style={{ color: '#FFFF00', textAlign: 'center' }}>
-        
-
-           
-
-Here, watch some Videos ...
-        <br />
-        But don't complain about his slow voice 'cause he's just a slow doof that discovered Einstein's Unification !
-
-        
-      </div>
-      <div className="spacer spacer--sm"></div>
       <figure className="media">
         <a href="https://rumble.com/v4t9oht--1-overview" target="_blank" rel="noopener noreferrer">
           <img src="/1VIDEO.png" alt="Video 1" width="500" height="300" loading="lazy" decoding="async" />
         </a>
       </figure>
-      <div className="spacer spacer--sm"></div>
       <figure className="media">
         <a href="https://rumble.com/v4tbd4i--2-proof" target="_blank" rel="noopener noreferrer">
           <img src="/2VIDEO.png" alt="Video 2" width="500" height="300" loading="lazy" decoding="async" />
         </a>
       </figure>
-      <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#FFFF00', textAlign: 'center' }}>COMING SOON !</div>
       <figure className="media"><img src="/3VIDEO.png" alt="Video 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>Advertisement</div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>Advertisement</div>
       <div className="spacer spacer--sm"></div>
@@ -345,16 +356,6 @@ Here, watch some Videos ...
         
 
             It will surely NEVER unify with quantum mechanics, which is an open declaration by physics experts.
-        <div className="spacer spacer--sm"></div>
-        And this is ALL because Albert used ( 
-        <span className="c-cyan">Velocity</span>
-         ) instead of
-        <div className="spacer spacer--sm"></div>
-        ( 
-        <span className="c-cyan">Acceleration</span>
-        <span className="c-white">x</span>
-        <span className="c-cyan">Time</span>
-         )
 
         
       </div>
@@ -362,13 +363,7 @@ Here, watch some Videos ...
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
-            Whenever VELOCITY is not reduced to its fundamental cores, it enables the "CROSS - MIXING" of its objects !!
-        <div className="spacer spacer--sm"></div>
-        Pure Fact ! Because Albert used only "broad" Velocity in his equation, he then "
-        <span className="c-red">CROSS - MIXED</span>
-        " the very Natures of Gravity and Light !!
-        <div className="spacer spacer--sm"></div>
-        By ignoring the specifics of his Velocity, Albert Einstein then E N A B L E D the biggest ERROR ever, in all the History of Science !!
+            By ignoring the specifics of his Velocity, Albert Einstein then E N A B L E D the biggest ERROR ever, in all the History of Science !!
         <div className="spacer spacer--sm"></div>
         And the [ [ 
         <span className="c-red">W A S T E A G E</span>
@@ -388,7 +383,7 @@ Here, watch some Videos ...
 
             ( Acceleration x Time ) TRUTHFULLY declares that Gravity is flowing at a [ Constant ] Velocity ( 
         <span className="c-cyan">exactly like the Genius Carl Gauss told us 200 years ago</span>
-         ) and Light is [ Stationary ] in Space. And don't start yapping "Well then how does Sunlight get to the earth ??". Just RELAX ! ... absorb the information and you won't end up being like the LOSERS who -OPPOSED- Ignaz Semmelweis when he gave the world the Truth regarding baby death-rates vs "Hand-washing". That's precisely why he's now known as the man who saved ONE MILLION Babies ! But yet they initially ridiculed him and MOCKED him and told him that his words were STUPID ... but he was oh so wonderfully VINDICATED (just like numerous other berated Scientists throughout History) and his mockers were then finally proven to be the --- DULL ---"LOSERS"--- that they truly were.
+         ) and Light is [ Stationary ] in Space. And don't start yapping "Well then how does Sunlight get to the earth ??". Just RELAX ! ... absorb the information and you won't end up being like the LOSERS who -OPPOSED- Ignaz Semmelweis when he gave the world the Truth regarding baby death-rates vs "Hand-washing". That's precisely why he's now known as the man who saved ONE MILLION Babies ! But yet they initially ridiculed him and MOCKED him and told him that his words were STUPID ... but he was wonderfully VINDICATED (just like numerous other berated Scientists throughout History) and his mockers were then finally proven to be the --- DULL ---"LOSERS"--- that they truly were.
         <div className="spacer spacer--sm"></div>
         If you allow immature skepticism and impatience to rule over Relaxation and Logic, you might as well go study Accounting.
         <div className="spacer spacer--sm"></div>
@@ -399,35 +394,23 @@ Here, watch some Videos ...
         Ohh loooook ... we just gave you the answer to one of the biggest Astronomy mysteries in History. For hundreds of years they've been trying to figure out why Space is Dark. (seeing that it's filled with trillions upon trillions of stars). Because Stars give off 
         <span className="c-red">ZERO</span>
          Light, only an electromagnetic-Wave.
-        <div className="spacer spacer--sm"></div>
-        And what a joke that we limit stars to a number, Ha ha ha. And what a joke that physics today talks about the universe having a "shape" or "size" or "boundary", Ha ha ha ... Have you looked up lately ??
-        <div className="spacer spacer--sm"></div>
-        <span style={{ color: '#FB8809' }}>The universe is INFINITE in 3 dimensions, Hellooo !</span>
-        <div className="spacer spacer--sm"></div>
-        And so they've been trying to figure out why Space is "Dark". Here's why Space is Dark, because Stars emit 
-        <span className="c-red">ZERO</span>
-         Light, only an Electromagnetic-Wave. That's right, just like any optical illusion, Stars are 
-        <span className="c-red">NOT</span>
-         shining (emiting Light) !!
 
         
       </div>
-      <br />
       <figure className="media"><img src="/STARS2.png" alt="98 Stars 2" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
-            Stars give off 
+            Stars give off{' '}
         <span className="c-red">ZERO</span>
-         Light, only an electromagnetic-Wave. And by saying that, did you hear what else we just told you ? ....... The Sun is "
+        {' '}Light, only an electromagnetic-Wave.<br />
+        And by that fact, we then understand that the Sun is only a Proton "Flow State" and therefore the Sun is "
         <span className="c-cyan">Cold</span>
-        " !!
+        " !
 
         
       </div>
-      <br />
-      <figure className="media"><img src="/bHEAT.png" alt="139b Heat" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="spacer spacer--sm"></div>
+      <figure className="media"><img src="/WPD.png" alt="WPD" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>UNDERSTAND THIS . . .</div>
       <br />
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
@@ -438,31 +421,7 @@ Here, watch some Videos ...
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
-            And exactly like Einstein in 1940 standing in front of the public microphone delivering his E=mc² address ... what you just read are monumental, 100% History smashing 
-        <span className="c-cyan">FACTS</span>
-         !!
-        <div className="spacer spacer--sm"></div>
-        And you should review those Facts once more right now ...
-        <div className="spacer spacer--sm"></div>
-        Einstein's faulty --- "mirror-image-equation" --- gave him results that are partially correct BUT the exact "opposite" of Reality !
-
-        
-      </div>
-      <div className="spacer spacer--sm"></div>
-      <div className="f-x-large" style={{ color: '#00FFFF' }}>
-        
-
-            Gravity is at a CONSTANT Velocity and Light, the Electron (mA) (
-        <span className="c-red">NO</span>
-         !! not a mass-less erroneous 
-        <span className="c-red">pHoton</span>
-         ) is naturally STATIONARY in space.
-        <div className="spacer spacer--sm"></div>
-        As the earth orbits the sun, its Magnetic-Field cuts stationary dim-Neutrons free from the fabric of space as they are then (key point) "able to be" brightened by the EM-Wave of the sun and thrown down onto the earth by the mind-boggling Pressure of space. This then produces the Constant Force and Velocity of...
-        <div className="spacer spacer--sm"></div>
-        <div style={{ color: '#00FFFF', textAlign: 'center' }}>TRUE Gravity !!</div>
-        <div className="spacer spacer--sm"></div>
-        Einstein's error is so simple it will SHOCK not only "You", but the entire World !!
+            Einstein's error is so simple it will SHOCK not only "You", but the entire World !!
         <div className="spacer spacer--sm"></div>
         To understand the Mathematically 
         <span className="c-cyan">PROVEN</span>
@@ -749,115 +708,12 @@ Here, watch some Videos ...
         <span style={{ color: '#00FFFF' }}>
           Sorry Albert, we cherish you, we know how hard you tried but 
           <span className="c-cyan">Truth</span>
-           CANNOT be restrained. Let us know if you fully comprehend the Physics surrounding Einstein's ERROR. You can call with any questions on WhatsApp +17802707009 ( but not until you have thoroughly studied the Slideshow, Please ! )
-          <div className="spacer spacer--sm"></div>
-          Cheers,
+           CANNOT be restrained. Let us know if you fully comprehend the Physics surrounding Einstein's ERROR. You can call with any questions on WhatsApp +17802707009
         </span>
       </div>
-      <div className="spacer spacer--sm"></div>
-      <div style={{ color: '#FB8809', textAlign: 'center' }}>
-        
-
-            The Biggest Enemy of Science
-        <br />
-        is Silence !
-
-        
-      </div>
-      <div className="spacer spacer--sm"></div>
-      <div className="f-x-large" style={{ color: '#00FFFF' }}>
-        
-
-            If you want to . . . . . " EASILY " . . . . . understand the biggest Physics Discovery in 100 years 
-        <br />
-        simply read this ... 
-
-        
-      </div>
-      <div className="spacer spacer--sm"></div>
-      <div style={{ color: '#00FFFF', textAlign: 'center' }}>
-        
-
-            * * * S L I D E S H O W * * *
-
-        
-      </div>
-      <div className="spacer spacer--sm"></div>
-      <div style={{ color: '#00FFFF', textAlign: 'center' }}>
-        
-
-            ---------------------------------------
-        <br />
-        
-
-            * * * 
-        <span className="c-cyan">Monumental Discovery</span>
-         * * *
-        <div className="spacer spacer--sm"></div>
-        ---------------------------------------
-
-        
-      </div>
-      <br />
-      <div style={{ textAlign: 'center', color: '#00FFFF' }}>Advertisement</div>
-      <div style={{ textAlign: 'center', color: '#00FFFF' }}>Advertisement</div>
-      <p className="f-medium">```</p>
       <div className="f-x-large slideshow-section">
-        <figure className="media"><img src="/KINGPIN.png" alt="Slide 92" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="c-cyan">103</div>
-        <figure className="media"><img src="/KINGWAVE.png" alt="Slide 103" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="c-cyan">104</div>
         <figure className="media"><img src="/MAXWELL2.png" alt="Slide 104" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <div style={{ textAlign: 'center', color: '#00FFFF' }}>
-          
-
-                Here below are
-          <div className="spacer spacer--sm"></div>
-          <span className="c-cyan">19 "Equational Charts"</span>
-          <div className="spacer spacer--sm"></div>
-          which boldly declare the Mathematics of our Solar System.
-          <div className="spacer spacer--sm"></div>
-          They are all completely "Relative" to one another !!
-          <div className="spacer spacer--sm"></div>
-          And if you believe that these equations,
-          <br />
-          (including their interaction between each other)
-          <div className="spacer spacer--sm"></div>
-          <span className="c-cyan">
-            IS JUST A
-            <div className="spacer spacer--sm"></div>
-            " C O I N C I D E N C E "
-          </span>
-          <div className="spacer spacer--sm"></div>
-          we suggest you immediately sign up for an "extended" course in Advanced Mathematical Probability.
-
-            
-        </div>
-        <div className="text-left f-medium">
-          <figure className="media"><img src="/Table1.png" alt="Table 1" width="500" height="300" loading="lazy" decoding="async" /></figure>
-          <figure className="media"><img src="/Table2.png" alt="Table 2" width="500" height="300" loading="lazy" decoding="async" /></figure>
-          <figure className="media"><img src="/Table19.png" alt="Table 19" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        </div>
-        <div className="c-cyan">174</div>
-        <figure className="media"><img src="/CONTACTUS.png" alt="Slide 174" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div className="c-cyan" style={{ textAlign: 'center' }}>175</div>
-        <figure className="media"><img src="/END.png" alt="Slide 175" width="500" height="300" loading="lazy" decoding="async" /></figure>
-        <div style={{ textAlign: 'center', color: '#FFFF00' }}>
-          
-
-                AND BE BOLD AGAINST
-          <br />
-          " FALSE PHYSICS "
-          <br />
-          BY TELLING THEM THAT
-          <br />
-          THEY ALSO NEED TO TELL
-          <br />
-          2 FRIENDS.
-
-            
-        </div>
-        <div style={{ textAlign: 'center', color: '#FF00FF' }}>
           
 
                 Right now if you understood
@@ -866,10 +722,11 @@ Here, watch some Videos ...
           <div className="spacer spacer--sm"></div>
           * * * C O N G R A T U L A T I O N S * * *
           <div className="spacer spacer--sm"></div>
-          "You" . . . are Smarter than
-          <div className="spacer spacer--sm"></div>
-          Albert Einstein !!
-          <div className="spacer spacer--sm"></div>
+          "You" . . . are Smarter than<br />
+          Albert Einstein !<br />
+          <br />
+          <br />
+          <br />
           <span className="c-cyan">
             
 
@@ -884,6 +741,8 @@ Here, watch some Videos ...
                 
           </span>
         </div>
+      </div>
+      </div>
       </div>
       <PageEndFooter pageNumber={4} />
       </main>

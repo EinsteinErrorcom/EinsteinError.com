@@ -303,6 +303,41 @@ a[target="_blank"] {
   color: var(--color-text);
 }
 
+.page4-content-25px,
+.page4-content-25px .f-small,
+.page4-content-25px .f-medium,
+.page4-content-25px .f-large,
+.page4-content-25px .f-massive,
+.page4-content-25px .f-x-large {
+  font-size: 23px !important;
+}
+
+.page4-content-25px figure.media {
+  margin-block: 4.5em;
+}
+
+.page4-narrow-column {
+  max-width: 40ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.page4-narrow-column figure.media {
+  max-width: min(500px, 100%);
+  margin-inline: auto;
+}
+
+.page4-narrow-column figure.media img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page4-narrow-column .page4-line-override {
+  display: inline-block;
+  max-width: none;
+  white-space: nowrap;
+}
+
 .letter-spaced {
   letter-spacing: 2px;
 }
