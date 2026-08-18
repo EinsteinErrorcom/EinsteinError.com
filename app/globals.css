@@ -1561,6 +1561,12 @@ h1.max-lit-chatbox-page-title {
 .page5__video-link__title {
   display: block;
   line-height: 1.1;
+  color: #ffffff;
+}
+
+.page5__video-link:hover .page5__video-link__title,
+.page5__video-link:focus-visible .page5__video-link__title {
+  color: #ffffff;
 }
 
 .page5__video-link__frame-hint {
@@ -1579,10 +1585,6 @@ h1.max-lit-chatbox-page-title {
   line-height: 1;
   text-align: center;
   white-space: nowrap;
-}
-
-.page5__video-link--placeholder .page5__video-link__label {
-  color: transparent !important;
 }
 
 .page5__video-link--placeholder {

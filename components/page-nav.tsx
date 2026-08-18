@@ -18,7 +18,7 @@ const W = "\u00A0\u00A0";
 const PAGE_LINKS: readonly PageLink[] = [
   { page: 2, href: "/page2", prefix: "PAGE2", suffix: `PROOFS${W}of${W}Einstein's${W}ERROR` },
   { page: 3, href: "/page3", prefix: "PAGE3", suffix: `PROOFS${W}of${W}Einstein's${W}ERROR` },
-  { page: 4, href: "/page4", prefix: "PAGE4", suffix: "Videos of PROOF" },
+  { page: 4, href: "/page4", prefix: "PAGE4", suffix: "Amazing PHYSICS" },
   { page: 5, href: "/page5", prefix: "PAGE5", suffix: `Videos${W}of${W}PROOF` },
   { page: 6, href: "/page6", prefix: "PAGE6", suffix: `The${W}TRUE${W}Universe` },
   { page: 7, href: "/page7", prefix: "PAGE7", suffix: `Numbers${W}of${W}the${W}TRUE${W}Universe` },
