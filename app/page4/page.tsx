@@ -297,24 +297,10 @@ export default function Page4() {
         </span>
       </div>
       <figure className="media"><img src="/BIGGEST3.png" alt="Biggest 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <figure className="media"><img src="/FINISHED.png" alt="Finished" width="500" height="300" loading="lazy" decoding="async" /></figure>
+      <figure className="media"><img src="/FINISHED.png" alt="Finished" width="400" height="800" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE.png" alt="9 Coincidence" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE2.png" alt="10 Coincidence 2" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/COINCIDENCE3.png" alt="11 Coincidence 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <figure className="media">
-        <a href="https://rumble.com/v4t9oht--1-overview" target="_blank" rel="noopener noreferrer">
-          <img src="/1VIDEO.png" alt="Video 1" width="500" height="300" loading="lazy" decoding="async" />
-        </a>
-      </figure>
-      <figure className="media">
-        <a href="https://rumble.com/v4tbd4i--2-proof" target="_blank" rel="noopener noreferrer">
-          <img src="/2VIDEO.png" alt="Video 2" width="500" height="300" loading="lazy" decoding="async" />
-        </a>
-      </figure>
-      <div className="f-x-large" style={{ color: '#FFFF00', textAlign: 'center' }}>COMING SOON !</div>
-      <figure className="media"><img src="/3VIDEO.png" alt="Video 3" width="500" height="300" loading="lazy" decoding="async" /></figure>
-      <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>Advertisement</div>
-      <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>Advertisement</div>
       <div className="spacer spacer--sm"></div>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         <u>
