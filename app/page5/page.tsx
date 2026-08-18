@@ -8,11 +8,13 @@ const PAGE5_VIDEO_LINKS = [
     href: "https://rumble.com/v6uj3f5-einstein-is-finished-.html",
     titleLine: PAGE5_VIDEO_PLACEHOLDER_TITLE,
     linkTitle: "CLICK this Video",
+    placeholder: false,
   },
   {
     href: "https://rumble.com/v4t4q00-may-3-2024.html",
     titleLine: "Einstein's Monumental ERROR !",
     linkTitle: "CLICK this Video",
+    placeholder: false,
   },
   {
     href: "#",
