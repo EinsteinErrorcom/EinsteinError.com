@@ -1,6 +1,7 @@
 import { Page8Gallery } from '@/components/page8/page8-gallery';
 import { PageEndFooter } from '@/components/page-end-footer';
 import { SiteHeader } from '@/components/site-header';
+import { SolarMathTM } from '@/components/solar-math-tm';
 import { listPage8Images } from '@/lib/content/page8';
 
 export default function Page8() {
@@ -14,7 +15,7 @@ export default function Page8() {
         <br />
 
         <div className="page8__intro f-medium">
-          This is{'\u00A0'.repeat(4)}<span className="page8__solar-math">SOLARMath&trade;</span>
+          This is{'\u00A0'.repeat(4)}<span className="page8__solar-math"><SolarMathTM /></span>
           <br />
           The Perfect Mathematics that is derived from the{' '}
           <span className="page8__intro-white">Unification of ALL Physics Constants</span>.

@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 export default function Page2() {
   return (
     <div className="page-wrapper">
-      <main id="main-content" className="content-page">
+      <main id="main-content" className="content-page page2">
         <SiteHeader page={2} />
         <p className="notice">
           We ask your patience as

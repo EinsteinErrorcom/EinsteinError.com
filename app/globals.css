@@ -111,11 +111,18 @@ body {
 }
 
 .page-nav__label {
-  color: var(--color-white);
   font-size: var(--text-base);
   font-weight: 700;
   font-style: italic;
   white-space: nowrap;
+}
+
+.page-nav__label-numbers {
+  color: var(--color-text);
+}
+
+.page-nav__label-title {
+  color: var(--max-lit-gold);
 }
 
 .page-nav__link,
@@ -304,11 +311,17 @@ a[target="_blank"] {
 }
 
 .page4-content-25px,
+.page3-content-23px,
 .page4-content-25px .f-small,
+.page3-content-23px .f-small,
 .page4-content-25px .f-medium,
+.page3-content-23px .f-medium,
 .page4-content-25px .f-large,
+.page3-content-23px .f-large,
 .page4-content-25px .f-massive,
-.page4-content-25px .f-x-large {
+.page3-content-23px .f-massive,
+.page4-content-25px .f-x-large,
+.page3-content-23px .f-x-large {
   font-size: 23px !important;
 }
 
@@ -450,6 +463,10 @@ a[target="_blank"] {
   line-height: 1.5;
   overflow-wrap: anywhere;
   -webkit-text-size-adjust: 100%;
+}
+
+.content-page.page2 {
+  font-size: 23px;
 }
 
 .content-page .notice,
@@ -1350,6 +1367,7 @@ h1.max-lit-chatbox-page-title {
 
 .content-page.page6 {
   max-width: min(2400px, 100%);
+  font-size: 23px;
 }
 
 .content-page.page6 .site-header {
@@ -1383,7 +1401,7 @@ h1.max-lit-chatbox-page-title {
   tab-size: 4;
   -moz-tab-size: 4;
   font-family: var(--font-mono);
-  font-size: var(--text-base);
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   line-height: 1.45;
@@ -1532,7 +1550,7 @@ h1.max-lit-chatbox-page-title {
 
 .page5__intro {
   color: var(--color-cyan);
-  font-size: 35px;
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   text-align: center;
@@ -1557,18 +1575,27 @@ h1.max-lit-chatbox-page-title {
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  width: min(100%, 37rem);
-  height: 9rem;
-  border: 6px solid var(--max-lit-gold);
+  width: min(100%, 27.75rem);
+  height: 6.75rem;
+  border: 4.5px solid var(--max-lit-gold);
   border-radius: 50% / 50%;
   color: var(--max-lit-gold) !important;
-  font-size: 30px;
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   line-height: 1.1;
-  padding: 0.75rem 1.75rem 0;
+  padding: 0.5625rem 1.3125rem 0;
   text-decoration: none;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.page5__video-link__label,
+.page5__video-link__frame-hint,
+.page5__video-link__prefix,
+.page5__video-link__prefix-word,
+.page5__video-link__title {
+  pointer-events: none;
 }
 
 .page5__video-link__label {
@@ -1580,13 +1607,17 @@ h1.max-lit-chatbox-page-title {
   width: max-content;
   max-width: calc(100% - 1rem);
   min-height: 0;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   text-align: left;
 }
 
 .page5__video-link__prefix {
   display: block;
   line-height: 1;
+}
+
+.page5__video-link__prefix--video-2 {
+  margin-left: 2.82em;
 }
 
 .page5__video-link__prefix-word {
@@ -1609,12 +1640,13 @@ h1.max-lit-chatbox-page-title {
   align-items: center;
   justify-content: center;
   align-self: stretch;
+  width: 100%;
   margin-top: auto;
   min-height: 6px;
-  padding: 0.4rem 0.75rem;
+  padding: 0.3rem 0.5625rem;
   background: var(--max-lit-gold);
   color: var(--color-cyan);
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   line-height: 1;
@@ -1628,8 +1660,18 @@ h1.max-lit-chatbox-page-title {
   user-select: none;
 }
 
+.page5__video-link--placeholder .page5__video-link__label,
+.page5__video-link--placeholder .page5__video-link__frame-hint,
+.page5__video-link--placeholder .page5__video-link__prefix,
+.page5__video-link--placeholder .page5__video-link__prefix-word,
+.page5__video-link--placeholder .page5__video-link__title {
+  pointer-events: none;
+}
+
 .page5__video-link:hover .page5__video-link__label,
-.page5__video-link:focus-visible .page5__video-link__label {
+.page5__video-link:focus-visible .page5__video-link__label,
+.page5__video-link:hover .page5__video-link__frame-hint,
+.page5__video-link:focus-visible .page5__video-link__frame-hint {
   text-decoration: underline;
 }
 
@@ -1661,12 +1703,20 @@ h1.max-lit-chatbox-page-title {
   line-height: 1.5;
 }
 
+.content-page.page8 {
+  font-size: 23px;
+}
+
 .content-page.page8 .page8__intro-white {
   color: #ffffff;
 }
 
 .content-page.page8 .page8__solar-math {
   color: var(--max-lit-gold);
+}
+
+.solar-math-tm__mark {
+  font-size: 12px;
 }
 
 .page8__gallery {
@@ -1684,7 +1734,7 @@ h1.max-lit-chatbox-page-title {
 
 .page8__empty {
   color: #ffff00;
-  font-size: var(--text-base);
+  font-size: 23px;
   text-align: center;
 }
 
@@ -1710,7 +1760,7 @@ h1.max-lit-chatbox-page-title {
   border: 1px solid var(--max-lit-gold);
   color: #ffffff;
   font-family: var(--font-mono);
-  font-size: clamp(0.7rem, 2.2vw, 0.95rem);
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   line-height: 1.15;
@@ -1720,6 +1770,7 @@ h1.max-lit-chatbox-page-title {
 
 .content-page.page7 {
   text-align: left;
+  font-size: 23px;
 }
 
 .content-page.page7 .page7__intro {
@@ -1744,7 +1795,7 @@ h1.max-lit-chatbox-page-title {
   border: 5px solid var(--max-lit-gold);
   color: #ffffff;
   font-family: var(--font-mono);
-  font-size: calc(clamp(0.7rem, 2.2vw, 0.95rem) + 5px);
+  font-size: 23px;
   font-weight: 700;
   font-style: italic;
   line-height: 1.15;
@@ -1755,7 +1806,7 @@ h1.max-lit-chatbox-page-title {
 
 .page7__numbers-note {
   padding-left: 2.5em;
-  font-size: 18px;
+  font-size: 23px;
   color: #999999;
   white-space: pre-wrap;
 }

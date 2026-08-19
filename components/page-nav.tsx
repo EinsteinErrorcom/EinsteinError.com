@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
+import { SolarMathTM } from "@/components/solar-math-tm";
 import { StyledEquals } from "@/components/styled-equals";
 
 type PageNavProps = {
@@ -10,7 +12,7 @@ type PageLink = {
   page: number;
   href: string;
   prefix: string;
-  suffix: string;
+  suffix: ReactNode;
 };
 
 const W = "\u00A0\u00A0";
@@ -21,8 +23,8 @@ const PAGE_LINKS: readonly PageLink[] = [
   { page: 4, href: "/page4", prefix: "PAGE4", suffix: "Amazing PHYSICS" },
   { page: 5, href: "/page5", prefix: "PAGE5", suffix: `Videos${W}of${W}PROOF` },
   { page: 6, href: "/page6", prefix: "PAGE6", suffix: `The${W}TRUE${W}Universe` },
-  { page: 7, href: "/page7", prefix: "PAGE7", suffix: `Numbers${W}of${W}the${W}TRUE${W}Universe` },
-  { page: 8, href: "/page8", prefix: "PAGE8", suffix: `SolarMath${W}CHARTS` },
+  { page: 7, href: "/page7", prefix: "PAGE7", suffix: `NUMBERS${W}of${W}the${W}True${W}Universe` },
+  { page: 8, href: "/page8", prefix: "PAGE8", suffix: <><SolarMathTM />{W}CHARTS</> },
 ];
 
 const TAB_SIZE = 4;
@@ -32,7 +34,7 @@ function getTabGap(prefix: string) {
   return nextStop === prefix.length ? TAB_SIZE : nextStop - prefix.length;
 }
 
-function NavLinkLabel({ prefix, suffix }: { prefix: string; suffix: string }) {
+function NavLinkLabel({ prefix, suffix }: { prefix: string; suffix: ReactNode }) {
   const gap = getTabGap(prefix);
   const afterEqCount =
     prefix === "PAGE8" ? 3 : prefix === "HOME" ? gap - 1 : gap;
@@ -41,7 +43,7 @@ function NavLinkLabel({ prefix, suffix }: { prefix: string; suffix: string }) {
   return (
     <>
       <span className="page-nav__prefix">{prefix}</span>
-      {'\t'}
+      {"\u00A0".repeat(gap)}
       <StyledEquals />
       {afterEq}
       {suffix}

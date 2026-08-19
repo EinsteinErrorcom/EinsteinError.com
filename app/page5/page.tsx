@@ -3,6 +3,13 @@ import { SiteHeader } from "@/components/site-header";
 
 const PAGE5_VIDEO_PLACEHOLDER_TITLE = "Einstein Is FINISHED !";
 
+const PAGE5_FUTURE_VIDEO = {
+  href: "#",
+  titleLine: "More Einstein Soon",
+  linkTitle: "Future video",
+  placeholder: true,
+} as const;
+
 const PAGE5_VIDEO_LINKS = [
   {
     href: "https://rumble.com/v6uj3f5-einstein-is-finished-.html",
@@ -16,12 +23,9 @@ const PAGE5_VIDEO_LINKS = [
     linkTitle: "CLICK this Video",
     placeholder: false,
   },
-  {
-    href: "#",
-    titleLine: "More Einstein Soon",
-    linkTitle: "Future video",
-    placeholder: true,
-  },
+  PAGE5_FUTURE_VIDEO,
+  PAGE5_FUTURE_VIDEO,
+  PAGE5_FUTURE_VIDEO,
 ] as const;
 
 export default function Page5() {
@@ -47,10 +51,11 @@ export default function Page5() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
         <div className="page5__video">
-          {PAGE5_VIDEO_LINKS.map(({ href, titleLine, linkTitle, placeholder }, index) => (
+          {PAGE5_VIDEO_LINKS.map(({ href, titleLine, linkTitle, placeholder }, index) => {
+            const videoNumber = index + 1;
+
+            return (
             <div className="page5__video-item" key={index}>
               <a
                 className={`page5__video-link${placeholder ? " page5__video-link--placeholder" : ""}`}
@@ -58,18 +63,19 @@ export default function Page5() {
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 title={linkTitle}
-                aria-label={`Video : ${titleLine}`}
+                aria-label={`Video ${videoNumber} : ${titleLine}`}
               >
                 <span className="page5__video-link__label">
-                  <span className="page5__video-link__prefix">
-                    <span className="page5__video-link__prefix-word">Video</span> :
+                  <span className={`page5__video-link__prefix${videoNumber === 2 ? " page5__video-link__prefix--video-2" : ""}`}>
+                    <span className="page5__video-link__prefix-word">Video {videoNumber}</span> :
                   </span>
                   <span className="page5__video-link__title">{titleLine}</span>
                 </span>
-                <span className="page5__video-link__frame-hint">CLICK the Link Above</span>
+                <span className="page5__video-link__frame-hint">CLICK{'\u00A0\u00A0\u00A0'}HERE</span>
               </a>
             </div>
-          ))}
+            );
+          })}
         </div>
         <br />
         <br />

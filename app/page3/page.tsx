@@ -7,6 +7,7 @@ export default function Page3() {
       <main id="main-content">
         <SiteHeader page={3} />
         <br/><br/>
+        <div className="page3-content-23px">
         <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
           
 
@@ -1670,6 +1671,7 @@ export default function Page3() {
         <figure className="media"><img src="/NEWTONG.png" alt="Newton G" width="500" height="300" loading="lazy" decoding="async" /></figure>
         <br />
         <figure className="media"><img src="/NEWTONG2.png" alt="Newton G2" width="500" height="300" loading="lazy" decoding="async" /></figure>
+        </div>
         <PageEndFooter pageNumber={3} />
       </main>
     </div>

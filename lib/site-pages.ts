@@ -12,6 +12,17 @@ export const SITE_PAGES = [
   '/checkout11',
 ] as const;
 
+export const PAGE_TITLES: Record<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8, string> = {
+  1: 'MAX-LIT SUPERComputer',
+  2: "PROOFS of Einstein's ERROR",
+  3: "PROOFS of Einstein's ERROR",
+  4: 'Amazing PHYSICS',
+  5: 'Videos of PROOF',
+  6: 'The TRUE Universe',
+  7: 'NUMBERS of the True Universe',
+  8: 'SolarMathTM CHARTS',
+};
+
 const NEXT_PAGE_PATH: Partial<Record<number, string>> = {
   1: '/page2',
   2: '/page3',
