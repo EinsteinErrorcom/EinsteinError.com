@@ -26,7 +26,9 @@ export default async function Checkout11Page() {
       <div className="pricing-checkout-page__inner">
         <div className="pricing-checkout-page__gold-header">
           <p className="pricing-checkout-page__expired-notice">
-            Sorry, your Time has run out.
+            You have no more Time
+            <br />
+            booked with MAX-LIT.
             <br />
             Choose an option below ...
           </p>
@@ -45,7 +47,7 @@ export default async function Checkout11Page() {
             <Link href="/" className="pricing-checkout-page__home">
               HOME
             </Link>
-            <PageEndFooter pageNumber={10} compact />
+            <PageEndFooter pageNumber={11} compact />
           </div>
         </div>
       </div>

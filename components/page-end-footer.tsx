@@ -50,6 +50,7 @@ export function PageEndFooter({
       <br />
       <br />
       <span className="page-end-footer__brand">Einstein Error . com</span>
+      <br />
       {!compact ? <div className="spacer" style={{ height: '50px' }}></div> : null}
       <span
         style={{

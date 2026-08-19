@@ -786,7 +786,7 @@ p {
 .pricing-checkout-page__expired-notice {
   margin: 0;
   color: #d0ab47;
-  font-size: 35px;
+  font-size: 31px;
   font-style: italic;
   font-weight: 700;
   line-height: 1.5;
@@ -796,7 +796,7 @@ p {
 
 .pricing-checkout-page__title {
   margin: 1.25rem 0 0;
-  color: #d0ab47;
+  color: #ffffff;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: 700;
@@ -819,7 +819,7 @@ p {
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
-  margin: 1.25rem 0 0;
+  margin: 0;
 }
 
 .pricing-checkout-page__home:hover {
@@ -839,11 +839,19 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .pricing-checkout-page__tail .page-end-footer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pricing-checkout-page__tail .page-end-footer br {
+  display: none;
 }
 
 .pricing-checkout-page__tail .page-end-footer .spacer:last-child {
@@ -929,12 +937,11 @@ p {
 }
 
 .payment-checkout__tier-label-grid {
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  column-gap: 1.25em;
-  row-gap: 0.2em;
-  justify-content: center;
-  text-align: left;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  text-align: center;
 }
 
 .payment-checkout__tier-price {

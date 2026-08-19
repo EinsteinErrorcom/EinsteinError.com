@@ -11,7 +11,7 @@ export default function Page4() {
       <div className="page4-content-25px">
       <div className="f-medium">
         
-        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>"Perfect Fitting" piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given orbit "Radius".<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
+        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>&quot;<span className="c-white">Perfect Fitting</span>&quot;{'\u00A0\u00A0\u00A0'}piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given &quot;orbit-Radius&quot;.<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
       
       </div>
       <figure className="media"><img src="/ORBITDENSITY.png" alt="Orbit Density" width="500" height="300" loading="lazy" decoding="async" /></figure>
@@ -42,8 +42,9 @@ export default function Page4() {
         <br />
         ( TRadius )<sup>3</sup> × Pi ( Toroidal Volume )<br />
         is what produces the<br />
-        30591067 Hz Lattice Frequency.
-        <Page4PumpkinDivider />
+        30591067 Hz Lattice Frequency.<br />
+        <div style={{ height: '2em' }} aria-hidden="true" />
+        <Page4PumpkinDivider gapBelow="5em" />
         <div style={{ color: '#FB8809', textDecoration: 'underline', textDecorationColor: '#FFFFFF', textUnderlineOffset: '0.2em' }}>
           This{'\u00A0\u00A0\u00A0'}Is{'\u00A0\u00A0\u00A0'}Even{'\u00A0\u00A0\u00A0'}More{'\u00A0\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
         </div>

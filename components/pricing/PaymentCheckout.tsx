@@ -33,7 +33,6 @@ function renderTierLabel(label: string) {
     return (
       <>
         <span>{renderTierLabelLine(lines[0])}</span>
-        <span aria-hidden="true" />
         <span>{renderTierLabelLine(lines[1])}</span>
       </>
     );
