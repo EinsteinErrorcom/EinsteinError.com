@@ -1,3 +1,4 @@
+import { Page4PumpkinDivider } from "@/components/page4-pumpkin-divider";
 import { PageEndFooter } from "@/components/page-end-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -10,21 +11,24 @@ export default function Page4() {
       <div className="page4-content-25px">
       <div className="f-medium">
         
-        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>"Perfect Fitting" piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given orbit "Radius".<br/>They are held in their orbits in the exact same way as a<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>.
+        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>"Perfect Fitting" piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given orbit "Radius".<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
       
       </div>
       <figure className="media"><img src="/ORBITDENSITY.png" alt="Orbit Density" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/HELIX.png" alt="Helix" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
-        <div style={{ display: 'inline-block', textAlign: 'center' }}>
+        <div style={{ color: '#FB8809', textDecoration: 'underline', textDecorationColor: '#FFFFFF', textUnderlineOffset: '0.2em' }}>
+          This{'\u00A0\u00A0\u00A0'}Is{'\u00A0\u00A0\u00A0'}Truly{'\u00A0\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
+        </div>
+        <div style={{ display: 'inline-block', textAlign: 'center', marginTop: '3em' }}>
         
         In our 12-Bit Universe, the Size of the Universe = ( Earth orbit-Radius )<sup>3</sup>
         <br />
-        The Universe is an Icosahedral boundary surrounding Toroidal Flow
+        The boundary of the Universe is Icosahedral in shape<br />and that shape surrounds a flowing Toroid.
         <br />
         ( Volume of the Toroid = 3.226 x 10<sup>41</sup> cubic meters )
         <br />
-        DIVIDED  BY
+        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
         <br />
         ( Volume of Icosahedron 1.054 x 10<sup>34</sup> cubic meters )
         <br />
@@ -33,26 +37,42 @@ export default function Page4() {
         ( which is the same as the Lattice Tension, 30591067 )
         <br />
         <br />
-        The difference between ( TRadius )<sup>3</sup> ( Icosahedral Volume ) and<br />
-        ( TRadius )<sup>3</sup>  ×  Pi ( Toroidal Volume ) is what produces the<br />
+        The difference between<br />( TRadius )<sup>3</sup> ( Icosahedral Volume )<br />
+        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
+        <br />
+        ( TRadius )<sup>3</sup> × Pi ( Toroidal Volume )<br />
+        is what produces the<br />
         30591067 Hz Lattice Frequency.
-        <div style={{ height: '4.5em' }} aria-hidden="true" />
-        <div style={{ width: '100%', height: '6px', backgroundColor: '#FB8809' }} aria-hidden="true" />
-        <div style={{ height: '4.5em' }} aria-hidden="true" />
+        <Page4PumpkinDivider />
+        <div style={{ color: '#FB8809', textDecoration: 'underline', textDecorationColor: '#FFFFFF', textUnderlineOffset: '0.2em' }}>
+          This{'\u00A0\u00A0\u00A0'}Is{'\u00A0\u00A0\u00A0'}Even{'\u00A0\u00A0\u00A0'}More{'\u00A0\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
+        </div>
+        <div style={{ height: '2em' }} aria-hidden="true" />
         
         </div>
       </div>
       <div className="f-medium">
         
-        That orbit "Path" that the earth follows<br />
-        contains one of the most AMAZING Physics realities<br />
-        as the "two" exact Physics Circumferences<br />
+        That Helix orbit "Path" that the earth follows<br />
+        contains one of the most AMAZING Physics realities.<br />
+        The "two" physical Circumferences of that PATH,<br />
         ( Radius x Tau ) and ( Acceleration x Time<sup>2</sup> )<br />
         should theoretically be the exact same Distance but they are NOT !<br />
         The difference between the two is the exact<br />
-        IMPEDANCE of Free SPACE !
+        &quot; <span className="c-white">IMPEDANCE of Free-Space</span> &quot;{'\u00A0\u00A0'}!
         <br />
         <br />
+        Earth orbit-Circumference<br />
+        938,814,773,206.93260027{'\u00A0\u00A0\u00A0'}( R x Tau )<br />
+        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
+        <br />
+        938,814,764,438.59541001{'\u00A0\u00A0\u00A0'}( AZ<sup>2</sup> )
+        <br />
+        <span style={{ color: '#FB8809' }}>EQUALS{'\u00A0\u00A0\u00A0'}THE</span>
+        <br />
+        &quot; <span className="c-white">IMPEDANCE of Free-Space</span>{'\u00A0'}&quot;
+        <br />
+        <Page4PumpkinDivider gapAbove="5em" gapBelow="5em" />
         <br />
         Don't forget the 3 most important letters in Physics . . .
         

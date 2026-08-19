@@ -66,8 +66,12 @@ export default function Page5() {
                 aria-label={`Video ${videoNumber} : ${titleLine}`}
               >
                 <span className="page5__video-link__label">
-                  <span className={`page5__video-link__prefix${videoNumber === 2 ? " page5__video-link__prefix--video-2" : ""}`}>
-                    <span className="page5__video-link__prefix-word">Video {videoNumber}</span> :
+                  <span className="page5__video-link__prefix">
+                    <span className="page5__video-link__prefix-word">
+                      Video{'\u00A0'}
+                      <span className="page5__video-link__prefix-number">{videoNumber}</span>
+                    </span>
+                    {'\u00A0'}:
                   </span>
                   <span className="page5__video-link__title">{titleLine}</span>
                 </span>
