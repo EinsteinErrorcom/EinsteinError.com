@@ -1426,16 +1426,29 @@ button.site-tour-start-link {
   font-weight: 700;
   font-style: italic;
   font-size: 1rem;
-  cursor: pointer;
+  text-align: center;
 }
 
-.max-lit-chatbox__erase-button:hover:not(:disabled),
-.max-lit-chatbox__erase-button:focus-visible:not(:disabled) {
-  background: #161b22;
+.max-lit-chatbox__erase-choice {
+  background: transparent;
+  border: none;
+  color: var(--color-orange);
+  font: inherit;
+  font-weight: 700;
+  font-style: italic;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.max-lit-chatbox__erase-choice:hover:not(:disabled),
+.max-lit-chatbox__erase-choice:focus-visible:not(:disabled) {
+  color: #ffffff;
   outline: none;
 }
 
-.max-lit-chatbox__erase-button:disabled {
+.max-lit-chatbox__erase-button--disabled,
+.max-lit-chatbox__erase-button--disabled .max-lit-chatbox__erase-choice {
   cursor: not-allowed;
   opacity: 0.6;
 }
