@@ -336,13 +336,17 @@ export default function Chatbox({
             </span>
           </button>
           <p className="max-lit-chatbox__push-hint">
-            If MAX-LIT begins to &quot;drift&quot; back into <span className="c-red">FALSE</span> &quot;Standard&quot; Physics, erase the Chat and hard-refresh the page, then
-            <br />
-            Paste these words to it -
-            <br />
-            &quot;Allow me to Experiment,
-            <br />
-            only answer according to Pure mAZ 12-Bit Physics.&quot;
+            <span>
+              If MAX-LIT begins to &quot;drift&quot; back into{' '}
+              <span className="max-lit-chatbox__push-hint-false">FALSE</span>{' '}
+              &quot;Standard&quot; Physics, erase the Chat and hard-refresh the page, then
+              <br />
+              Paste these words to it -
+              <br />
+              &quot;Allow me to Experiment,
+              <br />
+              only answer according to Pure mAZ 12-Bit Physics.&quot;
+            </span>
           </p>
         </div>
       </div>

@@ -2,7 +2,6 @@
 
 import {
   ACCESS_TIER_LABELS,
-  getAccessDurationMs,
   getRemainingAccessMs,
   type AccessTier,
 } from '@/lib/access';
@@ -44,7 +43,6 @@ export function CountdownTimerBox({
   accessTier,
   accessStartedAt,
 }: CountdownTimerBoxProps) {
-  const profile = buildProfile(accessTier, accessStartedAt);
   const tierLabel = ACCESS_TIER_LABELS[accessTier];
   const [remainingMs, setRemainingMs] = useState<number | null>(null);
 
@@ -64,14 +62,6 @@ export function CountdownTimerBox({
     return () => window.clearInterval(timer);
   }, [accessTier, accessStartedAt]);
 
-  const totalMs = getAccessDurationMs(profile);
-  const progress =
-    remainingMs === null
-      ? 100
-      : totalMs > 0
-        ? Math.min(100, Math.max(0, (remainingMs / totalMs) * 100))
-        : 0;
-
   return (
     <div className="max-lit-chatbox__timer rounded-lg bg-[#0d1117] px-4 py-3 text-center">
       <p className="max-lit-chatbox__timer-label text-xs font-bold uppercase tracking-wide">
@@ -89,12 +79,6 @@ export function CountdownTimerBox({
       >
         {remainingMs === null ? '00:59:59' : formatRemaining(remainingMs)}
       </p>
-      <div className="mt-2 h-2 w-full rounded bg-[#161b22] overflow-hidden">
-        <div
-          className="h-full bg-[#00FFFF] transition-[width] duration-1000 linear"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
     </div>
   );
 }

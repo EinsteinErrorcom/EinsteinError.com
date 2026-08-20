@@ -1473,6 +1473,10 @@ button.site-tour-start-link {
   text-align: center;
 }
 
+.max-lit-chatbox__push-hint-false {
+  color: var(--color-red);
+}
+
 .max-lit-chatbox__push-button {
   background-color: #000;
   border: 4px solid #00ff00;
