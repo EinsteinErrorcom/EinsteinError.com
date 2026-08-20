@@ -26,7 +26,11 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
     return (
       <main className="p-8">
         <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
-          MAX-LIT{'\u00A0'.repeat(3)}Chat{'\u00A0'.repeat(3)}WINDOW
+          <span className="max-lit-chatbox-page-title__brand">MAX-LIT</span>
+          <br />
+          <span className="max-lit-chatbox-page-title__subline">
+            Query{'\u00A0'.repeat(3)}Window
+          </span>
         </h1>
         <p style={{ color: '#FFFF00', fontStyle: 'italic', marginBottom: '24px' }}>
           Tour preview — sign-in and chat are disabled on this page.
@@ -100,7 +104,11 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
     <main className="p-8">
       <ChatExitLinks />
       <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
-        MAX-LIT{'\u00A0'.repeat(3)}Chat{'\u00A0'.repeat(3)}WINDOW
+        <span className="max-lit-chatbox-page-title__brand">MAX-LIT</span>
+        <br />
+        <span className="max-lit-chatbox-page-title__subline">
+          Query{'\u00A0'.repeat(3)}Window
+        </span>
       </h1>
       <Chatbox
         embedded

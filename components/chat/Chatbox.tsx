@@ -7,7 +7,6 @@ import { formatGeminiErrorForChat, isGeminiConfigError } from '@/lib/ai/gemini-b
 import { plainTextChatResponse } from '@/lib/chat/plain-text-response';
 import type { AccessTier } from '@/lib/access';
 import { CountdownTimerBox } from '@/components/chat/CountdownTimerBox';
-import { MAX_LIT_GOLD } from '@/components/chat/chat-theme';
 import { CHECKOUT_PATH, CHAT_PATH } from '@/lib/trial-gate';
 
 type ChatMessage = { role: 'user' | 'ai'; text: string };
@@ -262,27 +261,41 @@ export default function Chatbox({
           value={input} 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="max-lit-chatbox__input w-full p-2 bg-[#161b22] text-white rounded"
+          className="max-lit-chatbox__input w-full p-2 text-white"
           placeholder={'Ask Physics Question HERE\nThen PUSH it and Get Ready !'}
         />
-        <button 
-          type="button"
-          onClick={() => {
-            if (loading || !input.trim()) return;
-            void sendMessage();
-          }}
-          aria-disabled={loading || !input.trim()}
-          className={`max-lit-chatbox__push-button w-full mt-2 p-2 font-bold rounded-lg${
-            loading || !input.trim() ? ' max-lit-chatbox__push-button--inactive' : ''
-          }`}
-        >
-          <span
-            className="max-lit-chatbox__push-button-label"
-            style={{ color: MAX_LIT_GOLD, WebkitTextFillColor: MAX_LIT_GOLD }}
+        <div className="max-lit-chatbox__push-stack">
+          <p className="max-lit-chatbox__push-hint">
+            Always tell MAX to{'\u00A0'.repeat(4)}&quot;Calculate via mAZ 12-Bit PURE Physics&quot;
+          </p>
+          <button 
+            type="button"
+            onClick={() => {
+              if (loading || !input.trim()) return;
+              void sendMessage();
+            }}
+            aria-disabled={loading || !input.trim()}
+            className={`max-lit-chatbox__push-button w-full p-2 font-bold rounded-lg${
+              loading || !input.trim() ? ' max-lit-chatbox__push-button--inactive' : ''
+            }`}
           >
-            {loading ? 'Processing...' : 'PUSH Your Question To - "MAX"'}
-          </span>
-        </button>
+            <span className="max-lit-chatbox__push-button-label">
+              {loading ? (
+                'Processing...'
+              ) : (
+                <>
+                  PUSH{'\u00A0\u00A0'}HERE
+                  <br />
+                  <span className="max-lit-chatbox__push-button-line-white">
+                    to Send your Question to
+                  </span>
+                  <br />
+                  <span className="max-lit-chatbox__push-button-max">&quot; MAX &quot;</span>
+                </>
+              )}
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
