@@ -1,6 +1,5 @@
 import { getPageLink, PageLinkLabel } from '@/components/page-link-label';
 import { getNextSitePagePath } from '@/lib/site-pages';
-import { CHECKOUT_PATH } from '@/lib/trial-gate';
 import type { ReactNode } from 'react';
 
 type PageEndFooterProps = {
@@ -77,14 +76,16 @@ export function PageEndFooter({
       )}
       <span className="page-end-footer__brand">Einstein Error . com</span>
       <br />
-      {!compact ? <div className="spacer" style={{ height: '50px' }}></div> : null}
+      {!compact ? (
+        <div
+          className="spacer"
+          style={{ height: pageNumber === 9 ? '35px' : '50px' }}
+        ></div>
+      ) : null}
       {pageNumber === 9 ? (
         <>
-          <a href={CHECKOUT_PATH} className="page-end-footer__prices-link">
-            Go&nbsp;To&nbsp;
-            <span className="page-end-footer__prices-arrow">&rarr;</span>
-            {'\u00A0'}
-            PRICES
+          <a href="/" className="page-end-footer__prices-link">
+            HOME
           </a>
           <br />
           <br />
@@ -102,7 +103,7 @@ export function PageEndFooter({
       </span>
       <div
         className="spacer"
-        style={{ height: pageNumber === 9 ? '40px' : '100px' }}
+        style={{ height: pageNumber === 9 ? '20px' : '100px' }}
       ></div>
     </div>
   );

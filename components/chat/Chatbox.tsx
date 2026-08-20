@@ -248,33 +248,17 @@ export default function Chatbox({
                 accessStartedAt={accessStartedAt}
               />
               {showEraseButton ? (
-                <div
+                <button
+                  type="button"
+                  onClick={() => setShowEraseConfirm(true)}
+                  disabled={loading}
                   className={`max-lit-chatbox__erase-button${
                     loading ? ' max-lit-chatbox__erase-button--disabled' : ''
                   }`}
-                  role="group"
-                  aria-label="Erase chat warning"
+                  aria-label="Erase chat"
                 >
-                  ERASE CHAT ? (
-                  <button
-                    type="button"
-                    onClick={() => setShowEraseConfirm(true)}
-                    disabled={loading}
-                    className="max-lit-chatbox__erase-choice"
-                  >
-                    Yes
-                  </button>
-                  {'\u00A0'.repeat(2)}
-                  <button
-                    type="button"
-                    onClick={handleEraseNo}
-                    disabled={loading}
-                    className="max-lit-chatbox__erase-choice"
-                  >
-                    No
-                  </button>
-                  )
-                </div>
+                  ERASE{'\u00A0'.repeat(3)}CHAT ?
+                </button>
               ) : null}
             </>
           ) : null}

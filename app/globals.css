@@ -774,6 +774,10 @@ p {
   margin-top: 0 !important;
 }
 
+main.maxchatbox9-page ~ .gold-lines-divider {
+  margin-top: 8px;
+}
+
 .pricing-checkout-page__inner {
   width: min(100%, 704px);
   min-width: min(100%, 704px);
@@ -1463,6 +1467,7 @@ button.site-tour-start-link {
   font-style: italic;
   font-size: 1rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .max-lit-chatbox__erase-choice {

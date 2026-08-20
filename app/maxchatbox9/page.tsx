@@ -24,7 +24,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
 
   if (isTourMode(params.tour)) {
     return (
-      <main className="p-8">
+      <main className="p-8 maxchatbox9-page">
         <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
           <span className="max-lit-chatbox-page-title__brand">MAX-LIT</span>
           <br />
@@ -77,7 +77,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
 
     const refreshPath = `${CHAT_PATH}?session_id=${encodeURIComponent(params.session_id)}`;
     return (
-      <main className="p-8">
+      <main className="p-8 maxchatbox9-page">
         <h1 className="text-2xl font-bold mb-4 text-[#00FFFF]">Activating your payment</h1>
         <p style={{ color: '#FFFF00', fontStyle: 'italic', marginBottom: '16px', lineHeight: 1.6 }}>
           Your Stripe payment was received. We are activating your MAX-LIT access now.
@@ -101,7 +101,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
   const countdown = profile ? resolveCountdownProps(profile) : null;
 
   return (
-    <main className="p-8">
+    <main className="p-8 maxchatbox9-page">
       <ChatExitLinks />
       <h1 className="max-lit-chatbox-page-title text-2xl font-bold mb-4">
         <span className="max-lit-chatbox-page-title__brand">MAX-LIT</span>
