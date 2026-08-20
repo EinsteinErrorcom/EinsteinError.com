@@ -343,6 +343,59 @@ a[target="_blank"] {
   text-align: center;
 }
 
+.page4-society-shifts {
+  display: block;
+  max-width: 50ch;
+  margin: calc(1.45em * 5) auto 0;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.page4-society-shifts__prompt {
+  margin: 0 0 1rem;
+  color: #00ffff;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.page4-society-shifts__answered {
+  color: var(--max-lit-gold);
+}
+
+.page4-society-shifts__calculations-lead {
+  margin: 2rem auto 1.5rem;
+}
+
+.page4-society-shifts__delimiter {
+  margin: 0 0 1rem;
+  color: #d0ab47;
+  font-weight: 700;
+  font-style: italic;
+  word-break: break-all;
+}
+
+.page4-society-shifts__intro {
+  margin: 0 0 1rem;
+  color: #00ffff;
+}
+
+.page4-society-shifts__list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  color: #00ffff;
+}
+
+.page4-society-shifts__list li + li {
+  margin-top: 1rem;
+}
+
+.page4-society-shifts__item-title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 .page4-narrow-column figure.media {
   max-width: min(500px, 100%);
   margin-inline: auto;

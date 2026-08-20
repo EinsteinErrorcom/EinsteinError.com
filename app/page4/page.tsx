@@ -1,4 +1,5 @@
 import { Page4PumpkinDivider } from "@/components/page4-pumpkin-divider";
+import { Page4SocietyShifts } from "@/components/page4-society-shifts";
 import { PageEndFooter } from "@/components/page-end-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -11,7 +12,7 @@ export default function Page4() {
       <div className="page4-content-25px">
       <div className="f-medium">
         
-        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>&quot;<span className="c-white">Perfect Fitting</span>&quot;{'\u00A0\u00A0\u00A0'}piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given &quot;orbit-Radius&quot;.<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
+        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>&quot;{'\u00A0'}<span className="c-white">Perfect Fitting</span>{'\u00A0'}&quot;{'\u00A0\u00A0\u00A0'}piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given &quot;orbit-Radius&quot;.<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
       
       </div>
       <figure className="media"><img src="/ORBITDENSITY.png" alt="Orbit Density" width="500" height="300" loading="lazy" decoding="async" /></figure>
@@ -424,6 +425,10 @@ export default function Page4() {
         This is the ***
         <span className="c-cyan">REALITY</span>
         *** of our universe. Gravity is at a CONSTANT Velocity (flowing into the earth) and a lattice of Neutrons (m) that make up the fabric of space, are naturally STATIONARY in space. Yes, Neutrons (m) that are cut free by the Magnetic-field of the earth and accelerated into Electrons (mA) (and)
+      </div>
+      <Page4SocietyShifts />
+      <div className="f-x-large page4-society-shifts__calculations-lead" style={{ color: '#00FFFF', textAlign: 'center' }}>
+        These calculations are
       </div>
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
