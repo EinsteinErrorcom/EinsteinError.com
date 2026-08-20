@@ -115,6 +115,7 @@ export default async function MaxChatbox9Page({ searchParams }: MaxChatbox9PageP
         historyUserId={user.id}
         accessTier={countdown?.accessTier}
         accessStartedAt={countdown?.accessStartedAt}
+        showEraseButton
       />
       <PageEndFooter pageNumber={9} />
     </main>

@@ -18,6 +18,8 @@ type ChatboxProps = {
   historyUserId?: string;
   accessTier?: AccessTier;
   accessStartedAt?: string;
+  /** Show orange Erase Window control below the countdown timer. */
+  showEraseButton?: boolean;
 };
 
 const CHAT_STORAGE_PREFIX = 'maxlit-chat:';
@@ -43,6 +45,14 @@ function loadStoredMessages(userId: string): ChatMessage[] {
     );
   } catch {
     return [];
+  }
+}
+
+function clearStoredMessages(userId: string) {
+  try {
+    localStorage.removeItem(`${CHAT_STORAGE_PREFIX}${userId}`);
+  } catch {
+    // Ignore storage errors — in-memory clear still works.
   }
 }
 
@@ -80,6 +90,7 @@ export default function Chatbox({
   historyUserId,
   accessTier,
   accessStartedAt,
+  showEraseButton = false,
 }: ChatboxProps) {
   const [isOpen, setIsOpen] = useState(embedded);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -201,6 +212,17 @@ export default function Chatbox({
     setIsOpen(false);
   };
 
+  const handleEraseWindow = () => {
+    if (loading) {
+      return;
+    }
+
+    setMessages([]);
+    if (historyUserId) {
+      clearStoredMessages(historyUserId);
+    }
+  };
+
   if (!embedded && !isOpen) {
     return null;
   }
@@ -214,10 +236,22 @@ export default function Chatbox({
       <div className="max-lit-chatbox__header">
         <div className="text-center px-8 w-full max-w-md">
           {accessTier && accessStartedAt ? (
-            <CountdownTimerBox
-              accessTier={accessTier}
-              accessStartedAt={accessStartedAt}
-            />
+            <>
+              <CountdownTimerBox
+                accessTier={accessTier}
+                accessStartedAt={accessStartedAt}
+              />
+              {showEraseButton ? (
+                <button
+                  type="button"
+                  onClick={handleEraseWindow}
+                  disabled={loading}
+                  className="max-lit-chatbox__erase-button"
+                >
+                  Erase Window
+                </button>
+              ) : null}
+            </>
           ) : null}
           {!embedded && (
             <Link
