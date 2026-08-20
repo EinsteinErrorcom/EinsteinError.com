@@ -376,29 +376,27 @@ export default function Chatbox({
               id="max-lit-erase-confirm-title"
               className="max-lit-chatbox__erase-confirm-title"
             >
-              CONFIRM ERASE ?
+              CONFIRM{'\u00A0'.repeat(3)}ERASE ?
             </p>
             <p className="max-lit-chatbox__erase-confirm-text">
-              This will clear all chat messages in this window.
+              This will CLEAR ALL CHATS.
             </p>
             <p className="max-lit-chatbox__erase-confirm-actions">
-              (
               <button
                 type="button"
                 onClick={handleEraseWindow}
                 className="max-lit-chatbox__erase-choice"
               >
-                Yes
+                YES
               </button>
-              {'\u00A0'.repeat(2)}
+              {'\u00A0'.repeat(20)}
               <button
                 type="button"
                 onClick={handleEraseNo}
                 className="max-lit-chatbox__erase-choice"
               >
-                No
+                NO
               </button>
-              )
             </p>
           </div>
         </div>

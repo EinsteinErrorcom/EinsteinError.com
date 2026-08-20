@@ -1499,6 +1499,11 @@ button.site-tour-start-link {
   background: rgba(0, 0, 0, 0.72);
 }
 
+.max-lit-chatbox--embedded .max-lit-chatbox__erase-confirm {
+  align-items: flex-start;
+  padding-top: calc(6.5rem - 3in);
+}
+
 .max-lit-chatbox__erase-confirm-panel {
   width: min(100%, 22rem);
   padding: 1rem 0.85rem;
