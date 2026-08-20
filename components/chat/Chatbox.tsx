@@ -352,11 +352,15 @@ export default function Chatbox({
             </span>
           </button>
           <p className="max-lit-chatbox__push-hint">
-            Always tell MAX to
+            If MAX drifts back to
             <br />
-            &quot; Calculate via mAZ 12-Bit
+            FALSE
             <br />
-            PURE{'\u00A0\u00A0'}Physics &quot;
+            &quot; Standard &quot;
+            <br />
+            PHYSICS
+            <br />
+            PASTE &quot;Allow me to Experiment, only answer according to Pure mAZ 12-Bit Physics.&quot;
           </p>
         </div>
       </div>

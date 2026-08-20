@@ -1,8 +1,4 @@
 import { formatPurchaseAmount } from '@/lib/access';
-import {
-  formatFreeTrialClickCount,
-  type FreeTrialRow,
-} from '@/lib/free-trial-clicks';
 
 export type PurchaseRow = {
   id: string;
@@ -64,6 +60,15 @@ export function formatPurchasesText(rows: PurchaseRow[]): string {
   }
 
   return rows.map(formatPurchaseLine).join('\n\n');
+}
+
+export type FreeTrialRow = {
+  id: string;
+  trial_start_at: string | null;
+};
+
+function formatFreeTrialClickCount(count: number): string {
+  return count.toLocaleString('en-US');
 }
 
 export function formatFreeTrialLine(row: FreeTrialRow): string {

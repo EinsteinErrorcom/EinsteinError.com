@@ -1323,6 +1323,12 @@ button.site-tour-start-link {
   margin: 0 auto;
 }
 
+.max-lit-chatbox--embedded .max-lit-chatbox__footer {
+  --chatbox-frame-white-min: calc(
+    ((var(--chatbox-frame-green-min) * 2) - var(--chatbox-frame-red-min)) * 2
+  );
+}
+
 .max-lit-chatbox--floating {
   position: fixed;
   right: 1.5rem;

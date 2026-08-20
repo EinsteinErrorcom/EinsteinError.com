@@ -1,7 +1,5 @@
-import {
-  readFreeTrialClickCount,
-  type FreeTrialRow,
-} from '@/lib/free-trial-clicks';
+import { readFreeTrialClickCount } from '@/lib/free-trial-clicks';
+import type { FreeTrialRow } from '@/lib/purchases';
 import { createServiceRoleClient } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';

@@ -3,15 +3,6 @@ import { createClient } from '@/lib/supabase/server';
 
 export const FREE_TRIAL_CLICKS_KEY = 'free_trial_clicks';
 
-export type FreeTrialRow = {
-  id: string;
-  trial_start_at: string | null;
-};
-
-export function formatFreeTrialClickCount(count: number): string {
-  return count.toLocaleString('en-US');
-}
-
 export async function readFreeTrialClickCount(): Promise<number> {
   try {
     const supabase = await createClient();
