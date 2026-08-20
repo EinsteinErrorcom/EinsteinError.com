@@ -75,7 +75,10 @@ export function PageEndFooter({
       {pageNumber === 9 ? (
         <>
           <a href={CHECKOUT_PATH} className="page-end-footer__prices-link">
-            Go&nbsp;To&nbsp;PRICES
+            Go&nbsp;To&nbsp;
+            <span className="page-end-footer__prices-arrow">&rarr;</span>
+            {'\u00A0'}
+            PRICES
           </a>
           <br />
           <br />

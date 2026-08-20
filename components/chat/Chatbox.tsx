@@ -97,6 +97,7 @@ export default function Chatbox({
   const [historyLoaded, setHistoryLoaded] = useState(!historyUserId);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showEraseConfirm, setShowEraseConfirm] = useState(false);
 
   useEffect(() => {
     if (!historyUserId) {
@@ -221,6 +222,11 @@ export default function Chatbox({
     if (historyUserId) {
       clearStoredMessages(historyUserId);
     }
+    setShowEraseConfirm(false);
+  };
+
+  const handleEraseNo = () => {
+    setShowEraseConfirm(false);
   };
 
   if (!embedded && !isOpen) {
@@ -252,7 +258,7 @@ export default function Chatbox({
                   ERASE CHAT ? (
                   <button
                     type="button"
-                    onClick={handleEraseWindow}
+                    onClick={() => setShowEraseConfirm(true)}
                     disabled={loading}
                     className="max-lit-chatbox__erase-choice"
                   >
@@ -261,6 +267,7 @@ export default function Chatbox({
                   {'\u00A0'.repeat(2)}
                   <button
                     type="button"
+                    onClick={handleEraseNo}
                     disabled={loading}
                     className="max-lit-chatbox__erase-choice"
                   >
@@ -353,6 +360,45 @@ export default function Chatbox({
           </p>
         </div>
       </div>
+      {showEraseConfirm ? (
+        <div
+          className="max-lit-chatbox__erase-confirm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="max-lit-erase-confirm-title"
+        >
+          <div className="max-lit-chatbox__erase-confirm-panel">
+            <p
+              id="max-lit-erase-confirm-title"
+              className="max-lit-chatbox__erase-confirm-title"
+            >
+              CONFIRM ERASE ?
+            </p>
+            <p className="max-lit-chatbox__erase-confirm-text">
+              This will clear all chat messages in this window.
+            </p>
+            <p className="max-lit-chatbox__erase-confirm-actions">
+              (
+              <button
+                type="button"
+                onClick={handleEraseWindow}
+                className="max-lit-chatbox__erase-choice"
+              >
+                Yes
+              </button>
+              {'\u00A0'.repeat(2)}
+              <button
+                type="button"
+                onClick={handleEraseNo}
+                className="max-lit-chatbox__erase-choice"
+              >
+                No
+              </button>
+              )
+            </p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
