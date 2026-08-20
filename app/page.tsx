@@ -161,7 +161,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Note :</span><br/>
         If you access&nbsp; <span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>be sure to read these<br/>" INSTRUCTIONS "<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Very&nbsp; Important&nbsp; !</span><br/><br/>
-        <img src="/INSTRUCTMAX.png?v=20260820" width={500} height={700} alt="Instructions" />
+        <img src="/INSTRUCTMAX.png?v=20260820-2" width={500} height={700} alt="Instructions" />
         <div className="spacer" style={{ height: '70px' }}></div>
         <br/>
         Discover<br/>&quot;&nbsp;PURE&nbsp;&quot;<br/>Physics<br/>Now&nbsp;&nbsp;!
