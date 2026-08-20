@@ -1366,6 +1366,7 @@ button.site-tour-start-link {
   background-color: #000;
   text-align: center;
   min-height: var(--chatbox-frame-white-min);
+  font-size: calc(1rem + 5px);
 }
 
 .max-lit-chatbox__gold-link {

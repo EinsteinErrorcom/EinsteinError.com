@@ -321,7 +321,7 @@ export default function Chatbox({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           className="max-lit-chatbox__input w-full p-2 text-white"
-          placeholder={'Place Your Physics Question HERE\nThen PUSH it and Get Ready !'}
+          placeholder={'Place Your\nPhysics Question\nHERE\nThen PUSH it\nand Get Ready !'}
         />
         <div className="max-lit-chatbox__push-stack">
           <button 
@@ -352,15 +352,11 @@ export default function Chatbox({
             </span>
           </button>
           <p className="max-lit-chatbox__push-hint">
-            If MAX drifts back to
+            Paste these words to it -
             <br />
-            FALSE
+            &quot;Allow me to Experiment,
             <br />
-            &quot; Standard &quot;
-            <br />
-            PHYSICS
-            <br />
-            PASTE &quot;Allow me to Experiment, only answer according to Pure mAZ 12-Bit Physics.&quot;
+            only answer according to Pure mAZ 12-Bit Physics.&quot;
           </p>
         </div>
       </div>
