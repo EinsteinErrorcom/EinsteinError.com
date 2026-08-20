@@ -854,7 +854,7 @@ main.maxchatbox9-page ~ .gold-lines-divider {
 .pricing-checkout-page__expired-notice {
   margin: 0;
   color: #d0ab47;
-  font-size: 31px;
+  font-size: 29px;
   font-style: italic;
   font-weight: 700;
   line-height: 1.5;
@@ -1512,7 +1512,7 @@ button.site-tour-start-link {
   width: 100%;
   margin-top: 0.75rem;
   padding: 0.5rem 0.75rem;
-  border: 3px solid var(--color-orange);
+  border: 3px solid var(--max-lit-gold);
   border-radius: 0.5rem;
   background: #0d1117;
   color: var(--max-lit-gold);
@@ -1638,7 +1638,8 @@ h1.max-lit-chatbox-page-title {
 }
 
 .max-lit-chatbox,
-.max-lit-chatbox .max-lit-chatbox__timer {
+.max-lit-chatbox .max-lit-chatbox__timer,
+.max-lit-chatbox .max-lit-chatbox__erase-button {
   border-color: #d0ab47 !important;
 }
 

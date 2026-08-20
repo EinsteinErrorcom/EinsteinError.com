@@ -336,7 +336,7 @@ export default function Chatbox({
             </span>
           </button>
           <p className="max-lit-chatbox__push-hint">
-            If MAX-LIT begins to &quot;drift&quot; back into FALSE &quot;Standard&quot; Physics, erase the Chat and hard-refresh the page, then
+            If MAX-LIT begins to &quot;drift&quot; back into <span className="c-red">FALSE</span> &quot;Standard&quot; Physics, erase the Chat and hard-refresh the page, then
             <br />
             Paste these words to it -
             <br />
