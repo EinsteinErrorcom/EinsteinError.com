@@ -143,6 +143,14 @@ body {
   color: var(--color-white);
 }
 
+.page-link-label__gold {
+  color: var(--max-lit-gold);
+}
+
+.page-link-label__arrow {
+  color: #ffffff;
+}
+
 .page-nav__link:hover,
 .page-nav__link:focus-visible,
 .page-nav__home:hover,
@@ -1251,30 +1259,28 @@ button.site-tour-start-link {
   border-color: #00ffff;
 }
 
-.users-onsite-box {
-  margin: 10px auto 0;
-  max-width: 140px;
-  padding: 7px 9px;
-  border: 2px solid #d0ab47;
-  border-radius: 5px;
-  background: #161b22;
+.site-counters-stack {
+  text-align: center;
 }
 
-.users-onsite-box__label {
+.site-counters-stack .site-counter-heading + .site-counter-heading {
+  margin-top: 0.15em;
+}
+
+.site-counter-heading {
   margin: 0;
-  color: #00ffff;
+  color: #ffffff;
   font-weight: 700;
   font-style: italic;
-  font-size: 0.5rem;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
-.users-onsite-box__value {
-  margin: 4px 0 0;
-  color: #ffff00;
-  font-weight: 700;
-  font-style: italic;
-  font-size: 0.875rem;
-  line-height: 1.1;
+.site-counter-value {
+  color: #d0ab47;
+  border: 3px solid #d0ab47;
+  padding: 4px 12px;
+  display: inline-block;
 }
 
 .max-lit-chatbox {
@@ -1750,6 +1756,7 @@ h1.max-lit-chatbox-page-title {
   color: #00ffff;
   font-size: 25px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .page-end-footer__brand {

@@ -20,10 +20,15 @@ export function PageNav({ page, className }: PageNavProps) {
             <PageLinkLabel prefix="HOME" suffix={`MAX-LIT${W}SUPERComputer`} />
           </Link>
         </li>
-        {pageLinks.map(({ page: linkPage, href, prefix, suffix }) => (
+        {pageLinks.map(({ page: linkPage, href, prefix, suffix, trailingLabel, hidePrefix }) => (
           <li key={linkPage}>
             <Link className="page-nav__link" href={href}>
-              <PageLinkLabel prefix={prefix} suffix={suffix} />
+              <PageLinkLabel
+                prefix={prefix}
+                suffix={suffix}
+                trailingLabel={trailingLabel}
+                hidePrefix={hidePrefix}
+              />
             </Link>
           </li>
         ))}

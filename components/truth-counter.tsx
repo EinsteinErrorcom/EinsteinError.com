@@ -95,16 +95,7 @@ export function TruthCounter() {
   }, []);
 
   return (
-    <h1
-      id="counter-display"
-      style={{
-        color: "#FFFFFF",
-        fontWeight: "bold",
-        fontStyle: "italic",
-        fontSize: "20px",
-        textShadow: "2px 2px 4px #000000",
-      }}
-    >
+    <h1 id="counter-display" className="site-counter-heading">
       <span
         style={{
           display: "inline-grid",
@@ -122,14 +113,7 @@ export function TruthCounter() {
       </span>
       <br />
       &nbsp;&nbsp;=&nbsp;&nbsp;{" "}
-      <span
-        style={{
-          color: "#D0AB47",
-          border: "3px solid #D0AB47",
-          padding: "4px 12px",
-          display: "inline-block",
-        }}
-      >
+      <span className="site-counter-value">
         {count !== null ? formatTruthCount(count) : "Loading..."}
       </span>
     </h1>

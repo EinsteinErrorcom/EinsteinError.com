@@ -89,6 +89,10 @@ export default async function Home({ searchParams }: HomeProps) {
         <PurchasesLink />
       </div>
       <SiteHeader page={1} />
+      <div className="site-counters-stack">
+        <TruthCounter />
+        <UsersOnsiteDisplay />
+      </div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
@@ -100,15 +104,8 @@ export default async function Home({ searchParams }: HomeProps) {
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * CLICK&nbsp;&nbsp;&nbsp;HERE&nbsp;&nbsp;&nbsp;FOR * *<br/>* * ALL&nbsp;&nbsp;&nbsp;PROOFS * *<br/>* * ON&nbsp;&nbsp;&nbsp;PAGE 2 * *</a><br/><br/><br/><br/><a href={CHECKOUT_PATH} className="banner-image-link"><img src="/TITLE2.png" alt="Einstein Error Title Banner" width={700} height={150} /></a>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * CLICK&nbsp;&nbsp;&nbsp;HERE&nbsp;&nbsp;&nbsp;FOR * *<br/>* * ALL&nbsp;&nbsp;&nbsp;PROOFS * *<br/>* * ON&nbsp;&nbsp;&nbsp;PAGE 2 * *</a>
       </div>
-      <div className="checkout-banner-link" style={{ marginTop: 0 }}>
-        <UsersOnsiteDisplay />
-      </div>
-      <div className="spacer" style={{ height: '20px' }}></div>
-      
-      <TruthCounter />
-      
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         The Discovery of<br/>

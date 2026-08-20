@@ -43,8 +43,18 @@ export function PageEndFooter({
           {nextLabel ?? (
             nextPageLink ? (
               <>
-                <PageLinkLabel prefix={nextPageLink.prefix} suffix={nextPageLink.suffix} />{' '}
-                &rarr;
+                <PageLinkLabel
+                  prefix={nextPageLink.prefix}
+                  suffix={nextPageLink.suffix}
+                  trailingLabel={nextPageLink.trailingLabel}
+                  hidePrefix={nextPageLink.hidePrefix}
+                />
+                {!nextPageLink.hidePrefix ? (
+                  <>
+                    {' '}
+                    &rarr;
+                  </>
+                ) : null}
               </>
             ) : (
               <>
