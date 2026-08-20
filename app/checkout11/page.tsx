@@ -33,7 +33,9 @@ export default async function Checkout11Page() {
             Choose an option below ...
           </p>
           <h1 className="pricing-checkout-page__title">
-            MAX-LIT{'\u00A0'.repeat(4)}Secure{'\u00A0'.repeat(4)}CHECK-OUT
+            MAX-LIT
+            <br />
+            Secure{'\u00A0'.repeat(4)}CHECK-OUT
           </h1>
         </div>
         {!isSignedIn ? (
