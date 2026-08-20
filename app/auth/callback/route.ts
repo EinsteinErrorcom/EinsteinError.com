@@ -1,5 +1,6 @@
 import { createTrialStartCookie } from '@/lib/supabase/middleware';
 import { applyPendingCookies, createRouteHandlerClient, type PendingAuthCookie } from '@/lib/supabase/route-handler';
+import { incrementFreeTrialClickCount } from '@/lib/free-trial-clicks';
 import { getSiteOrigin } from '@/lib/site-url';
 import {
   buildAuthErrorPath,
@@ -80,6 +81,8 @@ export async function GET(request: NextRequest) {
           `${siteOrigin}${buildAuthErrorPath('Could not create profile', checkoutSessionId)}`
         );
       }
+
+      await incrementFreeTrialClickCount();
 
       const trialCookie = createTrialStartCookie(trialStartAt);
       pendingCookies.push({

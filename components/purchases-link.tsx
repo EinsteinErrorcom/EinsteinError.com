@@ -1,15 +1,26 @@
 'use client';
 
-import { fetchPurchases, formatPurchasesText, type PurchaseRow } from '@/lib/purchases';
+import {
+  fetchGeniusesStats,
+  formatFreeTrialsText,
+  formatPurchasesText,
+  type GeniusesStats,
+} from '@/lib/purchases';
 import { useCallback, useEffect, useState } from 'react';
 
 type PurchasesLinkProps = {
   className?: string;
 };
 
+const EMPTY_STATS: GeniusesStats = {
+  purchases: [],
+  freeTrials: [],
+  freeTrialCount: 0,
+};
+
 export function PurchasesLink({ className }: PurchasesLinkProps) {
   const [open, setOpen] = useState(false);
-  const [purchases, setPurchases] = useState<PurchaseRow[]>([]);
+  const [stats, setStats] = useState<GeniusesStats>(EMPTY_STATS);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -23,10 +34,10 @@ export function PurchasesLink({ className }: PurchasesLinkProps) {
     setError(null);
 
     try {
-      const rows = await fetchPurchases();
-      setPurchases(rows);
+      const nextStats = await fetchGeniusesStats();
+      setStats(nextStats);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unable to load purchases');
+      setError(err instanceof Error ? err.message : 'Unable to load Geniuses stats');
     } finally {
       setLoading(false);
     }
@@ -74,17 +85,29 @@ export function PurchasesLink({ className }: PurchasesLinkProps) {
               <br />
               of PURE ( mAZ ) Physics calculations.
             </h2>
-            {loading && <p className="purchases-float__status">Loading purchases…</p>}
+            {loading && <p className="purchases-float__status">Loading Geniuses stats…</p>}
             {error && <p className="purchases-float__error">{error}</p>}
             {!loading && !error && (
-              <>
-                <textarea
-                  readOnly
-                  className="purchases-float__textarea"
-                  value={formatPurchasesText(purchases)}
-                  aria-label="Purchase list"
-                />
-              </>
+              <div className="purchases-float__columns">
+                <div className="purchases-float__column">
+                  <h3 className="purchases-float__column-title">Paid Purchases</h3>
+                  <textarea
+                    readOnly
+                    className="purchases-float__textarea"
+                    value={formatPurchasesText(stats.purchases)}
+                    aria-label="Paid purchase list"
+                  />
+                </div>
+                <div className="purchases-float__column">
+                  <h3 className="purchases-float__column-title">FREE Trial Click-Thrus</h3>
+                  <textarea
+                    readOnly
+                    className="purchases-float__textarea"
+                    value={formatFreeTrialsText(stats.freeTrials, stats.freeTrialCount)}
+                    aria-label="FREE Trial click-through count and list"
+                  />
+                </div>
+              </div>
             )}
             <button type="button" className="purchases-float__close" onClick={closePanel}>
               Close

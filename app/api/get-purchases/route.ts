@@ -1,3 +1,7 @@
+import {
+  readFreeTrialClickCount,
+  type FreeTrialRow,
+} from '@/lib/free-trial-clicks';
 import { createServiceRoleClient } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
@@ -44,6 +48,42 @@ async function readPurchasesWithRpc(): Promise<PurchaseRow[] | null> {
   }
 }
 
+async function readFreeTrialsWithServiceRole(): Promise<FreeTrialRow[] | null> {
+  try {
+    const admin = createServiceRoleClient();
+    const { data, error } = await admin
+      .from('profiles')
+      .select('id, trial_start_at')
+      .eq('is_subscribed', false)
+      .eq('access_tier', 'trial')
+      .not('trial_start_at', 'is', null)
+      .order('trial_start_at', { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    return data ?? [];
+  } catch {
+    return null;
+  }
+}
+
+async function readFreeTrialsWithRpc(): Promise<FreeTrialRow[] | null> {
+  try {
+    const supabase = await createClient();
+    const { data, error } = await supabase.rpc('get_free_trial_clickthroughs');
+
+    if (error) {
+      throw error;
+    }
+
+    return (data as FreeTrialRow[] | null) ?? [];
+  } catch {
+    return null;
+  }
+}
+
 export async function GET() {
   const purchases =
     (await readPurchasesWithServiceRole()) ?? (await readPurchasesWithRpc());
@@ -58,5 +98,14 @@ export async function GET() {
     );
   }
 
-  return NextResponse.json(purchases);
+  const freeTrials =
+    (await readFreeTrialsWithServiceRole()) ?? (await readFreeTrialsWithRpc()) ?? [];
+
+  const freeTrialCount = await readFreeTrialClickCount();
+
+  return NextResponse.json({
+    purchases,
+    freeTrials,
+    freeTrialCount,
+  });
 }

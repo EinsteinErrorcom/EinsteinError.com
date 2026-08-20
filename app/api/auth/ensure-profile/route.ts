@@ -1,4 +1,5 @@
 import { createTrialStartCookie } from '@/lib/supabase/middleware';
+import { incrementFreeTrialClickCount } from '@/lib/free-trial-clicks';
 import { createClient, getAuthenticatedUser } from '@/lib/supabase/server';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
@@ -32,6 +33,8 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json({ error: 'Could not create profile' }, { status: 500 });
   }
+
+  await incrementFreeTrialClickCount();
 
   const cookieStore = await cookies();
   const trialCookie = createTrialStartCookie(trialStartAt);

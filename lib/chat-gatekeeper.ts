@@ -1,4 +1,5 @@
 import { isAccessActive } from '@/lib/access';
+import { incrementFreeTrialClickCount } from '@/lib/free-trial-clicks';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 export type ChatGatekeeperFailure = {
@@ -49,6 +50,8 @@ async function loadOrCreateProfile(
   if (insertError || !created) {
     return null;
   }
+
+  await incrementFreeTrialClickCount();
 
   return created;
 }

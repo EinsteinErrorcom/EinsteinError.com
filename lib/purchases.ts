@@ -1,4 +1,8 @@
 import { formatPurchaseAmount } from '@/lib/access';
+import {
+  formatFreeTrialClickCount,
+  type FreeTrialRow,
+} from '@/lib/free-trial-clicks';
 
 export type PurchaseRow = {
   id: string;
@@ -62,6 +66,26 @@ export function formatPurchasesText(rows: PurchaseRow[]): string {
   return rows.map(formatPurchaseLine).join('\n\n');
 }
 
+export function formatFreeTrialLine(row: FreeTrialRow): string {
+  return formatPurchaseDate(row.trial_start_at);
+}
+
+export function formatFreeTrialsText(rows: FreeTrialRow[], totalCount: number): string {
+  const countLine = `Count: ${formatFreeTrialClickCount(totalCount)}`;
+
+  if (rows.length === 0) {
+    return `${countLine}\n\nNo active FREE Trial\nclick-throughs listed.`;
+  }
+
+  return `${countLine}\n\n${rows.map(formatFreeTrialLine).join('\n\n')}`;
+}
+
+export type GeniusesStats = {
+  purchases: PurchaseRow[];
+  freeTrials: FreeTrialRow[];
+  freeTrialCount: number;
+};
+
 export function downloadPurchaseCsv(rows: PurchaseRow[]) {
   const csvContent = formatPurchaseCsv(rows);
   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
@@ -75,13 +99,13 @@ export function downloadPurchaseCsv(rows: PurchaseRow[]) {
   URL.revokeObjectURL(url);
 }
 
-export async function fetchPurchases(): Promise<PurchaseRow[]> {
+export async function fetchGeniusesStats(): Promise<GeniusesStats> {
   const res = await fetch('/api/get-purchases');
-  const data = (await res.json()) as PurchaseRow[] | { error?: string };
+  const data = (await res.json()) as GeniusesStats | { error?: string };
 
   if (!res.ok) {
-    throw new Error('error' in data ? data.error : 'Unable to load purchases');
+    throw new Error('error' in data ? data.error : 'Unable to load Geniuses stats');
   }
 
-  return data as PurchaseRow[];
+  return data as GeniusesStats;
 }
