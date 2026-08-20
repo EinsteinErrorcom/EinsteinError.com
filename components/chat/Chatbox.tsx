@@ -262,12 +262,9 @@ export default function Chatbox({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           className="max-lit-chatbox__input w-full p-2 text-white"
-          placeholder={'Ask Physics Question HERE\nThen PUSH it and Get Ready !'}
+          placeholder={'Place Your Physics Question HERE\nThen PUSH it and Get Ready !'}
         />
         <div className="max-lit-chatbox__push-stack">
-          <p className="max-lit-chatbox__push-hint">
-            Always tell MAX to{'\u00A0'.repeat(4)}&quot;Calculate via mAZ 12-Bit PURE Physics&quot;
-          </p>
           <button 
             type="button"
             onClick={() => {
@@ -284,10 +281,10 @@ export default function Chatbox({
                 'Processing...'
               ) : (
                 <>
-                  PUSH{'\u00A0\u00A0'}HERE
+                  CLICK{'\u00A0'.repeat(3)}HERE
                   <br />
                   <span className="max-lit-chatbox__push-button-line-white">
-                    to Send your Question to
+                    to Push your Question to
                   </span>
                   <br />
                   <span className="max-lit-chatbox__push-button-max">&quot; MAX &quot;</span>
@@ -295,6 +292,13 @@ export default function Chatbox({
               )}
             </span>
           </button>
+          <p className="max-lit-chatbox__push-hint">
+            Always tell MAX to
+            <br />
+            &quot; Calculate via mAZ 12-Bit
+            <br />
+            PURE{'\u00A0\u00A0'}Physics &quot;
+          </p>
         </div>
       </div>
     </div>

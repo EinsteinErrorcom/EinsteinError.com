@@ -25,7 +25,7 @@ export function ChatExitLinks() {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        gap: '16px',
+        gap: '48px',
         marginBottom: '16px',
         fontSize: '18px',
         fontWeight: 'bold',
