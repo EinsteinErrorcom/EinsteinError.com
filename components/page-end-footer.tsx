@@ -24,10 +24,12 @@ export function PageEndFooter({
   const nextPath = nextHref ?? getNextSitePagePath(pageNumber);
   const nextPageLink = getPageLink(pageNumber + 1);
 
+  const footerTopMargin = compact ? 0 : pageNumber === 9 ? '50px' : '100px';
+
   return (
     <div
       className="page-end-footer"
-      style={{ textAlign: 'center', marginTop: compact ? 0 : '100px' }}
+      style={{ textAlign: 'center', marginTop: footerTopMargin }}
     >
       {nextPath ? (
         <a
@@ -67,8 +69,12 @@ export function PageEndFooter({
           )}
         </a>
       ) : null}
-      <br />
-      <br />
+      {pageNumber === 9 ? <br /> : (
+        <>
+          <br />
+          <br />
+        </>
+      )}
       <span className="page-end-footer__brand">Einstein Error . com</span>
       <br />
       {!compact ? <div className="spacer" style={{ height: '50px' }}></div> : null}
