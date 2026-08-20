@@ -1504,7 +1504,7 @@ button.site-tour-start-link {
 }
 
 .max-lit-chatbox__timer {
-  border: 2px solid #d0ab47;
+  border: 3px solid #d0ab47;
 }
 
 .max-lit-chatbox__erase-button {
@@ -1515,7 +1515,7 @@ button.site-tour-start-link {
   border: 3px solid var(--color-orange);
   border-radius: 0.5rem;
   background: #0d1117;
-  color: var(--color-orange);
+  color: var(--max-lit-gold);
   font-weight: 700;
   font-style: italic;
   font-size: 1rem;
