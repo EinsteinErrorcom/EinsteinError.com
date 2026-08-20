@@ -19,7 +19,7 @@ export const PAGE_TITLES: Record<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8, string> = {
   4: 'Amazing PHYSICS',
   5: 'Videos of PROOF',
   6: 'The TRUE Universe',
-  7: 'NUMBERS of the True Universe',
+  7: 'NUMBERS Re: the True Universe',
   8: 'SolarMathTM CHARTS',
 };
 

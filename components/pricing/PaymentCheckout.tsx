@@ -32,8 +32,8 @@ function renderTierLabel(label: string) {
   if (lines.length > 1) {
     return (
       <>
-        <span>{renderTierLabelLine(lines[0])}</span>
-        <span>{renderTierLabelLine(lines[1])}</span>
+        <span className="payment-checkout__tier-duration">{renderTierLabelLine(lines[0])}</span>
+        <span className="payment-checkout__tier-cost">{renderTierLabelLine(lines[1])}</span>
       </>
     );
   }

@@ -1,3 +1,4 @@
+import { getPageLink, PageLinkLabel } from '@/components/page-link-label';
 import { getNextSitePagePath } from '@/lib/site-pages';
 import type { ReactNode } from 'react';
 
@@ -20,6 +21,7 @@ export function PageEndFooter({
   nextHref,
 }: PageEndFooterProps) {
   const nextPath = nextHref ?? getNextSitePagePath(pageNumber);
+  const nextPageLink = getPageLink(pageNumber + 1);
 
   return (
     <div
@@ -39,11 +41,18 @@ export function PageEndFooter({
             </>
           ) : null}
           {nextLabel ?? (
-            <>
-              Click&nbsp;&nbsp;to&nbsp;&nbsp;Next&nbsp;&nbsp;
-              <span style={{ color: '#FFFFFF' }}>Page&nbsp;{pageNumber + 1}</span>{' '}
-              &rarr;
-            </>
+            nextPageLink ? (
+              <>
+                <PageLinkLabel prefix={nextPageLink.prefix} suffix={nextPageLink.suffix} />{' '}
+                &rarr;
+              </>
+            ) : (
+              <>
+                Click&nbsp;&nbsp;to&nbsp;&nbsp;Next&nbsp;&nbsp;
+                <span style={{ color: '#FFFFFF' }}>Page&nbsp;{pageNumber + 1}</span>{' '}
+                &rarr;
+              </>
+            )
           )}
         </a>
       ) : null}

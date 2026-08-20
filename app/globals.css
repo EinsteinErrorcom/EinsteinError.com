@@ -751,14 +751,15 @@ p {
 }
 
 .pricing-checkout-page {
-  min-height: auto;
+  min-height: 100vh;
   background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   overflow: visible;
-  padding: 0.75rem 2rem 0.25rem;
+  padding: 0.75rem 2rem 0;
+  margin-bottom: calc(-1 * max(var(--space-sm), env(safe-area-inset-bottom, 0px)));
 }
 
 .pricing-checkout-page ~ .gold-lines-divider {
@@ -773,6 +774,8 @@ p {
   align-items: center;
   gap: 0.75rem;
   overflow: visible;
+  flex: 1;
+  min-height: 100%;
 }
 
 .pricing-checkout-page__gold-header {
@@ -828,11 +831,14 @@ p {
 
 .pricing-checkout-page__tail {
   width: 100%;
+  flex: 1;
   min-height: 12vh;
-  padding-top: 5vh;
+  margin-top: 2rem;
+  padding: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .pricing-checkout-page__tail-group {
@@ -840,6 +846,7 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  margin-bottom: calc(-5rem + 1.5em);
 }
 
 .pricing-checkout-page__tail .page-end-footer {
@@ -856,6 +863,8 @@ p {
 
 .pricing-checkout-page__tail .page-end-footer .spacer:last-child {
   height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .pricing-checkout-page__back {
@@ -944,10 +953,22 @@ p {
   text-align: center;
 }
 
+.payment-checkout__tier-duration {
+  font-size: calc(1.15rem + 7px);
+}
+
 .payment-checkout__tier-price {
   color: #ffffff;
   font-size: calc(1.15rem + 5px);
   font-weight: 700;
+}
+
+.payment-checkout__tier-cost {
+  color: #999;
+}
+
+.payment-checkout__tier-cost .payment-checkout__cost-hour {
+  color: #ffffff;
 }
 
 .payment-checkout__cost-hour {
@@ -1577,6 +1598,10 @@ h1.max-lit-chatbox-page-title {
   font-weight: 700;
   font-style: italic;
   line-height: 1.45;
+}
+
+.page5-content .page-end-footer {
+  margin-top: 40px !important;
 }
 
 .page5__intro {

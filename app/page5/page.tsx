@@ -31,7 +31,7 @@ const PAGE5_VIDEO_LINKS = [
 export default function Page5() {
   return (
     <div className="page-wrapper">
-      <main id="main-content">
+      <main id="main-content" className="page5-content">
         <SiteHeader page={5} />
         <br />
         <br />
@@ -81,9 +81,6 @@ export default function Page5() {
             );
           })}
         </div>
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <PageEndFooter pageNumber={5} />

@@ -13,7 +13,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     priceId: 'price_1U0ACSC39oHx6wOFTQfZCCTF',
     price: '$15',
-    label: '\t( 3 Hours of Time )\n( Cost = 5 dollars per Hour )',
+    label: '\t3 Hours of Time\n( Cost = 5 dollars per Hour )',
     description: '',
     amountCents: 1500,
     currency: 'usd',
@@ -21,7 +21,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     priceId: 'price_1U0ACSC39oHx6wOFWoJosDHi',
     price: '$75',
-    label: '\t( 24 Hours of Time )\n( Cost = 4 dollars per Hour )',
+    label: '\t24 Hours of Time\n( Cost = 4 dollars per Hour )',
     description: '',
     amountCents: 7500,
     currency: 'usd',
@@ -29,7 +29,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     priceId: 'price_1U0ACSC39oHx6wOFgtNTWLNV',
     price: '$400',
-    label: '\t( 7 Days of Time )\n( Cost = 3 dollars per Hour )',
+    label: '\t7 Days of Time\n( Cost = 3 dollars per Hour )',
     description: '',
     amountCents: 40000,
     currency: 'usd',
