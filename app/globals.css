@@ -1327,7 +1327,7 @@ button.site-tour-start-link {
 }
 
 .max-lit-chatbox__input {
-  border: 4px solid #d0ab47;
+  border: 4px solid #ffffff;
   border-radius: 0.5rem;
   background-color: #000;
   text-align: center;
@@ -1382,7 +1382,7 @@ button.site-tour-start-link {
 
 .max-lit-chatbox__push-button {
   background-color: #000;
-  border: 4px solid #d0ab47;
+  border: 4px solid #00ff00;
   font-style: italic;
   min-height: 5.25rem;
 }
@@ -1481,10 +1481,16 @@ h1.max-lit-chatbox-page-title {
 }
 
 .max-lit-chatbox,
-.max-lit-chatbox .max-lit-chatbox__timer,
-.max-lit-chatbox .max-lit-chatbox__input,
-.max-lit-chatbox .max-lit-chatbox__push-button {
+.max-lit-chatbox .max-lit-chatbox__timer {
   border-color: #d0ab47 !important;
+}
+
+.max-lit-chatbox .max-lit-chatbox__input {
+  border-color: #ffffff !important;
+}
+
+.max-lit-chatbox .max-lit-chatbox__push-button {
+  border-color: #00ff00 !important;
 }
 
 .max-lit-chatbox .max-lit-chatbox__user-message {

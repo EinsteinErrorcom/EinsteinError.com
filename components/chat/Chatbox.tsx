@@ -248,7 +248,7 @@ export default function Chatbox({
                   disabled={loading}
                   className="max-lit-chatbox__erase-button"
                 >
-                  Erase Window
+                  Erase{'\u00A0'.repeat(4)}Window
                 </button>
               ) : null}
             </>
