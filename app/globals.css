@@ -1863,6 +1863,21 @@ h1.max-lit-chatbox-page-title {
   font-style: italic;
 }
 
+.page-end-footer__prices-link {
+  color: var(--color-cyan);
+  font-size: 25px;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.page-end-footer__prices-link:hover,
+.page-end-footer__prices-link:focus-visible {
+  color: var(--color-cyan);
+  text-decoration: underline;
+  outline: none;
+}
+
 .page8__intro {
   max-width: min(700px, 100%);
   margin: 0 auto 6rem;
