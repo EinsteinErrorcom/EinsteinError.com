@@ -224,7 +224,18 @@ export default async function Home({ searchParams }: HomeProps) {
       <img src="/TWISTED.png" width={500} height={700} alt="Twisted" />
       <PageEndFooter
         pageNumber={1}
-        leadText={<>See&nbsp; the&nbsp; enormous&nbsp; PROOF</>}
+        nextLabel={
+          <span className="page-end-footer__landing-page2">
+            See&nbsp;&nbsp;the&nbsp;&nbsp;enormous&nbsp;&nbsp;PROOF&nbsp;&nbsp;of
+            <br />
+            Einstein&apos;s{'\u00A0'.repeat(6)}ERROR
+            <br />
+            Click&nbsp;&nbsp;on&nbsp;&nbsp;
+            <span className="page-end-footer__landing-page2-arrow">&rarr;</span>
+            {'\u00A0'}
+            <span className="page-end-footer__landing-page2-label">PAGE&nbsp;2</span>
+          </span>
+        }
       />
     </main>
   );

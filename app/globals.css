@@ -1759,6 +1759,23 @@ h1.max-lit-chatbox-page-title {
   white-space: nowrap;
 }
 
+.page-end-footer__next-link:has(.page-end-footer__landing-page2) {
+  white-space: normal;
+}
+
+.page-end-footer__landing-page2 {
+  display: inline-block;
+  text-align: center;
+}
+
+.page-end-footer__landing-page2-arrow {
+  color: var(--max-lit-gold);
+}
+
+.page-end-footer__landing-page2-label {
+  color: #ffffff;
+}
+
 .page-end-footer__brand {
   color: var(--max-lit-gold);
   font-size: 30px;

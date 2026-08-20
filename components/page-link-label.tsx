@@ -20,14 +20,7 @@ export const PAGE_LINKS: readonly PageLink[] = [
     page: 2,
     href: '/page2',
     prefix: 'PAGE2',
-    hidePrefix: true,
-    suffix: (
-      <>
-        {`of${W}Einstein's${W}ERROR${W}on${W}`}
-        <span className="page-link-label__arrow">&rarr;{'\u00A0'}</span>
-        <span className="page-link-label__gold">PAGE 2</span>
-      </>
-    ),
+    suffix: `PROOFS${W}of${W}Einstein's${W}ERROR`,
   },
   {
     page: 3,
