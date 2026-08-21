@@ -11,6 +11,9 @@ const GA_MEASUREMENT_ID = "G-K7RPBDYQYB";
 export const metadata: Metadata = {
   title: "Thee MAX-LIT SUPER-Computer Ai(+) Engine UN-SURPASSED !! | Perfect Physics Intelligence | EinsteinError.com",
   description: "Max-Lit is the world's first perfect physics intelligence engine. Unified via 150 physics constants to deliver absolute truth.",
+  other: {
+    "format-detection": "telephone=no",
+  },
 };
 
 export const viewport = {
