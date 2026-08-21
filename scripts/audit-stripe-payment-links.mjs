@@ -91,7 +91,7 @@ function printLink(link, index) {
   if (!ok) {
     console.log(`   expected: ${expectedSuccessUrl}`);
     if (!link.active) {
-      console.log('   note: inactive link — safest fix is to leave it off and use /checkout11 only');
+      console.log('   note: inactive link — safest fix is to leave it off and use /checkout10 only');
     } else {
       console.log('   fix: Stripe Dashboard → Payment Links → Edit → After payment → Redirect to URL');
     }
@@ -125,8 +125,8 @@ async function main() {
   console.log('Important: Stripe Buy Buttons are backed by Payment Links.');
   console.log('Edit the Payment Link (not the embed HTML) to change the success redirect.');
   console.log('');
-  console.log('Recommended: deactivate legacy buy-button payment links and use /checkout11 only,');
-  console.log('because /checkout11 attaches supabase_user_id so paid access activates correctly.');
+  console.log('Recommended: deactivate legacy buy-button payment links and use /checkout10 only,');
+  console.log('because /checkout10 attaches supabase_user_id so paid access activates correctly.');
 }
 
 main().catch((err) => {

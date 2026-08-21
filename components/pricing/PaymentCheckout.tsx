@@ -114,7 +114,7 @@ export default function PaymentCheckout() {
       <p className="payment-checkout__intro">
         Choose your MAX-LIT access cost
         <br />
-        and your payment will be SECURELY made using STRIPE.
+        and your payment will be <strong>SECURELY</strong> made using <strong>STRIPE</strong>.
       </p>
 
       <div className="payment-checkout__tiers" data-tour-block={tourMode ? 'true' : undefined}>

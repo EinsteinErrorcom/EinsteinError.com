@@ -16,7 +16,7 @@ export const SITE_TOUR_STEPS: SiteTourStep[] = [
   { path: '/page7', label: 'NUMBERS Re: the True Universe' },
   { path: '/page8', label: 'Page 8' },
   { path: '/maxchatbox9', label: 'AI Chatbox' },
-  { path: '/checkout11', label: 'Checkout' },
+  { path: '/checkout10', label: 'Checkout' },
 ];
 
 export function getTourHref(path: string): string {

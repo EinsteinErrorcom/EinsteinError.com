@@ -9,7 +9,7 @@ export const SITE_PAGES = [
   '/page7',
   '/page8',
   '/maxchatbox9',
-  '/checkout11',
+  '/checkout10',
 ] as const;
 
 export const PAGE_TITLES: Record<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8, string> = {

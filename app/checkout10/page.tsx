@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 /** MAX-LIT Secure Checkout — 3 Stripe tiers ($15 / $75 / $400) — Page 10 */
-export default async function Checkout11Page() {
+export default async function Checkout10Page() {
   let isSignedIn = false;
 
   if (getSupabaseEnv()) {
@@ -25,10 +25,10 @@ export default async function Checkout11Page() {
     <main className="pricing-checkout-page">
       <div className="pricing-checkout-page__inner">
         <div className="pricing-checkout-page__gold-header">
-          <p className="pricing-checkout-page__expired-notice">
-            You have no more Time
+          <p className="pricing-checkout-page__expired-notice" style={{ marginBottom: '1.5em' }}>
+            Your available{'\u00A0\u00A0\u00A0'}TIME
             <br />
-            booked with MAX-LIT.
+            with{'\u00A0\u00A0\u00A0'}MAX-LIT{'\u00A0\u00A0'}is{'\u00A0\u00A0\u00A0'}&quot;{'\u00A0'}0{'\u00A0'}&quot;
             <br />
             Choose an option below ...
           </p>
@@ -49,7 +49,7 @@ export default async function Checkout11Page() {
             <Link href="/" className="pricing-checkout-page__home">
               HOME
             </Link>
-            <PageEndFooter pageNumber={11} compact />
+            <PageEndFooter pageNumber={10} compact />
           </div>
         </div>
       </div>

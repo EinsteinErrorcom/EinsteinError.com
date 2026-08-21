@@ -25,7 +25,7 @@ const PAGE5_VIDEO_LINKS = [
   },
   {
     href: "https://rumble.com/shorts/v7eg3v6",
-    titleLine: "Video 3",
+    titleLine: "MAGNETISM = The Strong Force",
     linkTitle: "CLICK this Video",
     placeholder: false,
   },

@@ -1001,6 +1001,11 @@ main.maxchatbox9-page ~ .gold-lines-divider {
   text-align: center;
 }
 
+.payment-checkout__intro strong {
+  font-weight: 800;
+  color: #ffffff;
+}
+
 .payment-checkout__tiers {
   display: grid;
   gap: 0.75rem;

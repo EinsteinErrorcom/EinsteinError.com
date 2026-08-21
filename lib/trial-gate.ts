@@ -3,17 +3,10 @@ import { isAccessActive } from '@/lib/access';
 import { isProfileTrialActive, type ProfileTrial } from './trial';
 
 /** Site page routes (10-page structure: 8 content + chat + checkout) */
-/** MAX-LIT Secure Checkout — 3 tiers ($15 / $75 / $400) — Page 10 */
-export const CHECKOUT_PATH = '/checkout11';
-export const CHECKOUT11_PATH = CHECKOUT_PATH;
-/** @deprecated Use CHECKOUT_PATH */
+/** MAX-LIT Secure Checkout — 3 Stripe tiers ($15 / $75 / $400) — Page 10 */
+export const CHECKOUT_PATH = '/checkout10';
 export const CHECKOUT10_PATH = CHECKOUT_PATH;
-/** @deprecated Use CHECKOUT_PATH */
-export const PRICING_PATH = CHECKOUT_PATH;
-export const CHAT9_PATH = '/maxchatbox9';
 export const CHAT_PATH = '/maxchatbox9';
-/** @deprecated Use CHAT_PATH */
-export const CHAT8_PATH = CHAT_PATH;
 
 /** Landing page anchor — scrolls to the Google Sign-In block */
 export const SIGN_IN_SECTION_ID = 'auth-section';
