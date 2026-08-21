@@ -12,8 +12,10 @@ export default function Page4() {
         
       <Page4HardBreaks>
       <div className="f-medium">
-        
-        Below are examples of truly Amazing Physics that are only possible with TRUE Reality. When we calculate via True<br/><span>{'( mAZ )'}</span> 12-Bit Physics we clearly see how the Universe is an amazing<br/>&quot;{'\u00A0'}<span className="c-white">Perfect Fitting</span>{'\u00A0'}&quot;<br/>piece of machinery.<br/> The Planets are NOT held in their orbits by Gravity but rather by their &quot;Densities&quot; in relation to the Density of the Lattice at any given &quot;orbit-Radius&quot;. They are held in their orbits exactly the same as any<br/>{' '}
+        <div className="spacer spacer--sm"></div>
+        <div className="spacer spacer--sm"></div>
+        <div className="spacer spacer--sm"></div>
+        Below are examples of truly Amazing Physics that are only possible with TRUE Reality. When we calculate via True<br/><span>{'( mAZ )'}</span> 12-Bit Physics we clearly see how the Universe is an amazing<br/>&quot;{'\u00A0'}<span className="c-white">Perfect Fitting</span>{'\u00A0'}&quot;<br/>piece of machinery.<br/><div className="spacer spacer--sm"></div><div className="spacer spacer--sm"></div>The Planets are NOT held in their orbits by Gravity but rather by their{'\u00A0\u00A0'}&quot;Densities&quot;<br/>in relation to the Density<br/>of the Lattice at any given<br/>&quot;orbit-Radius&quot;.<br/>They are held in their orbits<br/>exactly the same as any<br/>{' '}
         <span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
       
       </div>

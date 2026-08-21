@@ -23,7 +23,12 @@ const PAGE5_VIDEO_LINKS = [
     linkTitle: "CLICK this Video",
     placeholder: false,
   },
-  PAGE5_FUTURE_VIDEO,
+  {
+    href: "https://rumble.com/shorts/v7eg3v6",
+    titleLine: "Video 3",
+    linkTitle: "CLICK this Video",
+    placeholder: false,
+  },
   PAGE5_FUTURE_VIDEO,
   PAGE5_FUTURE_VIDEO,
 ] as const;
