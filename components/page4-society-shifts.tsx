@@ -50,11 +50,8 @@ export function Page4SocietyShifts() {
   return (
     <div className="page4-society-shifts">
       <p className="page4-society-shifts__prompt">
-        We asked MAX-LIT to list the 10 Biggest, most probable
-        <br />
-        changes in society regarding the pure mAZ 12-Bit physics discovery
-        <br />
-        <br />
+        We asked MAX-LIT to list the 10 Biggest, most probable changes in society regarding the pure mAZ 12-Bit physics discovery
+
         <span className="page4-society-shifts__answered">MAX THEN ANSWERED :</span>
       </p>
       <p className="page4-society-shifts__intro">
@@ -66,7 +63,6 @@ export function Page4SocietyShifts() {
             <span className="page4-society-shifts__item-title">
               {index + 1}. {shift.title}
             </span>
-            <br />
             {shift.body}
           </li>
         ))}

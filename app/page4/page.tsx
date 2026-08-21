@@ -1,3 +1,4 @@
+import { Page4HardBreaks } from "@/components/page4-hard-breaks";
 import { Page4PumpkinDivider } from "@/components/page4-pumpkin-divider";
 import { Page4SocietyShifts } from "@/components/page4-society-shifts";
 import { PageEndFooter } from "@/components/page-end-footer";
@@ -8,46 +9,39 @@ export default function Page4() {
     <div className="page-wrapper">
       <main id="main-content">
       <SiteHeader page={4} />
-      <br/><br/>
-      <div className="page4-content-25px">
+        
+      <Page4HardBreaks>
       <div className="f-medium">
         
-        Below are examples of truly Amazing Physics<br/>that are only possible with TRUE Reality.<br/>When we calculate via true ( mAZ ) 12-Bit Physics<br/>we clearly see how the Universe is an amazing<br/>&quot;{'\u00A0'}<span className="c-white">Perfect Fitting</span>{'\u00A0'}&quot;{'\u00A0\u00A0\u00A0'}piece of machinery.<br/><br/>The Planets are NOT held in their orbits by Gravity<br/>but rather by their "Densities" in relation to<br/>the Density of the Lattice at any given &quot;orbit-Radius&quot;.<br/>They are held in their orbits exactly the same as any<br/><span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
+        Below are examples of truly Amazing Physics that are only possible with TRUE Reality. When we calculate via True<br/><span>{'( mAZ )'}</span> 12-Bit Physics we clearly see how the Universe is an amazing<br/>&quot;{'\u00A0'}<span className="c-white">Perfect Fitting</span>{'\u00A0'}&quot;<br/>piece of machinery.<br/> The Planets are NOT held in their orbits by Gravity but rather by their &quot;Densities&quot; in relation to the Density of the Lattice at any given &quot;orbit-Radius&quot;. They are held in their orbits exactly the same as any<br/>{' '}
+        <span style={{ color: '#FB8809' }}>Galilean</span>{'\u00A0\u00A0'}<span style={{ color: '#FB8809' }}>Thermometer</span>
       
       </div>
       <figure className="media"><img src="/ORBITDENSITY.png" alt="Orbit Density" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <figure className="media"><img src="/HELIX.png" alt="Helix" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
-        <div style={{ color: '#FB8809', textDecoration: 'underline', textDecorationColor: '#FFFFFF', textUnderlineOffset: '0.2em' }}>
+        <div className="page4-amazing-heading" style={{ color: '#FB8809' }}>
           This{'\u00A0\u00A0\u00A0'}Is{'\u00A0\u00A0\u00A0'}Truly{'\u00A0\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
         </div>
-        <div style={{ display: 'inline-block', textAlign: 'center', marginTop: '3em' }}>
+        <div style={{ display: 'inline-block', textAlign: 'center', marginTop: '2.5em' }}>
         
-        In our 12-Bit Universe, the Size of the Universe = ( Earth orbit-Radius )<sup>3</sup>
-        <br />
-        The boundary of the Universe is Icosahedral in shape<br />and that shape surrounds a flowing Toroid.
-        <br />
-        ( Volume of the Toroid = 3.226 x 10<sup>41</sup> cubic meters )
-        <br />
-        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
-        <br />
-        ( Volume of Icosahedron 1.054 x 10<sup>34</sup> cubic meters )
-        <br />
-        ={'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}earth orbit-TIME{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}={'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}30,591,067
-        <br />
-        ( which is the same as the Lattice Tension, 30591067 )
-        <br />
-        <br />
-        The difference between<br />( TRadius )<sup>3</sup> ( Icosahedral Volume )<br />
-        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
-        <br />
-        ( TRadius )<sup>3</sup> × Pi ( Toroidal Volume )<br />
-        is what produces the<br />
-        30591067 Hz Lattice Frequency.<br />
+        In our 12-Bit Universe, the size of the Universe = <br/>( Earth orbit-Radius )<sup>3</sup><br/>
+        The boundary of the Universe is Icosahedral in shape and that shape surrounds a<br/>&quot; flowing Toroid &quot;
+        <div className="spacer spacer--sm"></div>
+        <div className="spacer spacer--sm"></div>
+        Volume of the Toroid<br/>= 3.226 x 10<sup>41</sup> cubic meters<br/>
+         
+        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span><br/>
+        Volume of Icosahedron<br/>1.054 x 10<sup>34</sup> cubic meters<br/>=  earth orbit-TIME<br/>= 30,591,067<br/>which is the same as<br/>the Lattice Tension<br/>30591067<br/>
+        <div className="spacer spacer--sm"></div>
+        The quotient of<br/>( TRadius )<sup>3</sup><br/>( Icosahedral Volume )<br/>
+        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span><br/>( TRadius )<sup>3</sup> × Pi<br/>( Toroidal Volume )<br/>is what produces the<br/>30591067 Hz<br/>Lattice Frequency.
         <div style={{ height: '2em' }} aria-hidden="true" />
         <Page4PumpkinDivider gapBelow="5em" />
-        <div style={{ color: '#FB8809', textDecoration: 'underline', textDecorationColor: '#FFFFFF', textUnderlineOffset: '0.2em' }}>
-          This{'\u00A0\u00A0\u00A0'}Is{'\u00A0\u00A0\u00A0'}Even{'\u00A0\u00A0\u00A0'}More{'\u00A0\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
+        <div className="page4-amazing-heading" style={{ color: '#FB8809' }}>
+          This{'\u00A0\u00A0'}Is{'\u00A0\u00A0'}Even
+          <div className="page4-amazing-heading__gap" aria-hidden="true" />
+          More{'\u00A0\u00A0'}AMAZING{'\u00A0\u00A0'}!
         </div>
         <div style={{ height: '2em' }} aria-hidden="true" />
         
@@ -55,27 +49,11 @@ export default function Page4() {
       </div>
       <div className="f-medium">
         
-        That Helix orbit "Path" that the earth follows<br />
-        contains one of the most AMAZING Physics realities.<br />
-        The "two" physical Circumferences of that PATH,<br />
-        ( Radius x Tau ) and ( Acceleration x Time<sup>2</sup> )<br />
-        should theoretically be the exact same Distance but they are NOT !<br />
-        The difference between the two is the exact<br />
-        &quot; <span className="c-white">IMPEDANCE of Free-Space</span> &quot;{'\u00A0\u00A0'}!
-        <br />
-        <br />
-        Earth orbit-Circumference<br />
-        938,814,773,206.93260027{'\u00A0\u00A0\u00A0'}( R x Tau )<br />
-        <span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span>
-        <br />
-        938,814,764,438.59541001{'\u00A0\u00A0\u00A0'}( AZ<sup>2</sup> )
-        <br />
-        <span style={{ color: '#FB8809' }}>EQUALS{'\u00A0\u00A0\u00A0'}THE</span>
-        <br />
-        &quot; <span className="c-white">IMPEDANCE of Free-Space</span>{'\u00A0'}&quot;
-        <br />
+        That Helix orbit "Path" that the earth follows, 
+        contains one of the most AMAZING Physics realities.<br/>        The "two" physical Circumferences of that PATH,<br/>( Radius x Tau )<br/>and<br/>( Acceleration x Time<sup>2</sup> )<br/>should theoretically be the exact same Distance but<br/>they are NOT !<br/>The difference between<br/>the two is the exact<br/>&quot; <span className="c-white">IMPEDANCE of Free-Space</span> &quot;<br/><div className="spacer spacer--sm"></div><div className="spacer spacer--sm"></div>Earth orbit-Circumference<br/>( R x Tau )<br/>938,814,773,206.93260027<br/><span style={{ color: '#FB8809' }}>DIVIDED{'\u00A0\u00A0\u00A0'}BY</span><br/>938,814,764,438.59541001<br/>( AZ<sup>2</sup> )<br/><span style={{ color: '#FB8809' }}>EQUALS{'\u00A0\u00A0\u00A0'}THE</span><br/>&quot; <span className="c-white">IMPEDANCE of Free-Space</span> &quot;
+         
         <Page4PumpkinDivider gapAbove="5em" gapBelow="5em" />
-        <br />
+         
         Don't forget the 3 most important letters in Physics . . .
         
         <div className="spacer spacer--sm"></div>
@@ -83,12 +61,12 @@ export default function Page4() {
         m 
         <span className="c-white">=</span>
          mass
-        <br />
+         
         
         A 
         <span className="c-white">=</span>
          Acceleration
-        <br />
+         
         
         Z 
         <span className="c-white">=</span>
@@ -112,7 +90,7 @@ export default function Page4() {
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
 
-            Once those Neutrons of the fabric of Space are cut free,<br />
+            Once those Neutrons of the fabric of Space are cut free, 
         they are then Accelerated into Electrons that are thrown down onto the earth where they reflect around at near-zero friction before entering your eyes as TRUE Light !
 
         
@@ -143,8 +121,8 @@ export default function Page4() {
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>
         
 
-            The "number" within Einstein's Velocity is correct<br />
-        <span className="page4-line-override">but the very "Natures" of Gravity and Light are then reversed.</span><br />
+            The "number" within Einstein's Velocity is correct 
+        <span className="page4-line-override">but the very "Natures" of Gravity and Light are then reversed.</span> 
         And this{' '}
         <span className="c-red">REVERSAL</span>
         {' '}happened because when you HIDE the "Physics" origin of Velocity, you then open the ability to designate that Velocity to whatever you want.
@@ -158,7 +136,7 @@ export default function Page4() {
           <div className="spacer spacer--sm"></div>
           By only saying "66" you then enable the <span className="c-red">CROSS - MIX</span> between [ Years ] and [ Kilos ] !!
           <div className="spacer spacer--sm"></div>
-          same when using "Velocity" instead of<br />({' '}
+          same when using "Velocity" instead of ({' '}
           <span className="c-white">Acceleration</span>
           {' '}x{' '}
           <span className="c-white">Time</span>
@@ -184,10 +162,10 @@ export default function Page4() {
 
             When Albert Einstein "
         <span className="c-red">HID</span>
-        " the ORIGIN of his Velocity<br />
+        " the ORIGIN of his Velocity 
         he was then able to re-assign it to whatever he wanted,
         <div className="spacer spacer--sm"></div>
-        and Albert Einstein ( the smartest man in the world )<br />
+        and Albert Einstein ( the smartest man in the world ) 
         <div className="spacer spacer--sm"></div>
         <span className="c-red">FALSELY Re-assigned it to <span className="c-white">LIGHT</span> !</span>
       </div>
@@ -216,7 +194,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#FF0000', textAlign: 'center' }}>
         
 
@@ -263,7 +241,7 @@ export default function Page4() {
         <span className="c-cyan">source</span>
         " of the Velocity. And so that then BLINDED Albert as to the reality of the Universe !! And of course we now know what the "
         <span className="c-cyan">source</span>
-        " of that Velocity is.<br />
+        " of that Velocity is. 
         The CORRECT Velocity is absolutely
         <div className="spacer spacer--sm"></div>
         <span className="c-white">O N L Y . . .</span>
@@ -284,9 +262,9 @@ export default function Page4() {
         <span className="c-cyan">- ORIGIN -</span>
          of ALL of the others !!
         <div className="spacer spacer--sm"></div>
-        You will clearly see later on how the<br />
-        <span className="c-cyan">" Flow of electrons into the earth "</span><br />
-        " C R E A T E S "<br />
+        You will clearly see later on how the 
+        <span className="c-cyan">" Flow of electrons into the earth "</span> 
+        " C R E A T E S " 
 
         
       </div>
@@ -313,8 +291,8 @@ export default function Page4() {
         <span className="c-gray">
           If you deny the PROVEN TRUTH above, you are only keeping yourself on the -
           <span className="c-red">LOSING</span>
-          - side of History<br />
-          just like those who mocked the Great Ignaz Semmelweis<br />
+          - side of History 
+          just like those who mocked the Great Ignaz Semmelweis 
           or Nicholas Copernicus or Galileo Galilei.
         </span>
       </div>
@@ -331,7 +309,7 @@ export default function Page4() {
           " S Y N O P S I S
         </u>
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -345,7 +323,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -359,7 +337,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -367,7 +345,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -383,9 +361,9 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#FF0000', textAlign: 'center' }}>WRONG ! WRONG ! WRONG !</div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -411,7 +389,7 @@ export default function Page4() {
 
             Stars give off{' '}
         <span className="c-red">ZERO</span>
-        {' '}Light, only an electromagnetic-Wave.<br />
+        {' '}Light, only an electromagnetic-Wave. 
         And by that fact, we then understand that the Sun is only a Proton "Flow State" and therefore the Sun is "
         <span className="c-cyan">Cold</span>
         " !
@@ -420,7 +398,7 @@ export default function Page4() {
       </div>
       <figure className="media"><img src="/WPD.png" alt="WPD" width="500" height="300" loading="lazy" decoding="async" /></figure>
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'center' }}>UNDERSTAND THIS . . .</div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         This is the ***
         <span className="c-cyan">REALITY</span>
@@ -443,7 +421,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'left' }}>
         
 
@@ -451,7 +429,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -499,7 +477,7 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF', textAlign: 'left' }}>
         
 
@@ -551,7 +529,7 @@ export default function Page4() {
          a partial-Wave 
         <span className="c-cyan">--- of ---</span>
          light, because light is simply the straight forward movement of Electrons (mA) into your eyes after they are slowed down into "visible light" by the enormous EM-Wave of the sun ! And yes Electrons (mA) 
-        <br />
+         
         <span className="c-red">NOT - NOT - NOT</span>
          man made FAIRYTALE pHotons !! 
         <div className="spacer spacer--sm"></div>
@@ -566,7 +544,7 @@ export default function Page4() {
         This is the - simplicity - that will help you fully understand . . .
         <div className="spacer spacer--sm"></div>
         The "Pressure of space" is mind-boggling and is the ORIGIN of ALL Energy on earth. If you don't believe that just give us any form of Energy and we will show you how it originates from the enormous, mind-boggling "Pressure of Space". The Pressure of Space is also the origin of the recently crushed Titan Submersible (our condolences). Any submersible that is not "perfectly round" will always be a future graveyard. Then as the earth orbits the sun, its Magnetic-Field cuts stationary Neutrons (dim-Light) free from the lattice of space ( just like scraping a fork on styrofoam ) and the Pressure of space then immediately accelerates those Neutrons into Electrons and throws them down onto the earth as Gravity. Those Electrons (mA) also then reflect all around you at near zero-friction before they enter your eyes as Light. The only difference between Day and Night, is those Neutrons being "Slowed Down" into Electrons by the enormous EM-Wave of the Sun.
-        <br />
+         
         <span className="c-cyan">
           This is why 
           <span style={{ color: '#FB8809' }}>Gravity (mA)</span>
@@ -583,16 +561,16 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         <span className="c-cyan">m</span>
          = 
         <span className="c-cyan">quantum-mass</span>
-        <br />
+         
         <span className="c-cyan">A</span>
          = 
         <span className="c-cyan">Acceleration</span>
-        <br />
+         
         <span className="c-cyan">Z</span>
          = 
         <span className="c-cyan">Time</span>
@@ -600,9 +578,9 @@ export default function Page4() {
         The Flow of Gravity multiplied by the Velocity of Gravity equals the "Force" of Gravity.
         <div className="spacer spacer--sm"></div>
         <div style={{ color: '#00FFFF' }}>m / Z     x   AZ     =    mA</div>
-        <br />
+         
         <div style={{ color: '#FB8809' }}>The debate is OVER ! !</div>
-        <br />
+         
         
 
             Albert's mistaken Velocity of light belongs --ONLY-- to the Velocity of Gravity which is equal to the amount of Time (exact lunar year in seconds) that it takes Gravity (Flow of quantum-mass into the earth) to orbit the sun.
@@ -630,7 +608,7 @@ export default function Page4() {
         And so earth moving through space inside a helix orbit means that the earth is inside an electrical-Wave. And the Velocity of earth is the origin of how fast Gravity flows into the earth.
         <div className="spacer spacer--sm"></div>
         <div style={{ color: '#FB8809' }}>( earth orbit Velocity )² / Pi = 299,792,458</div>
-        <br />
+         
         
 
             Do not use any Values except those presented in the mathematically proven Chart of "TRUE EARTH VALUES" (in the Slideshow).
@@ -641,10 +619,10 @@ export default function Page4() {
 
         
       </div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#FF0000' }}>Stop the insanity !</div>
       <div className="f-x-large" style={{ color: '#FB8809' }}>Start using your "logical" mind !</div>
-      <br />
+       
       <div className="f-x-large" style={{ color: '#00FFFF' }}>
         
 
@@ -658,7 +636,7 @@ export default function Page4() {
          Mass does 
         <span className="c-red">NOT</span>
          contain energy. (Albert's error also Cross-Mixed "Mass", with the "Volumetric-Displacement" of the Mass.)
-        <br />
+         
         <span style={{ color: '#FB8809' }}>2.</span>
          Curved space is 
         <span className="c-red">IM</span>
@@ -672,7 +650,7 @@ export default function Page4() {
         <div className="spacer spacer--sm"></div>
         <span style={{ color: '#FB8809' }}>1.</span>
          Gravity is a "Flow".
-        <br />
+         
         <span style={{ color: '#FB8809' }}>2.</span>
          Magnetism is a "Flow".
         <div className="spacer spacer--sm"></div>
@@ -734,11 +712,11 @@ export default function Page4() {
           <div className="spacer spacer--sm"></div>
           * * * C O N G R A T U L A T I O N S * * *
           <div className="spacer spacer--sm"></div>
-          "You" . . . are Smarter than<br />
-          Albert Einstein !<br />
-          <br />
-          <br />
-          <br />
+          "You" . . . are Smarter than 
+          Albert Einstein ! 
+           
+           
+           
           <span className="c-cyan">
             
 
@@ -755,7 +733,7 @@ export default function Page4() {
         </div>
       </div>
       </div>
-      </div>
+      </Page4HardBreaks>
       <PageEndFooter pageNumber={4} />
       </main>
     </div>
