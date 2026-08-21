@@ -13,7 +13,7 @@ export function SiteHeader({ page }: SiteHeaderProps) {
         <PageNavLabel page={page} />
       </div>
       <figure className="media media--banner">
-        <a href={CHECKOUT_PATH}>
+        <a href={CHECKOUT_PATH} data-checkout-banner="true">
           <img
             src="/TITLE2.png"
             alt="Einstein Error Title Banner"

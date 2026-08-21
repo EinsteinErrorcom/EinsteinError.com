@@ -71,17 +71,16 @@ Visual handoff for **zzzbestmaxlit** — project, deploy, site flow, AI pipeline
 
   <rect x="20" y="636" width="360" height="52" rx="6" fill="#fff7ed" stroke="#f97316" stroke-width="1"/>
   <text x="32" y="654" class="t">10. TRIAL EXPIRED</text>
-  <text x="32" y="670" class="r">/trialexpired10 - free trial ended</text>
+  <text x="32" y="670" class="r">/checkout10 - checkout + expired access</text>
   <line x1="200" y1="688" x2="200" y2="704" stroke="#94a3b8" stroke-width="1" marker-end="url(#handoff-arr)"/>
 
   <rect x="20" y="704" width="360" height="52" rx="6" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1"/>
   <text x="32" y="722" class="t">11. CHECKOUT / STRIPE</text>
-  <text x="32" y="738" class="r">/checkout11 - $15 / $75 / $400 tiers</text>
+  <text x="32" y="738" class="r">/checkout10 - $15 / $75 / $400 tiers</text>
   <line x1="200" y1="756" x2="200" y2="772" stroke="#94a3b8" stroke-width="1" marker-end="url(#handoff-arr)"/>
 
   <rect x="20" y="772" width="360" height="52" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
   <text x="32" y="790" class="t">12. TIME EXPIRED</text>
-  <text x="32" y="806" class="r">/timeexpired12 - cookie gate</text>
   <line x1="200" y1="824" x2="200" y2="912" stroke="#94a3b8" stroke-width="1" marker-end="url(#handoff-arr)"/>
 
   <!-- AI -->
@@ -172,7 +171,7 @@ Visual handoff for **zzzbestmaxlit** — project, deploy, site flow, AI pipeline
 | **GitHub** | [EinsteinError.com](https://github.com/EinsteinErrorcom/EinsteinError.com) · `main` · tag `restore-2026-08-04` |
 | **Vercel** | [alwho-9360s-projects/zzzbestmaxlit](https://vercel.com/alwho-9360s-projects/zzzbestmaxlit) |
 | **Domains** | [einsteinerror.com](https://www.einsteinerror.com) (primary), [einsteingravity.com](https://www.einsteingravity.com) |
-| **Site flow** | `/` → `/page2`–`/page8` → `/maxchatbox9` → `/trialexpired10` → `/checkout11` → `/timeexpired12` |
+| **Site flow** | `/` → `/page2`–`/page8` → `/maxchatbox9` → `/checkout10` |
 | **Path constants** | `lib/trial-gate.ts`, `lib/site-pages.ts` |
 | **AI brain** | `lib/ai/system-instructions.ts` (`MASTER_SYSTEM_INSTRUCTIONS`) |
 | **Chat path** | `/api/chat` → `processPrompt()` → Gemini |

@@ -898,7 +898,7 @@ main.maxchatbox9-page ~ .gold-lines-divider {
 .pricing-checkout-page__expired-notice {
   margin: 0;
   color: #d0ab47;
-  font-size: 29px;
+  font-size: 30px;
   font-style: italic;
   font-weight: 700;
   line-height: 1.5;
@@ -908,7 +908,7 @@ main.maxchatbox9-page ~ .gold-lines-divider {
 .pricing-checkout-page__title {
   margin: 1.25rem 0 0;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-style: italic;
   font-weight: 700;
   line-height: 1.5;
@@ -922,6 +922,15 @@ main.maxchatbox9-page ~ .gold-lines-divider {
   background-size: 100% 8px, 100% 8px;
   background-position: 0 100%, 0 calc(100% + 0.6em);
   background-repeat: no-repeat;
+}
+
+.pricing-checkout-page__title-brand {
+  color: #d0ab47;
+  font-size: 35px;
+}
+
+.pricing-checkout-page__title-sub {
+  font-size: 24px;
 }
 
 .pricing-checkout-page__home {
@@ -1175,10 +1184,10 @@ main.maxchatbox9-page ~ .gold-lines-divider {
 }
 
 .payment-checkout__sign-in {
-  color: #00ffff;
+  color: #ff0000;
   font-weight: 700;
   text-decoration: none;
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
   padding: 0.4rem 0.9rem;
   display: inline-block;
 }

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:gemini": "node scripts/check-gemini.mjs"
+    "check:gemini": "node scripts/check-gemini.mjs",
+    "check:routes": "node scripts/audit-route-links.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

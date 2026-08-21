@@ -100,7 +100,7 @@ Or open in your browser: **`http://localhost:3000/saas-paths.html`** (run `npm r
 
   <rect x="325" y="344" width="170" height="38" rx="7" fill="#f97316" stroke="#ea580c" stroke-width="2"/>
   <text x="410" y="361" text-anchor="middle" class="box">Trial Expired</text>
-  <text x="410" y="374" text-anchor="middle" class="url">/trialexpired10</text>
+  <text x="410" y="374" text-anchor="middle" class="url">/checkout10</text>
 
   <rect x="560" y="344" width="130" height="40" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="360" class="br"><tspan class="brb">Auto</tspan> after 1 hr</text>
@@ -116,7 +116,7 @@ Or open in your browser: **`http://localhost:3000/saas-paths.html`** (run `npm r
 
   <rect x="325" y="418" width="170" height="38" rx="7" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
   <text x="410" y="435" text-anchor="middle" class="box">Price Page</text>
-  <text x="410" y="448" text-anchor="middle" class="url">/checkout11 · $15/$75/$400</text>
+  <text x="410" y="448" text-anchor="middle" class="url">/checkout10 · $15/$75/$400</text>
 
   <rect x="560" y="418" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="432" class="br"><tspan class="brb">Not signed in</tspan> → Log-In</text>
@@ -128,7 +128,7 @@ Or open in your browser: **`http://localhost:3000/saas-paths.html`** (run `npm r
   <!-- 7 Stripe -->
   <rect x="130" y="492" width="130" height="40" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="138" y="508" class="br"><tspan class="brb">Cancel</tspan> → Price (F4)</text>
-  <text x="138" y="520" class="br">cancel_url checkout11</text>
+  <text x="138" y="520" class="br">cancel_url checkout10</text>
 
   <rect x="325" y="492" width="170" height="38" rx="7" fill="#14b8a6" stroke="#0d9488" stroke-width="2"/>
   <text x="410" y="509" text-anchor="middle" class="box">Stripe Checkout</text>
@@ -166,7 +166,7 @@ Or open in your browser: **`http://localhost:3000/saas-paths.html`** (run `npm r
 
   <rect x="325" y="640" width="170" height="38" rx="7" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
   <text x="410" y="655" text-anchor="middle" class="box">ChatBox Time Expired</text>
-  <text x="410" y="668" text-anchor="middle" class="url">/timeexpired12</text>
+  <text x="410" y="668" text-anchor="middle" class="url">/checkout10</text>
 
   <rect x="560" y="640" width="130" height="52" rx="5" fill="#fff" stroke="#94a3b8" stroke-dasharray="4 3"/>
   <text x="568" y="654" class="br"><tspan class="brb">Footer chain</tspan> from Price</text>

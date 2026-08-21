@@ -5,7 +5,7 @@ import { getSupabaseEnv, SUPABASE_CONFIG_ERROR } from "@/lib/supabase/env";
 import { buildChatPathWithCheckoutSession, CHAT_PATH } from "@/lib/trial-gate";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import Script from "next/script";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 type GoogleLoginButtonProps = {
   googleClientId?: string | null;
@@ -13,7 +13,7 @@ type GoogleLoginButtonProps = {
   checkoutSessionId?: string | null;
   redirectPath?: string | null;
   variant?: 'banner' | 'link';
-  linkLabel?: string;
+  linkLabel?: ReactNode;
 };
 
 type CredentialResponse = {
@@ -100,6 +100,31 @@ async function waitForAccessToken(supabase: SupabaseClient): Promise<string> {
   );
 }
 
+async function establishServerSession(supabase: SupabaseClient): Promise<void> {
+  const { data: { session }, error } = await supabase.auth.getSession();
+
+  if (error || !session?.access_token || !session.refresh_token) {
+    throw new Error(
+      "Sign-in succeeded but your session was not established. Please try again."
+    );
+  }
+
+  const response = await fetch("/api/auth/establish-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    credentials: "same-origin",
+    body: JSON.stringify({
+      access_token: session.access_token,
+      refresh_token: session.refresh_token,
+    }),
+  });
+
+  if (!response.ok) {
+    const body = (await response.json().catch(() => null)) as { error?: string } | null;
+    throw new Error(body?.error ?? "Could not save your sign-in session.");
+  }
+}
+
 async function ensureProfileAfterSignIn(supabase: SupabaseClient): Promise<void> {
   const accessToken = await waitForAccessToken(supabase);
 
@@ -132,7 +157,7 @@ export function GoogleLoginButton({
   checkoutSessionId = null,
   redirectPath = null,
   variant = 'banner',
-  linkLabel = 'SIGN-IN HERE',
+  linkLabel = 'SIGN-IN to Google HERE',
 }: GoogleLoginButtonProps) {
   const clientId = googleClientId?.trim() || EXPECTED_CLIENT_ID;
   const [loginError, setLoginError] = useState<string | null>(initialError);
@@ -217,6 +242,7 @@ export function GoogleLoginButton({
         throw signInError;
       }
 
+      await establishServerSession(supabase);
       await ensureProfileAfterSignIn(supabase);
       const destination = checkoutSessionId
         ? buildChatPathWithCheckoutSession(checkoutSessionId)

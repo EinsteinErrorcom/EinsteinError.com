@@ -61,6 +61,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // Pre-rename checkout URL — stale caches/bookmarks still hit /checkout11
+    return [{ source: "/checkout11", destination: "/checkout10", permanent: true }];
+  },
   async headers() {
     return [
       {

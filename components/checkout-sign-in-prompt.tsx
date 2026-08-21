@@ -19,7 +19,7 @@ export function CheckoutSignInPrompt({ googleClientId }: CheckoutSignInPromptPro
         googleClientId={googleClientId}
         redirectPath={CHECKOUT_PATH}
         variant="link"
-        linkLabel={`SIGN-IN${'\u00A0'.repeat(4)}HERE`}
+        linkLabel={`SIGN-IN${'\u00A0'.repeat(4)}to${'\u00A0'}Google${'\u00A0'.repeat(4)}HERE`}
       />
       </div>
     </div>

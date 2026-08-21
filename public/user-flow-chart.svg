@@ -40,15 +40,15 @@
   <rect x="10" y="548" width="300" height="68" rx="6" fill="#fff7ed" stroke="#f97316" stroke-width="1"/>
   <text x="24" y="570" class="title">5. TRIAL EXPIRED</text>
   <text x="24" y="588" class="detail">Free 1-hour trial ended</text>
-  <text x="24" y="604" class="route">/trialexpired10</text>
+  <text x="24" y="604" class="route">/checkout10</text>
   <line x1="160" y1="616" x2="160" y2="636" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow)"/>
   <rect x="10" y="636" width="300" height="68" rx="6" fill="#faf5ff" stroke="#8b5cf6" stroke-width="1"/>
   <text x="24" y="658" class="title">6. CHECKOUT</text>
   <text x="24" y="676" class="detail">Stripe checkout (PAY)</text>
-  <text x="24" y="692" class="route">/checkout11</text>
+  <text x="24" y="692" class="route">/checkout10</text>
   <line x1="160" y1="704" x2="160" y2="724" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow)"/>
   <rect x="10" y="724" width="300" height="68" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
   <text x="24" y="746" class="title">7. TIME EXPIRED</text>
   <text x="24" y="764" class="detail">Cookie gate expired (EXPIRE)</text>
-  <text x="24" y="780" class="route">/timeexpired12</text>
+  <text x="24" y="780" class="route">/checkout10</text>
 </svg>
