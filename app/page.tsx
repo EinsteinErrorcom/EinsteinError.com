@@ -101,9 +101,9 @@ export default async function Home({ searchParams }: HomeProps) {
           This is your chance to go down in History !<br/>
           Whoever gets this Discovery on the News<br/>
           or into any major Publication<br/>
-          or connects us with a &quot; BACKER &quot;<br/>
+          or connects us with a{'\u00A0\u00A0\u00A0'}&quot; BACKER &quot;<br/>
           your Family{'\u00A0\u00A0\u00A0'}<span style={{ color: '#FFFFFF' }}>Name</span>{'\u00A0\u00A0\u00A0'}will most certainly<br/>
-          go down in History !{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Guaranteed.
+          go down in History !{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Guaranteed.<br/><span style={{ color: '#808080' }}>( Contact Us via WhatsApp{'\u00A0\u00A0'}+17802707009 )</span>
         </span>
         <br/><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
