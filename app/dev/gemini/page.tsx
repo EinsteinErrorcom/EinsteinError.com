@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { CHAT_PATH } from '@/lib/trial-gate';
+import { isLocalDevEnvironment } from '@/lib/dev-only';
 import { GEMINI_QUOTA_FIX_STEPS } from '@/lib/ai/gemini-billing-help';
 import { getGeminiApiKeys } from '@/lib/ai/gemini-keys';
 import { testGeminiApiKey } from '@/lib/ai/test-gemini-key';
@@ -137,12 +139,8 @@ OPENAI_API_KEY=sk-...`}
 ];
 
 export default async function DevGeminiPage() {
-  if (process.env.NODE_ENV === 'production' && process.env.VERCEL_ENV === 'production') {
-    return (
-      <main className="min-h-screen bg-[#0d1117] text-white p-8">
-        <p>Not available in production.</p>
-      </main>
-    );
+  if (!isLocalDevEnvironment()) {
+    redirect('/');
   }
 
   const result = await checkConfiguredKeys();

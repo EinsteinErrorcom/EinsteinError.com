@@ -1,11 +1,12 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { NextResponse } from 'next/server';
+import { isLocalDevEnvironment } from '@/lib/dev-only';
 import { getRuntimeGeminiKeyPath } from '@/lib/ai/gemini-runtime-key';
 import { testGeminiApiKey } from '@/lib/ai/test-gemini-key';
 
 function isDevRouteAllowed() {
-  return process.env.NODE_ENV !== 'production' || process.env.VERCEL_ENV !== 'production';
+  return isLocalDevEnvironment();
 }
 
 function upsertEnvLine(content: string, key: string, value: string): string {

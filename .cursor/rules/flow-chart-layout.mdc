@@ -9,6 +9,6 @@ alwaysApply: false
 When creating or editing MAX-LIT flow charts (HTML, SVG, Mermaid, or markdown diagrams):
 
 - **Top of page:** **HOMEPAGE** (`/`)
-- **Bottom of page:** **ChatBox Time Expired** (`/timeexpired11`)
+- **Bottom of page:** **Checkout / expired access** (`/checkout10`)
 
 The main spine runs top → bottom. Branch paths and side notes attach left/right of the spine; do not place Homepage anywhere except the top or ChatBox Time Expired anywhere except the bottom.

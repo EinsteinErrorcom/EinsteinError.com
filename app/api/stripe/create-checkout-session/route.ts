@@ -6,12 +6,12 @@ import {
   resolveSiteUrl,
 } from '@/lib/stripe/stripe-service';
 import { createClient, getAuthenticatedUser } from '@/lib/supabase/server';
-import { createPaymentIntentSchema } from '@/lib/validations/stripe';
+import { createCheckoutSessionSchema } from '@/lib/validations/stripe';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const parsed = createPaymentIntentSchema.safeParse(body);
+    const parsed = createCheckoutSessionSchema.safeParse(body);
 
     if (!parsed.success) {
       return NextResponse.json(

@@ -1,5 +1,5 @@
 import { z } from 'zod';
 
-export const createPaymentIntentSchema = z.object({
+export const createCheckoutSessionSchema = z.object({
   priceId: z.string().min(1, 'priceId is required'),
 });

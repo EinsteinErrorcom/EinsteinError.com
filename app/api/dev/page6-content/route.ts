@@ -1,12 +1,13 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { NextResponse } from 'next/server';
+import { isLocalDevEnvironment } from '@/lib/dev-only';
 import { z } from 'zod';
 
 const PAGE6_PATH = resolve(process.cwd(), 'content/page6.txt');
 
 function isDevRouteAllowed() {
-  return process.env.NODE_ENV !== 'production' || process.env.VERCEL_ENV !== 'production';
+  return isLocalDevEnvironment();
 }
 
 const saveBodySchema = z.object({

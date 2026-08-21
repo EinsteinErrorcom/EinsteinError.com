@@ -5,7 +5,6 @@ import { isProfileTrialActive, type ProfileTrial } from './trial';
 /** Site page routes (10-page structure: 8 content + chat + checkout) */
 /** MAX-LIT Secure Checkout — 3 Stripe tiers ($15 / $75 / $400) — Page 10 */
 export const CHECKOUT_PATH = '/checkout10';
-export const CHECKOUT10_PATH = CHECKOUT_PATH;
 export const CHAT_PATH = '/maxchatbox9';
 
 /** Landing page anchor — scrolls to the Google Sign-In block */

@@ -98,29 +98,3 @@ export async function createCheckoutSession({
     ...(email ? { customer_email: email } : {}),
   });
 }
-
-type CreatePaymentIntentInput = {
-  tier: PricingTier;
-  userId: string;
-  email?: string | null;
-};
-
-export async function createPaymentIntent({
-  tier,
-  userId,
-  email,
-}: CreatePaymentIntentInput): Promise<Stripe.PaymentIntent> {
-  const stripe = getStripeClient();
-
-  return stripe.paymentIntents.create({
-    amount: tier.amountCents,
-    currency: tier.currency,
-    automatic_payment_methods: { enabled: true },
-    metadata: {
-      supabase_user_id: userId,
-      price_id: tier.priceId,
-      product_label: tier.description,
-    },
-    ...(email ? { receipt_email: email } : {}),
-  });
-}

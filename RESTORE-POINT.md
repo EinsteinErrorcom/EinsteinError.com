@@ -58,7 +58,7 @@ Code accepts legacy Supabase names as fallback, but **always set the `NEXT_PUBLI
 
 - **Dashboard:** https://dashboard.stripe.com
 - **Webhook URL (Production):** `https://www.einsteinerror.com/api/stripe/webhook`
-- **Events to listen for:** `checkout.session.completed`, `payment_intent.succeeded`
+- **Events to listen for:** `checkout.session.completed`
 - **Signing secret:** copy to Vercel as `STRIPE_WEBHOOK_SIGNING_SECRET`
 
 ### Pricing tiers (live price IDs in code)
@@ -83,18 +83,16 @@ grant select, insert, update on table public.profiles to service_role;
 
 (Migration: `supabase/migrations/20260804140000_grant_profiles_service_role.sql`)
 
-## 12-page site routes
+## 10-page site routes
 
 | # | Route | Role |
 |---|---|---|
 | 1 | `/` | Home |
 | 2–8 | `/page2` … `/page8` | Content |
 | 9 | `/maxchatbox9` | AI chat (TRY) |
-| 10 | `/trialexpired10` | Trial expired (EXPIRE) |
-| 11 | `/checkout11` | Stripe checkout (PAY) |
-| 12 | `/timeexpired12` | Time expired (EXPIRE) |
+| 10 | `/checkout10` | Stripe checkout + expired access (PAY / EXPIRE) |
 
-Legacy URLs (`/maxchatbox8`, `/checkout10`, `/spare12`, etc.) redirect to the routes above via `next.config.ts`.
+Legacy URLs (`/checkout11`, `/trialexpired10`, `/maxchatbox8`, etc.) are **not** redirected — they 404.
 
 ## Quick health check
 

@@ -65,15 +65,6 @@ export async function POST(req: Request) {
       }
     }
 
-    if (event.type === 'payment_intent.succeeded') {
-      const paymentIntent = event.data.object as Stripe.PaymentIntent;
-      const userId = paymentIntent.metadata.supabase_user_id;
-
-      if (userId) {
-        await markUserSubscribed(userId, paymentIntent.metadata.price_id ?? null);
-      }
-    }
-
     return NextResponse.json({ received: true });
   } catch (err) {
     console.error('[stripe/webhook]', err);
