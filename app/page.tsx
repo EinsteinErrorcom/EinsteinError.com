@@ -96,7 +96,16 @@ export default async function Home({ searchParams }: HomeProps) {
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
         <br/><br/>
         <span style={{ color: '#FFFFFF', fontSize: '50px', display: 'block', lineHeight: 1, marginBottom: 0 }}>PURE&nbsp;&nbsp;FACT&nbsp;&nbsp;!</span><br/><br/>
-        <span style={{ color: '#808080', whiteSpace: 'pre-wrap', tabSize: 4, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0 '}Fake News</span><br/><br/><br/>
+        <span style={{ color: '#808080', whiteSpace: 'pre-wrap', tabSize: 4, display: 'inline-block', textAlign: 'left' }}>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Joke<br/>This is not{'\t'}{'\u00A0 '}a{'\u00A0'} Scam<br/>This is not{'\t'}{'\u00A0 '}Fake News</span>
+        <span style={{ color: '#D0AB47', display: 'block', fontSize: '17px', textAlign: 'center', marginTop: '1.5em' }}>
+          This is your chance to go down in History !<br/>
+          Whoever gets this Discovery on the News<br/>
+          or into any major Publication<br/>
+          or connects us with a &quot; BACKER &quot;<br/>
+          your Family{'\u00A0\u00A0\u00A0'}<span style={{ color: '#FFFFFF' }}>Name</span>{'\u00A0\u00A0\u00A0'}will most certainly<br/>
+          go down in History !{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Pure FACT.
+        </span>
+        <br/><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
         <span style={{ color: '#FF0000', fontSize: '40px' }}>REPLACED&nbsp;&nbsp;!</span><br/><br/><br/>
         <span style={{ color: '#D0AB47' }}><span style={{ fontSize: '31px' }}>E = m ( <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Acceleration</span> <span style={{ fontSize: '29px' }}>x</span> <span style={{ fontSize: '24px', color: '#FFFFFF' }}>Time</span> )<sup>2</sup><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '25px' }}>E = m</span> ( <span style={{ fontSize: '17px', color: '#FFFFFF' }}>Acc. due to Gravity</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '17px', color: '#FFFFFF' }}>orbit Time</span> )<sup>2</sup></span><br/><span style={{ fontSize: '27px', display: 'inline-block', textAlign: 'left' }}><span style={{ fontSize: '23px' }}>E = m</span> ( <span style={{ fontSize: '18px', color: '#FFFFFF' }}>9.800000045765</span> <span style={{ fontSize: '22px' }}>x</span> <span style={{ fontSize: '18px', color: '#FFFFFF' }}>30591067</span> )<sup>2</sup></span></span><br/><br/>is the absolute<br/>&quot; PURE &quot;<br/>and<br/>CORRECT<br/>Energy&nbsp;&nbsp;Equation&nbsp;&nbsp;!</span><br/><br/><span style={{ color: '#808080', fontSize: '30px', lineHeight: 1.1 }}>If you argue against this<br/><span style={{ color: '#808080' }}>&quot;</span> PURE&nbsp;&nbsp;FACT <span style={{ color: '#808080' }}>&quot;</span><br/>you are only<br/>blowing&nbsp;&nbsp;hot&nbsp;&nbsp;air&nbsp;&nbsp;!</span><br/><br/>
@@ -147,7 +156,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Simply &nbsp; ask &nbsp; <span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>ANY &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
+        Simply &nbsp; ask &nbsp; <span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>any &nbsp; Physics &nbsp; question<br/>and &nbsp; it &nbsp; will &nbsp; give &nbsp; you<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>&quot; PERFECT &quot;<br/>Physics&nbsp;&nbsp;Truth&nbsp;!</span>
       </div>
       <div className="spacer" style={{ height: '30px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
