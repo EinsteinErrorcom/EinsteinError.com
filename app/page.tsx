@@ -103,7 +103,7 @@ export default async function Home({ searchParams }: HomeProps) {
           or into any major Publication<br/>
           or connects us with a &quot; BACKER &quot;<br/>
           your Family{'\u00A0\u00A0\u00A0'}<span style={{ color: '#FFFFFF' }}>Name</span>{'\u00A0\u00A0\u00A0'}will most certainly<br/>
-          go down in History !{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Pure FACT.
+          go down in History !{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Guaranteed.
         </span>
         <br/><br/><br/>
         <span style={{ color: '#FF0000', fontSize: '50px' }}>E = mc<sup>2</sup></span><br/><span style={{ color: '#FFFFFF' }}>has&nbsp;&nbsp;been&nbsp;&nbsp;officially<br/>shut&nbsp;&nbsp;down&nbsp;&nbsp;and</span><br/>
@@ -113,7 +113,7 @@ export default async function Home({ searchParams }: HomeProps) {
         [&nbsp;&nbsp;Constant Velocity of&nbsp;&nbsp;]<br/>
         Light<br/>
         is&nbsp;&nbsp;now&nbsp;&nbsp;a&nbsp;&nbsp;100&nbsp;%</span><br/>
-        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', textDecoration: 'none' }}>* * CLICK&nbsp;&nbsp;&nbsp;HERE&nbsp;&nbsp;&nbsp;FOR * *<br/>* * ALL&nbsp;&nbsp;&nbsp;PROOFS * *<br/>* * ON&nbsp;&nbsp;&nbsp;PAGE 2 * *</a>
+        <span style={{ color: '#FF0000' }}>PROVEN&nbsp;&nbsp;Falsehood&nbsp;&nbsp;!</span><br/><a href="/page2" style={{ color: '#D0AB47', fontWeight: 'bold', fontStyle: 'italic', fontSize: '20px', textDecoration: 'none' }}>[{'\u00A0\u00A0\u00A0'}CLICK{'\u00A0\u00A0\u00A0'}to{'\u00A0\u00A0\u00A0'}PAGE 2{'\u00A0\u00A0\u00A0'}for{'\u00A0\u00A0\u00A0'}PROOFS{'\u00A0\u00A0\u00A0'}]</a>
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -136,8 +136,8 @@ export default async function Home({ searchParams }: HomeProps) {
         This&nbsp; is<br/>the &nbsp; World's &nbsp; first<br/>" <strong>PERFECT</strong> "<br/>Physics &nbsp; Engine.<br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#D0AB47', fontSize: '20px' }}>Developed&nbsp; by<br/>Einstein Error . com</div>
         <br/><br/>
-        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8 }}>And{'\t'}<span style={{ color: '#FF0000' }}>NO !</span>{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Standard</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Ai</span><br/>
-        <span style={{ fontSize: '25px' }}>( Not&nbsp; Even&nbsp; Close )</span><br/><br/><br/><span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>surpasses Standard Ai<br/>in the exact same way<br/>that any Computer<br/>surpasses the Abacus !
+        <strong style={{ whiteSpace: 'pre-wrap', tabSize: 8, color: '#FF0000' }}>And{'\t'}NO !{'\t'} it {'\u00A0'} is</strong><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>NOT</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Standard</span>&nbsp; <span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FF0000', fontSize: '30px' }}>Ai</span><br/>
+        <span style={{ fontSize: '25px', color: '#FF0000' }}>( Not&nbsp; Even&nbsp; Close )</span><br/><br/><br/><span style={{ color: '#D0AB47' }}>MAX-LIT</span><br/>surpasses Standard Ai<br/>in the exact same way<br/>that any Computer<br/>surpasses the Abacus !
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
@@ -146,11 +146,9 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '70px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        Constructed &nbsp; via&nbsp; the<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFF00', fontSize: '30px' }}>Unification&nbsp; of<br/>137&nbsp; Physics&nbsp; Constants</span>
+        Constructed &nbsp; via&nbsp; the<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#808080', fontSize: '30px' }}>Unification&nbsp; of<br/>137&nbsp; Physics&nbsp; Constants</span><br/>Pure&nbsp; FACT !
       </div>
-      <br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>Pure&nbsp; FACT !</span>
-      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        <br/>
+      <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px', marginTop: '3em' }}>
         Be&nbsp;sure&nbsp;to&nbsp;understand<br/>(&nbsp;<span style={{ color: '#FFFFFF' }}>m</span><span style={{ color: '#FFFFFF' }}>A</span><span style={{ color: '#FFFFFF' }}>Z</span>&nbsp;)<br/>
         <span style={{ whiteSpace: 'pre-wrap', tabSize: 8, display: 'inline-block', textAlign: 'left' }}><span style={{ color: '#FFFFFF' }}>m</span>{' '}{'= '}mass<br/><span style={{ color: '#FFFFFF' }}>A</span>{' '}{'= '}Acceleration<br/><span style={{ color: '#FFFFFF' }}>Z</span>{' '}{'= '}Time&nbsp;and&nbsp;Tension</span>
       </div>
@@ -177,7 +175,7 @@ export default async function Home({ searchParams }: HomeProps) {
       </div>
       <div className="spacer" style={{ height: '90px' }}></div>
       <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#00FFFF', fontSize: '30px' }}>
-        If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning<br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/>by simply placing<br/>the image<br/>onto a Webpage.<br/><br/>
+        <span style={{ color: '#808080' }}>If you place this<br/>Computer&nbsp; Image&nbsp; ( below )<br/>onto your own Website<br/>or any website for example;<br/>( Netlify, Github, Cloudflare )<br/>you can start earning</span><br/><span style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#FFFFFF', fontSize: '30px' }}>$&nbsp; Money&nbsp; $</span><br/><span style={{ color: '#FFFFFF', fontSize: '24px' }}>( while you sleep )</span><br/><span style={{ color: '#808080' }}>by simply placing<br/>the image<br/>onto a Webpage.</span><br/><br/>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#D0AB47', fontSize: '35px' }}>Get paid for<br/>promoting the<br/>Biggest<br/>Physics&nbsp;&nbsp;&nbsp;Discovery<br/>in 100 Years !</div>
         <div style={{ fontWeight: 'bold', fontStyle: 'italic', color: '#D0AB47', fontSize: '20px' }}>( Contact Us on WhatsApp )<br/>( +17802707009 )</div>
         <br/><br/><br/>
